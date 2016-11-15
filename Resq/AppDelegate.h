@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 #import <CoreData/CoreData.h>
+#import <RESideMenu/RESideMenu.h>
+
+#define DEVICE_OFFSET (CGRectGetWidth([UIScreen mainScreen].bounds)/320)
+#define appdelegate ((AppDelegate*)[UIApplication sharedApplication].delegate)
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
@@ -16,6 +20,8 @@
 @property (readonly, strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 @property (readonly, strong, nonatomic) NSManagedObjectModel *managedObjectModel;
 @property (readonly, strong, nonatomic) NSPersistentStoreCoordinator *persistentStoreCoordinator;
+@property (nonatomic, retain) RESideMenu *sideMenuViewController;
+@property (strong, nonatomic) UINavigationController *appNavigationController;
 
 - (void)saveContext;
 - (NSURL *)applicationDocumentsDirectory;

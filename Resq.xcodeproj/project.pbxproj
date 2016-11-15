@@ -7,15 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0FF0D2B03AEAB4DF39EAFD22 /* libPods-ResqUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A956C45DB19A854711506DB2 /* libPods-ResqUITests.a */; };
+		6450958A084E006C72E2423A /* libPods-ResqTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 589765DA3E0CCEE90880D0B8 /* libPods-ResqTests.a */; };
 		7853170B1DDA3F1E00FC379A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7853170A1DDA3F1E00FC379A /* main.m */; };
 		7853170E1DDA3F1E00FC379A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7853170D1DDA3F1E00FC379A /* AppDelegate.m */; };
-		785317111DDA3F1E00FC379A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 785317101DDA3F1E00FC379A /* ViewController.m */; };
 		785317141DDA3F1E00FC379A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 785317121DDA3F1E00FC379A /* Main.storyboard */; };
 		785317171DDA3F1E00FC379A /* Resq.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 785317151DDA3F1E00FC379A /* Resq.xcdatamodeld */; };
 		785317191DDA3F1E00FC379A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 785317181DDA3F1E00FC379A /* Assets.xcassets */; };
 		7853171C1DDA3F1E00FC379A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7853171A1DDA3F1E00FC379A /* LaunchScreen.storyboard */; };
 		785317271DDA3F1F00FC379A /* ResqTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 785317261DDA3F1F00FC379A /* ResqTests.m */; };
 		785317321DDA3F1F00FC379A /* ResqUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 785317311DDA3F1F00FC379A /* ResqUITests.m */; };
+		78A70D661DDBB6BD003BB2E1 /* ActivateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78A70D651DDBB6BD003BB2E1 /* ActivateViewController.m */; };
+		78A70D691DDBB843003BB2E1 /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78A70D681DDBB843003BB2E1 /* MenuViewController.m */; };
+		78A70D6C1DDBB9E5003BB2E1 /* ResqViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78A70D6B1DDBB9E5003BB2E1 /* ResqViewController.m */; };
+		78A70D6F1DDBBBFC003BB2E1 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78A70D6E1DDBBBFC003BB2E1 /* SettingsViewController.m */; };
+		D9E5A3694AB56C09A0B89B09 /* libPods-Resq.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EFA3F4DFF8A6BAD496DD5B4 /* libPods-Resq.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,12 +42,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2086D4CF2F3E7BABBC8EB87D /* Pods-ResqUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ResqUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ResqUITests/Pods-ResqUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		589765DA3E0CCEE90880D0B8 /* libPods-ResqTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ResqTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5FDCD9FA6118E84325556155 /* Pods-Resq.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Resq.release.xcconfig"; path = "Pods/Target Support Files/Pods-Resq/Pods-Resq.release.xcconfig"; sourceTree = "<group>"; };
+		6EFA3F4DFF8A6BAD496DD5B4 /* libPods-Resq.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Resq.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		785317061DDA3F1E00FC379A /* RESQ.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RESQ.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7853170A1DDA3F1E00FC379A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		7853170C1DDA3F1E00FC379A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		7853170D1DDA3F1E00FC379A /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		7853170F1DDA3F1E00FC379A /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		785317101DDA3F1E00FC379A /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		785317131DDA3F1E00FC379A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		785317161DDA3F1E00FC379A /* Resq.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Resq.xcdatamodel; sourceTree = "<group>"; };
 		785317181DDA3F1E00FC379A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -53,6 +61,19 @@
 		7853172D1DDA3F1F00FC379A /* ResqUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ResqUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		785317311DDA3F1F00FC379A /* ResqUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ResqUITests.m; sourceTree = "<group>"; };
 		785317331DDA3F1F00FC379A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		78A70D641DDBB6BD003BB2E1 /* ActivateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivateViewController.h; sourceTree = "<group>"; };
+		78A70D651DDBB6BD003BB2E1 /* ActivateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivateViewController.m; sourceTree = "<group>"; };
+		78A70D671DDBB843003BB2E1 /* MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuViewController.h; sourceTree = "<group>"; };
+		78A70D681DDBB843003BB2E1 /* MenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuViewController.m; sourceTree = "<group>"; };
+		78A70D6A1DDBB9E5003BB2E1 /* ResqViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResqViewController.h; sourceTree = "<group>"; };
+		78A70D6B1DDBB9E5003BB2E1 /* ResqViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResqViewController.m; sourceTree = "<group>"; };
+		78A70D6D1DDBBBFC003BB2E1 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
+		78A70D6E1DDBBBFC003BB2E1 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
+		7A00E41842F35AE579CDB56F /* Pods-Resq.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Resq.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Resq/Pods-Resq.debug.xcconfig"; sourceTree = "<group>"; };
+		7DB187CCDE2C58870439643C /* Pods-ResqUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ResqUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ResqUITests/Pods-ResqUITests.release.xcconfig"; sourceTree = "<group>"; };
+		A40D93B5B9577166790A9AD4 /* Pods-ResqTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ResqTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ResqTests/Pods-ResqTests.release.xcconfig"; sourceTree = "<group>"; };
+		A956C45DB19A854711506DB2 /* libPods-ResqUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ResqUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D676FAA2C94A7BE7F4C994DC /* Pods-ResqTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ResqTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ResqTests/Pods-ResqTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +81,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D9E5A3694AB56C09A0B89B09 /* libPods-Resq.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -67,6 +89,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6450958A084E006C72E2423A /* libPods-ResqTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,6 +97,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0FF0D2B03AEAB4DF39EAFD22 /* libPods-ResqUITests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -87,6 +111,8 @@
 				785317251DDA3F1F00FC379A /* ResqTests */,
 				785317301DDA3F1F00FC379A /* ResqUITests */,
 				785317071DDA3F1E00FC379A /* Products */,
+				BACD65216307F208D3DBDC1A /* Pods */,
+				CA0F6C8CD6EE61EBD07137E6 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -105,8 +131,14 @@
 			children = (
 				7853170C1DDA3F1E00FC379A /* AppDelegate.h */,
 				7853170D1DDA3F1E00FC379A /* AppDelegate.m */,
-				7853170F1DDA3F1E00FC379A /* ViewController.h */,
-				785317101DDA3F1E00FC379A /* ViewController.m */,
+				78A70D6D1DDBBBFC003BB2E1 /* SettingsViewController.h */,
+				78A70D6E1DDBBBFC003BB2E1 /* SettingsViewController.m */,
+				78A70D641DDBB6BD003BB2E1 /* ActivateViewController.h */,
+				78A70D651DDBB6BD003BB2E1 /* ActivateViewController.m */,
+				78A70D671DDBB843003BB2E1 /* MenuViewController.h */,
+				78A70D681DDBB843003BB2E1 /* MenuViewController.m */,
+				78A70D6A1DDBB9E5003BB2E1 /* ResqViewController.h */,
+				78A70D6B1DDBB9E5003BB2E1 /* ResqViewController.m */,
 				785317121DDA3F1E00FC379A /* Main.storyboard */,
 				785317181DDA3F1E00FC379A /* Assets.xcassets */,
 				7853171A1DDA3F1E00FC379A /* LaunchScreen.storyboard */,
@@ -143,6 +175,29 @@
 			path = ResqUITests;
 			sourceTree = "<group>";
 		};
+		BACD65216307F208D3DBDC1A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				7A00E41842F35AE579CDB56F /* Pods-Resq.debug.xcconfig */,
+				5FDCD9FA6118E84325556155 /* Pods-Resq.release.xcconfig */,
+				D676FAA2C94A7BE7F4C994DC /* Pods-ResqTests.debug.xcconfig */,
+				A40D93B5B9577166790A9AD4 /* Pods-ResqTests.release.xcconfig */,
+				2086D4CF2F3E7BABBC8EB87D /* Pods-ResqUITests.debug.xcconfig */,
+				7DB187CCDE2C58870439643C /* Pods-ResqUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		CA0F6C8CD6EE61EBD07137E6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6EFA3F4DFF8A6BAD496DD5B4 /* libPods-Resq.a */,
+				589765DA3E0CCEE90880D0B8 /* libPods-ResqTests.a */,
+				A956C45DB19A854711506DB2 /* libPods-ResqUITests.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -150,9 +205,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 785317361DDA3F1F00FC379A /* Build configuration list for PBXNativeTarget "Resq" */;
 			buildPhases = (
+				82CC584E25722FD21178D010 /* [CP] Check Pods Manifest.lock */,
 				785317021DDA3F1E00FC379A /* Sources */,
 				785317031DDA3F1E00FC379A /* Frameworks */,
 				785317041DDA3F1E00FC379A /* Resources */,
+				650FF61B881BE2013C906F80 /* [CP] Embed Pods Frameworks */,
+				17A4351215C3398E89C43DCF /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -167,9 +225,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 785317391DDA3F1F00FC379A /* Build configuration list for PBXNativeTarget "ResqTests" */;
 			buildPhases = (
+				F12156D3D823CC5D4F38898D /* [CP] Check Pods Manifest.lock */,
 				7853171E1DDA3F1E00FC379A /* Sources */,
 				7853171F1DDA3F1E00FC379A /* Frameworks */,
 				785317201DDA3F1E00FC379A /* Resources */,
+				4F67E7AD5DEF2E3FA67786D0 /* [CP] Embed Pods Frameworks */,
+				7A01948906E440243746C430 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -185,9 +246,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7853173C1DDA3F1F00FC379A /* Build configuration list for PBXNativeTarget "ResqUITests" */;
 			buildPhases = (
+				56A5C3227BF9DAD86998C013 /* [CP] Check Pods Manifest.lock */,
 				785317291DDA3F1F00FC379A /* Sources */,
 				7853172A1DDA3F1F00FC379A /* Frameworks */,
 				7853172B1DDA3F1F00FC379A /* Resources */,
+				3242649F1E15D674D01911C9 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -268,13 +331,139 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		17A4351215C3398E89C43DCF /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Resq/Pods-Resq-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3242649F1E15D674D01911C9 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ResqUITests/Pods-ResqUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4F67E7AD5DEF2E3FA67786D0 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ResqTests/Pods-ResqTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		56A5C3227BF9DAD86998C013 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		650FF61B881BE2013C906F80 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Resq/Pods-Resq-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7A01948906E440243746C430 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ResqTests/Pods-ResqTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		82CC584E25722FD21178D010 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		F12156D3D823CC5D4F38898D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		785317021DDA3F1E00FC379A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				785317171DDA3F1E00FC379A /* Resq.xcdatamodeld in Sources */,
-				785317111DDA3F1E00FC379A /* ViewController.m in Sources */,
+				78A70D6C1DDBB9E5003BB2E1 /* ResqViewController.m in Sources */,
+				78A70D691DDBB843003BB2E1 /* MenuViewController.m in Sources */,
+				78A70D6F1DDBBBFC003BB2E1 /* SettingsViewController.m in Sources */,
+				78A70D661DDBB6BD003BB2E1 /* ActivateViewController.m in Sources */,
 				7853170E1DDA3F1E00FC379A /* AppDelegate.m in Sources */,
 				7853170B1DDA3F1E00FC379A /* main.m in Sources */,
 			);
@@ -417,6 +606,7 @@
 		};
 		785317371DDA3F1F00FC379A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7A00E41842F35AE579CDB56F /* Pods-Resq.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Resq/Info.plist;
@@ -429,6 +619,7 @@
 		};
 		785317381DDA3F1F00FC379A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5FDCD9FA6118E84325556155 /* Pods-Resq.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Resq/Info.plist;
@@ -441,6 +632,7 @@
 		};
 		7853173A1DDA3F1F00FC379A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D676FAA2C94A7BE7F4C994DC /* Pods-ResqTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = ResqTests/Info.plist;
@@ -453,6 +645,7 @@
 		};
 		7853173B1DDA3F1F00FC379A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A40D93B5B9577166790A9AD4 /* Pods-ResqTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = ResqTests/Info.plist;
@@ -465,6 +658,7 @@
 		};
 		7853173D1DDA3F1F00FC379A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2086D4CF2F3E7BABBC8EB87D /* Pods-ResqUITests.debug.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = ResqUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -476,6 +670,7 @@
 		};
 		7853173E1DDA3F1F00FC379A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7DB187CCDE2C58870439643C /* Pods-ResqUITests.release.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = ResqUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -504,6 +699,7 @@
 				785317381DDA3F1F00FC379A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		785317391DDA3F1F00FC379A /* Build configuration list for PBXNativeTarget "ResqTests" */ = {
 			isa = XCConfigurationList;
@@ -512,6 +708,7 @@
 				7853173B1DDA3F1F00FC379A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		7853173C1DDA3F1F00FC379A /* Build configuration list for PBXNativeTarget "ResqUITests" */ = {
 			isa = XCConfigurationList;
@@ -520,6 +717,7 @@
 				7853173E1DDA3F1F00FC379A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

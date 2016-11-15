@@ -7,6 +7,8 @@
 //
 
 #import "AppDelegate.h"
+#import "ActivateViewController.h"
+#import "MenuViewController.h"
 
 @interface AppDelegate ()
 
@@ -17,6 +19,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    [self setSettingsViewController];
     return YES;
 }
 
@@ -42,6 +45,23 @@
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     // Saves changes in the application's managed object context before the application terminates.
     [self saveContext];
+}
+
+-(void)setSettingsViewController{
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    ActivateViewController *contentViewController = [storyboard instantiateViewControllerWithIdentifier:@"ActivateViewController"];
+    MenuViewController * leftMenuViewController = [storyboard instantiateViewControllerWithIdentifier:@"MenuViewController"];
+    _appNavigationController = [[UINavigationController alloc]initWithRootViewController:contentViewController];
+    [_appNavigationController.navigationBar setTranslucent:NO];
+    _sideMenuViewController = [[RESideMenu alloc] initWithContentViewController:_appNavigationController
+                                                         leftMenuViewController:leftMenuViewController
+                                                        rightMenuViewController:nil];
+    _sideMenuViewController.contentViewInPortraitOffsetCenterX=-10*DEVICE_OFFSET;
+    [_sideMenuViewController setPanGestureEnabled:NO];
+    [_sideMenuViewController setParallaxEnabled:NO];
+    _sideMenuViewController.fadeMenuView = NO;
+    _sideMenuViewController.scaleMenuView = YES;
+    self.window.rootViewController = _sideMenuViewController;
 }
 
 #pragma mark - Core Data stack
