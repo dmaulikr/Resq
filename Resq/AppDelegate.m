@@ -9,6 +9,9 @@
 #import "AppDelegate.h"
 #import "ActivateViewController.h"
 #import "MenuViewController.h"
+#import "SettingsViewController.h"
+
+@import Firebase;
 
 @interface AppDelegate ()
 
@@ -20,6 +23,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     [self setSettingsViewController];
+    [FIRApp configure];
     return YES;
 }
 
@@ -50,6 +54,7 @@
 -(void)setSettingsViewController{
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     ActivateViewController *contentViewController = [storyboard instantiateViewControllerWithIdentifier:@"ActivateViewController"];
+//    SettingsViewController *contentViewController = [storyboard instantiateViewControllerWithIdentifier:@"SettingsViewController"];
     MenuViewController * leftMenuViewController = [storyboard instantiateViewControllerWithIdentifier:@"MenuViewController"];
     _appNavigationController = [[UINavigationController alloc]initWithRootViewController:contentViewController];
     [_appNavigationController.navigationBar setTranslucent:NO];

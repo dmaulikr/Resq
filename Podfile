@@ -2,21 +2,21 @@
 platform :ios, '8.0'
 
 target 'Resq' do
-  # Uncomment this line if you're using Swift or would like to use dynamic frameworks
-  # use_frameworks!
-
-  	pod 'RESideMenu'
-	pod 'SVProgressHUD'
-
-
-  target 'ResqTests' do
-    inherit! :search_paths
-    # Pods for testing
-  end
-
-  target 'ResqUITests' do
-    inherit! :search_paths
-    # Pods for testing
-  end
-
+    # Uncomment this line if you're using Swift or would like to use dynamic frameworks
+    # use_frameworks!
+    
+    pod 'RESideMenu'
+    pod 'SVProgressHUD'
+    pod 'Firebase/Core'
+    
+    target 'ResqTests' do
+        inherit! :search_paths
+        # Pods for testing
+    end
+    
+    target 'ResqUITests' do
+        inherit! :search_paths
+        # Pods for testing
+    end
+    
 end

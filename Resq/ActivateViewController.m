@@ -7,6 +7,7 @@
 //
 
 #import "ActivateViewController.h"
+#import "PhoneNumberViewController.h"
 
 @interface ActivateViewController ()
 
@@ -21,6 +22,18 @@
     [[_activate_btn layer]setCornerRadius:CGRectGetHeight(_activate_btn.frame)/2];
     _isActivated = NO;
     [self activateButtonAction:nil];
+}
+
+-(void)viewDidAppear:(BOOL)animated{
+    if([[NSUserDefaults standardUserDefaults]valueForKey:@"phoneNumber"] && [[[NSUserDefaults standardUserDefaults]valueForKey:@"phoneNumber"] length]){
+        NSLog(@"Name %@",[[NSUserDefaults standardUserDefaults]valueForKey:@"name"]);
+        NSLog(@"Phone %@",[[NSUserDefaults standardUserDefaults]valueForKey:@"phoneNumber"]);
+    }else{
+        PhoneNumberViewController * controller = [self.storyboard instantiateViewControllerWithIdentifier:@"PhoneNumberViewController"];
+        UINavigationController * navController = [[UINavigationController alloc]initWithRootViewController:controller];
+        navController.navigationBar.translucent = NO;
+        [self.navigationController presentViewController:navController animated:YES completion:nil];
+    }
 }
 
 - (void)didReceiveMemoryWarning {
@@ -50,12 +63,14 @@
 
 - (IBAction)activateButtonAction:(id)sender {
     if(_isActivated){
+        [[ResqLocationManager sharedManager]startUpdatingLocation];
         UIImage* bg_image = [self stretchableButtonImageWithColor:[UIColor redColor] cornerRadius:CGRectGetHeight(_activate_btn.frame)/2];
         [_activate_btn setBackgroundImage:bg_image forState:UIControlStateNormal];
         [_activate_btn setTitle:@"Deactivate" forState:UIControlStateNormal];
         _isActivated = NO;
         
     }else{
+        [[ResqLocationManager sharedManager]stopUpdatingLocation];
         UIImage* bg_image = [self stretchableButtonImageWithColor:[UIColor colorWithRed:13.0/255.0 green:187.0/255.0 blue:15.0/255.0 alpha:1.0] cornerRadius:CGRectGetHeight(_activate_btn.frame)/2];
         [_activate_btn setBackgroundImage:bg_image forState:UIControlStateNormal];
         [_activate_btn setTitle:@"Activate" forState:UIControlStateNormal];

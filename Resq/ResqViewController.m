@@ -22,10 +22,10 @@
     [_leftItem setShouldGroupAccessibilityChildren:YES];
     _rightItem = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@""] style:UIBarButtonItemStyleDone target:self action:@selector(rightItemAction:)];
     
-    UIFont *navBarTitleFont = [UIFont systemFontOfSize:13.0];
-    [_rightItem setTitleTextAttributes:@{
-                                         NSFontAttributeName : navBarTitleFont,
-                                         } forState:UIControlStateNormal];
+//    UIFont *navBarTitleFont = [UIFont systemFontOfSize:13.0];
+//    [_rightItem setTitleTextAttributes:@{
+////                                         NSFontAttributeName : navBarTitleFont,
+//                                         } forState:UIControlStateNormal];
     [self.navigationItem setRightBarButtonItem:_rightItem animated:YES];
     [self.navigationItem setLeftBarButtonItem:_leftItem animated:YES];
 }
