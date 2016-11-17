@@ -29,6 +29,11 @@
 			<key>orderHint</key>
 			<integer>5</integer>
 		</dict>
+		<key>ViewDeck.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>6</integer>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
@@ -52,7 +57,27 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>69CE4EF5C9331F67AE50F2F11DA85462</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>B2F491425ABA3743111B9F474909428A</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>B93C61604D43C39F366D01BE5529DE43</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>E3A3EB6D29DB7574ACEBE74D672B606E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>EA9DCBF43C79FA2B41334F00D27FB9C1</key>
 		<dict>
 			<key>primary</key>
 			<true/>
