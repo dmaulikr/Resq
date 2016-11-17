@@ -24,16 +24,8 @@
     [self activateButtonAction:nil];
 }
 
--(void)viewDidAppear:(BOOL)animated{
-    if([[NSUserDefaults standardUserDefaults]valueForKey:@"phoneNumber"] && [[[NSUserDefaults standardUserDefaults]valueForKey:@"phoneNumber"] length]){
-        NSLog(@"Name %@",[[NSUserDefaults standardUserDefaults]valueForKey:@"name"]);
-        NSLog(@"Phone %@",[[NSUserDefaults standardUserDefaults]valueForKey:@"phoneNumber"]);
-    }else{
-        PhoneNumberViewController * controller = [self.storyboard instantiateViewControllerWithIdentifier:@"PhoneNumberViewController"];
-        UINavigationController * navController = [[UINavigationController alloc]initWithRootViewController:controller];
-        navController.navigationBar.translucent = NO;
-        [self.navigationController presentViewController:navController animated:YES completion:nil];
-    }
+-(void)menuAction:(id)sender{
+    [appdelegate.viewDeckController openLeftViewAnimated:YES];
 }
 
 - (void)didReceiveMemoryWarning {

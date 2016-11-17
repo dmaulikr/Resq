@@ -22,6 +22,7 @@
 @property (readonly, strong, nonatomic) NSPersistentStoreCoordinator *persistentStoreCoordinator;
 @property (nonatomic, retain) RESideMenu *sideMenuViewController;
 @property (strong, nonatomic) UINavigationController *appNavigationController;
+@property (nonatomic, retain) IIViewDeckController *viewDeckController;
 
 - (void)saveContext;
 - (NSURL *)applicationDocumentsDirectory;

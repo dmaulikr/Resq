@@ -9,9 +9,20 @@
 #ifndef PrefixHeader_pch
 #define PrefixHeader_pch
 
+#define CLOSE_BY_CELL @"CloseByCell"
+#define CONTACTS_SETTING_CELL @"ContactsSettingCell"
+#define FREQUENT_CONTACTS_HEADER_CELL @"FrequentContactHeaderCELL"
+#define FREQUENT_BUDDY_CELL @"FrequentBuddyCell"
+#define NOTIFICATION_TIME_CELL @"NotificationTimeCell"
+#define BUDDY_LIST_HEADER_CELL @"BuddyListHeaderCell"
+#define BUDDY_CELL @"BuddyCell"
+
+
+
 // Include any system framework and library headers here that should be included in all compilation units.
 // You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
 #import <CoreLocation/CoreLocation.h>
+#import <IIViewDeckController.h>
 #import "ResqLocationManager.h"
 #import "ResqViewController.h"
 #import "AppDelegate.h"
@@ -23,5 +34,14 @@ UIAlertView *av = [[UIAlertView alloc] initWithTitle:title message:msg delegate:
 ;\
 }
 
-
+typedef NS_ENUM (NSUInteger, ResqSettingCellType){
+    ResqSettingCellTypeCloseByCell = 0,
+    ResqSettingCellTypeContactsSettingCell = 1,
+    ResqSettingCellTypeFrequentContactHeaderCEL = 2,
+    ResqSettingCellTypeFrequentBuddyCell = 3,
+    ResqSettingCellTypeNotificationTimeCell = 4,
+    ResqSettingCellTypeBuddyListHeaderCell = 5,
+    ResqSettingCellTypeBuddyCell = 6,
+    
+};
 #endif /* PrefixHeader_pch */

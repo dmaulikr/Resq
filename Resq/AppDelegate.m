@@ -10,7 +10,6 @@
 #import "ActivateViewController.h"
 #import "MenuViewController.h"
 #import "SettingsViewController.h"
-
 @import Firebase;
 
 @interface AppDelegate ()
@@ -53,8 +52,8 @@
 
 -(void)setSettingsViewController{
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    ActivateViewController *contentViewController = [storyboard instantiateViewControllerWithIdentifier:@"ActivateViewController"];
-//    SettingsViewController *contentViewController = [storyboard instantiateViewControllerWithIdentifier:@"SettingsViewController"];
+//    ActivateViewController *contentViewController = [storyboard instantiateViewControllerWithIdentifier:@"ActivateViewController"];
+    SettingsViewController *contentViewController = [storyboard instantiateViewControllerWithIdentifier:@"SettingsViewController"];
     MenuViewController * leftMenuViewController = [storyboard instantiateViewControllerWithIdentifier:@"MenuViewController"];
     _appNavigationController = [[UINavigationController alloc]initWithRootViewController:contentViewController];
     [_appNavigationController.navigationBar setTranslucent:NO];
@@ -66,7 +65,13 @@
     [_sideMenuViewController setParallaxEnabled:NO];
     _sideMenuViewController.fadeMenuView = NO;
     _sideMenuViewController.scaleMenuView = YES;
-    self.window.rootViewController = _sideMenuViewController;
+    
+    _viewDeckController = [[IIViewDeckController alloc] initWithCenterViewController:_appNavigationController leftViewController:leftMenuViewController];
+    _viewDeckController.panningCancelsTouchesInView = NO;
+    _viewDeckController.centerhiddenInteractivity = IIViewDeckCenterHiddenNotUserInteractiveWithTapToClose;
+    self.window.rootViewController = _viewDeckController;
+
+//    self.window.rootViewController = _sideMenuViewController;
 }
 
 #pragma mark - Core Data stack
