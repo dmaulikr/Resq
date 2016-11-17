@@ -148,24 +148,11 @@
 		785317081DDA3F1E00FC379A /* Resq */ = {
 			isa = PBXGroup;
 			children = (
+				F272F9531DDDE68700D4A672 /* Common */,
+				F272F9521DDDE67600D4A672 /* CustomCells */,
+				F272F9511DDDE63000D4A672 /* ViewControllers */,
 				7853170C1DDA3F1E00FC379A /* AppDelegate.h */,
 				7853170D1DDA3F1E00FC379A /* AppDelegate.m */,
-				78A70D6D1DDBBBFC003BB2E1 /* SettingsViewController.h */,
-				78A70D6E1DDBBBFC003BB2E1 /* SettingsViewController.m */,
-				78A70D641DDBB6BD003BB2E1 /* ActivateViewController.h */,
-				78A70D651DDBB6BD003BB2E1 /* ActivateViewController.m */,
-				78A70D671DDBB843003BB2E1 /* MenuViewController.h */,
-				78A70D681DDBB843003BB2E1 /* MenuViewController.m */,
-				78A70D6A1DDBB9E5003BB2E1 /* ResqViewController.h */,
-				78A70D6B1DDBB9E5003BB2E1 /* ResqViewController.m */,
-				786EEE801DDCD2AD00B6C40F /* ResqLocationManager.h */,
-				786EEE811DDCD2AD00B6C40F /* ResqLocationManager.m */,
-				786EEE841DDCDD0400B6C40F /* PhoneNumberViewController.h */,
-				786EEE851DDCDD0400B6C40F /* PhoneNumberViewController.m */,
-				786EEE8A1DDCE34E00B6C40F /* CountryPickerViewController.h */,
-				786EEE8B1DDCE34E00B6C40F /* CountryPickerViewController.m */,
-				786EEE871DDCE05400B6C40F /* CountryTableViewCell.h */,
-				786EEE881DDCE05400B6C40F /* CountryTableViewCell.m */,
 				785317121DDA3F1E00FC379A /* Main.storyboard */,
 				785317181DDA3F1E00FC379A /* Assets.xcassets */,
 				7853171A1DDA3F1E00FC379A /* LaunchScreen.storyboard */,
@@ -227,6 +214,43 @@
 				A956C45DB19A854711506DB2 /* libPods-ResqUITests.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F272F9511DDDE63000D4A672 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				78A70D6D1DDBBBFC003BB2E1 /* SettingsViewController.h */,
+				78A70D6E1DDBBBFC003BB2E1 /* SettingsViewController.m */,
+				78A70D641DDBB6BD003BB2E1 /* ActivateViewController.h */,
+				78A70D651DDBB6BD003BB2E1 /* ActivateViewController.m */,
+				78A70D671DDBB843003BB2E1 /* MenuViewController.h */,
+				78A70D681DDBB843003BB2E1 /* MenuViewController.m */,
+				78A70D6A1DDBB9E5003BB2E1 /* ResqViewController.h */,
+				78A70D6B1DDBB9E5003BB2E1 /* ResqViewController.m */,
+				786EEE841DDCDD0400B6C40F /* PhoneNumberViewController.h */,
+				786EEE851DDCDD0400B6C40F /* PhoneNumberViewController.m */,
+				786EEE8A1DDCE34E00B6C40F /* CountryPickerViewController.h */,
+				786EEE8B1DDCE34E00B6C40F /* CountryPickerViewController.m */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		F272F9521DDDE67600D4A672 /* CustomCells */ = {
+			isa = PBXGroup;
+			children = (
+				786EEE871DDCE05400B6C40F /* CountryTableViewCell.h */,
+				786EEE881DDCE05400B6C40F /* CountryTableViewCell.m */,
+			);
+			name = CustomCells;
+			sourceTree = "<group>";
+		};
+		F272F9531DDDE68700D4A672 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				786EEE801DDCD2AD00B6C40F /* ResqLocationManager.h */,
+				786EEE811DDCD2AD00B6C40F /* ResqLocationManager.m */,
+			);
+			name = Common;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -304,7 +328,7 @@
 				TargetAttributes = {
 					785317051DDA3F1E00FC379A = {
 						CreatedOnToolsVersion = 7.3;
-						DevelopmentTeam = 5H3FK3HKHA;
+						DevelopmentTeam = E57G2KLGEZ;
 						ProvisioningStyle = Manual;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
@@ -654,16 +678,16 @@
 			baseConfigurationReference = 7A00E41842F35AE579CDB56F /* Pods-Resq.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Imtiaz Durrani (KN8UWMYXC7)";
-				DEVELOPMENT_TEAM = 5H3FK3HKHA;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Carlton whitfield (XJT36E7SXL)";
+				DEVELOPMENT_TEAM = E57G2KLGEZ;
 				GCC_PREFIX_HEADER = Resq/PrefixHeader.pch;
 				INFOPLIST_FILE = Resq/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.eden.resq;
+				PRODUCT_BUNDLE_IDENTIFIER = com.lbc.loopsplayer;
 				PRODUCT_NAME = RESQ;
-				PROVISIONING_PROFILE = "e2e3ea17-75ad-40dc-a17c-be48376fa02d";
-				PROVISIONING_PROFILE_SPECIFIER = "Pakistan Entertainer Wild Card* 19/11/15";
+				PROVISIONING_PROFILE = "1341af53-c0b5-47b5-bc74-4370b8504661";
+				PROVISIONING_PROFILE_SPECIFIER = LBC_Development;
 			};
 			name = Debug;
 		};
@@ -672,16 +696,16 @@
 			baseConfigurationReference = 5FDCD9FA6118E84325556155 /* Pods-Resq.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Imtiaz Durrani (KN8UWMYXC7)";
-				DEVELOPMENT_TEAM = 5H3FK3HKHA;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Carlton whitfield (XJT36E7SXL)";
+				DEVELOPMENT_TEAM = E57G2KLGEZ;
 				GCC_PREFIX_HEADER = Resq/PrefixHeader.pch;
 				INFOPLIST_FILE = Resq/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.eden.resq;
+				PRODUCT_BUNDLE_IDENTIFIER = com.lbc.loopsplayer;
 				PRODUCT_NAME = RESQ;
-				PROVISIONING_PROFILE = "e2e3ea17-75ad-40dc-a17c-be48376fa02d";
-				PROVISIONING_PROFILE_SPECIFIER = "Pakistan Entertainer Wild Card* 19/11/15";
+				PROVISIONING_PROFILE = "1341af53-c0b5-47b5-bc74-4370b8504661";
+				PROVISIONING_PROFILE_SPECIFIER = LBC_Development;
 			};
 			name = Release;
 		};
