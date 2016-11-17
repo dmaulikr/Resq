@@ -8,12 +8,18 @@
 
 #import "CountryPickerViewController.h"
 #import "CountryTableViewCell.h"
+
 @interface CountryPickerViewController () <UITableViewDelegate, UITableViewDataSource>
 
 @property (nonatomic, retain) NSMutableArray * sections;
 @property (nonatomic, retain) NSMutableArray * sectionTitles;
 @property (nonatomic, retain) NSMutableArray * searchResults;
-@property (strong, nonatomic) IBOutlet UISearchDisplayController *searchDisplayControllers;
+
+
+@property (strong, nonatomic) NSMutableArray *data;
+@property (strong, nonatomic) UISearchController *controller;
+@property (strong, nonatomic) NSArray *results;
+@property (strong, nonatomic) SearchResultsViewController *searchResultsController;
 
 @end
 
@@ -23,50 +29,44 @@ static NSString *cellIdentifier = @"CountryTableViewCell";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    //self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    _searchResultsController = (SearchResultsViewController *)self.controller.searchResultsController;
+    _searchResultsController.delegate = self;
+    [self addObserver:_searchResultsController forKeyPath:@"results" options:NSKeyValueObservingOptionNew context:nil];
     [self.tableView registerClass:[CountryTableViewCell class] forCellReuseIdentifier:cellIdentifier];
-    
-    
-    
-    // Do any additional setup after loading the view.
-    
-    
-    
-    
-    [self.searchDisplayController.searchResultsTableView registerClass:[UITableViewCell class] forCellReuseIdentifier:cellIdentifier];
-    self.edgesForExtendedLayout = UIRectEdgeNone;
     [self initWithObjectsApp];
 }
 
--(IBAction) doneButtonAction:(id)sender{
-    self.completion(self.selectedObject);
-    [self dismissViewControllerAnimated:YES completion:nil];
+
+- (UISearchController *)controller {
+    if (!_controller) {
+        // instantiate search results table view
+        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        SearchResultsViewController *resultsController = [storyboard instantiateViewControllerWithIdentifier:@"SearchResultsViewController"];
+        resultsController.delegate = self;
+        _controller = [[UISearchController alloc]initWithSearchResultsController:resultsController];
+        _controller.searchResultsUpdater = self;
+        _controller.delegate = self;
+        [_controller.searchBar setBarTintColor:[UIColor groupTableViewBackgroundColor]];
+        [_controller.view setBackgroundColor:[UIColor lightGrayColor]];
+    }
+    return _controller;
+}
+
+-(void)dealloc{
+    [self removeObserver:_searchResultsController forKeyPath:@"results"];
 }
 
 #pragma mark - UITableViewDataSource
 
-- (NSInteger) numberOfSectionsInTableView:(UITableView *)tableView
-{
-    if (tableView == self.searchDisplayControllers.searchResultsTableView) {
-        return 1;
-    }
+- (NSInteger) numberOfSectionsInTableView:(UITableView *)tableView{
     return [self.sections count];
 }
 
-- (NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
-    if (tableView == self.searchDisplayControllers.searchResultsTableView) {
-        return [self.searchResults count];
-    }
+- (NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     return [[self.sections objectAtIndex: section] count];
 }
 
-- (NSArray *) sectionIndexTitlesForTableView:(UITableView *)tableView
-{
-    if (tableView == self.searchDisplayControllers.searchResultsTableView) {
-        return nil;
-    }
+- (NSArray *) sectionIndexTitlesForTableView:(UITableView *)tableView{
     return self.sectionTitles;
 }
 
@@ -75,8 +75,6 @@ static NSString *cellIdentifier = @"CountryTableViewCell";
 }
 
 - (NSString *)tableView:(UITableView *)aTableView titleForHeaderInSection:(NSInteger)section {
-    if (aTableView == self.searchDisplayControllers.searchResultsTableView)
-        return nil;    
     return [self.sectionTitles objectAtIndex:section] ;
 }
 
@@ -86,37 +84,19 @@ static NSString *cellIdentifier = @"CountryTableViewCell";
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     CountryTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier forIndexPath:indexPath];
-    id object;
-    if (tableView == self.searchDisplayController.searchResultsTableView) {
-        object = [self.searchResults objectAtIndex:indexPath.row];
-        //        cell.savingLabel.text =[object valueForKeyPath:self.keypath];
-        cell.textLabel.text =[object valueForKeyPath:self.keypath];
-    } else{
-        object= [[self.sections objectAtIndex: indexPath.section] objectAtIndex: indexPath.row];
-        cell.savingLabel.text =[object valueForKeyPath:self.keypath];
-    }
-    //[cell.textLabel setFont:[UIFont systemFontOfSize:12]];
+    id object = [[self.sections objectAtIndex: indexPath.section] objectAtIndex: indexPath.row];
+    cell.savingLabel.text =[object valueForKeyPath:self.keypath];
     return cell;
 }
 
 #pragma mark - UITableViewDelegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    //self.selectedObject = self.objects[indexPath.row];
-    
-    
-    if (tableView == self.searchDisplayController.searchResultsTableView) {
-        self.selectedObject = [self.searchResults objectAtIndex:indexPath.row];
-        [self.searchDisplayController setActive:NO animated:YES];
-        [self updateSelection:YES];
-    } else{
-        self.selectedObject= [[self.sections objectAtIndex: indexPath.section] objectAtIndex: indexPath.row];
-        [self.searchDisplayController setActive:NO animated:YES];
-        [self updateSelection:NO];
-        
-    }
+    self.selectedObject = [[self.sections objectAtIndex: indexPath.section] objectAtIndex: indexPath.row];
+    [self updateSelection:NO];
+    self.completion(self.selectedObject);
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
-
 
 #pragma mark - Table view data source
 
@@ -133,97 +113,27 @@ static NSString *cellIdentifier = @"CountryTableViewCell";
         }
         [[self.sections lastObject] addObject: object];
     }
-    
-    //    NSInteger index=0;
-    //    int j=0;
-    //    for(NSArray * objectArray in self.sections){
-    //        index = [objectArray indexOfObject:self.selectedObject];
-    //       if( index != NSNotFound)
-    //           break;
-    //        j++;
-    //    }
     [self.tableView reloadData];
-    
-    //    if (index != NSNotFound && self.keypath)
-    //        [self.tableView selectRowAtIndexPath:[NSIndexPath indexPathForRow:index inSection:j] animated:NO scrollPosition:UITableViewScrollPositionMiddle];
     [self updateSelection:YES];
 }
 
-
-- (void)filterContentForSearchText:(NSString*)searchText scope:(NSString*)scope
-{
-    //    NSPredicate *resultPredicate = [NSPredicate predicateWithFormat:@"name contains[c] %@", searchText];
-    //    self.searchResults = [recipes filteredArrayUsingPredicate:resultPredicate];
-    
+- (void)filterContentForSearchText:(NSString*)searchText scope:(NSString*)scope{
     [self.searchResults removeAllObjects];
     self.searchResults = [[NSMutableArray alloc]init];
     
     for (NSArray *section in _sections) {
-        for (NSDictionary *dict in section)
-        {
+        for (NSDictionary *dict in section){
             NSDictionary * country =(NSDictionary*)dict;
-            
-            
             if(country && [country valueForKey:@"name"] && searchText && [[[country valueForKey:@"name"]lowercaseString] containsString:searchText.lowercaseString]){
                 [self.searchResults addObject:dict];
             }
-            
-            //            NSComparisonResult result = [dict[self.keypath] compare:searchText options:(NSCaseInsensitiveSearch|NSDiacriticInsensitiveSearch) range:NSMakeRange(0, [searchText length])];
-            //            if (result == NSOrderedSame)
-            //            {
-            //                [self.searchResults addObject:dict];
-            //            }
-            
         }
     }
-    
-    
-}
-
--(BOOL)searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchString:(NSString *)searchString
-{
-    [self.searchResults removeAllObjects];
-    self.searchResults = [[NSMutableArray alloc]init];
-    
-    for (NSArray *section in _sections) {
-        for (NSDictionary *dict in section)
-        {
-            if([dict isKindOfClass:[NSDictionary class]]){
-                
-                NSDictionary * country =(NSDictionary*)dict;
-                
-                if(country && [country valueForKey:@"name"] && searchString && [[[country valueForKey:@"name"]lowercaseString] containsString:searchString.lowercaseString]){
-                    [self.searchResults addObject:country];
-                }
-                
-                //                NSComparisonResult result = [country.name compare:searchString options:(NSCaseInsensitiveSearch|NSDiacriticInsensitiveSearch) range:NSMakeRange(0, [searchString length])];
-                //                if (result == NSOrderedSame)
-                //                {
-                //                    [self.searchResults addObject:country];
-                //                }
-            }
-            else{
-                
-                NSString * searchStringTemp = dict[self.keypath];
-                
-                if(searchStringTemp && searchString && [searchStringTemp.lowercaseString containsString:searchString.lowercaseString]){
-                    [self.searchResults addObject:dict];
-                }
-                //                NSComparisonResult result = [searchStringTemp compare:searchString options:(NSCaseInsensitiveSearch|NSDiacriticInsensitiveSearch)];
-                //                if (result == NSOrderedSame)
-                //                {
-                //                    [self.searchResults addObject:dict];
-                //                }
-            }
-            
-        }
-    }
-    return YES;
 }
 
 -(void)updateSelection:(BOOL)animate{
-    NSInteger index=0;
-    int j=0;
+    NSInteger index = 0;
+    int j = 0;
     for(NSArray * objectArray in self.sections){
         index = [objectArray indexOfObject:self.selectedObject];
         if( index != NSNotFound)
@@ -235,5 +145,43 @@ static NSString *cellIdentifier = @"CountryTableViewCell";
     if (index != NSNotFound && self.keypath)
         [self.tableView selectRowAtIndexPath:[NSIndexPath indexPathForRow:index inSection:j] animated:YES scrollPosition:position];
 }
+
+-(BOOL)searchBarShouldBeginEditing:(UISearchBar *)searchBar{
+    self.controller.searchBar.text = @"";
+    [self presentViewController:self.controller animated:YES completion:nil];
+    return NO;
+}
+
+# pragma mark - Search Results Updater
+
+- (void)updateSearchResultsForSearchController:(UISearchController *)searchController {
+    NSMutableArray * resultsArray = [[NSMutableArray alloc]init];
+    for (NSArray *section in _sections) {
+        for (NSDictionary *dict in section){
+            if([dict isKindOfClass:[NSDictionary class]]){
+                NSDictionary * country =(NSDictionary*)dict;
+                if(country && [country valueForKey:@"name"] && self.controller.searchBar.text && [[[country valueForKey:@"name"]lowercaseString] containsString:self.controller.searchBar.text.lowercaseString]){
+                    [resultsArray addObject:country];
+                }
+            }
+            else{
+                NSString * searchStringTemp = dict[self.keypath];
+                if(searchStringTemp && self.controller.searchBar.text && [searchStringTemp.lowercaseString containsString:self.controller.searchBar.text.lowercaseString]){
+                    [resultsArray addObject:dict];
+                }
+            }
+        }
+    }
+    self.results = resultsArray;
+}
+
+# pragma mark - Search Result Controller Delegate
+
+-(void)didTapOnProduct:(NSDictionary *)result{
+    [self dismissViewControllerAnimated:YES completion:^{
+        self.completion(result);
+    }];
+}
+
 
 @end

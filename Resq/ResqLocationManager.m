@@ -53,7 +53,7 @@ static ResqLocationManager *_sharedLocationManagerInstance = nil;
 - (void)stopUpdatingLocation {
     [self.locationManager stopUpdatingLocation];
     [self.locationManager stopUpdatingHeading];
-
+    
 }
 
 + (BOOL)canUseLocationServices
@@ -109,9 +109,9 @@ static ResqLocationManager *_sharedLocationManagerInstance = nil;
 }
 
 - (CLLocation *)currentLocation{
-//    if(!self->_currentLocation){
-//        [self startUpdatingLocation];
-//    }
+    //    if(!self->_currentLocation){
+    //        [self startUpdatingLocation];
+    //    }
     //    self.currentLocation = [[CLLocation alloc] initWithLatitude:25.130486 longitude: 55.11684];
     if (self->_currentLocation && CLLocationCoordinate2DIsValid(self->_currentLocation.coordinate)) {
         [[NSUserDefaults standardUserDefaults]setValue:[NSString stringWithFormat:@"%f", self->_currentLocation.coordinate.latitude] forKey:@"latitude"];
@@ -124,7 +124,7 @@ static ResqLocationManager *_sharedLocationManagerInstance = nil;
 }
 
 - (void)locationManager:(CLLocationManager *) manager didUpdateHeading:(nonnull CLHeading *)newHeading{
-    NSLog(@"Heading %f",newHeading);
+    //NSLog(@"Heading %f",newHeading);
     [[NSNotificationCenter defaultCenter] postNotificationName:didUpdateHeadingNotification object:newHeading];
     
 }
@@ -173,8 +173,8 @@ static ResqLocationManager *_sharedLocationManagerInstance = nil;
         [self.audioPlayer prepareToPlay];
         [self.audioPlayer play];
         //NSLog(@"update");
-        NSInteger count = [[[NSUserDefaults standardUserDefaults] valueForKey:@"count"] integerValue]+1;
-        [[NSUserDefaults standardUserDefaults]setValue:[NSString stringWithFormat:@"%d",count] forKey:@"count"];
+        //NSInteger count = [[[NSUserDefaults standardUserDefaults] valueForKey:@"count"] integerValue]+1;
+        //[[NSUserDefaults standardUserDefaults]setValue:[NSString stringWithFormat:@"%d",count] forKey:@"count"];
         //NSLog(@"%@",[[NSUserDefaults standardUserDefaults] valueForKey:@"count"]);
     }
 }
