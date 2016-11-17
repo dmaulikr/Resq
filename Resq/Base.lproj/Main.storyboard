@@ -23,7 +23,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="95"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="jXa-l3-yan" id="UAe-UZ-0gV">
-                                            <frame key="frameInset" width="375" height="95"/>
+                                            <frame key="frameInset" width="375" height="94.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Close by" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="IPj-Ks-6fy">
@@ -51,7 +51,7 @@
                                         <rect key="frame" x="0.0" y="123" width="375" height="79"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="gxC-kB-U7t" id="olI-Lu-Cy7">
-                                            <frame key="frameInset" width="375" height="79"/>
+                                            <frame key="frameInset" width="375" height="78.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Contacts" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="I69-O3-JS0">
@@ -79,7 +79,7 @@
                                         <rect key="frame" x="0.0" y="202" width="375" height="53"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="YY8-ab-2bG" id="uc7-Fw-Wpb">
-                                            <frame key="frameInset" width="375" height="53"/>
+                                            <frame key="frameInset" width="375" height="52.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Frequent contacts" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="TbB-YS-uBO">
@@ -96,7 +96,7 @@
                                         <rect key="frame" x="0.0" y="255" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ZXE-nw-H1b" id="12f-Js-C4p">
-                                            <frame key="frameInset" width="375" height="44"/>
+                                            <frame key="frameInset" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Frank" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ShV-Oq-wLq">
@@ -119,7 +119,7 @@
                                         <rect key="frame" x="0.0" y="299" width="375" height="104"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cco-Gf-nYd" id="Kd4-4V-4IQ">
-                                            <frame key="frameInset" width="375" height="104"/>
+                                            <frame key="frameInset" width="375" height="103.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Send notification after lack of movment for" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="VcJ-XD-cIj">
@@ -154,7 +154,7 @@
                                         <rect key="frame" x="0.0" y="403" width="375" height="53"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="9HD-J0-knE" id="qQV-Jt-gzb">
-                                            <frame key="frameInset" width="375" height="53"/>
+                                            <frame key="frameInset" width="375" height="52.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Buddy List" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="g1e-s0-EJZ">
@@ -177,7 +177,7 @@
                                         <rect key="frame" x="0.0" y="456" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="w9w-VA-r8q" id="42X-2l-Fua">
-                                            <frame key="frameInset" width="375" height="44"/>
+                                            <frame key="frameInset" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Frank" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="HOR-mf-2jm">
@@ -328,8 +328,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="jJs-Az-pWK">
-                                <frame key="frameInset" minY="205" width="204" height="46"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="jJs-Az-pWK">
+                                <frame key="frameInset" minY="21" width="204" height="46"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="21"/>
                                 <inset key="contentEdgeInsets" minX="25" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -340,8 +340,8 @@
                                     <action selector="activateAction:" destination="rWY-7F-GxZ" eventType="touchUpInside" id="k6H-gr-dym"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Ji8-Qc-EjN">
-                                <frame key="frameInset" minY="254" width="204" height="36"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Ji8-Qc-EjN">
+                                <frame key="frameInset" minY="70" width="204" height="46"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="21"/>
                                 <inset key="contentEdgeInsets" minX="25" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -360,73 +360,81 @@
             </objects>
             <point key="canvasLocation" x="1036" y="382"/>
         </scene>
-        <!--Picker-->
-        <scene sceneID="1a0-8S-0p7">
+        <!--Search Results View Controller-->
+        <scene sceneID="cOw-vW-ftQ">
             <objects>
-                <viewController storyboardIdentifier="CountryPickerViewController" id="PUr-GX-uwE" customClass="CountryPickerViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="AY4-r8-QcH">
-                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                <tableViewController storyboardIdentifier="SearchResultsViewController" id="xsG-9c-OAW" customClass="SearchResultsViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="kAm-aV-VHe">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CountryTableViewCell" id="TYl-5p-QYH">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="TYl-5p-QYH" id="tBw-Za-BS4">
+                                    <frame key="frameInset" width="375" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="xsG-9c-OAW" id="z6v-KP-SMe"/>
+                            <outlet property="delegate" destination="xsG-9c-OAW" id="Sbh-CO-uTb"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JM0-xD-dKm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1809" y="386"/>
+        </scene>
+        <!--Country Picker View Controller-->
+        <scene sceneID="lpd-66-OIU">
+            <objects>
+                <viewController storyboardIdentifier="CountryPickerViewController" id="LQi-h4-ac9" customClass="CountryPickerViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="buB-iD-Lpy">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <searchBar contentMode="scaleAspectFill" searchBarStyle="prominent" translucent="NO" id="tEm-Jy-0qD">
-                                <frame key="frameInset" minX="-1" height="44" maxX="0.5"/>
+                            <searchBar contentMode="redraw" misplaced="YES" id="IAL-jT-uVi">
+                                <frame key="frameInset" minY="64" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
-                                    <outlet property="delegate" destination="PUr-GX-uwE" id="NP9-dT-MlQ"/>
+                                    <outlet property="delegate" destination="LQi-h4-ac9" id="Oyp-jc-Eio"/>
                                 </connections>
                             </searchBar>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="Fss-S8-Lv6">
-                                <frame key="frameInset" minX="-1" minY="43.5" maxX="0.5" maxY="0.5"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="FuC-4F-z7e">
+                                <frame key="frameInset" minY="108" maxY="2"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CountryTableViewCell" id="liR-eE-Nzc">
-                                        <rect key="frame" x="0.0" y="22" width="375.5" height="44"/>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CountryTableViewCell" id="6SR-EZ-hA7">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="liR-eE-Nzc" id="8YN-UB-7fb">
-                                            <frame key="frameInset" width="375.5" height="43.5"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="6SR-EZ-hA7" id="Yhc-Qo-fog">
+                                            <frame key="frameInset" width="375" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
-                                    <outlet property="dataSource" destination="PUr-GX-uwE" id="ibz-Q9-Dqk"/>
-                                    <outlet property="delegate" destination="PUr-GX-uwE" id="FzE-NY-mXg"/>
+                                    <outlet property="dataSource" destination="LQi-h4-ac9" id="JrR-Um-88D"/>
+                                    <outlet property="delegate" destination="LQi-h4-ac9" id="fiN-9r-YpZ"/>
                                 </connections>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" red="0.92614853382110596" green="0.91692030429840088" blue="0.90218192338943481" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <toolbarItems/>
-                    <navigationItem key="navigationItem" title="Picker" id="Wfh-Se-jCC">
-                        <barButtonItem key="rightBarButtonItem" title="Done" id="sAf-jO-KJJ">
-                            <connections>
-                                <action selector="doneButtonAction:" destination="PUr-GX-uwE" id="YNf-45-gZ8"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
-                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
-                    <nil key="simulatedBottomBarMetrics"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
-                        <outlet property="searchDisplayController" destination="ixA-9t-Jg8" id="E0L-KL-Jg2"/>
-                        <outlet property="searchDisplayControllers" destination="ixA-9t-Jg8" id="0ix-gg-rX8"/>
-                        <outlet property="tableView" destination="Fss-S8-Lv6" id="VW4-Jt-E7d"/>
+                        <outlet property="searchBar" destination="IAL-jT-uVi" id="BPt-Ik-YW5"/>
+                        <outlet property="tableView" destination="FuC-4F-z7e" id="q1p-kc-WMc"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="eYz-cy-vZw" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <searchDisplayController id="ixA-9t-Jg8">
-                    <connections>
-                        <outlet property="delegate" destination="PUr-GX-uwE" id="lTa-ko-634"/>
-                        <outlet property="searchBar" destination="tEm-Jy-0qD" id="xyd-s3-3zS"/>
-                        <outlet property="searchContentsController" destination="PUr-GX-uwE" id="auL-H8-fc3"/>
-                        <outlet property="searchResultsDataSource" destination="PUr-GX-uwE" id="E3q-Ir-9BQ"/>
-                        <outlet property="searchResultsDelegate" destination="PUr-GX-uwE" id="ozm-PK-OK1"/>
-                    </connections>
-                </searchDisplayController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JLV-on-i36" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2165" y="363"/>
+            <point key="canvasLocation" x="2205.5" y="386.5"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

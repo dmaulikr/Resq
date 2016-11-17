@@ -60,7 +60,7 @@
     _sideMenuViewController = [[RESideMenu alloc] initWithContentViewController:_appNavigationController
                                                          leftMenuViewController:leftMenuViewController
                                                         rightMenuViewController:nil];
-    _sideMenuViewController.contentViewInPortraitOffsetCenterX=-10*DEVICE_OFFSET;
+    _sideMenuViewController.contentViewInPortraitOffsetCenterX = -10 * DEVICE_OFFSET;
     [_sideMenuViewController setPanGestureEnabled:NO];
     [_sideMenuViewController setParallaxEnabled:NO];
     _sideMenuViewController.fadeMenuView = NO;
@@ -68,6 +68,7 @@
     
     _viewDeckController = [[IIViewDeckController alloc] initWithCenterViewController:_appNavigationController leftViewController:leftMenuViewController];
     _viewDeckController.panningCancelsTouchesInView = NO;
+    _viewDeckController.leftSize = 150 * DEVICE_OFFSET;
     _viewDeckController.centerhiddenInteractivity = IIViewDeckCenterHiddenNotUserInteractiveWithTapToClose;
     self.window.rootViewController = _viewDeckController;
 
@@ -123,7 +124,6 @@
     return _persistentStoreCoordinator;
 }
 
-
 - (NSManagedObjectContext *)managedObjectContext {
     // Returns the managed object context for the application (which is already bound to the persistent store coordinator for the application.)
     if (_managedObjectContext != nil) {
@@ -153,5 +153,4 @@
         }
     }
 }
-
 @end

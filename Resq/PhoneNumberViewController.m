@@ -57,7 +57,7 @@
  */
 
 -(void)rightItemAction:(id)sender{
-    if([_nameField.text stringByReplacingOccurrencesOfString:@" " withString:@""].length==0){
+    if([_nameField.text stringByReplacingOccurrencesOfString:@" " withString:@""].length == 0){
         ALERT_VIEW(@"RESQ", @"Please enter your name.")
         return;
     }

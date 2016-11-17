@@ -25,7 +25,7 @@
 @property (nonatomic, retain) IIViewDeckController *viewDeckController;
 
 - (void)saveContext;
-- (NSURL *)applicationDocumentsDirectory;
+- (NSURL*)applicationDocumentsDirectory;
 
 
 @end
