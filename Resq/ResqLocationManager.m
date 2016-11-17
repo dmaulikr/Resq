@@ -12,6 +12,7 @@
 @import AVFoundation;       // for AVAudioSession
 
 NSString * const didUpdateLocationNotification = @"didUpdateLocationNotification";
+NSString * const didUpdateHeadingNotification = @"didUpdateHeadingNotification";
 NSString * const locationMangerLocationServicesStatusChangeNotification = @"locationMangerLocationServicesStatusChangeNotification";
 
 @interface ResqLocationManager ()<CLLocationManagerDelegate>
@@ -45,10 +46,14 @@ static ResqLocationManager *_sharedLocationManagerInstance = nil;
 - (void)startUpdatingLocation {
     [self.locationManager startUpdatingLocation];
     [self.locationManager requestAlwaysAuthorization];
+    [self.locationManager startUpdatingHeading];
+    self.locationManager.allowsBackgroundLocationUpdates = YES;
 }
 
 - (void)stopUpdatingLocation {
     [self.locationManager stopUpdatingLocation];
+    [self.locationManager stopUpdatingHeading];
+
 }
 
 + (BOOL)canUseLocationServices
@@ -116,6 +121,12 @@ static ResqLocationManager *_sharedLocationManagerInstance = nil;
         [[NSUserDefaults standardUserDefaults]setValue:@"0.00" forKey:@"longitude"];
     }
     return self->_currentLocation;
+}
+
+- (void)locationManager:(CLLocationManager *) manager didUpdateHeading:(nonnull CLHeading *)newHeading{
+    NSLog(@"Heading %f",newHeading);
+    [[NSNotificationCenter defaultCenter] postNotificationName:didUpdateHeadingNotification object:newHeading];
+    
 }
 
 #pragma mark - CLLocationManagerDelegate

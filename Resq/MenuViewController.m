@@ -44,15 +44,21 @@
     _activateViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"ActivateViewController"];
     UINavigationController* navigationController = [[UINavigationController alloc]initWithRootViewController:_activateViewController];
     [navigationController.navigationBar setTranslucent:NO];
-    [appdelegate.sideMenuViewController setContentViewController:navigationController animated:YES];
-    [appdelegate.sideMenuViewController hideMenuViewController];
+    appdelegate.viewDeckController.centerController = navigationController;
+    [appdelegate.viewDeckController closeOpenView];
+
+//    [appdelegate.sideMenuViewController setContentViewController:navigationController animated:YES];
+//    [appdelegate.sideMenuViewController hideMenuViewController];
 }
 
 - (IBAction)settingsAction:(id)sender {
     _settingsViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"SettingsViewController"];
     UINavigationController* navigationController = [[UINavigationController alloc]initWithRootViewController:_settingsViewController];
     [navigationController.navigationBar setTranslucent:NO];
-    [appdelegate.sideMenuViewController setContentViewController:navigationController animated:YES];
-    [appdelegate.sideMenuViewController hideMenuViewController];
+    appdelegate.viewDeckController.centerController = navigationController;
+    [appdelegate.viewDeckController closeOpenView];
+
+//    [appdelegate.sideMenuViewController setContentViewController:navigationController animated:YES];
+//    [appdelegate.sideMenuViewController hideMenuViewController];
 }
 @end

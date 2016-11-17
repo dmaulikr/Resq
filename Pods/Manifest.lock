@@ -18,11 +18,13 @@ PODS:
     - GoogleSymbolUtilities (~> 1.1)
   - RESideMenu (4.0.7)
   - SVProgressHUD (2.0.3)
+  - ViewDeck (2.4.2)
 
 DEPENDENCIES:
   - Firebase/Core
   - RESideMenu
   - SVProgressHUD
+  - ViewDeck
 
 SPEC CHECKSUMS:
   Firebase: be473484f0d515e72ffd04acf22f981773c23e58
@@ -34,7 +36,8 @@ SPEC CHECKSUMS:
   GoogleUtilities: 8bbc733218aad26306f9d4a253823986110e3358
   RESideMenu: f24c508404b49c667344c54aba7e590883533958
   SVProgressHUD: b0830714205bea1317ea1a2ebc71e5633af334d4
+  ViewDeck: 0b7b83bc2782a20dfb76207d0a2e8c5e6a6d182d
 
-PODFILE CHECKSUM: bd4e8ddca013585adbbb9e3f79df3cf1e600557b
+PODFILE CHECKSUM: b55a699a0c74b8143f56a6b12868bd59e9b0faca
 
 COCOAPODS: 1.0.1

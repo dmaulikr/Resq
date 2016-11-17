@@ -9,8 +9,10 @@
 #import <UIKit/UIKit.h>
 #import "ResqViewController.h"
 
-@interface SettingsViewController : ResqViewController
+@interface SettingsViewController : ResqViewController<UITableViewDelegate,UITableViewDataSource>
 
 @property (weak, nonatomic) IBOutlet UITableView *settingsTableView;
+@property (nonatomic, retain) UISlider *notificationTimeSlider;
+@property (nonatomic, retain) UILabel *notificationTimeLabel;
 
 @end
