@@ -27,7 +27,9 @@
 		78A70D691DDBB843003BB2E1 /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78A70D681DDBB843003BB2E1 /* MenuViewController.m */; };
 		78A70D6C1DDBB9E5003BB2E1 /* ResqViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78A70D6B1DDBB9E5003BB2E1 /* ResqViewController.m */; };
 		78A70D6F1DDBBBFC003BB2E1 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78A70D6E1DDBBBFC003BB2E1 /* SettingsViewController.m */; };
-		78AC28A21DDC8E5400F1AB09 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 78AC28A11DDC8E5400F1AB09 /* GoogleService-Info.plist */; };
+		78AC28A21DDC8E5400F1AB09 /* GoogleService-Info-1.plist in Resources */ = {isa = PBXBuildFile; fileRef = 78AC28A11DDC8E5400F1AB09 /* GoogleService-Info-1.plist */; };
+		78C522C11DE0EC6200A9A46D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 78C522C01DE0EC6200A9A46D /* GoogleService-Info.plist */; };
+		78C522C51DE1167400A9A46D /* FirebaseManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 78C522C41DE1167400A9A46D /* FirebaseManager.m */; };
 		78D68ACD1DDE3668000801FF /* SearchResultsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78D68ACC1DDE3668000801FF /* SearchResultsViewController.m */; };
 		D9E5A3694AB56C09A0B89B09 /* libPods-Resq.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EFA3F4DFF8A6BAD496DD5B4 /* libPods-Resq.a */; };
 /* End PBXBuildFile section */
@@ -88,7 +90,11 @@
 		78A70D6B1DDBB9E5003BB2E1 /* ResqViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResqViewController.m; sourceTree = "<group>"; };
 		78A70D6D1DDBBBFC003BB2E1 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
 		78A70D6E1DDBBBFC003BB2E1 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
-		78AC28A11DDC8E5400F1AB09 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		78AC28A11DDC8E5400F1AB09 /* GoogleService-Info-1.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info-1.plist"; sourceTree = "<group>"; };
+		78C522C01DE0EC6200A9A46D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		78C522C21DE106B000A9A46D /* RESQ.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = RESQ.entitlements; sourceTree = "<group>"; };
+		78C522C31DE1167400A9A46D /* FirebaseManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FirebaseManager.h; sourceTree = "<group>"; };
+		78C522C41DE1167400A9A46D /* FirebaseManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FirebaseManager.m; sourceTree = "<group>"; };
 		78D68ACB1DDE3668000801FF /* SearchResultsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchResultsViewController.h; sourceTree = "<group>"; };
 		78D68ACC1DDE3668000801FF /* SearchResultsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchResultsViewController.m; sourceTree = "<group>"; };
 		7A00E41842F35AE579CDB56F /* Pods-Resq.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Resq.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Resq/Pods-Resq.debug.xcconfig"; sourceTree = "<group>"; };
@@ -151,6 +157,7 @@
 		785317081DDA3F1E00FC379A /* Resq */ = {
 			isa = PBXGroup;
 			children = (
+				78C522C21DE106B000A9A46D /* RESQ.entitlements */,
 				7853170C1DDA3F1E00FC379A /* AppDelegate.h */,
 				7853170D1DDA3F1E00FC379A /* AppDelegate.m */,
 				F272F9531DDDE68700D4A672 /* Common */,
@@ -168,8 +175,9 @@
 		785317091DDA3F1E00FC379A /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				78C522C01DE0EC6200A9A46D /* GoogleService-Info.plist */,
 				7853171D1DDA3F1E00FC379A /* Info.plist */,
-				78AC28A11DDC8E5400F1AB09 /* GoogleService-Info.plist */,
+				78AC28A11DDC8E5400F1AB09 /* GoogleService-Info-1.plist */,
 				785317151DDA3F1E00FC379A /* Resq.xcdatamodeld */,
 				786EEE831DDCD37E00B6C40F /* PrefixHeader.pch */,
 				7853170A1DDA3F1E00FC379A /* main.m */,
@@ -262,6 +270,8 @@
 			children = (
 				786EEE801DDCD2AD00B6C40F /* ResqLocationManager.h */,
 				786EEE811DDCD2AD00B6C40F /* ResqLocationManager.m */,
+				78C522C31DE1167400A9A46D /* FirebaseManager.h */,
+				78C522C41DE1167400A9A46D /* FirebaseManager.m */,
 			);
 			name = Common;
 			sourceTree = "<group>";
@@ -347,6 +357,9 @@
 							com.apple.BackgroundModes = {
 								enabled = 1;
 							};
+							com.apple.Push = {
+								enabled = 1;
+							};
 						};
 					};
 					785317211DDA3F1E00FC379A = {
@@ -385,11 +398,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				7853171C1DDA3F1E00FC379A /* LaunchScreen.storyboard in Resources */,
-				78AC28A21DDC8E5400F1AB09 /* GoogleService-Info.plist in Resources */,
+				78AC28A21DDC8E5400F1AB09 /* GoogleService-Info-1.plist in Resources */,
 				786EEE8E1DDCE68000B6C40F /* country.json in Resources */,
 				785317191DDA3F1E00FC379A /* Assets.xcassets in Resources */,
 				785317141DDA3F1E00FC379A /* Main.storyboard in Resources */,
 				786EEE7F1DDCD26500B6C40F /* Hero.aiff in Resources */,
+				78C522C11DE0EC6200A9A46D /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -540,6 +554,7 @@
 				785317171DDA3F1E00FC379A /* Resq.xcdatamodeld in Sources */,
 				78A70D6C1DDBB9E5003BB2E1 /* ResqViewController.m in Sources */,
 				78A70D691DDBB843003BB2E1 /* MenuViewController.m in Sources */,
+				78C522C51DE1167400A9A46D /* FirebaseManager.m in Sources */,
 				78D68ACD1DDE3668000801FF /* SearchResultsViewController.m in Sources */,
 				78A70D6F1DDBBBFC003BB2E1 /* SettingsViewController.m in Sources */,
 				786EEE891DDCE05400B6C40F /* CountryTableViewCell.m in Sources */,
@@ -702,7 +717,7 @@
 				INFOPLIST_FILE = Resq/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.lbc.loopsplayer;
+				PRODUCT_BUNDLE_IDENTIFIER = com.eden.resqtest;
 				PRODUCT_NAME = RESQ;
 				PROVISIONING_PROFILE = "1341af53-c0b5-47b5-bc74-4370b8504661";
 				PROVISIONING_PROFILE_SPECIFIER = LBC_Development;
@@ -720,7 +735,7 @@
 				INFOPLIST_FILE = Resq/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.lbc.loopsplayer;
+				PRODUCT_BUNDLE_IDENTIFIER = com.eden.resqtest;
 				PRODUCT_NAME = RESQ;
 				PROVISIONING_PROFILE = "1341af53-c0b5-47b5-bc74-4370b8504661";
 				PROVISIONING_PROFILE_SPECIFIER = LBC_Development;
