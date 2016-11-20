@@ -9,40 +9,40 @@
 /* Begin PBXBuildFile section */
 		03CA78FD8B6827891E8FE003DF0DF0DC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90AAE8973B935FD4979EEDFB8B1E12AC /* Foundation.framework */; };
 		1B8062B55ED6E5068046208D7D4A3270 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90AAE8973B935FD4979EEDFB8B1E12AC /* Foundation.framework */; };
-		20B58229A35553AB85F2D8641A04E702 /* RESideMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 89CCB68A2B0283EEE1EE1BB13AF8A209 /* RESideMenu.m */; };
-		22269A5B9FBB5BC76443A57F76162442 /* IIWrapController.h in Headers */ = {isa = PBXBuildFile; fileRef = 7AE82C4CE3ACAC66681B80AF67A24348 /* IIWrapController.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		2607918D638E56A7F435B4DECED6EDFE /* SVProgressAnimatedView.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B211DF143DC64E717FDDAF782F0B438 /* SVProgressAnimatedView.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		2805B6DBF6A8891A990E300DE923CB85 /* RECommonFunctions.h in Headers */ = {isa = PBXBuildFile; fileRef = 6D97AEFA5476032E1C57757DEAD39D67 /* RECommonFunctions.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		2C9019E22EC65F56F488A51ACCEABF04 /* IISideController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD2F46F3F5B2A237D7067555CEDA844C /* IISideController.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		20B58229A35553AB85F2D8641A04E702 /* RESideMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = E95E0CE8CDCB02585AE91D10B25E3F10 /* RESideMenu.m */; };
+		22269A5B9FBB5BC76443A57F76162442 /* IIWrapController.h in Headers */ = {isa = PBXBuildFile; fileRef = 9D2D50EFD823157CF6579ADA0C939414 /* IIWrapController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2607918D638E56A7F435B4DECED6EDFE /* SVProgressAnimatedView.h in Headers */ = {isa = PBXBuildFile; fileRef = 53FCCE7BA166B8191BAC6FECA2CFE76C /* SVProgressAnimatedView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2805B6DBF6A8891A990E300DE923CB85 /* RECommonFunctions.h in Headers */ = {isa = PBXBuildFile; fileRef = 8BCD9F2D81E620AFC6AB4685DDD7410A /* RECommonFunctions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2C9019E22EC65F56F488A51ACCEABF04 /* IISideController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E0528B4BD36A4C3C7AF0216AB3E514E /* IISideController.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
 		2C945818487824273814D9AC22D0CE38 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB0B5C34B0704CE42DB8ACE437DB6B71 /* QuartzCore.framework */; };
-		39D9A740A0E581F4D325AAB1EC53CD3A /* SVProgressAnimatedView.m in Sources */ = {isa = PBXBuildFile; fileRef = 930071F7A335A8792BD0069ADECF626D /* SVProgressAnimatedView.m */; };
-		44795029A736C24FC6A7498329D29830 /* SVProgressHUD.h in Headers */ = {isa = PBXBuildFile; fileRef = CDAF710DBFB811A12080C45EE054CC25 /* SVProgressHUD.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		39D9A740A0E581F4D325AAB1EC53CD3A /* SVProgressAnimatedView.m in Sources */ = {isa = PBXBuildFile; fileRef = F7708F8E6298BFC7FC8B331C1A12321A /* SVProgressAnimatedView.m */; };
+		44795029A736C24FC6A7498329D29830 /* SVProgressHUD.h in Headers */ = {isa = PBXBuildFile; fileRef = 5E3639B3E5BE8F283C708EEA95F6A94C /* SVProgressHUD.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		44E79B0E0D23BD539EC14D14A86567AB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90AAE8973B935FD4979EEDFB8B1E12AC /* Foundation.framework */; };
 		4C954F82D407CD2C02D4E9BB63A82D77 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90AAE8973B935FD4979EEDFB8B1E12AC /* Foundation.framework */; };
-		5A1B2893717AE2865CF99452BEA722B9 /* IIWrapController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC1089B9EA1DFF2822B49A31AF16ACEC /* IIWrapController.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		6059CA6A6C0EB30A5C42031EB781BDB5 /* UIViewController+RESideMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 281D796A74C1A3AC65DC41441E5A15C8 /* UIViewController+RESideMenu.m */; };
-		66BA0D35D632B51C9A087CF086C6C416 /* SVIndefiniteAnimatedView.h in Headers */ = {isa = PBXBuildFile; fileRef = 06104195CF5C503AD97C0AEA8B354ECA /* SVIndefiniteAnimatedView.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		693ACFDD088478167CCAE3B4FD523097 /* RESideMenu.h in Headers */ = {isa = PBXBuildFile; fileRef = 0457A563974C1D9B52782E4CB2EF2154 /* RESideMenu.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		6A305AA5A33CF06FF408B364AA47F573 /* IISideController.h in Headers */ = {isa = PBXBuildFile; fileRef = C298D82C471C5633F61EE8814ADD68B3 /* IISideController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5A1B2893717AE2865CF99452BEA722B9 /* IIWrapController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A27DE7852A494C379A5424A71F06F66 /* IIWrapController.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		6059CA6A6C0EB30A5C42031EB781BDB5 /* UIViewController+RESideMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 22A0BB3BECF0B3D062A8E9C8B81FF4AA /* UIViewController+RESideMenu.m */; };
+		66BA0D35D632B51C9A087CF086C6C416 /* SVIndefiniteAnimatedView.h in Headers */ = {isa = PBXBuildFile; fileRef = 027EEC2235233ACB37F89D56CA22857E /* SVIndefiniteAnimatedView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		693ACFDD088478167CCAE3B4FD523097 /* RESideMenu.h in Headers */ = {isa = PBXBuildFile; fileRef = 60CD32F004D6AAC6679A3290EBB9216D /* RESideMenu.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6A305AA5A33CF06FF408B364AA47F573 /* IISideController.h in Headers */ = {isa = PBXBuildFile; fileRef = 9399A1DDBDF63EF18644090C25DB2110 /* IISideController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6AE4ED59C098AC7EC150B0AE6F7DDCBC /* Pods-ResqUITests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 785062E40E7D598EE736CD6C1CEDCC7F /* Pods-ResqUITests-dummy.m */; };
 		71992E2504A3CA031AB5C68F751D241E /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB0B5C34B0704CE42DB8ACE437DB6B71 /* QuartzCore.framework */; };
-		71C6D81789E9F28FD6D7FBFBC0F01996 /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E21B89D01C380C96AF93E75609CD9BA /* SVProgressHUD.m */; };
-		7836946A4E53771D9684F0B11D5230B7 /* SVIndefiniteAnimatedView.m in Sources */ = {isa = PBXBuildFile; fileRef = 30A5C1D0AF15EE9DCCD74D1039006B93 /* SVIndefiniteAnimatedView.m */; };
-		7EF39F9B0314E48BE702E38F9EDD6FA8 /* RESideMenu-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E85A95C112723ED5A3331BDC9868FEE5 /* RESideMenu-dummy.m */; };
+		71C6D81789E9F28FD6D7FBFBC0F01996 /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 88ADF28989A22722CAD8822CF0CCD677 /* SVProgressHUD.m */; };
+		7836946A4E53771D9684F0B11D5230B7 /* SVIndefiniteAnimatedView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A6C8EC161B88F3080B9912E7F9BBCAD /* SVIndefiniteAnimatedView.m */; };
+		7EF39F9B0314E48BE702E38F9EDD6FA8 /* RESideMenu-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = F1CE14FDBCC8D4AF2AD2B443BD492CBB /* RESideMenu-dummy.m */; };
 		82534F1295DF427C75DB1E8366C9A21E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90AAE8973B935FD4979EEDFB8B1E12AC /* Foundation.framework */; };
-		9081A5A690075C6A95C6FB63D9300717 /* UIViewController+RESideMenu.h in Headers */ = {isa = PBXBuildFile; fileRef = B78335C1F38B2DF2DF7C904B9014FA72 /* UIViewController+RESideMenu.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9081A5A690075C6A95C6FB63D9300717 /* UIViewController+RESideMenu.h in Headers */ = {isa = PBXBuildFile; fileRef = 20784CE620F25FD8C57A45A6B1FD4368 /* UIViewController+RESideMenu.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A069031C600CE1D9FE0954AF9CD5E103 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB0B5C34B0704CE42DB8ACE437DB6B71 /* QuartzCore.framework */; };
-		A12282F6F505BEA046AE7FC2B93F9A92 /* SVProgressHUD-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 97AB999C641C36D40D4573208536F4EE /* SVProgressHUD-dummy.m */; };
+		A12282F6F505BEA046AE7FC2B93F9A92 /* SVProgressHUD-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 600D0F91A31B12A32FC01DAEB40A480C /* SVProgressHUD-dummy.m */; };
 		A1EEFD9BF00219EE7C45F177E1D39B68 /* Pods-Resq-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = C474F2BA330329DF2C0412E66EAF6536 /* Pods-Resq-dummy.m */; };
 		A52E28C303C10C8E46F22AAFE61D54B9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90AAE8973B935FD4979EEDFB8B1E12AC /* Foundation.framework */; };
-		AA12AA8607CDAE69DE503C18E56F0890 /* IIViewDeckController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DF700A21403A47D84195B13A5D1065C /* IIViewDeckController.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		AE17206ECD4C33EC469985D96D80BEEA /* SVRadialGradientLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = F77A34D5132F8A33C78EED8903901E07 /* SVRadialGradientLayer.m */; };
-		AF98B2FF0EA26406F064CBC2F3EC1F93 /* ViewDeck-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FF2F88EC7EFAC06AD5D6FB532518FDD /* ViewDeck-dummy.m */; };
-		B1CD1D68C4257A31BE56D4A328D13E6A /* IIViewDeckController.h in Headers */ = {isa = PBXBuildFile; fileRef = 2834F3F4F1149158083A3DC7D6F94312 /* IIViewDeckController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AA12AA8607CDAE69DE503C18E56F0890 /* IIViewDeckController.m in Sources */ = {isa = PBXBuildFile; fileRef = C44869E8AD88D239D34E26A7B3DEB002 /* IIViewDeckController.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		AE17206ECD4C33EC469985D96D80BEEA /* SVRadialGradientLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 232DEB28C982D879C00798AB78146EB4 /* SVRadialGradientLayer.m */; };
+		AF98B2FF0EA26406F064CBC2F3EC1F93 /* ViewDeck-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 747CCBF7B0E645B24BFA38205782CEAD /* ViewDeck-dummy.m */; };
+		B1CD1D68C4257A31BE56D4A328D13E6A /* IIViewDeckController.h in Headers */ = {isa = PBXBuildFile; fileRef = EB0093F176B25EC56E160D64E64C2BFD /* IIViewDeckController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C6D3313578A1F56AB41E1273A87D836A /* Pods-ResqTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = FC31EA98DFE646DA20A2BFE17575196E /* Pods-ResqTests-dummy.m */; };
-		DB0C1135226AC1531E4C0AB67073FC2A /* SVRadialGradientLayer.h in Headers */ = {isa = PBXBuildFile; fileRef = FE89C0B6EA950DC41C655CEC650D780D /* SVRadialGradientLayer.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		DB9E661F509C1D1F2A12B1511EDA95BE /* RECommonFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FFD5ED399BAB2A46050C7D0B7EF0704 /* RECommonFunctions.m */; };
-		F19C175FBDFB73BE63269E32084BAB1C /* ViewDeck.h in Headers */ = {isa = PBXBuildFile; fileRef = CE14743D294AF3139D720ED0C2E1A59A /* ViewDeck.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DB0C1135226AC1531E4C0AB67073FC2A /* SVRadialGradientLayer.h in Headers */ = {isa = PBXBuildFile; fileRef = C2F62031E54E93F37D0ECEDDDE69D233 /* SVRadialGradientLayer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DB9E661F509C1D1F2A12B1511EDA95BE /* RECommonFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 4328FB5FE4F0ADF5314003BC7F13F941 /* RECommonFunctions.m */; };
+		F19C175FBDFB73BE63269E32084BAB1C /* ViewDeck.h in Headers */ = {isa = PBXBuildFile; fileRef = 20D483018535136495F6484F873B5595 /* ViewDeck.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,75 +70,79 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0457A563974C1D9B52782E4CB2EF2154 /* RESideMenu.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = RESideMenu.h; path = RESideMenu/RESideMenu.h; sourceTree = "<group>"; };
-		06104195CF5C503AD97C0AEA8B354ECA /* SVIndefiniteAnimatedView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SVIndefiniteAnimatedView.h; path = SVProgressHUD/SVIndefiniteAnimatedView.h; sourceTree = "<group>"; };
-		1522C45E11432C83F64DC7410972D808 /* GoogleInterchangeUtilities.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleInterchangeUtilities.framework; path = Frameworks/frameworks/GoogleInterchangeUtilities.framework; sourceTree = "<group>"; };
-		1989EC0C7755722B4F8FDFFC3BDBF27F /* FirebaseInstanceID.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseInstanceID.framework; path = Frameworks/frameworks/FirebaseInstanceID.framework; sourceTree = "<group>"; };
+		027EEC2235233ACB37F89D56CA22857E /* SVIndefiniteAnimatedView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SVIndefiniteAnimatedView.h; path = SVProgressHUD/SVIndefiniteAnimatedView.h; sourceTree = "<group>"; };
+		1CB7FFF025293D96CBC3174E0FB50A1A /* Firebase.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Firebase.h; path = Core/Sources/Firebase.h; sourceTree = "<group>"; };
+		20784CE620F25FD8C57A45A6B1FD4368 /* UIViewController+RESideMenu.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIViewController+RESideMenu.h"; path = "RESideMenu/UIViewController+RESideMenu.h"; sourceTree = "<group>"; };
+		20D483018535136495F6484F873B5595 /* ViewDeck.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ViewDeck.h; path = ViewDeck/ViewDeck.h; sourceTree = "<group>"; };
+		22A0BB3BECF0B3D062A8E9C8B81FF4AA /* UIViewController+RESideMenu.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIViewController+RESideMenu.m"; path = "RESideMenu/UIViewController+RESideMenu.m"; sourceTree = "<group>"; };
+		232DEB28C982D879C00798AB78146EB4 /* SVRadialGradientLayer.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SVRadialGradientLayer.m; path = SVProgressHUD/SVRadialGradientLayer.m; sourceTree = "<group>"; };
 		23E07E0299875070293D474F82EC181C /* Pods-Resq.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Resq.debug.xcconfig"; sourceTree = "<group>"; };
-		281D796A74C1A3AC65DC41441E5A15C8 /* UIViewController+RESideMenu.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIViewController+RESideMenu.m"; path = "RESideMenu/UIViewController+RESideMenu.m"; sourceTree = "<group>"; };
-		2834F3F4F1149158083A3DC7D6F94312 /* IIViewDeckController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = IIViewDeckController.h; path = ViewDeck/IIViewDeckController.h; sourceTree = "<group>"; };
+		25D0C310298D604316795F2016C5696A /* SVProgressHUD-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SVProgressHUD-prefix.pch"; sourceTree = "<group>"; };
+		28DFEB7E58A3C8E5C184E242C8C9ABF7 /* GoogleInterchangeUtilities.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleInterchangeUtilities.framework; path = Frameworks/frameworks/GoogleInterchangeUtilities.framework; sourceTree = "<group>"; };
 		2953465A93F4D0CF5D8FC94CFC9B2D76 /* Pods-ResqUITests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-ResqUITests-acknowledgements.markdown"; sourceTree = "<group>"; };
-		30A5C1D0AF15EE9DCCD74D1039006B93 /* SVIndefiniteAnimatedView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SVIndefiniteAnimatedView.m; path = SVProgressHUD/SVIndefiniteAnimatedView.m; sourceTree = "<group>"; };
+		34D87AE18F4F5C07813E1064529D0A3E /* GoogleUtilities.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleUtilities.framework; path = Frameworks/frameworks/GoogleUtilities.framework; sourceTree = "<group>"; };
 		35559864D002D71753197656E9D0F6B6 /* Pods-ResqUITests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-ResqUITests-acknowledgements.plist"; sourceTree = "<group>"; };
-		3A73BAC68FD72045D3930CD1DA26C087 /* SVProgressHUD.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SVProgressHUD.xcconfig; sourceTree = "<group>"; };
-		3B211DF143DC64E717FDDAF782F0B438 /* SVProgressAnimatedView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SVProgressAnimatedView.h; path = SVProgressHUD/SVProgressAnimatedView.h; sourceTree = "<group>"; };
+		3AEBC43F30CD6FB0FDA499BF1FA77F19 /* FirebaseCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseCore.framework; path = Frameworks/frameworks/FirebaseCore.framework; sourceTree = "<group>"; };
 		3F834BF86112FD254C8C9F54E867149F /* Pods-ResqUITests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-ResqUITests-frameworks.sh"; sourceTree = "<group>"; };
+		4328FB5FE4F0ADF5314003BC7F13F941 /* RECommonFunctions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = RECommonFunctions.m; path = RESideMenu/RECommonFunctions.m; sourceTree = "<group>"; };
 		43D509B2AEA6C676921F73257AFC082B /* Pods-Resq-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Resq-resources.sh"; sourceTree = "<group>"; };
 		4BF59BD59C093D2CF0A7D10485A7C5D3 /* Pods-ResqTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-ResqTests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		4E0528B4BD36A4C3C7AF0216AB3E514E /* IISideController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = IISideController.m; path = ViewDeck/IISideController.m; sourceTree = "<group>"; };
 		501DEDCAA0925AEEFA5608D521DAEAEC /* Pods-ResqTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ResqTests.debug.xcconfig"; sourceTree = "<group>"; };
+		51D885CF4395C39567720E7BE5BFEF22 /* SVProgressHUD.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SVProgressHUD.xcconfig; sourceTree = "<group>"; };
 		52FAFD8CD1E66332953668615924081B /* Pods-ResqTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ResqTests.release.xcconfig"; sourceTree = "<group>"; };
+		53FCCE7BA166B8191BAC6FECA2CFE76C /* SVProgressAnimatedView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SVProgressAnimatedView.h; path = SVProgressHUD/SVProgressAnimatedView.h; sourceTree = "<group>"; };
+		5B21B15519E3A3133009EE5719EF344E /* FirebaseInstanceID.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseInstanceID.framework; path = Frameworks/frameworks/FirebaseInstanceID.framework; sourceTree = "<group>"; };
+		5E3639B3E5BE8F283C708EEA95F6A94C /* SVProgressHUD.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SVProgressHUD.h; path = SVProgressHUD/SVProgressHUD.h; sourceTree = "<group>"; };
+		600D0F91A31B12A32FC01DAEB40A480C /* SVProgressHUD-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SVProgressHUD-dummy.m"; sourceTree = "<group>"; };
+		60CD32F004D6AAC6679A3290EBB9216D /* RESideMenu.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = RESideMenu.h; path = RESideMenu/RESideMenu.h; sourceTree = "<group>"; };
 		611937BFD6EF30A2C84EF308B7BF929A /* libRESideMenu.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libRESideMenu.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		63734274680F42C213DB1788A3FC10A0 /* FirebaseAnalytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseAnalytics.framework; path = Frameworks/frameworks/FirebaseAnalytics.framework; sourceTree = "<group>"; };
 		653B655AE656318A9487CCE0EA96A607 /* Pods-ResqUITests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-ResqUITests-resources.sh"; sourceTree = "<group>"; };
-		6ABDA880590429D0C295BFB068B306BB /* GoogleSymbolUtilities.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleSymbolUtilities.framework; path = Frameworks/frameworks/GoogleSymbolUtilities.framework; sourceTree = "<group>"; };
-		6D97AEFA5476032E1C57757DEAD39D67 /* RECommonFunctions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = RECommonFunctions.h; path = RESideMenu/RECommonFunctions.h; sourceTree = "<group>"; };
+		6A27DE7852A494C379A5424A71F06F66 /* IIWrapController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = IIWrapController.m; path = ViewDeck/IIWrapController.m; sourceTree = "<group>"; };
 		71A29A89921BB8FACA8B9EFFA3F3B5E8 /* Pods-Resq-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Resq-acknowledgements.markdown"; sourceTree = "<group>"; };
+		72B5614D4B1ACB1335498ACF7CC5EF29 /* ViewDeck.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ViewDeck.xcconfig; sourceTree = "<group>"; };
+		747CCBF7B0E645B24BFA38205782CEAD /* ViewDeck-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "ViewDeck-dummy.m"; sourceTree = "<group>"; };
 		785062E40E7D598EE736CD6C1CEDCC7F /* Pods-ResqUITests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-ResqUITests-dummy.m"; sourceTree = "<group>"; };
 		7A7550CE2F904B19435862E2151C0A61 /* libViewDeck.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libViewDeck.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		7AE82C4CE3ACAC66681B80AF67A24348 /* IIWrapController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = IIWrapController.h; path = ViewDeck/IIWrapController.h; sourceTree = "<group>"; };
-		7DF700A21403A47D84195B13A5D1065C /* IIViewDeckController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = IIViewDeckController.m; path = ViewDeck/IIViewDeckController.m; sourceTree = "<group>"; };
-		7E21B89D01C380C96AF93E75609CD9BA /* SVProgressHUD.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SVProgressHUD.m; path = SVProgressHUD/SVProgressHUD.m; sourceTree = "<group>"; };
+		7A82A35F736E8EECC2147E8E096A53FC /* FirebaseDatabase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseDatabase.framework; path = Frameworks/FirebaseDatabase.framework; sourceTree = "<group>"; };
+		848D6BA73ED000AB4BF022EAF92E8ACF /* FIRMessaging.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FIRMessaging.h; path = Sources/FIRMessaging.h; sourceTree = "<group>"; };
 		854133665D0D728492F0CDDEA78E4606 /* Pods-Resq.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Resq.release.xcconfig"; sourceTree = "<group>"; };
-		89CCB68A2B0283EEE1EE1BB13AF8A209 /* RESideMenu.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = RESideMenu.m; path = RESideMenu/RESideMenu.m; sourceTree = "<group>"; };
-		8B58858F1F2091173176EB5DD4933C68 /* RESideMenu-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "RESideMenu-prefix.pch"; sourceTree = "<group>"; };
+		88ADF28989A22722CAD8822CF0CCD677 /* SVProgressHUD.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SVProgressHUD.m; path = SVProgressHUD/SVProgressHUD.m; sourceTree = "<group>"; };
+		8A6C8EC161B88F3080B9912E7F9BBCAD /* SVIndefiniteAnimatedView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SVIndefiniteAnimatedView.m; path = SVProgressHUD/SVIndefiniteAnimatedView.m; sourceTree = "<group>"; };
+		8BCD9F2D81E620AFC6AB4685DDD7410A /* RECommonFunctions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = RECommonFunctions.h; path = RESideMenu/RECommonFunctions.h; sourceTree = "<group>"; };
 		8E111B1C6ED2E2EF6823891940C973FA /* libSVProgressHUD.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libSVProgressHUD.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		8FF2F88EC7EFAC06AD5D6FB532518FDD /* ViewDeck-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "ViewDeck-dummy.m"; sourceTree = "<group>"; };
-		8FFD5ED399BAB2A46050C7D0B7EF0704 /* RECommonFunctions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = RECommonFunctions.m; path = RESideMenu/RECommonFunctions.m; sourceTree = "<group>"; };
 		90AAE8973B935FD4979EEDFB8B1E12AC /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		930071F7A335A8792BD0069ADECF626D /* SVProgressAnimatedView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SVProgressAnimatedView.m; path = SVProgressHUD/SVProgressAnimatedView.m; sourceTree = "<group>"; };
+		9399A1DDBDF63EF18644090C25DB2110 /* IISideController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = IISideController.h; path = ViewDeck/IISideController.h; sourceTree = "<group>"; };
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9604F9F5A043718A3BD1D291F3E06A21 /* Pods-Resq-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Resq-frameworks.sh"; sourceTree = "<group>"; };
-		97AB999C641C36D40D4573208536F4EE /* SVProgressHUD-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SVProgressHUD-dummy.m"; sourceTree = "<group>"; };
-		9802E0CF17C571BBCCD44C45283CDA89 /* SVProgressHUD.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = SVProgressHUD.bundle; path = SVProgressHUD/SVProgressHUD.bundle; sourceTree = "<group>"; };
+		9D2D50EFD823157CF6579ADA0C939414 /* IIWrapController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = IIWrapController.h; path = ViewDeck/IIWrapController.h; sourceTree = "<group>"; };
 		9D9EE11A3A6BDF89F38FBD41C736A55A /* Pods-Resq-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Resq-acknowledgements.plist"; sourceTree = "<group>"; };
 		9E2EBA0BFC2A7ECE9BBB2572852FEA28 /* libPods-ResqUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ResqUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3427D75D3067759F7488A54A74D1810 /* Pods-ResqTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-ResqTests-acknowledgements.plist"; sourceTree = "<group>"; };
+		A599573F32681940494CD055476FC0A1 /* GoogleSymbolUtilities.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleSymbolUtilities.framework; path = Frameworks/frameworks/GoogleSymbolUtilities.framework; sourceTree = "<group>"; };
 		A6E1DA9395E53AFDC2734D38B4FE0E38 /* Pods-ResqTests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-ResqTests-frameworks.sh"; sourceTree = "<group>"; };
 		A7AC8C030F1D05D6110966B8373BD5C3 /* Pods-ResqTests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-ResqTests-resources.sh"; sourceTree = "<group>"; };
-		AD2F46F3F5B2A237D7067555CEDA844C /* IISideController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = IISideController.m; path = ViewDeck/IISideController.m; sourceTree = "<group>"; };
+		B1F2F9A3626B782DB6F677CD96E9108C /* FIRInstanceID.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FIRInstanceID.h; path = Sources/FIRInstanceID.h; sourceTree = "<group>"; };
 		B49DEE494E75DDFA33840DEBEE5DC932 /* libPods-Resq.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Resq.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		B64FA0B30EF48E32C5649EA4AEFFD713 /* SVProgressHUD-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SVProgressHUD-prefix.pch"; sourceTree = "<group>"; };
-		B78335C1F38B2DF2DF7C904B9014FA72 /* UIViewController+RESideMenu.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIViewController+RESideMenu.h"; path = "RESideMenu/UIViewController+RESideMenu.h"; sourceTree = "<group>"; };
 		B991958827515746CA00B140C1CA1CBA /* Pods-ResqUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ResqUITests.release.xcconfig"; sourceTree = "<group>"; };
-		BE59D480157421BE21249D497C7E5F1D /* Firebase.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Firebase.h; path = Core/Sources/Firebase.h; sourceTree = "<group>"; };
-		BF0481AAEF64D9079F6FECA65B29648F /* GoogleUtilities.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleUtilities.framework; path = Frameworks/frameworks/GoogleUtilities.framework; sourceTree = "<group>"; };
-		C298D82C471C5633F61EE8814ADD68B3 /* IISideController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = IISideController.h; path = ViewDeck/IISideController.h; sourceTree = "<group>"; };
+		BD14B5F8482D4A7553E2F0BC01B9C0B7 /* SVProgressHUD.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = SVProgressHUD.bundle; path = SVProgressHUD/SVProgressHUD.bundle; sourceTree = "<group>"; };
+		C2F62031E54E93F37D0ECEDDDE69D233 /* SVRadialGradientLayer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SVRadialGradientLayer.h; path = SVProgressHUD/SVRadialGradientLayer.h; sourceTree = "<group>"; };
+		C44869E8AD88D239D34E26A7B3DEB002 /* IIViewDeckController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = IIViewDeckController.m; path = ViewDeck/IIViewDeckController.m; sourceTree = "<group>"; };
 		C474F2BA330329DF2C0412E66EAF6536 /* Pods-Resq-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Resq-dummy.m"; sourceTree = "<group>"; };
-		C7DFACF2C60DAFB9477289FF8D35390C /* ViewDeck-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ViewDeck-prefix.pch"; sourceTree = "<group>"; };
-		C8CDDF749D6FFCDE010C5327270BFDC5 /* RESideMenu.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = RESideMenu.xcconfig; sourceTree = "<group>"; };
-		CB0F7226283E5E749CE692B84892720B /* FirebaseAnalytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseAnalytics.framework; path = Frameworks/frameworks/FirebaseAnalytics.framework; sourceTree = "<group>"; };
-		CDAF710DBFB811A12080C45EE054CC25 /* SVProgressHUD.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SVProgressHUD.h; path = SVProgressHUD/SVProgressHUD.h; sourceTree = "<group>"; };
-		CE14743D294AF3139D720ED0C2E1A59A /* ViewDeck.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ViewDeck.h; path = ViewDeck/ViewDeck.h; sourceTree = "<group>"; };
 		CEA5959A14EDB92F1DB44BDE946C0141 /* libPods-ResqTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ResqTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		CF27EC025D8A563DB7F2D9DB6B158874 /* ViewDeck.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ViewDeck.xcconfig; sourceTree = "<group>"; };
+		D72BABE682749BDCA6F001A828A9AB9B /* GoogleIPhoneUtilities.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleIPhoneUtilities.framework; path = Frameworks/GoogleIPhoneUtilities.framework; sourceTree = "<group>"; };
 		E522FEA935744B4D9B117E864C772C09 /* Pods-ResqUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ResqUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		E85A95C112723ED5A3331BDC9868FEE5 /* RESideMenu-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "RESideMenu-dummy.m"; sourceTree = "<group>"; };
+		E95E0CE8CDCB02585AE91D10B25E3F10 /* RESideMenu.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = RESideMenu.m; path = RESideMenu/RESideMenu.m; sourceTree = "<group>"; };
+		EB0093F176B25EC56E160D64E64C2BFD /* IIViewDeckController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = IIViewDeckController.h; path = ViewDeck/IIViewDeckController.h; sourceTree = "<group>"; };
 		EB0B5C34B0704CE42DB8ACE437DB6B71 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/QuartzCore.framework; sourceTree = DEVELOPER_DIR; };
-		EC1089B9EA1DFF2822B49A31AF16ACEC /* IIWrapController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = IIWrapController.m; path = ViewDeck/IIWrapController.m; sourceTree = "<group>"; };
-		F4CBB32AF9031060FFFFFCED34821C72 /* FIRInstanceID.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FIRInstanceID.h; path = Sources/FIRInstanceID.h; sourceTree = "<group>"; };
-		F60DF35AEFFB10017C54735946F489B1 /* FirebaseCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseCore.framework; path = Frameworks/frameworks/FirebaseCore.framework; sourceTree = "<group>"; };
-		F77A34D5132F8A33C78EED8903901E07 /* SVRadialGradientLayer.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SVRadialGradientLayer.m; path = SVProgressHUD/SVRadialGradientLayer.m; sourceTree = "<group>"; };
+		EF2BB9986A652A70E53AD640F930743B /* RESideMenu.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = RESideMenu.xcconfig; sourceTree = "<group>"; };
+		F09DE57982CD0469141FE8EBAB81E587 /* RESideMenu-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "RESideMenu-prefix.pch"; sourceTree = "<group>"; };
+		F1CE14FDBCC8D4AF2AD2B443BD492CBB /* RESideMenu-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "RESideMenu-dummy.m"; sourceTree = "<group>"; };
+		F6B48E57634D77D592B32E69808F4563 /* FirebaseMessaging.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseMessaging.framework; path = Frameworks/frameworks/FirebaseMessaging.framework; sourceTree = "<group>"; };
+		F7708F8E6298BFC7FC8B331C1A12321A /* SVProgressAnimatedView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SVProgressAnimatedView.m; path = SVProgressHUD/SVProgressAnimatedView.m; sourceTree = "<group>"; };
+		FACC25862CE572C0D7D044D3B8265FA3 /* ViewDeck-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ViewDeck-prefix.pch"; sourceTree = "<group>"; };
 		FC31EA98DFE646DA20A2BFE17575196E /* Pods-ResqTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-ResqTests-dummy.m"; sourceTree = "<group>"; };
-		FE89C0B6EA950DC41C655CEC650D780D /* SVRadialGradientLayer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SVRadialGradientLayer.h; path = SVProgressHUD/SVRadialGradientLayer.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -196,6 +200,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		071979F806C49F0245066D774E562CFE /* FirebaseMessaging */ = {
+			isa = PBXGroup;
+			children = (
+				848D6BA73ED000AB4BF022EAF92E8ACF /* FIRMessaging.h */,
+				513182FF986C0E2D9A4884B718E7496D /* Frameworks */,
+			);
+			path = FirebaseMessaging;
+			sourceTree = "<group>";
+		};
 		07502C02536DDAE26CEA6F65BDCF0A77 /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -209,51 +222,128 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		07B95A9AD51C7EA65D800B8C69BDFF15 /* Pods */ = {
+		0B3123B85789C668A20B13FE400CDCF4 /* GoogleIPhoneUtilities */ = {
 			isa = PBXGroup;
 			children = (
-				E49D7360D618133BC4778DCB69911976 /* Firebase */,
-				B8648D510C9C59CBAA531433DC427283 /* FirebaseAnalytics */,
-				619354125DD0A20CA780DF572DDEA78F /* FirebaseCore */,
-				DCA77C4D15B280D90A4134742B7A2B21 /* FirebaseInstanceID */,
-				73C26AC270106697FD174B95A1014CBD /* GoogleInterchangeUtilities */,
-				6F6F50DB6269048CECF949204D3ADF37 /* GoogleSymbolUtilities */,
-				76C64C7BD04F1E3B98F7357CE691695D /* GoogleUtilities */,
-				B02EA3DC5A6E6BD046A497F49B712759 /* RESideMenu */,
-				99AD32F255E86B756B8EA675B99C67A5 /* SVProgressHUD */,
-				F7565DC48874AEB3CB3490383AFA81E7 /* ViewDeck */,
+				93487C24F972AC37265263C45D34BDDA /* Frameworks */,
+			);
+			path = GoogleIPhoneUtilities;
+			sourceTree = "<group>";
+		};
+		0BC1366037DAFBCBA37E85CC757702B5 /* Firebase */ = {
+			isa = PBXGroup;
+			children = (
+				73E01CBE0A61E3FD365E08EC89C511CD /* Core */,
+			);
+			path = Firebase;
+			sourceTree = "<group>";
+		};
+		1E694E95F8FA46492B5F2D2DA5CCE7BB /* FirebaseCore */ = {
+			isa = PBXGroup;
+			children = (
+				FDA90A37AD2319F09C853975CC7F22DA /* Frameworks */,
+			);
+			path = FirebaseCore;
+			sourceTree = "<group>";
+		};
+		255D7767ACA8B05A52C541664D6B5993 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				EF2BB9986A652A70E53AD640F930743B /* RESideMenu.xcconfig */,
+				F1CE14FDBCC8D4AF2AD2B443BD492CBB /* RESideMenu-dummy.m */,
+				F09DE57982CD0469141FE8EBAB81E587 /* RESideMenu-prefix.pch */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/RESideMenu";
+			sourceTree = "<group>";
+		};
+		2A252AB30A967DEF4FB812D704A7B231 /* FirebaseDatabase */ = {
+			isa = PBXGroup;
+			children = (
+				93FE0AF9ACDFD091ED217DD78D413C78 /* Frameworks */,
+			);
+			path = FirebaseDatabase;
+			sourceTree = "<group>";
+		};
+		2DFD60863386C6793B68B1108F3E58AD /* ViewDeck */ = {
+			isa = PBXGroup;
+			children = (
+				9399A1DDBDF63EF18644090C25DB2110 /* IISideController.h */,
+				4E0528B4BD36A4C3C7AF0216AB3E514E /* IISideController.m */,
+				EB0093F176B25EC56E160D64E64C2BFD /* IIViewDeckController.h */,
+				C44869E8AD88D239D34E26A7B3DEB002 /* IIViewDeckController.m */,
+				9D2D50EFD823157CF6579ADA0C939414 /* IIWrapController.h */,
+				6A27DE7852A494C379A5424A71F06F66 /* IIWrapController.m */,
+				20D483018535136495F6484F873B5595 /* ViewDeck.h */,
+				6555F5F5B8B35D8219B95333A522E724 /* Support Files */,
+			);
+			path = ViewDeck;
+			sourceTree = "<group>";
+		};
+		325D56E61824770B2DEC74B4750C711A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				0BC1366037DAFBCBA37E85CC757702B5 /* Firebase */,
+				332E1F9C0A9FB8A43A72F9456E7EDDBF /* FirebaseAnalytics */,
+				1E694E95F8FA46492B5F2D2DA5CCE7BB /* FirebaseCore */,
+				2A252AB30A967DEF4FB812D704A7B231 /* FirebaseDatabase */,
+				987B7734E7B5E9DA9CF038AE8BEC7569 /* FirebaseInstanceID */,
+				071979F806C49F0245066D774E562CFE /* FirebaseMessaging */,
+				9097440AE570B38B15EAD2ACC6CC5DF7 /* GoogleInterchangeUtilities */,
+				0B3123B85789C668A20B13FE400CDCF4 /* GoogleIPhoneUtilities */,
+				5DC8E3FA5E94AD26354CA22DBC5CEB5D /* GoogleSymbolUtilities */,
+				B1067756AADAE46570D3E868292F7EED /* GoogleUtilities */,
+				35BB972DACEF90E6A5181DDC236A740C /* RESideMenu */,
+				C4F73D586942FA457EC1F9AEB39119DE /* SVProgressHUD */,
+				2DFD60863386C6793B68B1108F3E58AD /* ViewDeck */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		0EBF3C2CE92453CB48F1924D2671B50C /* Support Files */ = {
+		332E1F9C0A9FB8A43A72F9456E7EDDBF /* FirebaseAnalytics */ = {
 			isa = PBXGroup;
 			children = (
-				3A73BAC68FD72045D3930CD1DA26C087 /* SVProgressHUD.xcconfig */,
-				97AB999C641C36D40D4573208536F4EE /* SVProgressHUD-dummy.m */,
-				B64FA0B30EF48E32C5649EA4AEFFD713 /* SVProgressHUD-prefix.pch */,
+				3A4D43F355D9C1AB09D27A11A328546B /* Frameworks */,
 			);
-			name = "Support Files";
-			path = "../Target Support Files/SVProgressHUD";
+			path = FirebaseAnalytics;
 			sourceTree = "<group>";
 		};
-		19270700E844EFA9790E58E9E8D4DDD3 /* Frameworks */ = {
+		34711D9E7B59B7257834C6E55AFE61E1 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				1522C45E11432C83F64DC7410972D808 /* GoogleInterchangeUtilities.framework */,
+				BD14B5F8482D4A7553E2F0BC01B9C0B7 /* SVProgressHUD.bundle */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		35BB972DACEF90E6A5181DDC236A740C /* RESideMenu */ = {
+			isa = PBXGroup;
+			children = (
+				8BCD9F2D81E620AFC6AB4685DDD7410A /* RECommonFunctions.h */,
+				4328FB5FE4F0ADF5314003BC7F13F941 /* RECommonFunctions.m */,
+				60CD32F004D6AAC6679A3290EBB9216D /* RESideMenu.h */,
+				E95E0CE8CDCB02585AE91D10B25E3F10 /* RESideMenu.m */,
+				20784CE620F25FD8C57A45A6B1FD4368 /* UIViewController+RESideMenu.h */,
+				22A0BB3BECF0B3D062A8E9C8B81FF4AA /* UIViewController+RESideMenu.m */,
+				255D7767ACA8B05A52C541664D6B5993 /* Support Files */,
+			);
+			path = RESideMenu;
+			sourceTree = "<group>";
+		};
+		3A4D43F355D9C1AB09D27A11A328546B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				63734274680F42C213DB1788A3FC10A0 /* FirebaseAnalytics.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		36162124496F53E405BE65F4B099CF05 /* Support Files */ = {
+		3B25BA5F9CC3EC2348669AD002308CA8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				CF27EC025D8A563DB7F2D9DB6B158874 /* ViewDeck.xcconfig */,
-				8FF2F88EC7EFAC06AD5D6FB532518FDD /* ViewDeck-dummy.m */,
-				C7DFACF2C60DAFB9477289FF8D35390C /* ViewDeck-prefix.pch */,
+				5B21B15519E3A3133009EE5719EF344E /* FirebaseInstanceID.framework */,
 			);
-			name = "Support Files";
-			path = "../Target Support Files/ViewDeck";
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		433CD3331B6C3787F473C941B61FC68F /* Frameworks */ = {
@@ -264,55 +354,47 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		5295040F6377AEBEC37C20483364D31D /* Resources */ = {
+		513182FF986C0E2D9A4884B718E7496D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				9802E0CF17C571BBCCD44C45283CDA89 /* SVProgressHUD.bundle */,
+				F6B48E57634D77D592B32E69808F4563 /* FirebaseMessaging.framework */,
 			);
-			name = Resources;
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		5FE3CC9079417A2BAD34611E3DA6C5FB /* Support Files */ = {
+		5618145FF13763AC5FA3559AFCB03035 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				C8CDDF749D6FFCDE010C5327270BFDC5 /* RESideMenu.xcconfig */,
-				E85A95C112723ED5A3331BDC9868FEE5 /* RESideMenu-dummy.m */,
-				8B58858F1F2091173176EB5DD4933C68 /* RESideMenu-prefix.pch */,
+				34D87AE18F4F5C07813E1064529D0A3E /* GoogleUtilities.framework */,
 			);
-			name = "Support Files";
-			path = "../Target Support Files/RESideMenu";
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		619354125DD0A20CA780DF572DDEA78F /* FirebaseCore */ = {
+		5DC8E3FA5E94AD26354CA22DBC5CEB5D /* GoogleSymbolUtilities */ = {
 			isa = PBXGroup;
 			children = (
-				F576C3E18EE7E0DA22D7B6A956474F16 /* Frameworks */,
-			);
-			path = FirebaseCore;
-			sourceTree = "<group>";
-		};
-		6F6F50DB6269048CECF949204D3ADF37 /* GoogleSymbolUtilities */ = {
-			isa = PBXGroup;
-			children = (
-				B1AEDBFAAEA2001C41E2F771421B19F5 /* Frameworks */,
+				E8F491756BAD6A1F3282BD8D57790DFC /* Frameworks */,
 			);
 			path = GoogleSymbolUtilities;
 			sourceTree = "<group>";
 		};
-		73C26AC270106697FD174B95A1014CBD /* GoogleInterchangeUtilities */ = {
+		6555F5F5B8B35D8219B95333A522E724 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				19270700E844EFA9790E58E9E8D4DDD3 /* Frameworks */,
+				72B5614D4B1ACB1335498ACF7CC5EF29 /* ViewDeck.xcconfig */,
+				747CCBF7B0E645B24BFA38205782CEAD /* ViewDeck-dummy.m */,
+				FACC25862CE572C0D7D044D3B8265FA3 /* ViewDeck-prefix.pch */,
 			);
-			path = GoogleInterchangeUtilities;
+			name = "Support Files";
+			path = "../Target Support Files/ViewDeck";
 			sourceTree = "<group>";
 		};
-		76C64C7BD04F1E3B98F7357CE691695D /* GoogleUtilities */ = {
+		73E01CBE0A61E3FD365E08EC89C511CD /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				EE943D9F6DDD34F2BDC22C96CA0AC44B /* Frameworks */,
+				1CB7FFF025293D96CBC3174E0FB50A1A /* Firebase.h */,
 			);
-			path = GoogleUtilities;
+			name = Core;
 			sourceTree = "<group>";
 		};
 		7DB346D0F39D3F0E887471402A8071AB = {
@@ -320,7 +402,7 @@
 			children = (
 				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
 				433CD3331B6C3787F473C941B61FC68F /* Frameworks */,
-				07B95A9AD51C7EA65D800B8C69BDFF15 /* Pods */,
+				325D56E61824770B2DEC74B4750C711A /* Pods */,
 				07502C02536DDAE26CEA6F65BDCF0A77 /* Products */,
 				C0B4AB299ADA686427B00AA6A2E140E0 /* Targets Support Files */,
 			);
@@ -333,6 +415,39 @@
 				EB0B5C34B0704CE42DB8ACE437DB6B71 /* QuartzCore.framework */,
 			);
 			name = iOS;
+			sourceTree = "<group>";
+		};
+		9097440AE570B38B15EAD2ACC6CC5DF7 /* GoogleInterchangeUtilities */ = {
+			isa = PBXGroup;
+			children = (
+				C08FA1AE97E3247C8118A1AB241834C2 /* Frameworks */,
+			);
+			path = GoogleInterchangeUtilities;
+			sourceTree = "<group>";
+		};
+		93487C24F972AC37265263C45D34BDDA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D72BABE682749BDCA6F001A828A9AB9B /* GoogleIPhoneUtilities.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		93FE0AF9ACDFD091ED217DD78D413C78 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7A82A35F736E8EECC2147E8E096A53FC /* FirebaseDatabase.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		987B7734E7B5E9DA9CF038AE8BEC7569 /* FirebaseInstanceID */ = {
+			isa = PBXGroup;
+			children = (
+				B1F2F9A3626B782DB6F677CD96E9108C /* FIRInstanceID.h */,
+				3B25BA5F9CC3EC2348669AD002308CA8 /* Frameworks */,
+			);
+			path = FirebaseInstanceID;
 			sourceTree = "<group>";
 		};
 		98B30454859ED54A4C4F54E52C2CE621 /* Pods-Resq */ = {
@@ -350,51 +465,12 @@
 			path = "Target Support Files/Pods-Resq";
 			sourceTree = "<group>";
 		};
-		99AD32F255E86B756B8EA675B99C67A5 /* SVProgressHUD */ = {
+		B1067756AADAE46570D3E868292F7EED /* GoogleUtilities */ = {
 			isa = PBXGroup;
 			children = (
-				06104195CF5C503AD97C0AEA8B354ECA /* SVIndefiniteAnimatedView.h */,
-				30A5C1D0AF15EE9DCCD74D1039006B93 /* SVIndefiniteAnimatedView.m */,
-				3B211DF143DC64E717FDDAF782F0B438 /* SVProgressAnimatedView.h */,
-				930071F7A335A8792BD0069ADECF626D /* SVProgressAnimatedView.m */,
-				CDAF710DBFB811A12080C45EE054CC25 /* SVProgressHUD.h */,
-				7E21B89D01C380C96AF93E75609CD9BA /* SVProgressHUD.m */,
-				FE89C0B6EA950DC41C655CEC650D780D /* SVRadialGradientLayer.h */,
-				F77A34D5132F8A33C78EED8903901E07 /* SVRadialGradientLayer.m */,
-				5295040F6377AEBEC37C20483364D31D /* Resources */,
-				0EBF3C2CE92453CB48F1924D2671B50C /* Support Files */,
+				5618145FF13763AC5FA3559AFCB03035 /* Frameworks */,
 			);
-			path = SVProgressHUD;
-			sourceTree = "<group>";
-		};
-		B02EA3DC5A6E6BD046A497F49B712759 /* RESideMenu */ = {
-			isa = PBXGroup;
-			children = (
-				6D97AEFA5476032E1C57757DEAD39D67 /* RECommonFunctions.h */,
-				8FFD5ED399BAB2A46050C7D0B7EF0704 /* RECommonFunctions.m */,
-				0457A563974C1D9B52782E4CB2EF2154 /* RESideMenu.h */,
-				89CCB68A2B0283EEE1EE1BB13AF8A209 /* RESideMenu.m */,
-				B78335C1F38B2DF2DF7C904B9014FA72 /* UIViewController+RESideMenu.h */,
-				281D796A74C1A3AC65DC41441E5A15C8 /* UIViewController+RESideMenu.m */,
-				5FE3CC9079417A2BAD34611E3DA6C5FB /* Support Files */,
-			);
-			path = RESideMenu;
-			sourceTree = "<group>";
-		};
-		B09187A5B29DC48E158E7A5602DCD2BA /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				1989EC0C7755722B4F8FDFFC3BDBF27F /* FirebaseInstanceID.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		B1AEDBFAAEA2001C41E2F771421B19F5 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				6ABDA880590429D0C295BFB068B306BB /* GoogleSymbolUtilities.framework */,
-			);
-			name = Frameworks;
+			path = GoogleUtilities;
 			sourceTree = "<group>";
 		};
 		B7FB8AF5E7B2250D48079C3D7908A633 /* Pods-ResqTests */ = {
@@ -412,12 +488,12 @@
 			path = "Target Support Files/Pods-ResqTests";
 			sourceTree = "<group>";
 		};
-		B8648D510C9C59CBAA531433DC427283 /* FirebaseAnalytics */ = {
+		C08FA1AE97E3247C8118A1AB241834C2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				D8D3A225008A81C5073D652EE5B8BD9D /* Frameworks */,
+				28DFEB7E58A3C8E5C184E242C8C9ABF7 /* GoogleInterchangeUtilities.framework */,
 			);
-			path = FirebaseAnalytics;
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		C0B4AB299ADA686427B00AA6A2E140E0 /* Targets Support Files */ = {
@@ -430,43 +506,38 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		D8D3A225008A81C5073D652EE5B8BD9D /* Frameworks */ = {
+		C4F73D586942FA457EC1F9AEB39119DE /* SVProgressHUD */ = {
 			isa = PBXGroup;
 			children = (
-				CB0F7226283E5E749CE692B84892720B /* FirebaseAnalytics.framework */,
+				027EEC2235233ACB37F89D56CA22857E /* SVIndefiniteAnimatedView.h */,
+				8A6C8EC161B88F3080B9912E7F9BBCAD /* SVIndefiniteAnimatedView.m */,
+				53FCCE7BA166B8191BAC6FECA2CFE76C /* SVProgressAnimatedView.h */,
+				F7708F8E6298BFC7FC8B331C1A12321A /* SVProgressAnimatedView.m */,
+				5E3639B3E5BE8F283C708EEA95F6A94C /* SVProgressHUD.h */,
+				88ADF28989A22722CAD8822CF0CCD677 /* SVProgressHUD.m */,
+				C2F62031E54E93F37D0ECEDDDE69D233 /* SVRadialGradientLayer.h */,
+				232DEB28C982D879C00798AB78146EB4 /* SVRadialGradientLayer.m */,
+				34711D9E7B59B7257834C6E55AFE61E1 /* Resources */,
+				D76E8B94C0D93065FCEA2B0E01E7DD59 /* Support Files */,
 			);
-			name = Frameworks;
+			path = SVProgressHUD;
 			sourceTree = "<group>";
 		};
-		DCA77C4D15B280D90A4134742B7A2B21 /* FirebaseInstanceID */ = {
+		D76E8B94C0D93065FCEA2B0E01E7DD59 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				F4CBB32AF9031060FFFFFCED34821C72 /* FIRInstanceID.h */,
-				B09187A5B29DC48E158E7A5602DCD2BA /* Frameworks */,
+				51D885CF4395C39567720E7BE5BFEF22 /* SVProgressHUD.xcconfig */,
+				600D0F91A31B12A32FC01DAEB40A480C /* SVProgressHUD-dummy.m */,
+				25D0C310298D604316795F2016C5696A /* SVProgressHUD-prefix.pch */,
 			);
-			path = FirebaseInstanceID;
+			name = "Support Files";
+			path = "../Target Support Files/SVProgressHUD";
 			sourceTree = "<group>";
 		};
-		E49D7360D618133BC4778DCB69911976 /* Firebase */ = {
+		E8F491756BAD6A1F3282BD8D57790DFC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				E8B4BD8D39AEEFBEB6A9AFDCFE475255 /* Core */,
-			);
-			path = Firebase;
-			sourceTree = "<group>";
-		};
-		E8B4BD8D39AEEFBEB6A9AFDCFE475255 /* Core */ = {
-			isa = PBXGroup;
-			children = (
-				BE59D480157421BE21249D497C7E5F1D /* Firebase.h */,
-			);
-			name = Core;
-			sourceTree = "<group>";
-		};
-		EE943D9F6DDD34F2BDC22C96CA0AC44B /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				BF0481AAEF64D9079F6FECA65B29648F /* GoogleUtilities.framework */,
+				A599573F32681940494CD055476FC0A1 /* GoogleSymbolUtilities.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -486,27 +557,12 @@
 			path = "Target Support Files/Pods-ResqUITests";
 			sourceTree = "<group>";
 		};
-		F576C3E18EE7E0DA22D7B6A956474F16 /* Frameworks */ = {
+		FDA90A37AD2319F09C853975CC7F22DA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				F60DF35AEFFB10017C54735946F489B1 /* FirebaseCore.framework */,
+				3AEBC43F30CD6FB0FDA499BF1FA77F19 /* FirebaseCore.framework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		F7565DC48874AEB3CB3490383AFA81E7 /* ViewDeck */ = {
-			isa = PBXGroup;
-			children = (
-				C298D82C471C5633F61EE8814ADD68B3 /* IISideController.h */,
-				AD2F46F3F5B2A237D7067555CEDA844C /* IISideController.m */,
-				2834F3F4F1149158083A3DC7D6F94312 /* IIViewDeckController.h */,
-				7DF700A21403A47D84195B13A5D1065C /* IIViewDeckController.m */,
-				7AE82C4CE3ACAC66681B80AF67A24348 /* IIWrapController.h */,
-				EC1089B9EA1DFF2822B49A31AF16ACEC /* IIWrapController.m */,
-				CE14743D294AF3139D720ED0C2E1A59A /* ViewDeck.h */,
-				36162124496F53E405BE65F4B099CF05 /* Support Files */,
-			);
-			path = ViewDeck;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -765,7 +821,7 @@
 /* Begin XCBuildConfiguration section */
 		21193F832710108B74DDB06F96AB9121 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = CF27EC025D8A563DB7F2D9DB6B158874 /* ViewDeck.xcconfig */;
+			baseConfigurationReference = 72B5614D4B1ACB1335498ACF7CC5EF29 /* ViewDeck.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -786,7 +842,7 @@
 		};
 		281C3B27C87A01E553F3D109BDCBB968 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3A73BAC68FD72045D3930CD1DA26C087 /* SVProgressHUD.xcconfig */;
+			baseConfigurationReference = 51D885CF4395C39567720E7BE5BFEF22 /* SVProgressHUD.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -849,7 +905,7 @@
 		};
 		5D763CB1AD8B5462D33935611DD74BD3 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3A73BAC68FD72045D3930CD1DA26C087 /* SVProgressHUD.xcconfig */;
+			baseConfigurationReference = 51D885CF4395C39567720E7BE5BFEF22 /* SVProgressHUD.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEBUG_INFORMATION_FORMAT = dwarf;
@@ -912,7 +968,7 @@
 		};
 		6F6CF4FEF93485A9C32B5B9093E32736 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C8CDDF749D6FFCDE010C5327270BFDC5 /* RESideMenu.xcconfig */;
+			baseConfigurationReference = EF2BB9986A652A70E53AD640F930743B /* RESideMenu.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -1013,7 +1069,7 @@
 		};
 		E532B9A0A9C6A62D09A23E8E598CD1D2 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C8CDDF749D6FFCDE010C5327270BFDC5 /* RESideMenu.xcconfig */;
+			baseConfigurationReference = EF2BB9986A652A70E53AD640F930743B /* RESideMenu.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEBUG_INFORMATION_FORMAT = dwarf;
@@ -1076,7 +1132,7 @@
 		};
 		FB80924B05E76329F596F390634671D8 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = CF27EC025D8A563DB7F2D9DB6B158874 /* ViewDeck.xcconfig */;
+			baseConfigurationReference = 72B5614D4B1ACB1335498ACF7CC5EF29 /* ViewDeck.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEBUG_INFORMATION_FORMAT = dwarf;

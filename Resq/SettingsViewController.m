@@ -19,6 +19,23 @@
     self.title = @"Settings";
     [self.settingsTableView setTableFooterView:[[UIView alloc]init]];
     // Do any additional setup after loading the view.
+    _contactsArray = [[NSMutableArray alloc] init];
+    [[[FirebaseManager sharedManager].ref child:@"users"] observeEventType:FIRDataEventTypeChildAdded withBlock:^(FIRDataSnapshot * snapshot) {
+        if(snapshot.exists){
+            NSMutableDictionary * dic = [[NSMutableDictionary alloc]initWithDictionary:snapshot.value];
+            if(dic){
+                NSLog(@"%@",[dic valueForKey:@"name"]);
+                NSLog(@"%@",[dic valueForKey:@"phone"]);
+                NSLog(@"%@\n\n",[dic valueForKey:@"token"]);
+                [dic setValue:snapshot.key forKey:@"id"];
+                [_contactsArray addObject:dic];
+                [self.settingsTableView reloadData];
+            }
+            NSLog(@"%@",[[dic allKeys] firstObject]);
+        }
+    } withCancelBlock:^(NSError * _Nonnull error) {
+    }];
+
 }
 
 -(void)viewDidAppear:(BOOL)animated{
@@ -69,7 +86,7 @@
             return 1;
             break;
         }case ResqSettingCellTypeBuddyCell:{
-            return 5;
+            return _contactsArray.count;
             break;
         }
         default:
@@ -154,8 +171,11 @@
         }case ResqSettingCellTypeBuddyCell:{
             UILabel * buddyName = [cell viewWithTag:1];
             UIButton * removeBuddy = [cell viewWithTag:2];
+            NSDictionary * contactDic = [_contactsArray objectAtIndex:indexPath.row];
+            
             [removeBuddy addTarget:self action:@selector(removeBuddyAction:) forControlEvents:UIControlEventTouchUpInside];
-            [buddyName setText:@"Muhammad Ahsan"];
+            [buddyName setText:[contactDic valueForKey:@"name"]];
+            
             break;
         }
         default:
@@ -204,6 +224,51 @@
 
 -(void)removeBuddyAction:(id)sender{
     NSLog(@"Remove Buddy Action");
+    CGPoint buttonPosition = [sender convertPoint:CGPointZero toView:self.settingsTableView];
+    NSIndexPath *indexPath = [self.settingsTableView indexPathForRowAtPoint:buttonPosition];
+    NSDictionary * contactDic = [_contactsArray objectAtIndex:indexPath.row];
+    
+    
+    
+    UIAlertController * alert = [UIAlertController
+                                 alertControllerWithTitle:@"RESQ"
+                                 message:[NSString stringWithFormat:@"Are You Sure you want to remove %@ from your buddy List?",[contactDic valueForKey:@"name"]]
+                                 preferredStyle:UIAlertControllerStyleAlert];
+    
+    //Add Buttons
+    UIAlertAction* yesButton = [UIAlertAction
+                                actionWithTitle:@"Yes"
+                                style:UIAlertActionStyleDefault
+                                handler:^(UIAlertAction * action) {
+                                    //Handle your yes please button action here
+//                                    [[[[] child:@"users"]child:[contactDic valueForKey:@"id"]] removeValue];
+//                                    
+//                                    
+//                                                                                  [_contactsArray removeObjectAtIndex:indexPath.row];
+//                                                [self.settingsTableView deleteRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:indexPath.row inSection:indexPath.section]] withRowAnimation:UITableViewRowAnimationAutomatic];
+                                    [[[[FirebaseManager sharedManager].ref child:@"users"]child:[contactDic valueForKey:@"id"]] removeValueWithCompletionBlock:^(NSError * _Nullable error, FIRDatabaseReference * _Nonnull ref) {
+                                        [SVProgressHUD dismiss];
+                                        if(error)
+                                            ALERT_VIEW(@"RESQ", error.localizedDescription)
+                                            else{
+                                                [_contactsArray removeObjectAtIndex:indexPath.row];
+                                                [self.settingsTableView deleteRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:indexPath.row inSection:indexPath.section]] withRowAnimation:UITableViewRowAnimationAutomatic];
+                                            }
+                                        
+                                    }];
+                                }];
+    
+    UIAlertAction* noButton = [UIAlertAction
+                               actionWithTitle:@"NO"
+                               style:UIAlertActionStyleDefault
+                               handler:^(UIAlertAction * action) {
+                                   //Handle no, thanks button
+                               }];
+    
+    //Add your buttons to alert controller
+    [alert addAction:yesButton];
+    [alert addAction:noButton];
+    [self presentViewController:alert animated:YES completion:nil];
 }
 
 -(void)addBuddyAction:(id)sender{
@@ -253,4 +318,65 @@
     }
     return nil;
 }
+
+-(void)finalFunctions{
+    
+    //Add
+    [[_ref child:@"users"].childByAutoId setValue:@{@"name":@"Muhammad Ahsan",@"token":@"12342342",@"phone":@"+923338878045"}];
+    
+    
+    //Search
+    [[[[_ref child:@"users"]queryOrderedByChild:@"phone"] queryEqualToValue:@"+923338878044"]observeEventType:FIRDataEventTypeValue withBlock:^(FIRDataSnapshot * snapshot) {
+        if(snapshot.exists){
+            NSLog(@"Snapshot:   %@",snapshot.value);
+            
+        }else{
+            NSLog(@"snapshot was NULL");
+        }
+        
+    } withCancelBlock:^(NSError * _Nonnull error) {
+        NSLog(@"Error:   %@",error);
+    }];
+    
+    
+    //Delete
+    [[[[_ref child:@"users"]queryOrderedByChild:@"phone"] queryEqualToValue:@"+923338878046"]observeEventType:FIRDataEventTypeValue withBlock:^(FIRDataSnapshot * snapshot) {
+        if(snapshot.exists){
+            
+            NSDictionary * dic = snapshot.value;
+            NSLog(@"%@",[[dic allKeys] firstObject]);
+            
+            //            [snapshot.ref setValue:nil];
+            [[[_ref child:@"users"]child:[[dic allKeys] firstObject]] removeValue];
+            //            NSLog(@"Snapshot:   %@",);
+            
+        }else{
+            NSLog(@"snapshot was NULL");
+        }
+        
+    } withCancelBlock:^(NSError * _Nonnull error) {
+        NSLog(@"Error:   %@",error);
+    }];
+    
+    //Update
+    [[[[_ref child:@"users"]queryOrderedByChild:@"phone"] queryEqualToValue:@"+923338878044"]observeEventType:FIRDataEventTypeValue withBlock:^(FIRDataSnapshot * snapshot) {
+        if(snapshot.exists){
+            
+            NSDictionary * dic = snapshot.value;
+            NSLog(@"%@",[[dic allKeys] firstObject]);
+            
+            //            [snapshot.ref setValue:nil];
+            [[[_ref child:@"users"]child:[[dic allKeys] firstObject]] setValue:@{@"name":@"Muhammad Ahsan",@"token":@"11111111",@"phone":@"+923338878046"}];
+            //            NSLog(@"Snapshot:   %@",);
+            
+        }else{
+            NSLog(@"snapshot was NULL");
+        }
+        
+    } withCancelBlock:^(NSError * _Nonnull error) {
+        NSLog(@"Error:   %@",error);
+    }];
+    
+}
+
 @end

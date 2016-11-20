@@ -69,11 +69,20 @@
         return;
     }
     
+    
     NSString *phoneNumber = [NSString stringWithFormat:@"%@%@",[_selectedCountry valueForKey:@"dial_code"],_phoneField.text];
     NSLog(@"phone number: %@",phoneNumber);
     [[NSUserDefaults standardUserDefaults]setValue:phoneNumber forKey:@"phoneNumber"];
     [[NSUserDefaults standardUserDefaults]setValue:_nameField.text forKey:@"name"];
-    [self dismissViewControllerAnimated:YES completion:nil];
+    [SVProgressHUD show];
+    [[FirebaseManager sharedManager]registerOrUpdateUserWithcompletion:^(BOOL isUpdated, NSError *error) {
+        if(isUpdated){
+            [self dismissViewControllerAnimated:YES completion:nil];
+        }else if(error){
+            ALERT_VIEW(@"RESQ", error.localizedDescription)
+        }
+        [SVProgressHUD dismiss];
+    }];
 }
 
 -(NSArray*)loadJsonDataWithFileName:(NSString *)filename{
