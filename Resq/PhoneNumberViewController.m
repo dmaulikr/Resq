@@ -62,7 +62,7 @@
         return;
     }
     
-    BOOL isValidPhoneNumber = [self validatePhoneNumber:self.phoneField.text];
+    BOOL isValidPhoneNumber = true;//[self validatePhoneNumber:self.phoneField.text];
     
     if(!isValidPhoneNumber){
         ALERT_VIEW(@"RESQ", @"Please enter a valid mobile number.")

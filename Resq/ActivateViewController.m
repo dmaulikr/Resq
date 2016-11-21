@@ -56,14 +56,16 @@
 - (IBAction)activateButtonAction:(id)sender {
     if(_isActivated){
         [[ResqLocationManager sharedManager]startUpdatingLocation];
-        UIImage* bg_image = [self stretchableButtonImageWithColor:[UIColor redColor] cornerRadius:CGRectGetHeight(_activate_btn.frame)/2];
+        UIImage* bg_image = [self stretchableButtonImageWithColor:[UIColor greenColor] cornerRadius:CGRectGetHeight(_activate_btn.frame)/2];
         [_activate_btn setBackgroundImage:bg_image forState:UIControlStateNormal];
-        [_activate_btn setTitle:@"Deactivate" forState:UIControlStateNormal];
+        self.activate_btn.titleLabel.lineBreakMode = NSLineBreakByWordWrapping;
+        self.activate_btn.titleLabel.textAlignment = NSTextAlignmentCenter;
+        [_activate_btn setTitle:@"Active\nPress to deactivate" forState:UIControlStateNormal];
         _isActivated = NO;
         
     }else{
         [[ResqLocationManager sharedManager]stopUpdatingLocation];
-        UIImage* bg_image = [self stretchableButtonImageWithColor:[UIColor colorWithRed:13.0/255.0 green:187.0/255.0 blue:15.0/255.0 alpha:1.0] cornerRadius:CGRectGetHeight(_activate_btn.frame)/2];
+        UIImage* bg_image = [self stretchableButtonImageWithColor:[UIColor grayColor] cornerRadius:CGRectGetHeight(_activate_btn.frame)/2];
         [_activate_btn setBackgroundImage:bg_image forState:UIControlStateNormal];
         [_activate_btn setTitle:@"Activate" forState:UIControlStateNormal];
         _isActivated = YES;

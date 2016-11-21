@@ -717,7 +717,7 @@
 				INFOPLIST_FILE = Resq/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.eden.resqtest;
+				PRODUCT_BUNDLE_IDENTIFIER = com.lbc.loopsplayer;
 				PRODUCT_NAME = RESQ;
 				PROVISIONING_PROFILE = "1341af53-c0b5-47b5-bc74-4370b8504661";
 				PROVISIONING_PROFILE_SPECIFIER = LBC_Development;
@@ -735,7 +735,7 @@
 				INFOPLIST_FILE = Resq/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.eden.resqtest;
+				PRODUCT_BUNDLE_IDENTIFIER = com.lbc.loopsplayer;
 				PRODUCT_NAME = RESQ;
 				PROVISIONING_PROFILE = "1341af53-c0b5-47b5-bc74-4370b8504661";
 				PROVISIONING_PROFILE_SPECIFIER = LBC_Development;

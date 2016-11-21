@@ -146,7 +146,7 @@
             UILabel * buddyName = [cell viewWithTag:1];
             UIButton * addBuddy = [cell viewWithTag:2];
             [addBuddy addTarget:self action:@selector(addBuddyAction:) forControlEvents:UIControlEventTouchUpInside];
-            [buddyName setText:@"Shaikh Ahsan"];
+            [buddyName setText:@"Aleks Tanner"];
             break;
         }case ResqSettingCellTypeNotificationTimeCell:{
             UISlider * slider = [cell viewWithTag:1];
@@ -322,7 +322,7 @@
 -(void)finalFunctions{
     
     //Add
-    [[_ref child:@"users"].childByAutoId setValue:@{@"name":@"Muhammad Ahsan",@"token":@"12342342",@"phone":@"+923338878045"}];
+    [[_ref child:@"users"].childByAutoId setValue:@{@"name":@"Stefanos Synkiniotis",@"token":@"12342342",@"phone":@"+923338878045"}];
     
     
     //Search
@@ -366,7 +366,7 @@
             NSLog(@"%@",[[dic allKeys] firstObject]);
             
             //            [snapshot.ref setValue:nil];
-            [[[_ref child:@"users"]child:[[dic allKeys] firstObject]] setValue:@{@"name":@"Muhammad Ahsan",@"token":@"11111111",@"phone":@"+923338878046"}];
+            [[[_ref child:@"users"]child:[[dic allKeys] firstObject]] setValue:@{@"name":@"Michael King", @"token":@"11111111", @"phone":@"+923338878046"}];
             //            NSLog(@"Snapshot:   %@",);
             
         }else{
