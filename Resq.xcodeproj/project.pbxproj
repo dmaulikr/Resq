@@ -23,6 +23,7 @@
 		786EEE891DDCE05400B6C40F /* CountryTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 786EEE881DDCE05400B6C40F /* CountryTableViewCell.m */; };
 		786EEE8C1DDCE34E00B6C40F /* CountryPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 786EEE8B1DDCE34E00B6C40F /* CountryPickerViewController.m */; };
 		786EEE8E1DDCE68000B6C40F /* country.json in Resources */ = {isa = PBXBuildFile; fileRef = 786EEE8D1DDCE68000B6C40F /* country.json */; };
+		7890D7B61DE3B05800C17E78 /* BluetoothViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7890D7B51DE3B05800C17E78 /* BluetoothViewController.m */; };
 		78A70D661DDBB6BD003BB2E1 /* ActivateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78A70D651DDBB6BD003BB2E1 /* ActivateViewController.m */; };
 		78A70D691DDBB843003BB2E1 /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78A70D681DDBB843003BB2E1 /* MenuViewController.m */; };
 		78A70D6C1DDBB9E5003BB2E1 /* ResqViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78A70D6B1DDBB9E5003BB2E1 /* ResqViewController.m */; };
@@ -82,6 +83,8 @@
 		786EEE8A1DDCE34E00B6C40F /* CountryPickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountryPickerViewController.h; sourceTree = "<group>"; };
 		786EEE8B1DDCE34E00B6C40F /* CountryPickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountryPickerViewController.m; sourceTree = "<group>"; };
 		786EEE8D1DDCE68000B6C40F /* country.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = country.json; sourceTree = "<group>"; };
+		7890D7B41DE3B05800C17E78 /* BluetoothViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BluetoothViewController.h; sourceTree = "<group>"; };
+		7890D7B51DE3B05800C17E78 /* BluetoothViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BluetoothViewController.m; sourceTree = "<group>"; };
 		78A70D641DDBB6BD003BB2E1 /* ActivateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivateViewController.h; sourceTree = "<group>"; };
 		78A70D651DDBB6BD003BB2E1 /* ActivateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivateViewController.m; sourceTree = "<group>"; };
 		78A70D671DDBB843003BB2E1 /* MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuViewController.h; sourceTree = "<group>"; };
@@ -252,6 +255,8 @@
 				786EEE8B1DDCE34E00B6C40F /* CountryPickerViewController.m */,
 				78D68ACB1DDE3668000801FF /* SearchResultsViewController.h */,
 				78D68ACC1DDE3668000801FF /* SearchResultsViewController.m */,
+				7890D7B41DE3B05800C17E78 /* BluetoothViewController.h */,
+				7890D7B51DE3B05800C17E78 /* BluetoothViewController.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -351,7 +356,7 @@
 				TargetAttributes = {
 					785317051DDA3F1E00FC379A = {
 						CreatedOnToolsVersion = 7.3;
-						DevelopmentTeam = E57G2KLGEZ;
+						DevelopmentTeam = MBT5FS6977;
 						ProvisioningStyle = Manual;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
@@ -560,6 +565,7 @@
 				786EEE891DDCE05400B6C40F /* CountryTableViewCell.m in Sources */,
 				78A70D661DDBB6BD003BB2E1 /* ActivateViewController.m in Sources */,
 				7853170E1DDA3F1E00FC379A /* AppDelegate.m in Sources */,
+				7890D7B61DE3B05800C17E78 /* BluetoothViewController.m in Sources */,
 				786EEE861DDCDD0400B6C40F /* PhoneNumberViewController.m in Sources */,
 				786EEE8C1DDCE34E00B6C40F /* CountryPickerViewController.m in Sources */,
 				7853170B1DDA3F1E00FC379A /* main.m in Sources */,
@@ -711,16 +717,16 @@
 			baseConfigurationReference = 7A00E41842F35AE579CDB56F /* Pods-Resq.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Carlton whitfield (XJT36E7SXL)";
-				DEVELOPMENT_TEAM = E57G2KLGEZ;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Muhammad Ahsan (V32767GP8L)";
+				DEVELOPMENT_TEAM = MBT5FS6977;
 				GCC_PREFIX_HEADER = Resq/PrefixHeader.pch;
 				INFOPLIST_FILE = Resq/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.lbc.loopsplayer;
+				PRODUCT_BUNDLE_IDENTIFIER = com.eden.resqtest;
 				PRODUCT_NAME = RESQ;
-				PROVISIONING_PROFILE = "1341af53-c0b5-47b5-bc74-4370b8504661";
-				PROVISIONING_PROFILE_SPECIFIER = LBC_Development;
+				PROVISIONING_PROFILE = "28bed251-aa1a-4e5c-9a90-394e136a3526";
+				PROVISIONING_PROFILE_SPECIFIER = "Resq Dev";
 			};
 			name = Debug;
 		};
@@ -729,16 +735,16 @@
 			baseConfigurationReference = 5FDCD9FA6118E84325556155 /* Pods-Resq.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Carlton whitfield (XJT36E7SXL)";
-				DEVELOPMENT_TEAM = E57G2KLGEZ;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Muhammad Ahsan (V32767GP8L)";
+				DEVELOPMENT_TEAM = MBT5FS6977;
 				GCC_PREFIX_HEADER = Resq/PrefixHeader.pch;
 				INFOPLIST_FILE = Resq/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.lbc.loopsplayer;
+				PRODUCT_BUNDLE_IDENTIFIER = com.eden.resqtest;
 				PRODUCT_NAME = RESQ;
-				PROVISIONING_PROFILE = "1341af53-c0b5-47b5-bc74-4370b8504661";
-				PROVISIONING_PROFILE_SPECIFIER = LBC_Development;
+				PROVISIONING_PROFILE = "28bed251-aa1a-4e5c-9a90-394e136a3526";
+				PROVISIONING_PROFILE_SPECIFIER = "Resq Dev";
 			};
 			name = Release;
 		};
