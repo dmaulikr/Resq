@@ -111,11 +111,8 @@
     };
 }
 
-- (BOOL)validatePhoneNumber:(NSString*)number
-{
-    NSString *numberRegEx = @"[235689][0-9]{6}([0-9]{3})?";
-    NSPredicate *numberTest = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", numberRegEx];
-    if ([numberTest evaluateWithObject:number] == YES)
+- (BOOL)validatePhoneNumber:(NSString*)number{
+    if (number.length>=7)
         return TRUE;
     else
         return FALSE;

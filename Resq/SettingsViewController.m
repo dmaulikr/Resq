@@ -8,7 +8,11 @@
 
 #import "SettingsViewController.h"
 #import "PhoneNumberViewController.h"
-@interface SettingsViewController ()
+#import "BluetoothViewController.h"
+#import <AddressBookUI/AddressBookUI.h>
+#import <AddressBook/AddressBook.h>
+
+@interface SettingsViewController ()<ABPeoplePickerNavigationControllerDelegate>
 
 @end
 
@@ -35,7 +39,7 @@
         }
     } withCancelBlock:^(NSError * _Nonnull error) {
     }];
-
+    
 }
 
 -(void)viewDidAppear:(BOOL)animated{
@@ -216,6 +220,19 @@
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    if(indexPath.section == ResqSettingCellTypeCloseByCell){
+        BluetoothViewController * controller = [self.storyboard instantiateViewControllerWithIdentifier:@"BluetoothViewController"];
+        UINavigationController * navController = [[UINavigationController alloc]initWithRootViewController:controller];
+        navController.navigationBar.translucent = NO;
+        [self.navigationController presentViewController:navController animated:YES completion:nil];
+    }if(indexPath.section == ResqSettingCellTypeContactsSettingCell){
+        ABPeoplePickerNavigationController *picker =
+        [[ABPeoplePickerNavigationController alloc] init];
+        picker.peoplePickerDelegate = self;
+        picker.predicateForEnablingPerson = [NSPredicate predicateWithFormat:@"%K.@count > 0", ABPersonPhoneNumbersProperty];
+        
+        [self.navigationController presentViewController:picker animated:YES completion:nil];
+    }
 }
 
 -(void)clearbuddyAction:(id)sender{
@@ -241,11 +258,11 @@
                                 style:UIAlertActionStyleDefault
                                 handler:^(UIAlertAction * action) {
                                     //Handle your yes please button action here
-//                                    [[[[] child:@"users"]child:[contactDic valueForKey:@"id"]] removeValue];
-//                                    
-//                                    
-//                                                                                  [_contactsArray removeObjectAtIndex:indexPath.row];
-//                                                [self.settingsTableView deleteRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:indexPath.row inSection:indexPath.section]] withRowAnimation:UITableViewRowAnimationAutomatic];
+                                    //                                    [[[[] child:@"users"]child:[contactDic valueForKey:@"id"]] removeValue];
+                                    //
+                                    //
+                                    //                                                                                  [_contactsArray removeObjectAtIndex:indexPath.row];
+                                    //                                                [self.settingsTableView deleteRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:indexPath.row inSection:indexPath.section]] withRowAnimation:UITableViewRowAnimationAutomatic];
                                     [[[[FirebaseManager sharedManager].ref child:@"users"]child:[contactDic valueForKey:@"id"]] removeValueWithCompletionBlock:^(NSError * _Nullable error, FIRDatabaseReference * _Nonnull ref) {
                                         [SVProgressHUD dismiss];
                                         if(error)
@@ -296,14 +313,14 @@
 -(void)closeBySwitchAction:(id)sender {
     UISwitch *onoff = (UISwitch *) sender;
     NSLog(@"Close By: %@", onoff.on ? @"On" : @"Off");
-    [[NSUserDefaults standardUserDefaults]setBool:onoff forKey:@"closeBySwitch"];
+    [[NSUserDefaults standardUserDefaults]setBool:onoff.on forKey:@"closeBySwitch"];
     [[NSUserDefaults standardUserDefaults]synchronize];
 }
 
 -(void)contactsSwitchAction:(id)sender {
     UISwitch *onoff = (UISwitch *) sender;
     NSLog(@"Contacts: %@", onoff.on ? @"On" : @"Off");
-    [[NSUserDefaults standardUserDefaults]setBool:onoff forKey:@"contactsSwitch"];
+    [[NSUserDefaults standardUserDefaults]setBool:onoff.on forKey:@"contactsSwitch"];
     [[NSUserDefaults standardUserDefaults]synchronize];
     
 }
@@ -379,4 +396,116 @@
     
 }
 
+
+#pragma mark - AddressBook Delegate Methods
+
+-(BOOL)peoplePickerNavigationController:(ABPeoplePickerNavigationController *)peoplePicker shouldContinueAfterSelectingPerson:(ABRecordRef)person{
+    return YES;
+}
+
+
+-(BOOL)peoplePickerNavigationController:(ABPeoplePickerNavigationController *)peoplePicker shouldContinueAfterSelectingPerson:(ABRecordRef)person property:(ABPropertyID)property identifier:(ABMultiValueIdentifier)identifier{
+    
+    // Get the first and the last name. Actually, copy their values using the person object and the appropriate
+    // properties into two string variables equivalently.
+    // Watch out the ABRecordCopyValue method below. Also, notice that we cast to NSString *.
+    NSString *firstName = (__bridge NSString *)ABRecordCopyValue(person, kABPersonFirstNameProperty);
+    NSString *lastName = (NSString *)CFBridgingRelease(ABRecordCopyValue(person, kABPersonLastNameProperty));
+    
+    // Compose the full name.
+    NSString *fullName = @"";
+    // Before adding the first and the last name in the fullName string make sure that these values are filled in.
+    if (firstName != nil) {
+        fullName = [fullName stringByAppendingString:firstName];
+    }
+    if (lastName != nil) {
+        fullName = [fullName stringByAppendingString:@" "];
+        fullName = [fullName stringByAppendingString:lastName];
+    }
+    
+    if (property == kABPersonPhoneProperty) {
+        ABMultiValueRef multiPhones = ABRecordCopyValue(person, kABPersonPhoneProperty);
+        for(CFIndex i = 0; i < ABMultiValueGetCount(multiPhones); i++) {
+            if(identifier == ABMultiValueGetIdentifierAtIndex (multiPhones, i)) {
+                CFStringRef phoneNumberRef = ABMultiValueCopyValueAtIndex(multiPhones, i);
+                CFRelease(multiPhones);
+                NSString *phoneNumber = (__bridge NSString *) phoneNumberRef;
+                NSLog(@"%@",phoneNumber);
+                //                NSString *phoneNumber = (NSString *) phoneNumberRef;
+                CFRelease(phoneNumberRef);
+                //                txtPhoneNumber.text = [NSString stringWithFormat:@"%@", phoneNumber];
+                //                [phoneNumber release];
+            }
+        }
+    }
+    
+    [self dismissModalViewControllerAnimated:YES];
+    return NO;
+    
+    
+    //    // Get the multivalue e-mail property.
+    //    CFTypeRef multivalue = ABRecordCopyValue(person, property);
+    //
+    //    // Get the index of the selected e-mail. Remember that the e-mail multi-value property is being returned as an array.
+    //    CFIndex index = ABMultiValueGetIndexForIdentifier(multivalue, identifier);
+    //
+    //    // Copy the e-mail value into a string.
+    //    NSString *email = (__bridge NSString *)ABMultiValueCopyValueAtIndex(multivalue, index);
+    //
+    //    // Create a temp array in which we'll add all the desired values.
+    //    NSMutableArray *tempArray = [[NSMutableArray alloc] init];
+    //    [tempArray addObject:fullName];
+    //
+    //    // Save the email into the tempArray array.
+    //    [tempArray addObject:email];
+    //
+    //
+    //    // Now add the tempArray into the contactsArray.
+    //    [contactsArray addObject:tempArray];
+    //
+    //    // Release the tempArray.
+    //
+    //    // Reload the table to display the new data.
+    //    [table reloadData];
+    //
+    //    // Dismiss the contacts view controller.
+    //    [contacts dismissViewControllerAnimated:YES completion:nil];
+    //    [[NSUserDefaults standardUserDefaults]removeObjectForKey:@"contacts"];
+    //    [[NSUserDefaults standardUserDefaults]setObject:contactsArray forKey:@"contacts"];
+    //    [[NSUserDefaults standardUserDefaults]synchronize];
+    return NO;
+}
+
+
+- (void)peoplePickerNavigationController:(ABPeoplePickerNavigationController*)peoplePicker didSelectPerson:(ABRecordRef)person property:(ABPropertyID)property identifier:(ABMultiValueIdentifier)identifier{
+    NSString *firstName = (__bridge NSString *)ABRecordCopyValue(person, kABPersonFirstNameProperty);
+    NSString *lastName = (NSString *)CFBridgingRelease(ABRecordCopyValue(person, kABPersonLastNameProperty));
+    
+    // Compose the full name.
+    NSString *fullName = @"";
+    // Before adding the first and the last name in the fullName string make sure that these values are filled in.
+    if (firstName != nil) {
+        fullName = [fullName stringByAppendingString:firstName];
+    }
+    if (lastName != nil) {
+        fullName = [fullName stringByAppendingString:@" "];
+        fullName = [fullName stringByAppendingString:lastName];
+    }
+    NSLog(@"%@",fullName);
+    if (property == kABPersonPhoneProperty) {
+        ABMultiValueRef multiPhones = ABRecordCopyValue(person, kABPersonPhoneProperty);
+        for(CFIndex i = 0; i < ABMultiValueGetCount(multiPhones); i++) {
+            if(identifier == ABMultiValueGetIdentifierAtIndex (multiPhones, i)) {
+                CFStringRef phoneNumberRef = ABMultiValueCopyValueAtIndex(multiPhones, i);
+                CFRelease(multiPhones);
+                NSString *phoneNumber = (__bridge NSString *) phoneNumberRef;
+                NSLog(@"%@",phoneNumber);
+                //                NSString *phoneNumber = (NSString *) phoneNumberRef;
+                CFRelease(phoneNumberRef);
+                //                txtPhoneNumber.text = [NSString stringWithFormat:@"%@", phoneNumber];
+                //                [phoneNumber release];
+            }
+        }
+    }
+}
 @end
