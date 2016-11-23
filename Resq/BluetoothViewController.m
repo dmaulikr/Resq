@@ -16,11 +16,14 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self.rightItem setTitle:@"Browse"];
-    [self.leftItem setTitle:@"Cancel"];
-    [self.leftItem setImage:[[UIImage alloc] init]];
-//    [self.navigationItem setLeftBarButtonItem:nil animated:YES];
+//    [self.rightItem setTitle:@"Browse"];
+//    [self.leftItem setTitle:@"Cancel"];
+//    [self.leftItem setImage:[[UIImage alloc] init]];
+    [self.navigationItem setLeftBarButtonItem:nil animated:YES];
     [self setUpMultipeer];
+//    [self rightItemAction:self];
+    [self presentViewController:self.browserVC animated:NO completion:nil];
+
 }
 
 - (void)didReceiveMemoryWarning {
@@ -61,11 +64,12 @@
 }
 
 -(void)rightItemAction:(id)sender{
-    [self presentViewController:self.browserVC animated:YES completion:nil];
+    [self presentViewController:self.browserVC animated:NO completion:nil];
 }
 
 - (void) dismissBrowserVC{
-    [self.browserVC dismissViewControllerAnimated:YES completion:nil];
+    [self.browserVC dismissViewControllerAnimated:NO completion:nil];
+    [self menuAction:self];
 }
 
 - (void) sendText{

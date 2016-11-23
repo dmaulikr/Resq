@@ -17,6 +17,9 @@
 		7853171C1DDA3F1E00FC379A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7853171A1DDA3F1E00FC379A /* LaunchScreen.storyboard */; };
 		785317271DDA3F1F00FC379A /* ResqTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 785317261DDA3F1F00FC379A /* ResqTests.m */; };
 		785317321DDA3F1F00FC379A /* ResqUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 785317311DDA3F1F00FC379A /* ResqUITests.m */; };
+		785AAB021DE61F3C0089C84D /* Contacts+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 785AAAFF1DE61F3C0089C84D /* Contacts+CoreDataProperties.m */; };
+		785AAB031DE61F3C0089C84D /* Contacts.m in Sources */ = {isa = PBXBuildFile; fileRef = 785AAB011DE61F3C0089C84D /* Contacts.m */; };
+		785AAB061DE6205E0089C84D /* UserManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 785AAB051DE6205E0089C84D /* UserManager.m */; };
 		786EEE7F1DDCD26500B6C40F /* Hero.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 786EEE7E1DDCD26500B6C40F /* Hero.aiff */; };
 		786EEE821DDCD2AD00B6C40F /* ResqLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 786EEE811DDCD2AD00B6C40F /* ResqLocationManager.m */; };
 		786EEE861DDCDD0400B6C40F /* PhoneNumberViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 786EEE851DDCDD0400B6C40F /* PhoneNumberViewController.m */; };
@@ -24,6 +27,7 @@
 		786EEE8C1DDCE34E00B6C40F /* CountryPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 786EEE8B1DDCE34E00B6C40F /* CountryPickerViewController.m */; };
 		786EEE8E1DDCE68000B6C40F /* country.json in Resources */ = {isa = PBXBuildFile; fileRef = 786EEE8D1DDCE68000B6C40F /* country.json */; };
 		7890D7B61DE3B05800C17E78 /* BluetoothViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7890D7B51DE3B05800C17E78 /* BluetoothViewController.m */; };
+		789E66971DE62BC100B907EC /* ContactsUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 789E66961DE62BC100B907EC /* ContactsUI.framework */; };
 		78A70D661DDBB6BD003BB2E1 /* ActivateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78A70D651DDBB6BD003BB2E1 /* ActivateViewController.m */; };
 		78A70D691DDBB843003BB2E1 /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78A70D681DDBB843003BB2E1 /* MenuViewController.m */; };
 		78A70D6C1DDBB9E5003BB2E1 /* ResqViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78A70D6B1DDBB9E5003BB2E1 /* ResqViewController.m */; };
@@ -72,6 +76,12 @@
 		7853172D1DDA3F1F00FC379A /* ResqUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ResqUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		785317311DDA3F1F00FC379A /* ResqUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ResqUITests.m; sourceTree = "<group>"; };
 		785317331DDA3F1F00FC379A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		785AAAFE1DE61F3C0089C84D /* Contacts+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Contacts+CoreDataProperties.h"; sourceTree = "<group>"; };
+		785AAAFF1DE61F3C0089C84D /* Contacts+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Contacts+CoreDataProperties.m"; sourceTree = "<group>"; };
+		785AAB001DE61F3C0089C84D /* Contacts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Contacts.h; sourceTree = "<group>"; };
+		785AAB011DE61F3C0089C84D /* Contacts.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Contacts.m; sourceTree = "<group>"; };
+		785AAB041DE6205E0089C84D /* UserManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserManager.h; sourceTree = "<group>"; };
+		785AAB051DE6205E0089C84D /* UserManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserManager.m; sourceTree = "<group>"; };
 		786EEE7E1DDCD26500B6C40F /* Hero.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = Hero.aiff; sourceTree = "<group>"; };
 		786EEE801DDCD2AD00B6C40F /* ResqLocationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResqLocationManager.h; sourceTree = "<group>"; };
 		786EEE811DDCD2AD00B6C40F /* ResqLocationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResqLocationManager.m; sourceTree = "<group>"; };
@@ -85,6 +95,7 @@
 		786EEE8D1DDCE68000B6C40F /* country.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = country.json; sourceTree = "<group>"; };
 		7890D7B41DE3B05800C17E78 /* BluetoothViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BluetoothViewController.h; sourceTree = "<group>"; };
 		7890D7B51DE3B05800C17E78 /* BluetoothViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BluetoothViewController.m; sourceTree = "<group>"; };
+		789E66961DE62BC100B907EC /* ContactsUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ContactsUI.framework; path = System/Library/Frameworks/ContactsUI.framework; sourceTree = SDKROOT; };
 		78A70D641DDBB6BD003BB2E1 /* ActivateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivateViewController.h; sourceTree = "<group>"; };
 		78A70D651DDBB6BD003BB2E1 /* ActivateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivateViewController.m; sourceTree = "<group>"; };
 		78A70D671DDBB843003BB2E1 /* MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuViewController.h; sourceTree = "<group>"; };
@@ -112,6 +123,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				789E66971DE62BC100B907EC /* ContactsUI.framework in Frameworks */,
 				D9E5A3694AB56C09A0B89B09 /* libPods-Resq.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -170,6 +182,7 @@
 				7853171A1DDA3F1E00FC379A /* LaunchScreen.storyboard */,
 				785317181DDA3F1E00FC379A /* Assets.xcassets */,
 				78D68ACE1DDE446A000801FF /* Resources */,
+				785AAAF81DE619F40089C84D /* Model */,
 				785317091DDA3F1E00FC379A /* Supporting Files */,
 			);
 			path = Resq;
@@ -181,7 +194,6 @@
 				78C522C01DE0EC6200A9A46D /* GoogleService-Info.plist */,
 				7853171D1DDA3F1E00FC379A /* Info.plist */,
 				78AC28A11DDC8E5400F1AB09 /* GoogleService-Info-1.plist */,
-				785317151DDA3F1E00FC379A /* Resq.xcdatamodeld */,
 				786EEE831DDCD37E00B6C40F /* PrefixHeader.pch */,
 				7853170A1DDA3F1E00FC379A /* main.m */,
 			);
@@ -204,6 +216,18 @@
 				785317331DDA3F1F00FC379A /* Info.plist */,
 			);
 			path = ResqUITests;
+			sourceTree = "<group>";
+		};
+		785AAAF81DE619F40089C84D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				785AAAFE1DE61F3C0089C84D /* Contacts+CoreDataProperties.h */,
+				785AAAFF1DE61F3C0089C84D /* Contacts+CoreDataProperties.m */,
+				785AAB001DE61F3C0089C84D /* Contacts.h */,
+				785AAB011DE61F3C0089C84D /* Contacts.m */,
+				785317151DDA3F1E00FC379A /* Resq.xcdatamodeld */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 		78D68ACE1DDE446A000801FF /* Resources */ = {
@@ -231,6 +255,7 @@
 		CA0F6C8CD6EE61EBD07137E6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				789E66961DE62BC100B907EC /* ContactsUI.framework */,
 				6EFA3F4DFF8A6BAD496DD5B4 /* libPods-Resq.a */,
 				589765DA3E0CCEE90880D0B8 /* libPods-ResqTests.a */,
 				A956C45DB19A854711506DB2 /* libPods-ResqUITests.a */,
@@ -277,6 +302,8 @@
 				786EEE811DDCD2AD00B6C40F /* ResqLocationManager.m */,
 				78C522C31DE1167400A9A46D /* FirebaseManager.h */,
 				78C522C41DE1167400A9A46D /* FirebaseManager.m */,
+				785AAB041DE6205E0089C84D /* UserManager.h */,
+				785AAB051DE6205E0089C84D /* UserManager.m */,
 			);
 			name = Common;
 			sourceTree = "<group>";
@@ -357,6 +384,7 @@
 					785317051DDA3F1E00FC379A = {
 						CreatedOnToolsVersion = 7.3;
 						DevelopmentTeam = MBT5FS6977;
+						LastSwiftMigration = 0800;
 						ProvisioningStyle = Manual;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
@@ -556,6 +584,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				785AAB061DE6205E0089C84D /* UserManager.m in Sources */,
 				785317171DDA3F1E00FC379A /* Resq.xcdatamodeld in Sources */,
 				78A70D6C1DDBB9E5003BB2E1 /* ResqViewController.m in Sources */,
 				78A70D691DDBB843003BB2E1 /* MenuViewController.m in Sources */,
@@ -565,8 +594,10 @@
 				786EEE891DDCE05400B6C40F /* CountryTableViewCell.m in Sources */,
 				78A70D661DDBB6BD003BB2E1 /* ActivateViewController.m in Sources */,
 				7853170E1DDA3F1E00FC379A /* AppDelegate.m in Sources */,
+				785AAB021DE61F3C0089C84D /* Contacts+CoreDataProperties.m in Sources */,
 				7890D7B61DE3B05800C17E78 /* BluetoothViewController.m in Sources */,
 				786EEE861DDCDD0400B6C40F /* PhoneNumberViewController.m in Sources */,
+				785AAB031DE61F3C0089C84D /* Contacts.m in Sources */,
 				786EEE8C1DDCE34E00B6C40F /* CountryPickerViewController.m in Sources */,
 				7853170B1DDA3F1E00FC379A /* main.m in Sources */,
 				786EEE821DDCD2AD00B6C40F /* ResqLocationManager.m in Sources */,
@@ -717,6 +748,7 @@
 			baseConfigurationReference = 7A00E41842F35AE579CDB56F /* Pods-Resq.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Muhammad Ahsan (V32767GP8L)";
 				DEVELOPMENT_TEAM = MBT5FS6977;
 				GCC_PREFIX_HEADER = Resq/PrefixHeader.pch;
@@ -727,6 +759,8 @@
 				PRODUCT_NAME = RESQ;
 				PROVISIONING_PROFILE = "28bed251-aa1a-4e5c-9a90-394e136a3526";
 				PROVISIONING_PROFILE_SPECIFIER = "Resq Dev";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -735,6 +769,7 @@
 			baseConfigurationReference = 5FDCD9FA6118E84325556155 /* Pods-Resq.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Muhammad Ahsan (V32767GP8L)";
 				DEVELOPMENT_TEAM = MBT5FS6977;
 				GCC_PREFIX_HEADER = Resq/PrefixHeader.pch;
@@ -745,6 +780,7 @@
 				PRODUCT_NAME = RESQ;
 				PROVISIONING_PROFILE = "28bed251-aa1a-4e5c-9a90-394e136a3526";
 				PROVISIONING_PROFILE_SPECIFIER = "Resq Dev";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};

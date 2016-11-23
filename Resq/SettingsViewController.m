@@ -11,8 +11,9 @@
 #import "BluetoothViewController.h"
 #import <AddressBookUI/AddressBookUI.h>
 #import <AddressBook/AddressBook.h>
+#import <ContactsUI/ContactsUI.h>
 
-@interface SettingsViewController ()<ABPeoplePickerNavigationControllerDelegate>
+@interface SettingsViewController ()<ABPeoplePickerNavigationControllerDelegate,CNContactPickerDelegate>
 
 @end
 
@@ -24,28 +25,30 @@
     [self.settingsTableView setTableFooterView:[[UIView alloc]init]];
     // Do any additional setup after loading the view.
     _contactsArray = [[NSMutableArray alloc] init];
-    [[[FirebaseManager sharedManager].ref child:@"users"] observeEventType:FIRDataEventTypeChildAdded withBlock:^(FIRDataSnapshot * snapshot) {
-        if(snapshot.exists){
-            NSMutableDictionary * dic = [[NSMutableDictionary alloc]initWithDictionary:snapshot.value];
-            if(dic){
-                NSLog(@"%@",[dic valueForKey:@"name"]);
-                NSLog(@"%@",[dic valueForKey:@"phone"]);
-                NSLog(@"%@\n\n",[dic valueForKey:@"token"]);
-                [dic setValue:snapshot.key forKey:@"id"];
-                [_contactsArray addObject:dic];
-                [self.settingsTableView reloadData];
-            }
-            NSLog(@"%@",[[dic allKeys] firstObject]);
-        }
-    } withCancelBlock:^(NSError * _Nonnull error) {
-    }];
+    _frequentContactsArray = [[NSMutableArray alloc] init];
     
+    //    [[[FirebaseManager sharedManager].ref child:@"users"] observeEventType:FIRDataEventTypeChildAdded withBlock:^(FIRDataSnapshot * snapshot) {
+    //        if(snapshot.exists){
+    //            NSMutableDictionary * dic = [[NSMutableDictionary alloc]initWithDictionary:snapshot.value];
+    //            if(dic){
+    //                NSLog(@"%@",[dic valueForKey:@"name"]);
+    //                NSLog(@"%@",[dic valueForKey:@"phone"]);
+    //                NSLog(@"%@\n\n",[dic valueForKey:@"token"]);
+    //                [dic setValue:snapshot.key forKey:@"id"];
+    //                [_contactsArray addObject:dic];
+    //                [self.settingsTableView reloadData];
+    //            }
+    //            NSLog(@"%@",[[dic allKeys] firstObject]);
+    //        }
+    //    } withCancelBlock:^(NSError * _Nonnull error) {
+    //    }];
+    [self updateList];
 }
 
 -(void)viewDidAppear:(BOOL)animated{
     if([[NSUserDefaults standardUserDefaults]valueForKey:@"phoneNumber"] && [[[NSUserDefaults standardUserDefaults]valueForKey:@"phoneNumber"] length]){
-        NSLog(@"Name %@",[[NSUserDefaults standardUserDefaults]valueForKey:@"name"]);
-        NSLog(@"Phone %@",[[NSUserDefaults standardUserDefaults]valueForKey:@"phoneNumber"]);
+        //        NSLog(@"Name %@",[[NSUserDefaults standardUserDefaults]valueForKey:@"name"]);
+        //        NSLog(@"Phone %@",[[NSUserDefaults standardUserDefaults]valueForKey:@"phoneNumber"]);
     }else{
         PhoneNumberViewController * controller = [self.storyboard instantiateViewControllerWithIdentifier:@"PhoneNumberViewController"];
         UINavigationController * navController = [[UINavigationController alloc]initWithRootViewController:controller];
@@ -81,7 +84,7 @@
             return 1;
             break;
         }case ResqSettingCellTypeFrequentBuddyCell:{
-            return 3;
+            return _frequentContactsArray.count;
             break;
         }case ResqSettingCellTypeNotificationTimeCell:{
             return 1;
@@ -150,7 +153,10 @@
             UILabel * buddyName = [cell viewWithTag:1];
             UIButton * addBuddy = [cell viewWithTag:2];
             [addBuddy addTarget:self action:@selector(addBuddyAction:) forControlEvents:UIControlEventTouchUpInside];
-            [buddyName setText:@"Aleks Tanner"];
+            
+            Contacts * contact = [_frequentContactsArray objectAtIndex:indexPath.row];
+            [buddyName setText:contact.name];
+            
             break;
         }case ResqSettingCellTypeNotificationTimeCell:{
             UISlider * slider = [cell viewWithTag:1];
@@ -175,10 +181,10 @@
         }case ResqSettingCellTypeBuddyCell:{
             UILabel * buddyName = [cell viewWithTag:1];
             UIButton * removeBuddy = [cell viewWithTag:2];
-            NSDictionary * contactDic = [_contactsArray objectAtIndex:indexPath.row];
+            Contacts * contact = [_contactsArray objectAtIndex:indexPath.row];
             
             [removeBuddy addTarget:self action:@selector(removeBuddyAction:) forControlEvents:UIControlEventTouchUpInside];
-            [buddyName setText:[contactDic valueForKey:@"name"]];
+            [buddyName setText:contact.name];
             
             break;
         }
@@ -226,30 +232,30 @@
         navController.navigationBar.translucent = NO;
         [self.navigationController presentViewController:navController animated:YES completion:nil];
     }if(indexPath.section == ResqSettingCellTypeContactsSettingCell){
-        ABPeoplePickerNavigationController *picker =
-        [[ABPeoplePickerNavigationController alloc] init];
-        picker.peoplePickerDelegate = self;
-        picker.predicateForEnablingPerson = [NSPredicate predicateWithFormat:@"%K.@count > 0", ABPersonPhoneNumbersProperty];
-        
-        [self.navigationController presentViewController:picker animated:YES completion:nil];
+        ABAddressBookRef addressBook =  ABAddressBookCreateWithOptions(NULL, NULL);
+        ABAddressBookRequestAccessWithCompletion(addressBook, ^(bool granted, CFErrorRef error) {
+            if (granted) {
+                ABPeoplePickerNavigationController*  _addressBookController = [[ABPeoplePickerNavigationController alloc] init];
+                [[_addressBookController navigationBar] setBarStyle:UIBarStyleBlack];
+                
+//                _addressBookController.delegate =  self;
+                [_addressBookController setPredicateForEnablingPerson:[NSPredicate predicateWithFormat:@"%K.@count > 0", ABPersonPhoneNumbersProperty]];
+                [_addressBookController setPeoplePickerDelegate:self];
+                [self presentViewController:_addressBookController animated:YES completion:nil];
+            }
+            else {
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    ALERT_VIEW(@"RESQ", @"PLEASE_GRANT_CONTACTS")
+                });
+            }
+        });
     }
 }
 
 -(void)clearbuddyAction:(id)sender{
-    NSLog(@"Clear Action");
-}
-
--(void)removeBuddyAction:(id)sender{
-    NSLog(@"Remove Buddy Action");
-    CGPoint buttonPosition = [sender convertPoint:CGPointZero toView:self.settingsTableView];
-    NSIndexPath *indexPath = [self.settingsTableView indexPathForRowAtPoint:buttonPosition];
-    NSDictionary * contactDic = [_contactsArray objectAtIndex:indexPath.row];
-    
-    
-    
     UIAlertController * alert = [UIAlertController
                                  alertControllerWithTitle:@"RESQ"
-                                 message:[NSString stringWithFormat:@"Are You Sure you want to remove %@ from your buddy List?",[contactDic valueForKey:@"name"]]
+                                 message:[NSString stringWithFormat:@"Are You Sure you want to remove all Buddies?"]
                                  preferredStyle:UIAlertControllerStyleAlert];
     
     //Add Buttons
@@ -257,22 +263,53 @@
                                 actionWithTitle:@"Yes"
                                 style:UIAlertActionStyleDefault
                                 handler:^(UIAlertAction * action) {
-                                    //Handle your yes please button action here
-                                    //                                    [[[[] child:@"users"]child:[contactDic valueForKey:@"id"]] removeValue];
-                                    //
-                                    //
-                                    //                                                                                  [_contactsArray removeObjectAtIndex:indexPath.row];
-                                    //                                                [self.settingsTableView deleteRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:indexPath.row inSection:indexPath.section]] withRowAnimation:UITableViewRowAnimationAutomatic];
-                                    [[[[FirebaseManager sharedManager].ref child:@"users"]child:[contactDic valueForKey:@"id"]] removeValueWithCompletionBlock:^(NSError * _Nullable error, FIRDatabaseReference * _Nonnull ref) {
-                                        [SVProgressHUD dismiss];
-                                        if(error)
-                                            ALERT_VIEW(@"RESQ", error.localizedDescription)
-                                            else{
-                                                [_contactsArray removeObjectAtIndex:indexPath.row];
-                                                [self.settingsTableView deleteRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:indexPath.row inSection:indexPath.section]] withRowAnimation:UITableViewRowAnimationAutomatic];
-                                            }
-                                        
-                                    }];
+                                    for (Contacts *contact in _contactsArray) {
+                                        contact.isBuddy = @(NO);
+                                    }
+                                    NSError* error;
+                                    [appdelegate.managedObjectContext save:&error];
+                                    if(error){
+                                        NSLog(@"Some thing is Wrong");
+                                    }else{
+                                        [self updateList];
+                                    }                                }];
+    
+    UIAlertAction* noButton = [UIAlertAction
+                               actionWithTitle:@"NO"
+                               style:UIAlertActionStyleDefault
+                               handler:^(UIAlertAction * action) {
+                                   //Handle no, thanks button
+                               }];
+    
+    //Add your buttons to alert controller
+    [alert addAction:yesButton];
+    [alert addAction:noButton];
+    [self presentViewController:alert animated:YES completion:nil];
+}
+
+-(void)removeBuddyAction:(id)sender{
+    NSLog(@"Remove Buddy Action");
+    CGPoint buttonPosition = [sender convertPoint:CGPointZero toView:self.settingsTableView];
+    NSIndexPath *indexPath = [self.settingsTableView indexPathForRowAtPoint:buttonPosition];
+    Contacts * contact = [_contactsArray objectAtIndex:indexPath.row];
+    
+    
+    
+    UIAlertController * alert = [UIAlertController
+                                 alertControllerWithTitle:@"RESQ"
+                                 message:[NSString stringWithFormat:@"Are You Sure you want to remove %@ from your buddy List?",contact.name]
+                                 preferredStyle:UIAlertControllerStyleAlert];
+    
+    //Add Buttons
+    UIAlertAction* yesButton = [UIAlertAction
+                                actionWithTitle:@"Yes"
+                                style:UIAlertActionStyleDefault
+                                handler:^(UIAlertAction * action) {
+                                    NSManagedObjectContext *context = appdelegate.managedObjectContext;
+                                    contact.isBuddy = @(NO);
+                                    NSError *saveError = nil;
+                                    [context save:&saveError];
+                                    [self updateList];
                                 }];
     
     UIAlertAction* noButton = [UIAlertAction
@@ -289,7 +326,17 @@
 }
 
 -(void)addBuddyAction:(id)sender{
+    CGPoint buttonPosition = [sender convertPoint:CGPointZero toView:self.settingsTableView];
+    NSIndexPath *indexPath = [self.settingsTableView indexPathForRowAtPoint:buttonPosition];
+    Contacts * contact = [_frequentContactsArray objectAtIndex:indexPath.row];
+    
     NSLog(@"Add Buddy Action");
+    NSManagedObjectContext *context = appdelegate.managedObjectContext;
+    contact.isBuddy = @(YES);
+    contact.frequentCount = @([contact.frequentCount integerValue]+ 1);
+    NSError *saveError = nil;
+    [context save:&saveError];
+    [self updateList];
 }
 
 -(void)sliderAction:(id)sender{
@@ -403,84 +450,9 @@
     return YES;
 }
 
-
--(BOOL)peoplePickerNavigationController:(ABPeoplePickerNavigationController *)peoplePicker shouldContinueAfterSelectingPerson:(ABRecordRef)person property:(ABPropertyID)property identifier:(ABMultiValueIdentifier)identifier{
-    
-    // Get the first and the last name. Actually, copy their values using the person object and the appropriate
-    // properties into two string variables equivalently.
-    // Watch out the ABRecordCopyValue method below. Also, notice that we cast to NSString *.
-    NSString *firstName = (__bridge NSString *)ABRecordCopyValue(person, kABPersonFirstNameProperty);
-    NSString *lastName = (NSString *)CFBridgingRelease(ABRecordCopyValue(person, kABPersonLastNameProperty));
-    
-    // Compose the full name.
-    NSString *fullName = @"";
-    // Before adding the first and the last name in the fullName string make sure that these values are filled in.
-    if (firstName != nil) {
-        fullName = [fullName stringByAppendingString:firstName];
-    }
-    if (lastName != nil) {
-        fullName = [fullName stringByAppendingString:@" "];
-        fullName = [fullName stringByAppendingString:lastName];
-    }
-    
-    if (property == kABPersonPhoneProperty) {
-        ABMultiValueRef multiPhones = ABRecordCopyValue(person, kABPersonPhoneProperty);
-        for(CFIndex i = 0; i < ABMultiValueGetCount(multiPhones); i++) {
-            if(identifier == ABMultiValueGetIdentifierAtIndex (multiPhones, i)) {
-                CFStringRef phoneNumberRef = ABMultiValueCopyValueAtIndex(multiPhones, i);
-                CFRelease(multiPhones);
-                NSString *phoneNumber = (__bridge NSString *) phoneNumberRef;
-                NSLog(@"%@",phoneNumber);
-                //                NSString *phoneNumber = (NSString *) phoneNumberRef;
-                CFRelease(phoneNumberRef);
-                //                txtPhoneNumber.text = [NSString stringWithFormat:@"%@", phoneNumber];
-                //                [phoneNumber release];
-            }
-        }
-    }
-    
-    [self dismissModalViewControllerAnimated:YES];
-    return NO;
-    
-    
-    //    // Get the multivalue e-mail property.
-    //    CFTypeRef multivalue = ABRecordCopyValue(person, property);
-    //
-    //    // Get the index of the selected e-mail. Remember that the e-mail multi-value property is being returned as an array.
-    //    CFIndex index = ABMultiValueGetIndexForIdentifier(multivalue, identifier);
-    //
-    //    // Copy the e-mail value into a string.
-    //    NSString *email = (__bridge NSString *)ABMultiValueCopyValueAtIndex(multivalue, index);
-    //
-    //    // Create a temp array in which we'll add all the desired values.
-    //    NSMutableArray *tempArray = [[NSMutableArray alloc] init];
-    //    [tempArray addObject:fullName];
-    //
-    //    // Save the email into the tempArray array.
-    //    [tempArray addObject:email];
-    //
-    //
-    //    // Now add the tempArray into the contactsArray.
-    //    [contactsArray addObject:tempArray];
-    //
-    //    // Release the tempArray.
-    //
-    //    // Reload the table to display the new data.
-    //    [table reloadData];
-    //
-    //    // Dismiss the contacts view controller.
-    //    [contacts dismissViewControllerAnimated:YES completion:nil];
-    //    [[NSUserDefaults standardUserDefaults]removeObjectForKey:@"contacts"];
-    //    [[NSUserDefaults standardUserDefaults]setObject:contactsArray forKey:@"contacts"];
-    //    [[NSUserDefaults standardUserDefaults]synchronize];
-    return NO;
-}
-
-
 - (void)peoplePickerNavigationController:(ABPeoplePickerNavigationController*)peoplePicker didSelectPerson:(ABRecordRef)person property:(ABPropertyID)property identifier:(ABMultiValueIdentifier)identifier{
     NSString *firstName = (__bridge NSString *)ABRecordCopyValue(person, kABPersonFirstNameProperty);
     NSString *lastName = (NSString *)CFBridgingRelease(ABRecordCopyValue(person, kABPersonLastNameProperty));
-    
     // Compose the full name.
     NSString *fullName = @"";
     // Before adding the first and the last name in the fullName string make sure that these values are filled in.
@@ -491,7 +463,6 @@
         fullName = [fullName stringByAppendingString:@" "];
         fullName = [fullName stringByAppendingString:lastName];
     }
-    NSLog(@"%@",fullName);
     if (property == kABPersonPhoneProperty) {
         ABMultiValueRef multiPhones = ABRecordCopyValue(person, kABPersonPhoneProperty);
         for(CFIndex i = 0; i < ABMultiValueGetCount(multiPhones); i++) {
@@ -499,13 +470,56 @@
                 CFStringRef phoneNumberRef = ABMultiValueCopyValueAtIndex(multiPhones, i);
                 CFRelease(multiPhones);
                 NSString *phoneNumber = (__bridge NSString *) phoneNumberRef;
-                NSLog(@"%@",phoneNumber);
-                //                NSString *phoneNumber = (NSString *) phoneNumberRef;
+                NSLog(@"Name: %@",fullName);
+                NSLog(@"Phone Number: %@",phoneNumber);
+                [self addBuddyinList:phoneNumber name:fullName];
                 CFRelease(phoneNumberRef);
-                //                txtPhoneNumber.text = [NSString stringWithFormat:@"%@", phoneNumber];
-                //                [phoneNumber release];
             }
         }
+    }else{
+        ALERT_VIEW(@"RESQ", @"Please select Phone number.")
     }
+}
+
+-(void)addBuddyinList:(NSString*)mobileNumber name:(NSString*)name{
+    
+    mobileNumber = [mobileNumber stringByReplacingOccurrencesOfString:@"(" withString:@""];
+    mobileNumber = [mobileNumber stringByReplacingOccurrencesOfString:@")" withString:@""];
+    mobileNumber = [mobileNumber stringByReplacingOccurrencesOfString:@" " withString:@""];
+    mobileNumber = [mobileNumber stringByReplacingOccurrencesOfString:@"-" withString:@""];
+    mobileNumber = [mobileNumber stringByReplacingOccurrencesOfString:@"+" withString:@""];
+    
+    NSString *predicateString = [NSString stringWithFormat:@"phoneNumber = '%@' ", mobileNumber];//OR contact_id = '123'
+    Contacts *userobject = (Contacts *)[[UserManager sharedManager]getObject:@"Contacts" predicate:predicateString];
+    NSInteger count = 1;
+    if(!userobject){
+        NSEntityDescription* entityDesc=[NSEntityDescription entityForName:@"Contacts" inManagedObjectContext:appdelegate.managedObjectContext];
+        userobject = (Contacts *) [[NSManagedObject alloc]initWithEntity:entityDesc insertIntoManagedObjectContext:appdelegate.managedObjectContext];
+        count = 1 + [userobject.frequentCount integerValue];
+    }
+    
+    userobject.contact_id = @"123";
+    userobject.deviceToken = @"";
+    userobject.frequentCount = @(count);
+    userobject.isBuddy = @(YES);
+    userobject.name = name;
+    userobject.phoneNumber = mobileNumber;
+    
+    NSError* error;
+    [appdelegate.managedObjectContext save:&error];
+    if(error){
+        NSLog(@"Some thing is Wrong");
+    }else{
+        [self updateList];
+    }
+}
+
+-(void)updateList{
+    NSString *predicateString = [NSString stringWithFormat:@"isBuddy = '%@' ", @(YES)];
+    _contactsArray = (NSMutableArray*)[[UserManager sharedManager]getAllContacts:@"Contacts" predicate:predicateString isFrequent:NO];
+    
+    predicateString = [NSString stringWithFormat:@"isBuddy = '%@' ", @(NO)];
+    _frequentContactsArray = (NSMutableArray*)[[UserManager sharedManager]getAllContacts:@"Contacts" predicate:predicateString isFrequent:YES];
+    [self.settingsTableView reloadData];
 }
 @end
