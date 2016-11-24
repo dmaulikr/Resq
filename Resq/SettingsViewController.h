@@ -17,5 +17,6 @@
 @property (nonatomic, retain) UILabel *notificationTimeLabel;
 @property (strong, nonatomic) FIRDatabaseReference *ref;
 @property (nonatomic, retain) NSMutableArray* contactsArray;
+@property (nonatomic, retain) NSMutableArray* frequentContactsArray;
 
 @end
