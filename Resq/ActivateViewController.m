@@ -11,7 +11,6 @@
 
 @interface ActivateViewController ()
 
-@property (assign) BOOL isActivated;
 @end
 
 @implementation ActivateViewController
@@ -20,8 +19,7 @@
     [super viewDidLoad];
     self.title = @"Activate";
     [[_activate_btn layer]setCornerRadius:CGRectGetHeight(_activate_btn.frame)/2];
-    _isActivated = NO;
-    [self activateButtonAction:nil];
+    [self updateView];
 }
 
 -(void)menuAction:(id)sender{
@@ -54,21 +52,39 @@
 }
 
 - (IBAction)activateButtonAction:(id)sender {
-    if(_isActivated){
+    if(![[UserManager sharedManager]isActivated]){
         [[ResqLocationManager sharedManager]startUpdatingLocation];
         UIImage* bg_image = [self stretchableButtonImageWithColor:[UIColor greenColor] cornerRadius:CGRectGetHeight(_activate_btn.frame)/2];
         [_activate_btn setBackgroundImage:bg_image forState:UIControlStateNormal];
         self.activate_btn.titleLabel.lineBreakMode = NSLineBreakByWordWrapping;
         self.activate_btn.titleLabel.textAlignment = NSTextAlignmentCenter;
         [_activate_btn setTitle:@"Active\nPress to deactivate" forState:UIControlStateNormal];
-        _isActivated = NO;
-        
+        [[UserManager sharedManager]setIsActivated:YES];
+        [[UserManager sharedManager]setup];
     }else{
         [[ResqLocationManager sharedManager]stopUpdatingLocation];
         UIImage* bg_image = [self stretchableButtonImageWithColor:[UIColor grayColor] cornerRadius:CGRectGetHeight(_activate_btn.frame)/2];
         [_activate_btn setBackgroundImage:bg_image forState:UIControlStateNormal];
         [_activate_btn setTitle:@"Activate" forState:UIControlStateNormal];
-        _isActivated = YES;
+        [[UserManager sharedManager]setIsActivated:NO];
+        if([[UserManager sharedManager] alertTimer]){
+            [[[UserManager sharedManager] alertTimer] invalidate];
+        }
+    }
+//    [[UserManager sharedManager]setTimeRemaining:0];
+}
+
+-(void)updateView{
+    if([[UserManager sharedManager]isActivated]){
+        UIImage* bg_image = [self stretchableButtonImageWithColor:[UIColor greenColor] cornerRadius:CGRectGetHeight(_activate_btn.frame)/2];
+        [_activate_btn setBackgroundImage:bg_image forState:UIControlStateNormal];
+        self.activate_btn.titleLabel.lineBreakMode = NSLineBreakByWordWrapping;
+        self.activate_btn.titleLabel.textAlignment = NSTextAlignmentCenter;
+        [_activate_btn setTitle:@"Active\nPress to deactivate" forState:UIControlStateNormal];
+    }else{
+        UIImage* bg_image = [self stretchableButtonImageWithColor:[UIColor grayColor] cornerRadius:CGRectGetHeight(_activate_btn.frame)/2];
+        [_activate_btn setBackgroundImage:bg_image forState:UIControlStateNormal];
+        [_activate_btn setTitle:@"Activate" forState:UIControlStateNormal];
     }
 }
 @end

@@ -20,6 +20,47 @@ static UserManager *_sharedUserManagerInstance = nil;
     return _sharedUserManagerInstance;
 }
 
+-(void)setup{
+    //    [NSTimer scheduledTimerWithTimeInterval:1 repeats:YES block:^(NSTimer * _Nonnull timer) {
+    //        if(_isActivated){
+    //            int totalTime = [[NSUserDefaults standardUserDefaults]floatForKey:@"notificationTime"];
+    //
+    //            NSLog(@"Ahsan %d    -     %d",_timeRemaining ,totalTime);
+    //            if(_timeRemaining<=totalTime){
+    //                _timeRemaining++;
+    //            }else{
+    //                NSLog(@"Fire Alert");
+    //                _isActivated = NO;
+    //            }
+    //        }
+    //    }];
+    
+    if(_isActivated){
+        if(_alertTimer){
+            [_alertTimer invalidate];
+        }
+        _alertTimer = [NSTimer scheduledTimerWithTimeInterval:[[NSUserDefaults standardUserDefaults]floatForKey:@"notificationTime"] target:self selector:@selector(alertAction) userInfo:nil repeats:NO];
+    }
+}
+
+-(void)alertAction{
+    if(_isActivated){
+        NSLog(@"Fire Alert");
+
+        UILocalNotification* localNotification = [[UILocalNotification alloc] init];
+        localNotification.fireDate = [NSDate date];
+        localNotification.alertBody = @"Send SMS to all buddies!";
+        localNotification.timeZone = [NSTimeZone defaultTimeZone];
+        localNotification.applicationIconBadgeNumber = [[UIApplication sharedApplication] applicationIconBadgeNumber] + 1;
+        [[UIApplication sharedApplication] scheduleLocalNotification:localNotification];
+        
+        // Request to reload table view data
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"reloadData" object:self];
+        
+        _isActivated = NO;
+    }
+}
+
 - (NSArray *)allEntitiesWithName:(NSString *)name sortKey:(NSString *)sortKey {
     return [self allEntitiesWithName:name sortDescriptors:@[ [NSSortDescriptor sortDescriptorWithKey:sortKey ascending:YES] ]];
 }
