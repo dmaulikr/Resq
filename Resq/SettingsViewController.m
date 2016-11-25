@@ -160,7 +160,7 @@
             break;
         }case ResqSettingCellTypeNotificationTimeCell:{
             UISlider * slider = [cell viewWithTag:1];
-            slider.minimumValue = 30.0;
+            slider.minimumValue = 5.0;
             slider.maximumValue = 300.0;
             slider.continuous = YES;
             UILabel * notificationTime = [cell viewWithTag:2];
@@ -355,6 +355,8 @@
     [_notificationTimeLabel setText:timeString];
     [[NSUserDefaults standardUserDefaults]setFloat:value forKey:@"notificationTime"];
     [[NSUserDefaults standardUserDefaults]synchronize];
+    [[UserManager sharedManager]setup];
+
 }
 
 -(void)closeBySwitchAction:(id)sender {

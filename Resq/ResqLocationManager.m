@@ -124,8 +124,9 @@ static ResqLocationManager *_sharedLocationManagerInstance = nil;
 }
 
 - (void)locationManager:(CLLocationManager *) manager didUpdateHeading:(nonnull CLHeading *)newHeading{
-    //NSLog(@"Heading %f",newHeading);
+//    NSLog(@"Heading %f",newHeading);
     [[NSNotificationCenter defaultCenter] postNotificationName:didUpdateHeadingNotification object:newHeading];
+    [[UserManager sharedManager] setup];
     
 }
 
