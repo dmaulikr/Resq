@@ -12,6 +12,8 @@
 #import <AddressBookUI/AddressBookUI.h>
 #import <AddressBook/AddressBook.h>
 #import <ContactsUI/ContactsUI.h>
+#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 @interface SettingsViewController ()<ABPeoplePickerNavigationControllerDelegate,CNContactPickerDelegate>
 
@@ -225,6 +227,7 @@
     return 0.0;
 }
 
+
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     if(indexPath.section == ResqSettingCellTypeCloseByCell){
         BluetoothViewController * controller = [self.storyboard instantiateViewControllerWithIdentifier:@"BluetoothViewController"];
@@ -238,7 +241,7 @@
                 ABPeoplePickerNavigationController*  _addressBookController = [[ABPeoplePickerNavigationController alloc] init];
                 [[_addressBookController navigationBar] setBarStyle:UIBarStyleBlack];
                 
-//                _addressBookController.delegate =  self;
+                //                _addressBookController.delegate =  self;
                 [_addressBookController setPredicateForEnablingPerson:[NSPredicate predicateWithFormat:@"%K.@count > 0", ABPersonPhoneNumbersProperty]];
                 [_addressBookController setPeoplePickerDelegate:self];
                 [self presentViewController:_addressBookController animated:YES completion:nil];
@@ -356,7 +359,7 @@
     [[NSUserDefaults standardUserDefaults]setFloat:value forKey:@"notificationTime"];
     [[NSUserDefaults standardUserDefaults]synchronize];
     [[UserManager sharedManager]setup];
-
+    
 }
 
 -(void)closeBySwitchAction:(id)sender {
@@ -524,4 +527,5 @@
     _frequentContactsArray = (NSMutableArray*)[[UserManager sharedManager]getAllContacts:@"Contacts" predicate:predicateString isFrequent:YES];
     [self.settingsTableView reloadData];
 }
+
 @end

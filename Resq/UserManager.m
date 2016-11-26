@@ -45,18 +45,20 @@ static UserManager *_sharedUserManagerInstance = nil;
 
 -(void)alertAction{
     if(_isActivated){
-        NSLog(@"Fire Alert");
 
+        NSString *predicateString = [NSString stringWithFormat:@"isBuddy = '%@' ", @(YES)];
+        NSMutableArray* arr = (NSMutableArray*)[[UserManager sharedManager]getAllContacts:@"Contacts" predicate:predicateString isFrequent:NO];
+        for(Contacts * contact in arr){
+            [self sendMessage:contact.phoneNumber];
+        }
+        
         UILocalNotification* localNotification = [[UILocalNotification alloc] init];
         localNotification.fireDate = [NSDate date];
         localNotification.alertBody = @"Send SMS to all buddies!";
         localNotification.timeZone = [NSTimeZone defaultTimeZone];
         localNotification.applicationIconBadgeNumber = [[UIApplication sharedApplication] applicationIconBadgeNumber] + 1;
-        [[UIApplication sharedApplication] scheduleLocalNotification:localNotification];
-        
-        // Request to reload table view data
+        //[[UIApplication sharedApplication] scheduleLocalNotification:localNotification];
         [[NSNotificationCenter defaultCenter] postNotificationName:@"reloadData" object:self];
-        
         _isActivated = NO;
     }
 }
@@ -139,4 +141,61 @@ static UserManager *_sharedUserManagerInstance = nil;
     NSError *saveError = nil;
     [context save:&saveError];
 }
+
+- (NSString *)urlencode:(NSString*)string {
+    NSMutableString *output = [NSMutableString string];
+    const unsigned char *source = (const unsigned char *)[string UTF8String];
+    NSInteger sourceLen = strlen((const char *)source);
+    for (int i = 0; i < sourceLen; ++i) {
+        const unsigned char thisChar = source[i];
+        if (thisChar == ' '){
+            [output appendString:@"+"];
+        } else if (thisChar == '.' || thisChar == '-' || thisChar == '_' || thisChar == '~' ||
+                   (thisChar >= 'a' && thisChar <= 'z') ||
+                   (thisChar >= 'A' && thisChar <= 'Z') ||
+                   (thisChar >= '0' && thisChar <= '9')) {
+            [output appendFormat:@"%c", thisChar];
+        } else {
+            [output appendFormat:@"%%%02X", thisChar];
+        }
+    }
+    return output;
+}
+
+-(void)sendMessage:(NSString*)to{
+    NSString * from = @"+12137856052";
+    from = [self urlencode:from];
+    to = [self urlencode:to];
+    NSLog(@"%@   %@",to, from);
+    NSString* mapUrlPath = [NSString stringWithFormat:@"http://maps.google.com/maps?q=%f,%f&iwloc=A",[ResqLocationManager sharedManager].currentLocation.coordinate.latitude,[ResqLocationManager sharedManager].currentLocation.coordinate.longitude];
+    mapUrlPath = [self urlencode:mapUrlPath];
+    
+    NSString *post = [NSString stringWithFormat:@"To=%@&From=%@&Body=%@ needs your help at this location: %@",to,from,[[NSUserDefaults standardUserDefaults] valueForKey:@"name"],mapUrlPath];
+    
+    NSData *postData = [post dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES];
+    NSString *postLength = [NSString stringWithFormat:@"%ld",[postData length]];
+    NSString *urlString = [NSString stringWithFormat: @"https://api.twilio.com/2010-04-01/Accounts/AC069ca1df85386763f163a49d22948cdb/Messages.json"];
+    NSMutableURLRequest* request = [NSMutableURLRequest requestWithURL: [NSURL URLWithString: urlString]];
+    [request setHTTPMethod: @"POST"];
+    
+    [request setValue:postLength forHTTPHeaderField:@"Content-Length"];
+    [request setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
+    [request setHTTPBody:postData];
+    
+    [request setTimeoutInterval:100];
+    NSString *authStr = [NSString stringWithFormat:@"%@:%@", @"AC069ca1df85386763f163a49d22948cdb",@"4b61e09a05a8f7a0ae46378ceb51d2c3"];
+    NSData *authData = [authStr dataUsingEncoding:NSUTF8StringEncoding];
+    NSString *authValue = [NSString stringWithFormat:@"Basic %@", [authData base64EncodedStringWithOptions:0]];
+    [request setValue:authValue forHTTPHeaderField:@"Authorization"];
+    NSData *response;
+    NSError *WSerror;
+    NSHTTPURLResponse *WSresponse = nil;
+    NSString *responseString;
+    response = [NSURLConnection sendSynchronousRequest:request returningResponse:&WSresponse error:&WSerror];
+    responseString = [[NSString alloc] initWithData:response encoding:NSUTF8StringEncoding] ;
+    if(WSresponse.statusCode == 0){
+        NSLog(@"Response: %@",responseString);
+    }
+}
+
 @end
