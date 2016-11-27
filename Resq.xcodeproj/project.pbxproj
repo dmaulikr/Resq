@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0FF0D2B03AEAB4DF39EAFD22 /* libPods-ResqUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A956C45DB19A854711506DB2 /* libPods-ResqUITests.a */; };
 		6450958A084E006C72E2423A /* libPods-ResqTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 589765DA3E0CCEE90880D0B8 /* libPods-ResqTests.a */; };
+		783EFCB41DEB1F8D007817E6 /* UserProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 783EFCB31DEB1F8D007817E6 /* UserProfileViewController.m */; };
 		7853170B1DDA3F1E00FC379A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7853170A1DDA3F1E00FC379A /* main.m */; };
 		7853170E1DDA3F1E00FC379A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7853170D1DDA3F1E00FC379A /* AppDelegate.m */; };
 		785317141DDA3F1E00FC379A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 785317121DDA3F1E00FC379A /* Main.storyboard */; };
@@ -27,14 +28,17 @@
 		786EEE8C1DDCE34E00B6C40F /* CountryPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 786EEE8B1DDCE34E00B6C40F /* CountryPickerViewController.m */; };
 		786EEE8E1DDCE68000B6C40F /* country.json in Resources */ = {isa = PBXBuildFile; fileRef = 786EEE8D1DDCE68000B6C40F /* country.json */; };
 		7890D7B61DE3B05800C17E78 /* BluetoothViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7890D7B51DE3B05800C17E78 /* BluetoothViewController.m */; };
-		789E66971DE62BC100B907EC /* ContactsUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 789E66961DE62BC100B907EC /* ContactsUI.framework */; };
+		789DC67F1DEA3221007D3B0A /* CBCentralManager+Blocks.m in Sources */ = {isa = PBXBuildFile; fileRef = 789DC6721DEA3221007D3B0A /* CBCentralManager+Blocks.m */; };
+		789DC6801DEA3221007D3B0A /* CBCentralManager+Debug.m in Sources */ = {isa = PBXBuildFile; fileRef = 789DC6741DEA3221007D3B0A /* CBCentralManager+Debug.m */; };
+		789DC6811DEA3221007D3B0A /* CBCharacteristic+Debug.m in Sources */ = {isa = PBXBuildFile; fileRef = 789DC6761DEA3221007D3B0A /* CBCharacteristic+Debug.m */; };
+		789DC6821DEA3221007D3B0A /* CBPeripheral+Blocks.m in Sources */ = {isa = PBXBuildFile; fileRef = 789DC6781DEA3221007D3B0A /* CBPeripheral+Blocks.m */; };
+		789DC6831DEA3221007D3B0A /* CBPeripheral+Debug.m in Sources */ = {isa = PBXBuildFile; fileRef = 789DC67A1DEA3221007D3B0A /* CBPeripheral+Debug.m */; };
+		789DC6841DEA3221007D3B0A /* CBPeripheralManager+Blocks.m in Sources */ = {isa = PBXBuildFile; fileRef = 789DC67C1DEA3221007D3B0A /* CBPeripheralManager+Blocks.m */; };
+		789DC6851DEA3221007D3B0A /* CBPeripheralManager+Debug.m in Sources */ = {isa = PBXBuildFile; fileRef = 789DC67E1DEA3221007D3B0A /* CBPeripheralManager+Debug.m */; };
 		78A70D661DDBB6BD003BB2E1 /* ActivateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78A70D651DDBB6BD003BB2E1 /* ActivateViewController.m */; };
 		78A70D691DDBB843003BB2E1 /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78A70D681DDBB843003BB2E1 /* MenuViewController.m */; };
 		78A70D6C1DDBB9E5003BB2E1 /* ResqViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78A70D6B1DDBB9E5003BB2E1 /* ResqViewController.m */; };
 		78A70D6F1DDBBBFC003BB2E1 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78A70D6E1DDBBBFC003BB2E1 /* SettingsViewController.m */; };
-		78AC28A21DDC8E5400F1AB09 /* GoogleService-Info-1.plist in Resources */ = {isa = PBXBuildFile; fileRef = 78AC28A11DDC8E5400F1AB09 /* GoogleService-Info-1.plist */; };
-		78C522C11DE0EC6200A9A46D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 78C522C01DE0EC6200A9A46D /* GoogleService-Info.plist */; };
-		78C522C51DE1167400A9A46D /* FirebaseManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 78C522C41DE1167400A9A46D /* FirebaseManager.m */; };
 		78D68ACD1DDE3668000801FF /* SearchResultsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78D68ACC1DDE3668000801FF /* SearchResultsViewController.m */; };
 		D9E5A3694AB56C09A0B89B09 /* libPods-Resq.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EFA3F4DFF8A6BAD496DD5B4 /* libPods-Resq.a */; };
 /* End PBXBuildFile section */
@@ -61,6 +65,8 @@
 		589765DA3E0CCEE90880D0B8 /* libPods-ResqTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ResqTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5FDCD9FA6118E84325556155 /* Pods-Resq.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Resq.release.xcconfig"; path = "Pods/Target Support Files/Pods-Resq/Pods-Resq.release.xcconfig"; sourceTree = "<group>"; };
 		6EFA3F4DFF8A6BAD496DD5B4 /* libPods-Resq.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Resq.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		783EFCB21DEB1F8D007817E6 /* UserProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserProfileViewController.h; sourceTree = "<group>"; };
+		783EFCB31DEB1F8D007817E6 /* UserProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserProfileViewController.m; sourceTree = "<group>"; };
 		785317061DDA3F1E00FC379A /* RESQ.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RESQ.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7853170A1DDA3F1E00FC379A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		7853170C1DDA3F1E00FC379A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -95,6 +101,21 @@
 		786EEE8D1DDCE68000B6C40F /* country.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = country.json; sourceTree = "<group>"; };
 		7890D7B41DE3B05800C17E78 /* BluetoothViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BluetoothViewController.h; sourceTree = "<group>"; };
 		7890D7B51DE3B05800C17E78 /* BluetoothViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BluetoothViewController.m; sourceTree = "<group>"; };
+		789DC6701DEA3221007D3B0A /* BlocksBluetoothDefinitions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlocksBluetoothDefinitions.h; sourceTree = "<group>"; };
+		789DC6711DEA3221007D3B0A /* CBCentralManager+Blocks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CBCentralManager+Blocks.h"; sourceTree = "<group>"; };
+		789DC6721DEA3221007D3B0A /* CBCentralManager+Blocks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CBCentralManager+Blocks.m"; sourceTree = "<group>"; };
+		789DC6731DEA3221007D3B0A /* CBCentralManager+Debug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CBCentralManager+Debug.h"; sourceTree = "<group>"; };
+		789DC6741DEA3221007D3B0A /* CBCentralManager+Debug.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CBCentralManager+Debug.m"; sourceTree = "<group>"; };
+		789DC6751DEA3221007D3B0A /* CBCharacteristic+Debug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CBCharacteristic+Debug.h"; sourceTree = "<group>"; };
+		789DC6761DEA3221007D3B0A /* CBCharacteristic+Debug.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CBCharacteristic+Debug.m"; sourceTree = "<group>"; };
+		789DC6771DEA3221007D3B0A /* CBPeripheral+Blocks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CBPeripheral+Blocks.h"; sourceTree = "<group>"; };
+		789DC6781DEA3221007D3B0A /* CBPeripheral+Blocks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CBPeripheral+Blocks.m"; sourceTree = "<group>"; };
+		789DC6791DEA3221007D3B0A /* CBPeripheral+Debug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CBPeripheral+Debug.h"; sourceTree = "<group>"; };
+		789DC67A1DEA3221007D3B0A /* CBPeripheral+Debug.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CBPeripheral+Debug.m"; sourceTree = "<group>"; };
+		789DC67B1DEA3221007D3B0A /* CBPeripheralManager+Blocks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CBPeripheralManager+Blocks.h"; sourceTree = "<group>"; };
+		789DC67C1DEA3221007D3B0A /* CBPeripheralManager+Blocks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CBPeripheralManager+Blocks.m"; sourceTree = "<group>"; };
+		789DC67D1DEA3221007D3B0A /* CBPeripheralManager+Debug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CBPeripheralManager+Debug.h"; sourceTree = "<group>"; };
+		789DC67E1DEA3221007D3B0A /* CBPeripheralManager+Debug.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CBPeripheralManager+Debug.m"; sourceTree = "<group>"; };
 		789E66961DE62BC100B907EC /* ContactsUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ContactsUI.framework; path = System/Library/Frameworks/ContactsUI.framework; sourceTree = SDKROOT; };
 		78A70D641DDBB6BD003BB2E1 /* ActivateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivateViewController.h; sourceTree = "<group>"; };
 		78A70D651DDBB6BD003BB2E1 /* ActivateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivateViewController.m; sourceTree = "<group>"; };
@@ -104,11 +125,7 @@
 		78A70D6B1DDBB9E5003BB2E1 /* ResqViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResqViewController.m; sourceTree = "<group>"; };
 		78A70D6D1DDBBBFC003BB2E1 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
 		78A70D6E1DDBBBFC003BB2E1 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
-		78AC28A11DDC8E5400F1AB09 /* GoogleService-Info-1.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info-1.plist"; sourceTree = "<group>"; };
-		78C522C01DE0EC6200A9A46D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		78C522C21DE106B000A9A46D /* RESQ.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = RESQ.entitlements; sourceTree = "<group>"; };
-		78C522C31DE1167400A9A46D /* FirebaseManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FirebaseManager.h; sourceTree = "<group>"; };
-		78C522C41DE1167400A9A46D /* FirebaseManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FirebaseManager.m; sourceTree = "<group>"; };
 		78D68ACB1DDE3668000801FF /* SearchResultsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchResultsViewController.h; sourceTree = "<group>"; };
 		78D68ACC1DDE3668000801FF /* SearchResultsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchResultsViewController.m; sourceTree = "<group>"; };
 		7A00E41842F35AE579CDB56F /* Pods-Resq.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Resq.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Resq/Pods-Resq.debug.xcconfig"; sourceTree = "<group>"; };
@@ -123,7 +140,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				789E66971DE62BC100B907EC /* ContactsUI.framework in Frameworks */,
 				D9E5A3694AB56C09A0B89B09 /* libPods-Resq.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -191,9 +207,7 @@
 		785317091DDA3F1E00FC379A /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				78C522C01DE0EC6200A9A46D /* GoogleService-Info.plist */,
 				7853171D1DDA3F1E00FC379A /* Info.plist */,
-				78AC28A11DDC8E5400F1AB09 /* GoogleService-Info-1.plist */,
 				786EEE831DDCD37E00B6C40F /* PrefixHeader.pch */,
 				7853170A1DDA3F1E00FC379A /* main.m */,
 			);
@@ -230,9 +244,32 @@
 			name = Model;
 			sourceTree = "<group>";
 		};
+		789DC66F1DEA3221007D3B0A /* BlocksBluetooth */ = {
+			isa = PBXGroup;
+			children = (
+				789DC6701DEA3221007D3B0A /* BlocksBluetoothDefinitions.h */,
+				789DC6711DEA3221007D3B0A /* CBCentralManager+Blocks.h */,
+				789DC6721DEA3221007D3B0A /* CBCentralManager+Blocks.m */,
+				789DC6731DEA3221007D3B0A /* CBCentralManager+Debug.h */,
+				789DC6741DEA3221007D3B0A /* CBCentralManager+Debug.m */,
+				789DC6751DEA3221007D3B0A /* CBCharacteristic+Debug.h */,
+				789DC6761DEA3221007D3B0A /* CBCharacteristic+Debug.m */,
+				789DC6771DEA3221007D3B0A /* CBPeripheral+Blocks.h */,
+				789DC6781DEA3221007D3B0A /* CBPeripheral+Blocks.m */,
+				789DC6791DEA3221007D3B0A /* CBPeripheral+Debug.h */,
+				789DC67A1DEA3221007D3B0A /* CBPeripheral+Debug.m */,
+				789DC67B1DEA3221007D3B0A /* CBPeripheralManager+Blocks.h */,
+				789DC67C1DEA3221007D3B0A /* CBPeripheralManager+Blocks.m */,
+				789DC67D1DEA3221007D3B0A /* CBPeripheralManager+Debug.h */,
+				789DC67E1DEA3221007D3B0A /* CBPeripheralManager+Debug.m */,
+			);
+			path = BlocksBluetooth;
+			sourceTree = "<group>";
+		};
 		78D68ACE1DDE446A000801FF /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				789DC66F1DEA3221007D3B0A /* BlocksBluetooth */,
 				786EEE8D1DDCE68000B6C40F /* country.json */,
 				786EEE7E1DDCD26500B6C40F /* Hero.aiff */,
 			);
@@ -282,6 +319,8 @@
 				78D68ACC1DDE3668000801FF /* SearchResultsViewController.m */,
 				7890D7B41DE3B05800C17E78 /* BluetoothViewController.h */,
 				7890D7B51DE3B05800C17E78 /* BluetoothViewController.m */,
+				783EFCB21DEB1F8D007817E6 /* UserProfileViewController.h */,
+				783EFCB31DEB1F8D007817E6 /* UserProfileViewController.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -300,8 +339,6 @@
 			children = (
 				786EEE801DDCD2AD00B6C40F /* ResqLocationManager.h */,
 				786EEE811DDCD2AD00B6C40F /* ResqLocationManager.m */,
-				78C522C31DE1167400A9A46D /* FirebaseManager.h */,
-				78C522C41DE1167400A9A46D /* FirebaseManager.m */,
 				785AAB041DE6205E0089C84D /* UserManager.h */,
 				785AAB051DE6205E0089C84D /* UserManager.m */,
 			);
@@ -390,7 +427,7 @@
 								enabled = 1;
 							};
 							com.apple.Push = {
-								enabled = 1;
+								enabled = 0;
 							};
 						};
 					};
@@ -430,12 +467,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				7853171C1DDA3F1E00FC379A /* LaunchScreen.storyboard in Resources */,
-				78AC28A21DDC8E5400F1AB09 /* GoogleService-Info-1.plist in Resources */,
 				786EEE8E1DDCE68000B6C40F /* country.json in Resources */,
 				785317191DDA3F1E00FC379A /* Assets.xcassets in Resources */,
 				785317141DDA3F1E00FC379A /* Main.storyboard in Resources */,
 				786EEE7F1DDCD26500B6C40F /* Hero.aiff in Resources */,
-				78C522C11DE0EC6200A9A46D /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -583,22 +618,29 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				789DC6801DEA3221007D3B0A /* CBCentralManager+Debug.m in Sources */,
 				785AAB061DE6205E0089C84D /* UserManager.m in Sources */,
+				789DC6821DEA3221007D3B0A /* CBPeripheral+Blocks.m in Sources */,
 				785317171DDA3F1E00FC379A /* Resq.xcdatamodeld in Sources */,
 				78A70D6C1DDBB9E5003BB2E1 /* ResqViewController.m in Sources */,
 				78A70D691DDBB843003BB2E1 /* MenuViewController.m in Sources */,
-				78C522C51DE1167400A9A46D /* FirebaseManager.m in Sources */,
 				78D68ACD1DDE3668000801FF /* SearchResultsViewController.m in Sources */,
 				78A70D6F1DDBBBFC003BB2E1 /* SettingsViewController.m in Sources */,
 				786EEE891DDCE05400B6C40F /* CountryTableViewCell.m in Sources */,
 				78A70D661DDBB6BD003BB2E1 /* ActivateViewController.m in Sources */,
 				7853170E1DDA3F1E00FC379A /* AppDelegate.m in Sources */,
+				789DC6851DEA3221007D3B0A /* CBPeripheralManager+Debug.m in Sources */,
 				785AAB021DE61F3C0089C84D /* Contacts+CoreDataProperties.m in Sources */,
 				7890D7B61DE3B05800C17E78 /* BluetoothViewController.m in Sources */,
 				786EEE861DDCDD0400B6C40F /* PhoneNumberViewController.m in Sources */,
 				785AAB031DE61F3C0089C84D /* Contacts.m in Sources */,
+				789DC6831DEA3221007D3B0A /* CBPeripheral+Debug.m in Sources */,
+				789DC6811DEA3221007D3B0A /* CBCharacteristic+Debug.m in Sources */,
+				789DC67F1DEA3221007D3B0A /* CBCentralManager+Blocks.m in Sources */,
 				786EEE8C1DDCE34E00B6C40F /* CountryPickerViewController.m in Sources */,
 				7853170B1DDA3F1E00FC379A /* main.m in Sources */,
+				783EFCB41DEB1F8D007817E6 /* UserProfileViewController.m in Sources */,
+				789DC6841DEA3221007D3B0A /* CBPeripheralManager+Blocks.m in Sources */,
 				786EEE821DDCD2AD00B6C40F /* ResqLocationManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

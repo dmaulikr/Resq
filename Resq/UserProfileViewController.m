@@ -1,15 +1,15 @@
 //
-//  PhoneNumberViewController.m
+//  UserProfileViewController.m
 //  Resq
 //
-//  Created by Muhammad Ahsan on 11/16/16.
+//  Created by Muhammad Ahsan on 11/27/16.
 //  Copyright © 2016 Eden. All rights reserved.
 //
 
-#import "PhoneNumberViewController.h"
+#import "UserProfileViewController.h"
 #import "CountryPickerViewController.h"
 
-@interface PhoneNumberViewController ()<UITextFieldDelegate>
+@interface UserProfileViewController ()<UITextFieldDelegate>
 
 @property (nonatomic, retain) NSDictionary *selectedCountry;
 @property (weak, nonatomic) IBOutlet UITextField *nameField;
@@ -18,14 +18,13 @@
 
 @end
 
-@implementation PhoneNumberViewController
+@implementation UserProfileViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     _nameField.delegate = self;
-    self.title = @"Enter Details";
+    self.title = @"Update Details";
     [self.rightItem setTitle:@"Save"];
-    [self.navigationItem setLeftBarButtonItem:nil animated:YES];
     
     // Do any additional setup after loading the view.
     NSLocale *currentLocale = [NSLocale currentLocale];  // get the current locale.
@@ -40,6 +39,10 @@
             }
         }
     }
+    [_nameField setText:[[NSUserDefaults standardUserDefaults] valueForKey:@"name"]];
+    [_phoneField setText:[[[NSUserDefaults standardUserDefaults] valueForKey:@"phoneNumber"] stringByReplacingOccurrencesOfString:[[NSUserDefaults standardUserDefaults] valueForKey:@"dial_code"] withString:@""]];
+    [_countryCodeField setText:[[NSUserDefaults standardUserDefaults] valueForKey:@"dial_code"]];
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -70,13 +73,13 @@
         return;
     }
     
-    
     NSString *phoneNumber = [NSString stringWithFormat:@"%@%@",[_selectedCountry valueForKey:@"dial_code"],_phoneField.text];
     NSLog(@"phone number: %@",phoneNumber);
     [[NSUserDefaults standardUserDefaults]setValue:phoneNumber forKey:@"phoneNumber"];
     [[NSUserDefaults standardUserDefaults]setValue:_nameField.text forKey:@"name"];
     [[NSUserDefaults standardUserDefaults]setValue:[_selectedCountry valueForKey:@"dial_code"] forKey:@"dial_code"];
-    [self dismissViewControllerAnimated:YES completion:nil];
+    
+    ALERT_VIEW(@"RESQ", @"User profile update!")
 }
 
 -(NSArray*)loadJsonDataWithFileName:(NSString *)filename{
@@ -110,6 +113,10 @@
         return TRUE;
     else
         return FALSE;
+}
+
+-(void)menuAction:(id)sender{
+    [appdelegate.viewDeckController openLeftViewAnimated:YES];
 }
 
 - (BOOL)textField:(UITextField *) textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {

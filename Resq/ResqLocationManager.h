@@ -7,11 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <CoreMotion/CoreMotion.h>
 
 extern NSString * const didUpdateLocationNotification;
 extern NSString * const locationMangerLocationServicesStatusChangeNotification;
 
-@interface ResqLocationManager : NSObject
+@interface ResqLocationManager : NSObject<UIAccelerometerDelegate>
 
 @property (nonatomic, strong, readonly) CLLocation *currentLocation;
 
@@ -24,7 +25,9 @@ extern NSString * const locationMangerLocationServicesStatusChangeNotification;
 + (BOOL)didPhoneAllowedUseLocationServices;
 
 //
+@property (strong, nonatomic) CMMotionManager *motionManager;
 @property (nonatomic, strong) CLLocationManager *locationManager;
+@property (nonatomic,strong) CMMotionActivityManager *motionActivityManager;
 
 
 @end

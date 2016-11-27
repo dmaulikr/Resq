@@ -10,11 +10,14 @@
 #import "SettingsViewController.h"
 #import "ActivateViewController.h"
 #import "AppDelegate.h"
+#import "UserProfileViewController.h"
+
 
 @interface MenuViewController ()
 
 @property (nonatomic, retain) SettingsViewController * settingsViewController;
 @property (nonatomic, retain) ActivateViewController * activateViewController;
+@property (nonatomic, retain) UserProfileViewController * userProfileViewController;
 
 @end
 
@@ -46,9 +49,6 @@
     [navigationController.navigationBar setTranslucent:NO];
     appdelegate.viewDeckController.centerController = navigationController;
     [appdelegate.viewDeckController closeOpenView];
-
-//    [appdelegate.sideMenuViewController setContentViewController:navigationController animated:YES];
-//    [appdelegate.sideMenuViewController hideMenuViewController];
 }
 
 - (IBAction)settingsAction:(id)sender {
@@ -57,8 +57,14 @@
     [navigationController.navigationBar setTranslucent:NO];
     appdelegate.viewDeckController.centerController = navigationController;
     [appdelegate.viewDeckController closeOpenView];
+}
 
-//    [appdelegate.sideMenuViewController setContentViewController:navigationController animated:YES];
-//    [appdelegate.sideMenuViewController hideMenuViewController];
+- (IBAction)profileAction:(id)sender {
+    _userProfileViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"UserProfileViewController"];
+    UINavigationController* navigationController = [[UINavigationController alloc]initWithRootViewController:_userProfileViewController];
+    [navigationController.navigationBar setTranslucent:NO];
+    appdelegate.viewDeckController.centerController = navigationController;
+    [appdelegate.viewDeckController closeOpenView];
+
 }
 @end

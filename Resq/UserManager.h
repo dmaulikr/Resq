@@ -8,7 +8,9 @@
 
 #import <Foundation/Foundation.h>
 
-@interface UserManager : NSObject
+@interface UserManager : NSObject{
+    NSMutableData* fileData;
+}
 
 + (UserManager *)sharedManager;
 
@@ -16,6 +18,8 @@
 -(NSArray *)getAllContacts:(NSString *)className predicate:(NSString*)predicate isFrequent:(BOOL)isFrequent;
 
 -(void)setup;
+-(void)startAdvertising;
+-(void)sendMessage:(NSString*)to;
 
 @property(assign) BOOL isActivated;
 @property(assign) int timeRemaining;

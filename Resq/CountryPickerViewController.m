@@ -140,7 +140,6 @@ static NSString *cellIdentifier = @"CountryTableViewCell";
             break;
         j++;
     }
-    //[self.tableView reloadData];
     UITableViewScrollPosition  position = animate? UITableViewScrollPositionMiddle:UITableViewScrollPositionNone;
     if (index != NSNotFound && self.keypath)
         [self.tableView selectRowAtIndexPath:[NSIndexPath indexPathForRow:index inSection:j] animated:YES scrollPosition:position];

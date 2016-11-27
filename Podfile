@@ -7,11 +7,11 @@ target 'Resq' do
     
     pod 'RESideMenu'
     pod 'SVProgressHUD'
-    pod 'Firebase/Core'
-    pod 'Firebase/Messaging'
-    pod 'Firebase/Database'
+    #    pod 'Firebase/Core'
+    #    pod 'Firebase/Messaging'
+    #    pod 'Firebase/Database'
     pod 'ViewDeck'
-
+    
     target 'ResqTests' do
         inherit! :search_paths
         # Pods for testing
