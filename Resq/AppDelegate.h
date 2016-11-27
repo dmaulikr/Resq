@@ -13,8 +13,6 @@
 #define DEVICE_OFFSET (CGRectGetWidth([UIScreen mainScreen].bounds)/320)
 #define appdelegate ((AppDelegate*)[UIApplication sharedApplication].delegate)
 
-@import Firebase;
-
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;

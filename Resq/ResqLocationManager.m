@@ -39,20 +39,48 @@ static ResqLocationManager *_sharedLocationManagerInstance = nil;
         self.locationManager = [[CLLocationManager alloc] init];
         self.locationManager.delegate = self;
         [self initilizeAudioPlayer];
+        
+        self.motionManager = [[CMMotionManager alloc] init];
+        self.motionManager.deviceMotionUpdateInterval = 1.0 / 50.0;
     }
     return self;
+}
+
+-(void)outputAccelertionData:(CMAcceleration)acceleration
+{
+    NSLog(@"Ahsan");
+    
+}
+-(void)outputRotationData:(CMRotationRate)rotation
+{
+    NSLog(@"Hananta");
+    
 }
 
 - (void)startUpdatingLocation {
     [self.locationManager startUpdatingLocation];
     [self.locationManager requestAlwaysAuthorization];
     [self.locationManager startUpdatingHeading];
-    self.locationManager.allowsBackgroundLocationUpdates = YES;
+    if([self respondsToSelector:@selector(allowsBackgroundLocationUpdates)])
+        self.locationManager.allowsBackgroundLocationUpdates = YES;
+    [self.motionManager startDeviceMotionUpdatesToQueue:[NSOperationQueue mainQueue]
+                                            withHandler:^(CMDeviceMotion *deviceMotion, NSError *error) {
+                                                CMAcceleration userAcceleration = deviceMotion.userAcceleration;
+                                                double totalAcceleration = sqrt(userAcceleration.x * userAcceleration.x +
+                                                                                userAcceleration.y * userAcceleration.y + userAcceleration.z * userAcceleration.z);
+                                                // UPDATE: print debug information
+                                                float staticThreshold = 0.020;
+                                                if(totalAcceleration> staticThreshold){
+                                                    NSLog (@"total=%f", totalAcceleration);
+                                                    [[UserManager sharedManager] setup];
+                                                }
+                                            }];
 }
 
 - (void)stopUpdatingLocation {
     [self.locationManager stopUpdatingLocation];
     [self.locationManager stopUpdatingHeading];
+    [self.motionManager stopDeviceMotionUpdates];
     
 }
 
@@ -124,7 +152,7 @@ static ResqLocationManager *_sharedLocationManagerInstance = nil;
 }
 
 - (void)locationManager:(CLLocationManager *) manager didUpdateHeading:(nonnull CLHeading *)newHeading{
-//    NSLog(@"Heading %f",newHeading);
+    //    NSLog(@"Heading");
     [[NSNotificationCenter defaultCenter] postNotificationName:didUpdateHeadingNotification object:newHeading];
     [[UserManager sharedManager] setup];
     
@@ -133,10 +161,9 @@ static ResqLocationManager *_sharedLocationManagerInstance = nil;
 #pragma mark - CLLocationManagerDelegate
 
 - (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations {
-    
     if (locations != nil && locations.count > 0){
         [self setSessionActiveWithMixing:YES]; // YES == duck if other audio is playing
-        [self playSound];
+        //[self playSound];
         CLLocation *location = [locations lastObject];
         if (location)
             self.currentLocation = location;

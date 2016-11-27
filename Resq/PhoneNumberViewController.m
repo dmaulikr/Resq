@@ -75,6 +75,7 @@
     NSLog(@"phone number: %@",phoneNumber);
     [[NSUserDefaults standardUserDefaults]setValue:phoneNumber forKey:@"phoneNumber"];
     [[NSUserDefaults standardUserDefaults]setValue:_nameField.text forKey:@"name"];
+    [[NSUserDefaults standardUserDefaults]setValue:[_selectedCountry valueForKey:@"dial_code"] forKey:@"dial_code"];
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 

@@ -60,12 +60,7 @@
     
     [[CBCentralManager defaultManager] scanForPeripheralsWithServices:@[demoServiceUUID] options:nil didDiscover:^(CBPeripheral *peripheral, NSDictionary *advertisementData, NSNumber *RSSI) {
         NSLog(@"advertisementData  %@",advertisementData);
-        NSLog(@"peripheral  %@",peripheral.name);
-        NSLog(@"peripheral.name  %@",peripheral.name);
-        NSLog(@"services  %@",peripheral.services);
-        
         if([advertisementData isKindOfClass:[NSDictionary class]] && [advertisementData valueForKey:@"kCBAdvDataLocalName"]){
-            //[[[UIAlertView alloc] initWithTitle:[advertisementData valueForKey:@"CBAdvertisementDataManufacturerDataKey"] message:[advertisementData valueForKey:@"kCBAdvDataLocalName"] delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil] show];
             NSArray * arr = [[advertisementData valueForKey:@"kCBAdvDataLocalName"]componentsSeparatedByString:@"√+"];
             NSLog(@"%@",arr);
             if(arr && [arr isKindOfClass:[NSArray class]] && arr.count == 2){
@@ -74,6 +69,7 @@
                 Contacts *userobject = (Contacts *)[[UserManager sharedManager]getObject:@"Contacts" predicate:predicateString];
                 if(userobject){
                     isAlreadybuddy = YES;
+                    NSLog(@"%@",[weakSelf.peripherals valueForKey:@"phoneNum"]);
                 }
                 [weakSelf.peripherals addObject:@{@"name":arr[0],@"phoneNum":[NSString stringWithFormat:@"+%@",arr[1]],@"isBuddy":@(isAlreadybuddy)}];
             }
@@ -107,15 +103,10 @@
     UIButton * addBuddy = [cell viewWithTag:3];
     [addBuddy addTarget:self action:@selector(addBuddyAction:) forControlEvents:UIControlEventTouchUpInside];
     
-    UIButton * removeBuddy = [cell viewWithTag:4];
-    [removeBuddy addTarget:self action:@selector(removeBuddyAction:) forControlEvents:UIControlEventTouchUpInside];
-    
     if([[buddy valueForKey:@"isBuddy"] boolValue]){
         addBuddy.hidden = YES;
-        removeBuddy.hidden = YES;
     }else{
         addBuddy.hidden = NO;
-        removeBuddy.hidden = YES;
     }
     return cell;
 }
@@ -129,45 +120,6 @@
         [self.bluetoothTableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationTop];
         [self.bluetoothTableView endUpdates];
     }
-}
-
-
--(void)removeBuddyAction:(id)sender{
-    NSLog(@"Remove Buddy Action");
-    //    CGPoint buttonPosition = [sender convertPoint:CGPointZero toView:self.bluetoothTableView];
-    //    NSIndexPath *indexPath = [self.bluetoothTableView indexPathForRowAtPoint:buttonPosition];
-    //        NSDictionary * contact = [_contactsArray objectAtIndex:indexPath.row];
-    //
-    //
-    //
-    //        UIAlertController * alert = [UIAlertController
-    //                                     alertControllerWithTitle:@"RESQ"
-    //                                     message:[NSString stringWithFormat:@"Are You Sure you want to remove %@ from your buddy List?",[contact valueForKey:@"name"]]
-    //                                     preferredStyle:UIAlertControllerStyleAlert];
-    //
-    //        //Add Buttons
-    //        UIAlertAction* yesButton = [UIAlertAction
-    //                                    actionWithTitle:@"Yes"
-    //                                    style:UIAlertActionStyleDefault
-    //                                    handler:^(UIAlertAction * action) {
-    //                                        NSManagedObjectContext *context = appdelegate.managedObjectContext;
-    //                                        contact.isBuddy = @(NO);
-    //                                        NSError *saveError = nil;
-    //                                        [context save:&saveError];
-    //                                        [self updateList];
-    //                                    }];
-    //
-    //        UIAlertAction* noButton = [UIAlertAction
-    //                                   actionWithTitle:@"NO"
-    //                                   style:UIAlertActionStyleDefault
-    //                                   handler:^(UIAlertAction * action) {
-    //                                       //Handle no, thanks button
-    //                                   }];
-    //
-    //        //Add your buttons to alert controller
-    //        [alert addAction:yesButton];
-    //        [alert addAction:noButton];
-    //        [self presentViewController:alert animated:YES completion:nil];
 }
 
 -(void)addBuddyAction:(id)sender{
@@ -201,7 +153,7 @@
         userobject.name = [contact valueForKey:@"name"];
         userobject.phoneNumber = [contact valueForKey:@"phoneNum"];
         userobject.frequentCount = @([userobject.frequentCount intValue] + 1);
-
+        
         NSError* error;
         [appdelegate.managedObjectContext save:&error];
         if(error){

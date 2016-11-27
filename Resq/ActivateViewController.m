@@ -73,7 +73,6 @@
             [[[UserManager sharedManager] alertTimer] invalidate];
         }
     }
-    //    [[UserManager sharedManager]setTimeRemaining:0];
 }
 
 -(void)updateView{

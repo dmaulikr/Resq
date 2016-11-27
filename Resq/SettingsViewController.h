@@ -8,14 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import "ResqViewController.h"
-@import Firebase;
 
 @interface SettingsViewController : ResqViewController<UITableViewDelegate,UITableViewDataSource>
 
 @property (weak, nonatomic) IBOutlet UITableView *settingsTableView;
 @property (nonatomic, retain) UISlider *notificationTimeSlider;
 @property (nonatomic, retain) UILabel *notificationTimeLabel;
-@property (strong, nonatomic) FIRDatabaseReference *ref;
 @property (nonatomic, retain) NSMutableArray* contactsArray;
 @property (nonatomic, retain) NSMutableArray* frequentContactsArray;
 

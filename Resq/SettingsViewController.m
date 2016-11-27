@@ -14,6 +14,7 @@
 #import <ContactsUI/ContactsUI.h>
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
+#import "CBCentralManager+Blocks.h"
 
 @interface SettingsViewController ()<ABPeoplePickerNavigationControllerDelegate,CNContactPickerDelegate>
 
@@ -24,16 +25,21 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"Settings";
-    [[UserManager sharedManager]startAdvertising];
     [self.settingsTableView setTableFooterView:[[UIView alloc]init]];
-    // Do any additional setup after loading the view.
     _contactsArray = [[NSMutableArray alloc] init];
     _frequentContactsArray = [[NSMutableArray alloc] init];
-    [self updateList];
 }
 
 -(void)viewDidAppear:(BOOL)animated{
+    
     if([[NSUserDefaults standardUserDefaults]valueForKey:@"phoneNumber"] && [[[NSUserDefaults standardUserDefaults]valueForKey:@"phoneNumber"] length]){
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [[UserManager sharedManager]startAdvertising];
+            CBUUID *demoServiceUUID = [CBUUID UUIDWithString:@"7846ED88-7CD9-495F-AC2A-D34D245C9FB6"];
+            [[CBCentralManager defaultManager] scanForPeripheralsWithServices:@[demoServiceUUID] options:nil didDiscover:^(CBPeripheral *peripheral, NSDictionary *advertisementData, NSNumber *RSSI) {
+            }];
+            
+        });
         [self updateList];
     }else{
         PhoneNumberViewController * controller = [self.storyboard instantiateViewControllerWithIdentifier:@"PhoneNumberViewController"];
@@ -213,30 +219,33 @@
 
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    if(indexPath.section == ResqSettingCellTypeCloseByCell){
-        BluetoothViewController * controller = [self.storyboard instantiateViewControllerWithIdentifier:@"BluetoothViewController"];
-        UINavigationController * navController = [[UINavigationController alloc]initWithRootViewController:controller];
-        navController.navigationBar.translucent = NO;
-        [self.navigationController presentViewController:navController animated:YES completion:nil];
-    }if(indexPath.section == ResqSettingCellTypeContactsSettingCell){
-        ABAddressBookRef addressBook =  ABAddressBookCreateWithOptions(NULL, NULL);
-        ABAddressBookRequestAccessWithCompletion(addressBook, ^(bool granted, CFErrorRef error) {
-            if (granted) {
-                ABPeoplePickerNavigationController*  _addressBookController = [[ABPeoplePickerNavigationController alloc] init];
-                [[_addressBookController navigationBar] setBarStyle:UIBarStyleBlack];
-                
-                //                _addressBookController.delegate =  self;
-                [_addressBookController setPredicateForEnablingPerson:[NSPredicate predicateWithFormat:@"%K.@count > 0", ABPersonPhoneNumbersProperty]];
-                [_addressBookController setPeoplePickerDelegate:self];
-                [self presentViewController:_addressBookController animated:YES completion:nil];
-            }
-            else {
-                dispatch_async(dispatch_get_main_queue(), ^{
-                    ALERT_VIEW(@"RESQ", @"PLEASE_GRANT_CONTACTS")
-                });
-            }
-        });
-    }
+    dispatch_async(dispatch_get_main_queue(), ^{
+        
+        if(indexPath.section == ResqSettingCellTypeCloseByCell){
+            BluetoothViewController * controller = [self.storyboard instantiateViewControllerWithIdentifier:@"BluetoothViewController"];
+            UINavigationController * navController = [[UINavigationController alloc]initWithRootViewController:controller];
+            navController.navigationBar.translucent = NO;
+            [self presentViewController:navController animated:YES completion:nil];
+        }if(indexPath.section == ResqSettingCellTypeContactsSettingCell){
+            ABAddressBookRef addressBook =  ABAddressBookCreateWithOptions(NULL, NULL);
+            ABAddressBookRequestAccessWithCompletion(addressBook, ^(bool granted, CFErrorRef error) {
+                if (granted) {
+                    ABPeoplePickerNavigationController*  _addressBookController = [[ABPeoplePickerNavigationController alloc] init];
+                    [[_addressBookController navigationBar] setBarStyle:UIBarStyleBlack];
+                    
+                    //                _addressBookController.delegate =  self;
+                    [_addressBookController setPredicateForEnablingPerson:[NSPredicate predicateWithFormat:@"%K.@count > 0", ABPersonPhoneNumbersProperty]];
+                    [_addressBookController setPeoplePickerDelegate:self];
+                    [self presentViewController:_addressBookController animated:YES completion:nil];
+                }
+                else {
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        ALERT_VIEW(@"RESQ", @"PLEASE_GRANT_CONTACTS")
+                    });
+                }
+            });
+        }
+    });
 }
 
 -(void)clearbuddyAction:(id)sender{
@@ -371,67 +380,6 @@
     }
     return nil;
 }
-
--(void)finalFunctions{
-    
-    //Add
-    [[_ref child:@"users"].childByAutoId setValue:@{@"name":@"Stefanos Synkiniotis",@"token":@"12342342",@"phone":@"+923338878045"}];
-    
-    
-    //Search
-    [[[[_ref child:@"users"]queryOrderedByChild:@"phone"] queryEqualToValue:@"+923338878044"]observeEventType:FIRDataEventTypeValue withBlock:^(FIRDataSnapshot * snapshot) {
-        if(snapshot.exists){
-            NSLog(@"Snapshot:   %@",snapshot.value);
-            
-        }else{
-            NSLog(@"snapshot was NULL");
-        }
-        
-    } withCancelBlock:^(NSError * _Nonnull error) {
-        NSLog(@"Error:   %@",error);
-    }];
-    
-    
-    //Delete
-    [[[[_ref child:@"users"]queryOrderedByChild:@"phone"] queryEqualToValue:@"+923338878046"]observeEventType:FIRDataEventTypeValue withBlock:^(FIRDataSnapshot * snapshot) {
-        if(snapshot.exists){
-            
-            NSDictionary * dic = snapshot.value;
-            NSLog(@"%@",[[dic allKeys] firstObject]);
-            
-            //            [snapshot.ref setValue:nil];
-            [[[_ref child:@"users"]child:[[dic allKeys] firstObject]] removeValue];
-            //            NSLog(@"Snapshot:   %@",);
-            
-        }else{
-            NSLog(@"snapshot was NULL");
-        }
-        
-    } withCancelBlock:^(NSError * _Nonnull error) {
-        NSLog(@"Error:   %@",error);
-    }];
-    
-    //Update
-    [[[[_ref child:@"users"]queryOrderedByChild:@"phone"] queryEqualToValue:@"+923338878044"]observeEventType:FIRDataEventTypeValue withBlock:^(FIRDataSnapshot * snapshot) {
-        if(snapshot.exists){
-            
-            NSDictionary * dic = snapshot.value;
-            NSLog(@"%@",[[dic allKeys] firstObject]);
-            
-            //            [snapshot.ref setValue:nil];
-            [[[_ref child:@"users"]child:[[dic allKeys] firstObject]] setValue:@{@"name":@"Michael King", @"token":@"11111111", @"phone":@"+923338878046"}];
-            //            NSLog(@"Snapshot:   %@",);
-            
-        }else{
-            NSLog(@"snapshot was NULL");
-        }
-        
-    } withCancelBlock:^(NSError * _Nonnull error) {
-        NSLog(@"Error:   %@",error);
-    }];
-    
-}
-
 
 #pragma mark - AddressBook Delegate Methods
 
