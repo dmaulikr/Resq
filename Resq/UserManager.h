@@ -16,6 +16,7 @@
 -(NSArray *)getAllContacts:(NSString *)className predicate:(NSString*)predicate isFrequent:(BOOL)isFrequent;
 
 -(void)setup;
+-(void)startAdvertising;
 
 @property(assign) BOOL isActivated;
 @property(assign) int timeRemaining;

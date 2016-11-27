@@ -7,8 +7,14 @@
 //
 
 #import "BluetoothViewController.h"
+#import "CBCentralManager+Blocks.h"
 
 @interface BluetoothViewController ()
+
+@property (nonatomic, strong) NSMutableArray *peripherals;
+@property (nonatomic, strong) NSMutableArray *RSSIs;
+@property (weak, nonatomic) IBOutlet UITableView *bluetoothTableView;
+@property (nonatomic, getter = isScanning) BOOL scanning;
 
 @end
 
@@ -16,14 +22,12 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-//    [self.rightItem setTitle:@"Browse"];
-//    [self.leftItem setTitle:@"Cancel"];
-//    [self.leftItem setImage:[[UIImage alloc] init]];
-    [self.navigationItem setLeftBarButtonItem:nil animated:YES];
-    [self setUpMultipeer];
-//    [self rightItemAction:self];
-    [self presentViewController:self.browserVC animated:NO completion:nil];
-
+    
+    self.peripherals = [NSMutableArray new];
+    self.RSSIs = [NSMutableArray new];
+    [self.rightItem setTitle:@"Refresh"];
+    [self.leftItem setImage:[UIImage imageNamed:@"back-arrow"]];
+    [self rightItemAction:self];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -32,125 +36,194 @@
 }
 
 /*
-#pragma mark - Navigation
-
+ #pragma mark - Navigation
+ 
  In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-     Get the new view controller using [segue destinationViewController].
-     Pass the selected object to the new view controller.
-}
-*/
-
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+ Get the new view controller using [segue destinationViewController].
+ Pass the selected object to the new view controller.
+ }
+ */
 
 -(void)menuAction:(id)sender{
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
-- (void) setUpMultipeer{
-    //  Setup peer ID
-    self.myPeerID = [[MCPeerID alloc] initWithDisplayName:[[NSUserDefaults standardUserDefaults] valueForKey:@"name"]];
-    
-    //  Setup session
-    self.mySession = [[MCSession alloc] initWithPeer:self.myPeerID];
-    self.mySession.delegate = self;
-    
-    //  Setup BrowserViewController
-    self.browserVC = [[MCBrowserViewController alloc] initWithServiceType:@"chat" session:self.mySession];
-    self.browserVC.delegate = self;
-    
-    //  Setup Advertiser
-    self.advertiser = [[MCAdvertiserAssistant alloc] initWithServiceType:@"chat" discoveryInfo:nil session:self.mySession];
-    [self.advertiser start];
-}
-
 -(void)rightItemAction:(id)sender{
-    [self presentViewController:self.browserVC animated:NO completion:nil];
-}
-
-- (void) dismissBrowserVC{
-    [self.browserVC dismissViewControllerAnimated:NO completion:nil];
-    [self menuAction:self];
-}
-
-- (void) sendText{
-    //  Retrieve text from chat box and clear chat box
-    NSString *message = [[NSUserDefaults standardUserDefaults] valueForKey:@"phoneNumber"];//self.chatBox.text;
+    __weak typeof(self) weakSelf = self;
+    [self.peripherals removeAllObjects];
+    [self.RSSIs removeAllObjects];
+    [self.bluetoothTableView reloadData];
     
-    //  Convert text to NSData
-    NSData *data = [message dataUsingEncoding:NSUTF8StringEncoding];
+    CBUUID *demoServiceUUID = [CBUUID UUIDWithString:@"7846ED88-7CD9-495F-AC2A-D34D245C9FB6"];
+    [[CBCentralManager defaultManager]state];
     
-    //  Send data to connected peers
-    NSError *error;
-    [self.mySession sendData:data toPeers:[self.mySession connectedPeers] withMode:MCSessionSendDataUnreliable error:&error];
+    [[CBCentralManager defaultManager] scanForPeripheralsWithServices:@[demoServiceUUID] options:nil didDiscover:^(CBPeripheral *peripheral, NSDictionary *advertisementData, NSNumber *RSSI) {
+        NSLog(@"advertisementData  %@",advertisementData);
+        NSLog(@"peripheral  %@",peripheral.name);
+        NSLog(@"peripheral.name  %@",peripheral.name);
+        NSLog(@"services  %@",peripheral.services);
+        
+        if([advertisementData isKindOfClass:[NSDictionary class]] && [advertisementData valueForKey:@"kCBAdvDataLocalName"]){
+            //[[[UIAlertView alloc] initWithTitle:[advertisementData valueForKey:@"CBAdvertisementDataManufacturerDataKey"] message:[advertisementData valueForKey:@"kCBAdvDataLocalName"] delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil] show];
+            NSArray * arr = [[advertisementData valueForKey:@"kCBAdvDataLocalName"]componentsSeparatedByString:@"√+"];
+            NSLog(@"%@",arr);
+            if(arr && [arr isKindOfClass:[NSArray class]] && arr.count == 2){
+                bool isAlreadybuddy = NO;
+                NSString *predicateString = [NSString stringWithFormat:@"phoneNumber = '%@' AND isBuddy = '%@'", [NSString stringWithFormat:@"+%@",arr[1]],@(YES)];//OR contact_id = '123'
+                Contacts *userobject = (Contacts *)[[UserManager sharedManager]getObject:@"Contacts" predicate:predicateString];
+                if(userobject){
+                    isAlreadybuddy = YES;
+                }
+                [weakSelf.peripherals addObject:@{@"name":arr[0],@"phoneNum":[NSString stringWithFormat:@"+%@",arr[1]],@"isBuddy":@(isAlreadybuddy)}];
+            }
+            [self.bluetoothTableView reloadData];
+        }
+    }];
+    self.scanning = YES;
+}
+
+#pragma mark - Table view data source
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+    return 1;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return self.peripherals.count;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
     
-    //  Append your own message to text box
-    [self receiveMessage: message fromPeer: self.myPeerID];
-}
-
-- (void) receiveMessage: (NSString *) message fromPeer: (MCPeerID *) peer{
-    //  Create the final text to append
-    NSLog(@"%@",message);
-//    NSString *finalText;
-//    if (peer == self.myPeerID) {
-//        finalText = [NSString stringWithFormat:@"\nme: %@ \n", message];
-//    }
-//    else{
-//        finalText = [NSString stringWithFormat:@"\n%@: %@ \n", peer.displayName, message];
-//    }
-//    
-//    //  Append text to text box
-//    self.textBox.text = [self.textBox.text stringByAppendingString:finalText];
-}
-
-#pragma marks MCBrowserViewControllerDelegate
-
-// Notifies the delegate, when the user taps the done button
-- (void)browserViewControllerDidFinish:(MCBrowserViewController *)browserViewController{
-    [self dismissBrowserVC];
-}
-
-// Notifies delegate that the user taps the cancel button.
-- (void)browserViewControllerWasCancelled:(MCBrowserViewController *)browserViewController{
-    [self dismissBrowserVC];
-}
-
-#pragma marks UITextFieldDelegate
-
-- (BOOL)textFieldShouldReturn:(UITextField *)textField{
-    [textField resignFirstResponder];
-    [self sendText];
-    return YES;
-}
-
-#pragma marks MCSessionDelegate
-// Remote peer changed state
-- (void)session:(MCSession *)session peer:(MCPeerID *)peerID didChangeState:(MCSessionState)state{
+    NSDictionary * buddy = [_peripherals objectAtIndex:indexPath.row];
     
+    UILabel * name = [cell viewWithTag:1];
+    [name setText:[buddy valueForKey:@"name"]];
+    
+    UILabel * phoneNum = [cell viewWithTag:2];
+    [phoneNum setText:[buddy valueForKey:@"phoneNum"]];
+    
+    UIButton * addBuddy = [cell viewWithTag:3];
+    [addBuddy addTarget:self action:@selector(addBuddyAction:) forControlEvents:UIControlEventTouchUpInside];
+    
+    UIButton * removeBuddy = [cell viewWithTag:4];
+    [removeBuddy addTarget:self action:@selector(removeBuddyAction:) forControlEvents:UIControlEventTouchUpInside];
+    
+    if([[buddy valueForKey:@"isBuddy"] boolValue]){
+        addBuddy.hidden = YES;
+        removeBuddy.hidden = YES;
+    }else{
+        addBuddy.hidden = NO;
+        removeBuddy.hidden = YES;
+    }
+    return cell;
 }
 
-// Received data from remote peer
-- (void)session:(MCSession *)session didReceiveData:(NSData *)data fromPeer:(MCPeerID *)peerID{
-    //  Decode data back to NSString
-    NSString *message = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-    
-    //  append message to text box:
-    dispatch_async(dispatch_get_main_queue(), ^{
-        [self receiveMessage:message fromPeer:peerID];
-    });
+- (void)addPeripheral:(CBPeripheral *)peripheral RSSI:(NSNumber *)RSSI{
+    if (![self.peripherals containsObject:peripheral]) {
+        [self.bluetoothTableView beginUpdates];
+        NSIndexPath *indexPath = [NSIndexPath indexPathForRow:self.peripherals.count inSection:0];
+        [self.peripherals addObject:peripheral];
+        [self.RSSIs addObject:RSSI];
+        [self.bluetoothTableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationTop];
+        [self.bluetoothTableView endUpdates];
+    }
 }
 
-// Received a byte stream from remote peer
-- (void)session:(MCSession *)session didReceiveStream:(NSInputStream *)stream withName:(NSString *)streamName fromPeer:(MCPeerID *)peerID{
-    
+
+-(void)removeBuddyAction:(id)sender{
+    NSLog(@"Remove Buddy Action");
+    //    CGPoint buttonPosition = [sender convertPoint:CGPointZero toView:self.bluetoothTableView];
+    //    NSIndexPath *indexPath = [self.bluetoothTableView indexPathForRowAtPoint:buttonPosition];
+    //        NSDictionary * contact = [_contactsArray objectAtIndex:indexPath.row];
+    //
+    //
+    //
+    //        UIAlertController * alert = [UIAlertController
+    //                                     alertControllerWithTitle:@"RESQ"
+    //                                     message:[NSString stringWithFormat:@"Are You Sure you want to remove %@ from your buddy List?",[contact valueForKey:@"name"]]
+    //                                     preferredStyle:UIAlertControllerStyleAlert];
+    //
+    //        //Add Buttons
+    //        UIAlertAction* yesButton = [UIAlertAction
+    //                                    actionWithTitle:@"Yes"
+    //                                    style:UIAlertActionStyleDefault
+    //                                    handler:^(UIAlertAction * action) {
+    //                                        NSManagedObjectContext *context = appdelegate.managedObjectContext;
+    //                                        contact.isBuddy = @(NO);
+    //                                        NSError *saveError = nil;
+    //                                        [context save:&saveError];
+    //                                        [self updateList];
+    //                                    }];
+    //
+    //        UIAlertAction* noButton = [UIAlertAction
+    //                                   actionWithTitle:@"NO"
+    //                                   style:UIAlertActionStyleDefault
+    //                                   handler:^(UIAlertAction * action) {
+    //                                       //Handle no, thanks button
+    //                                   }];
+    //
+    //        //Add your buttons to alert controller
+    //        [alert addAction:yesButton];
+    //        [alert addAction:noButton];
+    //        [self presentViewController:alert animated:YES completion:nil];
 }
 
-// Start receiving a resource from remote peer
-- (void)session:(MCSession *)session didStartReceivingResourceWithName:(NSString *)resourceName fromPeer:(MCPeerID *)peerID withProgress:(NSProgress *)progress{
+-(void)addBuddyAction:(id)sender{
+    CGPoint buttonPosition = [sender convertPoint:CGPointZero toView:self.bluetoothTableView];
+    NSIndexPath *indexPath = [self.bluetoothTableView indexPathForRowAtPoint:buttonPosition];
+    NSDictionary * contact = [_peripherals objectAtIndex:indexPath.row];
     
+    NSString *predicateString = [NSString stringWithFormat:@"phoneNumber = '%@' ", [contact valueForKey:@"phoneNum"]];
+    Contacts *userobject = (Contacts *)[[UserManager sharedManager]getObject:@"Contacts" predicate:predicateString];
+    NSInteger count = 1;
+    if(!userobject){
+        NSEntityDescription* entityDesc=[NSEntityDescription entityForName:@"Contacts" inManagedObjectContext:appdelegate.managedObjectContext];
+        userobject = (Contacts *) [[NSManagedObject alloc]initWithEntity:entityDesc insertIntoManagedObjectContext:appdelegate.managedObjectContext];
+        count = 1 ;
+        userobject.contact_id = @"123";
+        userobject.deviceToken = @"";
+        userobject.frequentCount = @(count);
+        userobject.isBuddy = @(YES);
+        userobject.name = [contact valueForKey:@"name"];
+        userobject.phoneNumber = [contact valueForKey:@"phoneNum"];
+        
+        NSError* error;
+        [appdelegate.managedObjectContext save:&error];
+        if(error){
+            NSLog(@"Some thing is Wrong");
+        }else{
+            [self updateList];
+        }
+    }else{
+        userobject.isBuddy = @(YES);
+        userobject.name = [contact valueForKey:@"name"];
+        userobject.phoneNumber = [contact valueForKey:@"phoneNum"];
+        userobject.frequentCount = @([userobject.frequentCount intValue] + 1);
+
+        NSError* error;
+        [appdelegate.managedObjectContext save:&error];
+        if(error){
+            NSLog(@"Some thing is Wrong");
+        }else{
+            [self updateList];
+        }
+    }
 }
 
-// Finished receiving a resource from remote peer and saved the content in a temporary location - the app is responsible for moving the file to a permanent location within its sandbox
-- (void)session:(MCSession *)session didFinishReceivingResourceWithName:(NSString *)resourceName fromPeer:(MCPeerID *)peerID atURL:(NSURL *)localURL withError:(NSError *)error{
-    
+-(void)updateList{
+    NSMutableArray* list = [_peripherals mutableCopy];
+    [self.peripherals removeAllObjects];
+    for(NSDictionary *contact in list){
+        bool isAlreadybuddy = NO;
+        NSString *predicateString = [NSString stringWithFormat:@"phoneNumber = '%@' AND isBuddy = '%@'", [contact valueForKey:@"phoneNum"], @(YES)];
+        Contacts *userobject = (Contacts *)[[UserManager sharedManager]getObject:@"Contacts" predicate:predicateString];
+        if(userobject){
+            isAlreadybuddy = YES;
+        }
+        [self.peripherals addObject:@{@"name":[contact valueForKey:@"name"],@"phoneNum":[contact valueForKey:@"phoneNum"],@"isBuddy":@(isAlreadybuddy)}];
+    }
+    [self.bluetoothTableView reloadData];
 }
 @end

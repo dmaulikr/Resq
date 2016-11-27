@@ -18,6 +18,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"Activate";
+    
+    [[UserManager sharedManager]startAdvertising];
     [[_activate_btn layer]setCornerRadius:CGRectGetHeight(_activate_btn.frame)/2];
     [self updateView];
 }
@@ -71,7 +73,7 @@
             [[[UserManager sharedManager] alertTimer] invalidate];
         }
     }
-//    [[UserManager sharedManager]setTimeRemaining:0];
+    //    [[UserManager sharedManager]setTimeRemaining:0];
 }
 
 -(void)updateView{
@@ -87,4 +89,5 @@
         [_activate_btn setTitle:@"Activate" forState:UIControlStateNormal];
     }
 }
+
 @end

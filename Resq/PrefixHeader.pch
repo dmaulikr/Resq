@@ -22,6 +22,9 @@
 // Include any system framework and library headers here that should be included in all compilation units.
 // You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
 #import <CoreLocation/CoreLocation.h>
+#import "CBPeripheralManager+Blocks.h"
+#import "CBPeripheral+Debug.h"
+
 #import "Contacts+CoreDataProperties.h"
 #import <SVProgressHUD.h>
 #import <IIViewDeckController.h>
@@ -29,8 +32,6 @@
 #import "ResqLocationManager.h"
 #import "ResqViewController.h"
 #import "AppDelegate.h"
-#import <FirebaseCore/FirebaseCore.h>
-#import "FirebaseManager.h"
 
 #define ALERT_VIEW(title,msg)\
 {\

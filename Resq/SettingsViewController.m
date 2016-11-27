@@ -24,33 +24,17 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"Settings";
+    [[UserManager sharedManager]startAdvertising];
     [self.settingsTableView setTableFooterView:[[UIView alloc]init]];
     // Do any additional setup after loading the view.
     _contactsArray = [[NSMutableArray alloc] init];
     _frequentContactsArray = [[NSMutableArray alloc] init];
-    
-    //    [[[FirebaseManager sharedManager].ref child:@"users"] observeEventType:FIRDataEventTypeChildAdded withBlock:^(FIRDataSnapshot * snapshot) {
-    //        if(snapshot.exists){
-    //            NSMutableDictionary * dic = [[NSMutableDictionary alloc]initWithDictionary:snapshot.value];
-    //            if(dic){
-    //                NSLog(@"%@",[dic valueForKey:@"name"]);
-    //                NSLog(@"%@",[dic valueForKey:@"phone"]);
-    //                NSLog(@"%@\n\n",[dic valueForKey:@"token"]);
-    //                [dic setValue:snapshot.key forKey:@"id"];
-    //                [_contactsArray addObject:dic];
-    //                [self.settingsTableView reloadData];
-    //            }
-    //            NSLog(@"%@",[[dic allKeys] firstObject]);
-    //        }
-    //    } withCancelBlock:^(NSError * _Nonnull error) {
-    //    }];
     [self updateList];
 }
 
 -(void)viewDidAppear:(BOOL)animated{
     if([[NSUserDefaults standardUserDefaults]valueForKey:@"phoneNumber"] && [[[NSUserDefaults standardUserDefaults]valueForKey:@"phoneNumber"] length]){
-        //        NSLog(@"Name %@",[[NSUserDefaults standardUserDefaults]valueForKey:@"name"]);
-        //        NSLog(@"Phone %@",[[NSUserDefaults standardUserDefaults]valueForKey:@"phoneNumber"]);
+        [self updateList];
     }else{
         PhoneNumberViewController * controller = [self.storyboard instantiateViewControllerWithIdentifier:@"PhoneNumberViewController"];
         UINavigationController * navController = [[UINavigationController alloc]initWithRootViewController:controller];

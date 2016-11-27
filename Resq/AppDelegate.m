@@ -11,10 +11,6 @@
 #import "MenuViewController.h"
 #import "SettingsViewController.h"
 #import <UserNotifications/UserNotifications.h>
-@import Firebase;
-@import FirebaseInstanceID;
-@import FirebaseMessaging;
-
 
 @interface AppDelegate ()<UNUserNotificationCenterDelegate, FIRMessagingDelegate>
 
@@ -26,8 +22,8 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     [self setSettingsViewController];
-    [FIRApp configure];
     [self registerAppForPushNotifications];
+    [[UserManager sharedManager]startAdvertising];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(tokenRefreshNotification:)
                                                  name:kFIRInstanceIDTokenRefreshNotification object:nil];
     return YES;
@@ -160,7 +156,7 @@ didReceiveNotificationResponse:(UNNotificationResponse *)response
     NSLog(@"InstanceID token: %@", refreshedToken);
     [[FIRMessaging messaging] subscribeToTopic:@"/topics/news"];
     NSLog(@"Subscribed to news topic");
-
+    
     
     // Connect to FCM since connection may have failed when attempted before having a token.
     [self connectToFcm];

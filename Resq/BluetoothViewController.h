@@ -7,16 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <MultipeerConnectivity/MultipeerConnectivity.h>
 
-@interface BluetoothViewController : ResqViewController <MCBrowserViewControllerDelegate, MCSessionDelegate>
-
-@property (nonatomic, strong) MCBrowserViewController *browserVC;
-@property (nonatomic, strong) MCAdvertiserAssistant *advertiser;
-@property (nonatomic, strong) MCSession *mySession;
-@property (nonatomic, strong) MCPeerID *myPeerID;
-
-- (void)sendMessage:(id)sender;
-- (void)connectToDevice:(id)sender;
+@interface BluetoothViewController : ResqViewController
 
 @end

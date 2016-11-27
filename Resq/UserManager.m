@@ -45,7 +45,7 @@ static UserManager *_sharedUserManagerInstance = nil;
 
 -(void)alertAction{
     if(_isActivated){
-
+        
         NSString *predicateString = [NSString stringWithFormat:@"isBuddy = '%@' ", @(YES)];
         NSMutableArray* arr = (NSMutableArray*)[[UserManager sharedManager]getAllContacts:@"Contacts" predicate:predicateString isFrequent:NO];
         for(Contacts * contact in arr){
@@ -173,7 +173,8 @@ static UserManager *_sharedUserManagerInstance = nil;
     NSString *post = [NSString stringWithFormat:@"To=%@&From=%@&Body=%@ needs your help at this location: %@",to,from,[[NSUserDefaults standardUserDefaults] valueForKey:@"name"],mapUrlPath];
     
     NSData *postData = [post dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES];
-    NSString *postLength = [NSString stringWithFormat:@"%ld",[postData length]];
+    
+    NSString *postLength = [NSString stringWithFormat:@"%d",postData.length];
     NSString *urlString = [NSString stringWithFormat: @"https://api.twilio.com/2010-04-01/Accounts/AC069ca1df85386763f163a49d22948cdb/Messages.json"];
     NSMutableURLRequest* request = [NSMutableURLRequest requestWithURL: [NSURL URLWithString: urlString]];
     [request setHTTPMethod: @"POST"];
@@ -196,6 +197,22 @@ static UserManager *_sharedUserManagerInstance = nil;
     if(WSresponse.statusCode == 0){
         NSLog(@"Response: %@",responseString);
     }
+}
+
+-(void)startAdvertising{
+    static NSString * const BBDemoServiceUUID = @"7846ED88-7CD9-495F-AC2A-D34D245C9FB6";
+    CBUUID *demoServiceUUID = [CBUUID UUIDWithString:BBDemoServiceUUID];
+    NSDictionary *dict = @{
+                           CBAdvertisementDataServiceUUIDsKey : @[demoServiceUUID],
+                           CBAdvertisementDataLocalNameKey : [NSString stringWithFormat:@"%@√%@",[[NSUserDefaults standardUserDefaults]valueForKey:@"name"],[[NSUserDefaults standardUserDefaults]valueForKey:@"phoneNumber"]],
+                           CBAdvertisementDataTxPowerLevelKey : @"923",
+                           CBAdvertisementDataManufacturerDataKey : @"BlocksBluetooth Demo This is a BlocksBluetooth demo characteristic",
+                           };
+    [[CBPeripheralManager defaultManager] startAdvertising:dict didStart:^(NSError *error) {
+        if(error){
+            NSLog(@"Error startAdvertising::: %@",error);
+        }
+    }];
 }
 
 @end

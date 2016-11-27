@@ -9,7 +9,7 @@
 #import "PhoneNumberViewController.h"
 #import "CountryPickerViewController.h"
 
-@interface PhoneNumberViewController ()
+@interface PhoneNumberViewController ()<UITextFieldDelegate>
 
 @property (nonatomic, retain) NSDictionary *selectedCountry;
 @property (weak, nonatomic) IBOutlet UITextField *nameField;
@@ -22,6 +22,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    _nameField.delegate = self;
     self.title = @"Enter Details";
     [self.rightItem setTitle:@"Save"];
     [self.navigationItem setLeftBarButtonItem:nil animated:YES];
@@ -74,15 +75,7 @@
     NSLog(@"phone number: %@",phoneNumber);
     [[NSUserDefaults standardUserDefaults]setValue:phoneNumber forKey:@"phoneNumber"];
     [[NSUserDefaults standardUserDefaults]setValue:_nameField.text forKey:@"name"];
-    [SVProgressHUD show];
-    [[FirebaseManager sharedManager]registerOrUpdateUserWithcompletion:^(BOOL isUpdated, NSError *error) {
-        if(isUpdated){
-            [self dismissViewControllerAnimated:YES completion:nil];
-        }else if(error){
-            ALERT_VIEW(@"RESQ", error.localizedDescription)
-        }
-        [SVProgressHUD dismiss];
-    }];
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 -(NSArray*)loadJsonDataWithFileName:(NSString *)filename{
@@ -116,5 +109,18 @@
         return TRUE;
     else
         return FALSE;
+}
+
+- (BOOL)textField:(UITextField *) textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
+    
+    NSUInteger oldLength = [textField.text length];
+    NSUInteger replacementLength = [string length];
+    NSUInteger rangeLength = range.length;
+    
+    NSUInteger newLength = oldLength - rangeLength + replacementLength;
+    
+    BOOL returnKey = [string rangeOfString: @"\n"].location != NSNotFound;
+    
+    return newLength <= 16 || returnKey;
 }
 @end

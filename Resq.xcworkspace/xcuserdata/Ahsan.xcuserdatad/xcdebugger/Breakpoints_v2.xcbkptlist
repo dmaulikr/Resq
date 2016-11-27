@@ -26,7 +26,7 @@
             startingLineNumber = "137"
             endingLineNumber = "137"
             landmarkName = "-locationManager:didUpdateLocations:"
-            landmarkType = "5">
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -36,60 +36,45 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Resq/SettingsViewController.m"
-            timestampString = "501812448.966293"
+            timestampString = "501941639.615237"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "480"
-            endingLineNumber = "480"
-            landmarkName = "-finalFunctions"
+            startingLineNumber = "463"
+            endingLineNumber = "463"
+            landmarkName = "-peoplePickerNavigationController:didSelectPerson:property:identifier:"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__40-[SettingsViewController finalFunctions]_block_invoke_3"
-                  moduleName = "RESQ"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/Ahsan/AhsanMacBook/Source%20Tree/Resq/Resq/SettingsViewController.m"
-                  timestampString = "501812565.46205"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "481"
-                  endingLineNumber = "481"
-                  offsetFromSymbolStart = "487">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__destroy_helper_block_.461"
-                  moduleName = "RESQ"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/Ahsan/AhsanMacBook/Source%20Tree/Resq/Resq/SettingsViewController.m"
-                  timestampString = "501812565.467024"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "481"
-                  endingLineNumber = "481"
-                  offsetFromSymbolStart = "29">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__40-[SettingsViewController finalFunctions]_block_invoke.463"
-                  moduleName = "RESQ"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/Ahsan/AhsanMacBook/Source%20Tree/Resq/Resq/SettingsViewController.m"
-                  timestampString = "501812565.468996"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "482"
-                  endingLineNumber = "482"
-                  offsetFromSymbolStart = "51">
-               </Location>
-            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Resq/BluetoothViewController.m"
+            timestampString = "501941383.460136"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "71"
+            endingLineNumber = "71"
+            landmarkName = "-rightItemAction:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Resq/BluetoothViewController.m"
+            timestampString = "501941373.219428"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "181"
+            endingLineNumber = "181"
+            landmarkName = "-addBuddyAction:"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
