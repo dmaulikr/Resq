@@ -24,9 +24,8 @@
 @property (strong, nonatomic) UINavigationController *appNavigationController;
 @property (nonatomic, retain) IIViewDeckController *viewDeckController;
 
-- (void)saveContext;
-- (NSURL*)applicationDocumentsDirectory;
-
-
+-(void)saveContext;
+-(NSURL*)applicationDocumentsDirectory;
+-(void)setSettingsViewController;
 @end
 

@@ -7,7 +7,6 @@
 //
 
 #import "SettingsViewController.h"
-#import "PhoneNumberViewController.h"
 #import "BluetoothViewController.h"
 #import <AddressBookUI/AddressBookUI.h>
 #import <AddressBook/AddressBook.h>
@@ -31,36 +30,25 @@
 }
 
 -(void)viewDidAppear:(BOOL)animated{
-    
-    if([[NSUserDefaults standardUserDefaults]valueForKey:@"phoneNumber"] && [[[NSUserDefaults standardUserDefaults]valueForKey:@"phoneNumber"] length]){
-        dispatch_async(dispatch_get_main_queue(), ^{
-            [[UserManager sharedManager]startAdvertising];
-            CBUUID *demoServiceUUID = [CBUUID UUIDWithString:@"7846ED88-7CD9-495F-AC2A-D34D245C9FB6"];
-            [[CBCentralManager defaultManager] scanForPeripheralsWithServices:@[demoServiceUUID] options:nil didDiscover:^(CBPeripheral *peripheral, NSDictionary *advertisementData, NSNumber *RSSI) {
-            }];
-            
-        });
-        [self updateList];
-    }else{
-        PhoneNumberViewController * controller = [self.storyboard instantiateViewControllerWithIdentifier:@"PhoneNumberViewController"];
-        UINavigationController * navController = [[UINavigationController alloc]initWithRootViewController:controller];
-        navController.navigationBar.translucent = NO;
-        [self.navigationController presentViewController:navController animated:YES completion:nil];
-    }
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [[UserManager sharedManager]startAdvertising];
+        CBUUID *demoServiceUUID = [CBUUID UUIDWithString:@"7846ED88-7CD9-495F-AC2A-D34D245C9FB6"];
+        [[CBCentralManager defaultManager] scanForPeripheralsWithServices:@[demoServiceUUID] options:nil didDiscover:^(CBPeripheral *peripheral, NSDictionary *advertisementData, NSNumber *RSSI) {
+        }];
+        
+    });
+    [self updateList];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 -(void)menuAction:(id)sender{
-    //    [[UserManager sharedManager]sendMessage:@""];
     [appdelegate.viewDeckController openLeftViewAnimated:YES];
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    
     return 7;
 }
 
