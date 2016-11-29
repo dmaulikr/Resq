@@ -797,8 +797,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.app.resq;
 				PRODUCT_NAME = RESQ;
-				PROVISIONING_PROFILE = "b5891ec0-58f9-4c9f-a408-7b0499b424e8";
-				PROVISIONING_PROFILE_SPECIFIER = iOS_Resq_Distribution;
+				PROVISIONING_PROFILE = "492bfcb8-b73f-4f01-9724-87374429bceb";
+				PROVISIONING_PROFILE_SPECIFIER = Resq_Appstore;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -816,8 +816,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.app.resq;
 				PRODUCT_NAME = RESQ;
-				PROVISIONING_PROFILE = "b5891ec0-58f9-4c9f-a408-7b0499b424e8";
-				PROVISIONING_PROFILE_SPECIFIER = iOS_Resq_Distribution;
+				PROVISIONING_PROFILE = "492bfcb8-b73f-4f01-9724-87374429bceb";
+				PROVISIONING_PROFILE_SPECIFIER = Resq_Appstore;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
