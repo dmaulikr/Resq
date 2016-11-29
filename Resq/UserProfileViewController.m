@@ -23,7 +23,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     _nameField.delegate = self;
-    self.title = @"Update Details";
+    self.title = @"user details";
     [self.rightItem setTitle:@"Save"];
     
     // Do any additional setup after loading the view.
