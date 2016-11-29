@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface PhoneNumberViewController : ResqViewController
+@interface PhoneNumberViewController : UIViewController
 
 @end

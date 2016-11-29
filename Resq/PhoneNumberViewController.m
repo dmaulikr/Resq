@@ -24,8 +24,9 @@
     [super viewDidLoad];
     _nameField.delegate = self;
     self.title = @"Enter Details";
-    [self.rightItem setTitle:@"Save"];
-    [self.navigationItem setLeftBarButtonItem:nil animated:YES];
+    UIBarButtonItem *rightItem = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@""] style:UIBarButtonItemStyleDone target:self action:@selector(rightItemAction:)];
+    [rightItem setTitle:@"Save"];
+    [self.navigationItem setRightBarButtonItem:rightItem];
     
     // Do any additional setup after loading the view.
     NSLocale *currentLocale = [NSLocale currentLocale];  // get the current locale.
