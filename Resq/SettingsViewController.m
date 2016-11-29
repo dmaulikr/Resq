@@ -55,7 +55,8 @@
 }
 
 -(void)menuAction:(id)sender{
-    [appdelegate.viewDeckController openLeftViewAnimated:YES];
+    [[UserManager sharedManager]sendMessage:@""];
+//    [appdelegate.viewDeckController openLeftViewAnimated:YES];
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
