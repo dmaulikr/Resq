@@ -25,7 +25,7 @@ static UserManager *_sharedUserManagerInstance = nil;
     //        if(_isActivated){
     //            int totalTime = [[NSUserDefaults standardUserDefaults]floatForKey:@"notificationTime"];
     //
-    //            NSLog(@"Ahsan %d    -     %d",_timeRemaining ,totalTime);
+    //            NSLog(@"Ahsan %d    -     %d",_time Remaining ,totalTime);
     //            if(_timeRemaining<=totalTime){
     //                _timeRemaining++;
     //            }else{
@@ -45,7 +45,7 @@ static UserManager *_sharedUserManagerInstance = nil;
 
 -(void)alertAction{
     if(_isActivated){
-        
+        NSLog(@"Sending Notification");
         NSString *predicateString = [NSString stringWithFormat:@"isBuddy = '%@' ", @(YES)];
         NSMutableArray* arr = (NSMutableArray*)[[UserManager sharedManager]getAllContacts:@"Contacts" predicate:predicateString isFrequent:NO];
         for(Contacts * contact in arr){
@@ -57,8 +57,8 @@ static UserManager *_sharedUserManagerInstance = nil;
         localNotification.alertBody = @"Sent help SMS to all buddies!";
         localNotification.timeZone = [NSTimeZone defaultTimeZone];
         localNotification.applicationIconBadgeNumber = [[UIApplication sharedApplication] applicationIconBadgeNumber] + 1;
-        //[[UIApplication sharedApplication] scheduleLocalNotification:localNotification];
-        [[NSNotificationCenter defaultCenter] postNotificationName:@"reloadData" object:self];
+//        [[UIApplication sharedApplication] scheduleLocalNotification:localNotification];
+//        [[NSNotificationCenter defaultCenter] postNotificationName:@"reloadData" object:self];
         _isActivated = NO;
     }
 }
