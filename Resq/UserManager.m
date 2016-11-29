@@ -167,7 +167,7 @@ static UserManager *_sharedUserManagerInstance = nil;
     __block NSString * to = toUser;
     dispatch_async(dispatch_get_main_queue(), ^{
         
-        NSString * from = @"+12137856052";
+        NSString * from = @"+12018906100";
         from = [self urlencode:from];
         to = [self urlencode:to];
         NSLog(@"%@   %@",to, from);
@@ -179,7 +179,7 @@ static UserManager *_sharedUserManagerInstance = nil;
         NSData *postData = [post dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES];
         
         NSString *postLength = [NSString stringWithFormat:@"%ld",postData.length];
-        NSString *urlString = [NSString stringWithFormat: @"https://api.twilio.com/2010-04-01/Accounts/AC069ca1df85386763f163a49d22948cdb/Messages.json"];
+        NSString *urlString = [NSString stringWithFormat: @"https://api.twilio.com/2010-04-01/Accounts/ACc73d243cda5db2fba6f01d55abdb870e/Messages.json"];
         NSMutableURLRequest* request = [NSMutableURLRequest requestWithURL: [NSURL URLWithString: urlString]];
         [request setHTTPMethod: @"POST"];
         
@@ -188,7 +188,7 @@ static UserManager *_sharedUserManagerInstance = nil;
         [request setHTTPBody:postData];
         
         [request setTimeoutInterval:30];
-        NSString *authStr = [NSString stringWithFormat:@"%@:%@", @"AC069ca1df85386763f163a49d22948cdb",@"4b61e09a05a8f7a0ae46378ceb51d2c3"];
+        NSString *authStr = [NSString stringWithFormat:@"%@:%@", @"ACc73d243cda5db2fba6f01d55abdb870e",@"a507da7d83162bc27482ff60638c4973"];
         NSData *authData = [authStr dataUsingEncoding:NSUTF8StringEncoding];
         NSString *authValue = [NSString stringWithFormat:@"Basic %@", [authData base64EncodedStringWithOptions:0]];
         [request setValue:authValue forHTTPHeaderField:@"Authorization"];
@@ -199,9 +199,9 @@ static UserManager *_sharedUserManagerInstance = nil;
         response = [NSURLConnection sendSynchronousRequest:request returningResponse:&WSresponse error:&WSerror];
         responseString = [[NSString alloc] initWithData:response encoding:NSUTF8StringEncoding] ;
         if(WSresponse.statusCode == 0){
-//            NSLog(@"Response1: %@",responseString);
+            NSLog(@"Response1: %@",responseString);
         }else{
-//            NSLog(@"Response2: %@",responseString);
+            NSLog(@"Response2: %@",responseString);
         }
     });
 }

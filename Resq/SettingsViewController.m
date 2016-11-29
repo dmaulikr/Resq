@@ -55,6 +55,7 @@
 }
 
 -(void)menuAction:(id)sender{
+    //    [[UserManager sharedManager]sendMessage:@""];
     [appdelegate.viewDeckController openLeftViewAnimated:YES];
 }
 
@@ -152,7 +153,7 @@
             break;
         }case ResqSettingCellTypeNotificationTimeCell:{
             UISlider * slider = [cell viewWithTag:1];
-            slider.minimumValue = 5.0;
+            slider.minimumValue = 30.0;
             slider.maximumValue = 300.0;
             slider.continuous = YES;
             UILabel * notificationTime = [cell viewWithTag:2];
