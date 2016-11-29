@@ -420,7 +420,7 @@
 				TargetAttributes = {
 					785317051DDA3F1E00FC379A = {
 						CreatedOnToolsVersion = 7.3;
-						DevelopmentTeam = E57G2KLGEZ;
+						DevelopmentTeam = 9BXTLR97LR;
 						ProvisioningStyle = Manual;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
@@ -789,16 +789,17 @@
 			baseConfigurationReference = 7A00E41842F35AE579CDB56F /* Pods-Resq.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Carlton whitfield (XJT36E7SXL)";
-				DEVELOPMENT_TEAM = E57G2KLGEZ;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Jeppe Bang Hebsgaard (9BXTLR97LR)";
+				DEVELOPMENT_TEAM = 9BXTLR97LR;
 				GCC_PREFIX_HEADER = Resq/PrefixHeader.pch;
 				INFOPLIST_FILE = Resq/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.lbc.loopsplayer;
+				PRODUCT_BUNDLE_IDENTIFIER = com.app.resq;
 				PRODUCT_NAME = RESQ;
-				PROVISIONING_PROFILE = "1341af53-c0b5-47b5-bc74-4370b8504661";
-				PROVISIONING_PROFILE_SPECIFIER = LBC_Development;
+				PROVISIONING_PROFILE = "b5891ec0-58f9-4c9f-a408-7b0499b424e8";
+				PROVISIONING_PROFILE_SPECIFIER = iOS_Resq_Distribution;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -807,16 +808,17 @@
 			baseConfigurationReference = 5FDCD9FA6118E84325556155 /* Pods-Resq.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Carlton whitfield (XJT36E7SXL)";
-				DEVELOPMENT_TEAM = E57G2KLGEZ;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Jeppe Bang Hebsgaard (9BXTLR97LR)";
+				DEVELOPMENT_TEAM = 9BXTLR97LR;
 				GCC_PREFIX_HEADER = Resq/PrefixHeader.pch;
 				INFOPLIST_FILE = Resq/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.lbc.loopsplayer;
+				PRODUCT_BUNDLE_IDENTIFIER = com.app.resq;
 				PRODUCT_NAME = RESQ;
-				PROVISIONING_PROFILE = "1341af53-c0b5-47b5-bc74-4370b8504661";
-				PROVISIONING_PROFILE_SPECIFIER = LBC_Development;
+				PROVISIONING_PROFILE = "b5891ec0-58f9-4c9f-a408-7b0499b424e8";
+				PROVISIONING_PROFILE_SPECIFIER = iOS_Resq_Distribution;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
