@@ -61,7 +61,7 @@ static ResqLocationManager *_sharedLocationManagerInstance = nil;
     [self.locationManager startUpdatingLocation];
     [self.locationManager requestAlwaysAuthorization];
     [self.locationManager startUpdatingHeading];
-    if([self respondsToSelector:@selector(allowsBackgroundLocationUpdates)])
+//    if([self respondsToSelector:@selector(allowsBackgroundLocationUpdates)])
         self.locationManager.allowsBackgroundLocationUpdates = YES;
     [self.motionManager startDeviceMotionUpdatesToQueue:[NSOperationQueue mainQueue]
                                             withHandler:^(CMDeviceMotion *deviceMotion, NSError *error) {
@@ -152,7 +152,7 @@ static ResqLocationManager *_sharedLocationManagerInstance = nil;
 }
 
 - (void)locationManager:(CLLocationManager *) manager didUpdateHeading:(nonnull CLHeading *)newHeading{
-    //    NSLog(@"Heading");
+        NSLog(@"Heading");
     [[NSNotificationCenter defaultCenter] postNotificationName:didUpdateHeadingNotification object:newHeading];
     [[UserManager sharedManager] setup];
     
