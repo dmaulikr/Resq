@@ -68,15 +68,14 @@
     if(!isValidPhoneNumber){
         ALERT_VIEW(@"RESQ", @"Please enter a valid mobile number.")
         return;
-    }
-    
+    }    
     
     NSString *phoneNumber = [NSString stringWithFormat:@"%@%@",[_selectedCountry valueForKey:@"dial_code"],_phoneField.text];
     NSLog(@"phone number: %@",phoneNumber);
     [[NSUserDefaults standardUserDefaults]setValue:phoneNumber forKey:@"phoneNumber"];
     [[NSUserDefaults standardUserDefaults]setValue:_nameField.text forKey:@"name"];
     [[NSUserDefaults standardUserDefaults]setValue:[_selectedCountry valueForKey:@"dial_code"] forKey:@"dial_code"];
-    [self dismissViewControllerAnimated:YES completion:nil];
+    [appdelegate setSettingsViewController];
 }
 
 -(NSArray*)loadJsonDataWithFileName:(NSString *)filename{
@@ -117,11 +116,8 @@
     NSUInteger oldLength = [textField.text length];
     NSUInteger replacementLength = [string length];
     NSUInteger rangeLength = range.length;
-    
     NSUInteger newLength = oldLength - rangeLength + replacementLength;
-    
     BOOL returnKey = [string rangeOfString: @"\n"].location != NSNotFound;
-    
     return newLength <= 16 || returnKey;
 }
 @end

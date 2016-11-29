@@ -11,6 +11,7 @@
 #import "MenuViewController.h"
 #import "SettingsViewController.h"
 #import <UserNotifications/UserNotifications.h>
+#import "PhoneNumberViewController.h"
 
 @interface AppDelegate ()<UNUserNotificationCenterDelegate>
 
@@ -22,6 +23,17 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     [self setSettingsViewController];
+    
+    if([[NSUserDefaults standardUserDefaults]valueForKey:@"phoneNumber"] && [[[NSUserDefaults standardUserDefaults]valueForKey:@"phoneNumber"] length]){
+        [self setSettingsViewController];
+        
+    }else{
+        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        PhoneNumberViewController * controller = [storyboard instantiateViewControllerWithIdentifier:@"PhoneNumberViewController"];
+        UINavigationController * navController = [[UINavigationController alloc]initWithRootViewController:controller];
+        navController.navigationBar.translucent = NO;
+        self.window.rootViewController = navController;
+    }
     return YES;
 }
 
