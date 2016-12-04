@@ -59,7 +59,7 @@ static ResqLocationManager *_sharedLocationManagerInstance = nil;
 
 - (void)startUpdatingLocation {
     [self.locationManager startUpdatingLocation];
-    [self.locationManager requestAlwaysAuthorization];
+    [self.locationManager requestWhenInUseAuthorization];
     [self.locationManager startUpdatingHeading];
 //    if([self respondsToSelector:@selector(allowsBackgroundLocationUpdates)])
         self.locationManager.allowsBackgroundLocationUpdates = YES;
@@ -69,7 +69,7 @@ static ResqLocationManager *_sharedLocationManagerInstance = nil;
                                                 double totalAcceleration = sqrt(userAcceleration.x * userAcceleration.x +
                                                                                 userAcceleration.y * userAcceleration.y + userAcceleration.z * userAcceleration.z);
                                                 // UPDATE: print debug information
-                                                float staticThreshold = 0.020;
+                                                float staticThreshold = 0.025;
                                                 if(totalAcceleration> staticThreshold){
                                                     NSLog (@"total=%f", totalAcceleration);
                                                     [[UserManager sharedManager] setup];

@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <CoreData/CoreData.h>
 #import <RESideMenu/RESideMenu.h>
+#import "LandingViewController.h"
 
 #define DEVICE_OFFSET (CGRectGetWidth([UIScreen mainScreen].bounds)/320)
 #define appdelegate ((AppDelegate*)[UIApplication sharedApplication].delegate)
@@ -23,9 +24,11 @@
 @property (nonatomic, retain) RESideMenu *sideMenuViewController;
 @property (strong, nonatomic) UINavigationController *appNavigationController;
 @property (nonatomic, retain) IIViewDeckController *viewDeckController;
+@property (nonatomic, retain) LandingViewController *landingViewController;
 
 -(void)saveContext;
 -(NSURL*)applicationDocumentsDirectory;
 -(void)setSettingsViewController;
+-(void)checkForTermsOfUseAndPrivacyPolicy:(UIViewController*)viewController;
 @end
 

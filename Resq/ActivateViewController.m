@@ -24,6 +24,11 @@
     [self updateView];
 }
 
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    [appdelegate checkForTermsOfUseAndPrivacyPolicy:self];
+}
+
 -(void)menuAction:(id)sender{
     [appdelegate.viewDeckController openLeftViewAnimated:YES];
 }

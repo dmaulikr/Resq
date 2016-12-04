@@ -11,13 +11,15 @@
 #import "ActivateViewController.h"
 #import "AppDelegate.h"
 #import "UserProfileViewController.h"
+#import "InstructionsViewController.h"
+#import "PrivacyPolicyViewController.h"
+#import <MessageUI/MFMailComposeViewController.h>
 
+@interface MenuViewController ()<MFMailComposeViewControllerDelegate>
 
-@interface MenuViewController ()
-
-@property (nonatomic, retain) SettingsViewController * settingsViewController;
-@property (nonatomic, retain) ActivateViewController * activateViewController;
 @property (nonatomic, retain) UserProfileViewController * userProfileViewController;
+@property (nonatomic, retain) PrivacyPolicyViewController * privacyPolicyViewController;
+@property (nonatomic, retain) InstructionsViewController * instructionsViewController;
 
 @end
 
@@ -44,16 +46,20 @@
  */
 
 - (IBAction)activateAction:(id)sender {
-    _activateViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"ActivateViewController"];
-    UINavigationController* navigationController = [[UINavigationController alloc]initWithRootViewController:_activateViewController];
+    if(appdelegate.landingViewController)
+        appdelegate.landingViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"LandingViewController"];
+    [appdelegate.landingViewController setIsActivateScreen:YES];
+    UINavigationController* navigationController = [[UINavigationController alloc]initWithRootViewController:appdelegate.landingViewController];
     [navigationController.navigationBar setTranslucent:NO];
     appdelegate.viewDeckController.centerController = navigationController;
     [appdelegate.viewDeckController closeOpenView];
 }
 
 - (IBAction)settingsAction:(id)sender {
-    _settingsViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"SettingsViewController"];
-    UINavigationController* navigationController = [[UINavigationController alloc]initWithRootViewController:_settingsViewController];
+    if(appdelegate.landingViewController)
+        appdelegate.landingViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"LandingViewController"];
+    [appdelegate.landingViewController setIsActivateScreen:NO];
+    UINavigationController* navigationController = [[UINavigationController alloc]initWithRootViewController:appdelegate.landingViewController];
     [navigationController.navigationBar setTranslucent:NO];
     appdelegate.viewDeckController.centerController = navigationController;
     [appdelegate.viewDeckController closeOpenView];
@@ -65,6 +71,39 @@
     [navigationController.navigationBar setTranslucent:NO];
     appdelegate.viewDeckController.centerController = navigationController;
     [appdelegate.viewDeckController closeOpenView];
+}
 
+- (IBAction)privacyPolicyAction:(id)sender {
+    _privacyPolicyViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"PrivacyPolicyViewController"];
+    UINavigationController* navigationController = [[UINavigationController alloc]initWithRootViewController:_privacyPolicyViewController];
+    [navigationController.navigationBar setTranslucent:NO];
+    appdelegate.viewDeckController.centerController = navigationController;
+    [appdelegate.viewDeckController closeOpenView];
+}
+
+- (IBAction)howToUserAction:(id)sender {
+    _instructionsViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"InstructionsViewController"];
+    UINavigationController* navigationController = [[UINavigationController alloc]initWithRootViewController:_instructionsViewController];
+    [navigationController.navigationBar setTranslucent:NO];
+    appdelegate.viewDeckController.centerController = navigationController;
+    [appdelegate.viewDeckController closeOpenView];
+}
+
+- (IBAction)feedbackAction:(id)sender {
+    if([MFMailComposeViewController canSendMail]){
+        MFMailComposeViewController *composer = [[MFMailComposeViewController alloc] init];
+        composer.mailComposeDelegate = self;
+        [composer setSubject:@"RESQ"];
+        [composer setToRecipients:@[@"eden201621@gmail.com"]];
+        [self presentViewController:composer animated:YES completion:nil];
+    }else{
+        [[[UIAlertView alloc]initWithTitle:NSLocalizedString(@"Email", nil) message:NSLocalizedString(@"There are no Email account setup on this device. Go to Settings to add one.", nil) delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil] show];
+    }
+}
+
+- (void)mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error{
+    [self dismissViewControllerAnimated:YES completion:^{
+        //[appdelegate.viewDeckController closeOpenView];
+    }];
 }
 @end

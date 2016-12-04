@@ -12,6 +12,8 @@
 #import "SettingsViewController.h"
 #import <UserNotifications/UserNotifications.h>
 #import "PhoneNumberViewController.h"
+#import "LandingViewController.h"
+#import "PrivacyPolicyViewController.h"
 
 @interface AppDelegate ()<UNUserNotificationCenterDelegate>
 
@@ -24,10 +26,12 @@
     // Override point for customization after application launch.
     [self setSettingsViewController];
     
+    
     if([[NSUserDefaults standardUserDefaults]valueForKey:@"phoneNumber"] && [[[NSUserDefaults standardUserDefaults]valueForKey:@"phoneNumber"] length]){
         [self setSettingsViewController];
         
     }else{
+        [[NSUserDefaults standardUserDefaults]setFloat:120.0 forKey:@"notificationTime"];
         UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
         PhoneNumberViewController * controller = [storyboard instantiateViewControllerWithIdentifier:@"PhoneNumberViewController"];
         UINavigationController * navController = [[UINavigationController alloc]initWithRootViewController:controller];
@@ -36,6 +40,7 @@
     }
     return YES;
 }
+
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
@@ -64,9 +69,13 @@
 -(void)setSettingsViewController{
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     //    ActivateViewController *contentViewController = [storyboard instantiateViewControllerWithIdentifier:@"ActivateViewController"];
-    SettingsViewController *contentViewController = [storyboard instantiateViewControllerWithIdentifier:@"SettingsViewController"];
+    //    SettingsViewController *contentViewController = [storyboard instantiateViewControllerWithIdentifier:@"SettingsViewController"];
     MenuViewController * leftMenuViewController = [storyboard instantiateViewControllerWithIdentifier:@"MenuViewController"];
-    _appNavigationController = [[UINavigationController alloc]initWithRootViewController:contentViewController];
+    
+    if(!_landingViewController)
+        _landingViewController = [storyboard instantiateViewControllerWithIdentifier:@"LandingViewController"];
+    
+    _appNavigationController = [[UINavigationController alloc]initWithRootViewController:_landingViewController];
     [_appNavigationController.navigationBar setTranslucent:NO];
     _sideMenuViewController = [[RESideMenu alloc] initWithContentViewController:_appNavigationController
                                                          leftMenuViewController:leftMenuViewController
@@ -79,7 +88,7 @@
     
     _viewDeckController = [[IIViewDeckController alloc] initWithCenterViewController:_appNavigationController leftViewController:leftMenuViewController];
     _viewDeckController.panningCancelsTouchesInView = NO;
-    _viewDeckController.leftSize = 150 * DEVICE_OFFSET;
+    _viewDeckController.leftSize = 100 * DEVICE_OFFSET;
     _viewDeckController.centerhiddenInteractivity = IIViewDeckCenterHiddenNotUserInteractiveWithTapToClose;
     self.window.rootViewController = _viewDeckController;
     
@@ -163,5 +172,39 @@
             abort();
         }
     }
+}
+
+-(void)checkForTermsOfUseAndPrivacyPolicy:(UIViewController*)viewController{
+    
+    if([[NSUserDefaults standardUserDefaults]boolForKey:@"Agreement Accepted"]){
+        return;
+    }
+    UIAlertController *alertController = [UIAlertController  alertControllerWithTitle:@"Privacy Policy and Terms of Use"  message:@"By clicking \"I accept\", I agree to accept the Privacy Policy and Terms of Use!"  preferredStyle:UIAlertControllerStyleAlert];
+    [alertController addAction:[UIAlertAction actionWithTitle:@"Privacy Policy and Terms of Use" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+       
+        [viewController dismissViewControllerAnimated:YES completion:nil];
+        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        PrivacyPolicyViewController *privacyPolicyViewController = [storyboard instantiateViewControllerWithIdentifier:@"PrivacyPolicyViewController"];
+        UINavigationController* navigationController = [[UINavigationController alloc]initWithRootViewController:privacyPolicyViewController];
+        [navigationController.navigationBar setTranslucent:NO];
+        [viewController presentViewController:navigationController animated:YES completion:nil];
+
+    }]];
+    [alertController addAction:[UIAlertAction actionWithTitle:@"I accept" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+        [viewController dismissViewControllerAnimated:YES completion:nil];
+        [[NSUserDefaults standardUserDefaults]setBool:YES forKey:@"Agreement Accepted"];
+    }]];
+    [viewController presentViewController:alertController animated:YES completion:nil];
+}
+
+- (UIViewController*) topMostController{
+    UIViewController *topController = [UIApplication sharedApplication].keyWindow.rootViewController;
+    while (topController.presentedViewController) {
+        topController = topController.presentedViewController;
+    }
+    if([topController isKindOfClass:[UIAlertController class]]){
+        topController = [UIApplication sharedApplication].keyWindow.rootViewController;
+    }
+    return topController;
 }
 @end

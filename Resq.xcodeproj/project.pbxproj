@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		0FF0D2B03AEAB4DF39EAFD22 /* libPods-ResqUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A956C45DB19A854711506DB2 /* libPods-ResqUITests.a */; };
 		6450958A084E006C72E2423A /* libPods-ResqTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 589765DA3E0CCEE90880D0B8 /* libPods-ResqTests.a */; };
+		78144ACD1DF43F7200CD18B6 /* LandingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78144ACC1DF43F7200CD18B6 /* LandingViewController.m */; };
+		78144AD01DF445A200CD18B6 /* PrivacyPolicyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78144ACF1DF445A200CD18B6 /* PrivacyPolicyViewController.m */; };
+		78144AD31DF445F100CD18B6 /* InstructionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78144AD21DF445F100CD18B6 /* InstructionsViewController.m */; };
 		783EFCB41DEB1F8D007817E6 /* UserProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 783EFCB31DEB1F8D007817E6 /* UserProfileViewController.m */; };
 		7853170B1DDA3F1E00FC379A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7853170A1DDA3F1E00FC379A /* main.m */; };
 		7853170E1DDA3F1E00FC379A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7853170D1DDA3F1E00FC379A /* AppDelegate.m */; };
@@ -65,6 +68,12 @@
 		589765DA3E0CCEE90880D0B8 /* libPods-ResqTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ResqTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5FDCD9FA6118E84325556155 /* Pods-Resq.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Resq.release.xcconfig"; path = "Pods/Target Support Files/Pods-Resq/Pods-Resq.release.xcconfig"; sourceTree = "<group>"; };
 		6EFA3F4DFF8A6BAD496DD5B4 /* libPods-Resq.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Resq.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		78144ACB1DF43F7200CD18B6 /* LandingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LandingViewController.h; sourceTree = "<group>"; };
+		78144ACC1DF43F7200CD18B6 /* LandingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LandingViewController.m; sourceTree = "<group>"; };
+		78144ACE1DF445A200CD18B6 /* PrivacyPolicyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrivacyPolicyViewController.h; sourceTree = "<group>"; };
+		78144ACF1DF445A200CD18B6 /* PrivacyPolicyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PrivacyPolicyViewController.m; sourceTree = "<group>"; };
+		78144AD11DF445F100CD18B6 /* InstructionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InstructionsViewController.h; sourceTree = "<group>"; };
+		78144AD21DF445F100CD18B6 /* InstructionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InstructionsViewController.m; sourceTree = "<group>"; };
 		783EFCB21DEB1F8D007817E6 /* UserProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserProfileViewController.h; sourceTree = "<group>"; };
 		783EFCB31DEB1F8D007817E6 /* UserProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserProfileViewController.m; sourceTree = "<group>"; };
 		785317061DDA3F1E00FC379A /* RESQ.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RESQ.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -305,6 +314,8 @@
 			children = (
 				78A70D6D1DDBBBFC003BB2E1 /* SettingsViewController.h */,
 				78A70D6E1DDBBBFC003BB2E1 /* SettingsViewController.m */,
+				78144ACB1DF43F7200CD18B6 /* LandingViewController.h */,
+				78144ACC1DF43F7200CD18B6 /* LandingViewController.m */,
 				78A70D641DDBB6BD003BB2E1 /* ActivateViewController.h */,
 				78A70D651DDBB6BD003BB2E1 /* ActivateViewController.m */,
 				78A70D671DDBB843003BB2E1 /* MenuViewController.h */,
@@ -321,6 +332,10 @@
 				7890D7B51DE3B05800C17E78 /* BluetoothViewController.m */,
 				783EFCB21DEB1F8D007817E6 /* UserProfileViewController.h */,
 				783EFCB31DEB1F8D007817E6 /* UserProfileViewController.m */,
+				78144ACE1DF445A200CD18B6 /* PrivacyPolicyViewController.h */,
+				78144ACF1DF445A200CD18B6 /* PrivacyPolicyViewController.m */,
+				78144AD11DF445F100CD18B6 /* InstructionsViewController.h */,
+				78144AD21DF445F100CD18B6 /* InstructionsViewController.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -627,6 +642,7 @@
 				78A70D691DDBB843003BB2E1 /* MenuViewController.m in Sources */,
 				78D68ACD1DDE3668000801FF /* SearchResultsViewController.m in Sources */,
 				78A70D6F1DDBBBFC003BB2E1 /* SettingsViewController.m in Sources */,
+				78144AD31DF445F100CD18B6 /* InstructionsViewController.m in Sources */,
 				786EEE891DDCE05400B6C40F /* CountryTableViewCell.m in Sources */,
 				78A70D661DDBB6BD003BB2E1 /* ActivateViewController.m in Sources */,
 				7853170E1DDA3F1E00FC379A /* AppDelegate.m in Sources */,
@@ -636,10 +652,12 @@
 				786EEE861DDCDD0400B6C40F /* PhoneNumberViewController.m in Sources */,
 				785AAB031DE61F3C0089C84D /* Contacts.m in Sources */,
 				789DC6831DEA3221007D3B0A /* CBPeripheral+Debug.m in Sources */,
+				78144AD01DF445A200CD18B6 /* PrivacyPolicyViewController.m in Sources */,
 				789DC6811DEA3221007D3B0A /* CBCharacteristic+Debug.m in Sources */,
 				789DC67F1DEA3221007D3B0A /* CBCentralManager+Blocks.m in Sources */,
 				786EEE8C1DDCE34E00B6C40F /* CountryPickerViewController.m in Sources */,
 				7853170B1DDA3F1E00FC379A /* main.m in Sources */,
+				78144ACD1DF43F7200CD18B6 /* LandingViewController.m in Sources */,
 				783EFCB41DEB1F8D007817E6 /* UserProfileViewController.m in Sources */,
 				789DC6841DEA3221007D3B0A /* CBPeripheralManager+Blocks.m in Sources */,
 				786EEE821DDCD2AD00B6C40F /* ResqLocationManager.m in Sources */,
