@@ -174,7 +174,24 @@ static UserManager *_sharedUserManagerInstance = nil;
         NSString* mapUrlPath = [NSString stringWithFormat:@"http://maps.google.com/maps?q=%f,%f&iwloc=A",[ResqLocationManager sharedManager].currentLocation.coordinate.latitude,[ResqLocationManager sharedManager].currentLocation.coordinate.longitude];
         mapUrlPath = [self urlencode:mapUrlPath];
         
-        NSString *post = [NSString stringWithFormat:@"To=%@&From=%@&Body=%@ needs your help at this location: %@",to,from,[[NSUserDefaults standardUserDefaults] valueForKey:@"name"],mapUrlPath];
+        int roundOfTime = [[NSUserDefaults standardUserDefaults]floatForKey:@"notificationTime"];
+        if((roundOfTime % 15)>=1){
+            roundOfTime = (roundOfTime - (roundOfTime % 15))+15;
+        }
+        float value = roundOfTime;
+        int valueInt = value;
+        int min = valueInt/60;
+        NSString* timeString = @"";
+        if(min){
+            timeString = [NSString stringWithFormat:@"%d %@", min ,min > 1 ? @"min" : @"min"];
+        }
+        int sec = valueInt%60;
+        if(sec){
+            timeString = [NSString stringWithFormat:@"%@ %d %@",timeString,sec,sec>1?@"sec" : @"sec"];
+        }
+
+        
+        NSString *post = [NSString stringWithFormat:@"To=%@&From=%@&Body=Snow Rescue Alert: %@ has not moved for %@ time and might need your help. %@",to,from,[[NSUserDefaults standardUserDefaults] valueForKey:@"name"],timeString,mapUrlPath];
         
         NSData *postData = [post dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES];
         

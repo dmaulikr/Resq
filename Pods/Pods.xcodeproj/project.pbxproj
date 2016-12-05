@@ -7,139 +7,180 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		03CA78FD8B6827891E8FE003DF0DF0DC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90AAE8973B935FD4979EEDFB8B1E12AC /* Foundation.framework */; };
-		1B8062B55ED6E5068046208D7D4A3270 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90AAE8973B935FD4979EEDFB8B1E12AC /* Foundation.framework */; };
-		20B58229A35553AB85F2D8641A04E702 /* RESideMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E7BA475AAD00D21CDC322CD9B5B1E27 /* RESideMenu.m */; };
-		22269A5B9FBB5BC76443A57F76162442 /* IIWrapController.h in Headers */ = {isa = PBXBuildFile; fileRef = 91B95B70AB399441209D166FF2F7EDDD /* IIWrapController.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		2607918D638E56A7F435B4DECED6EDFE /* SVProgressAnimatedView.h in Headers */ = {isa = PBXBuildFile; fileRef = 38BBC9B4DE7D1294A92CA39C0456150B /* SVProgressAnimatedView.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		2805B6DBF6A8891A990E300DE923CB85 /* RECommonFunctions.h in Headers */ = {isa = PBXBuildFile; fileRef = 86FA1C114045B91CEE6B6829D21A55DA /* RECommonFunctions.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		2C9019E22EC65F56F488A51ACCEABF04 /* IISideController.m in Sources */ = {isa = PBXBuildFile; fileRef = B98F292289DADD71025D576F4A7C5357 /* IISideController.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		2C945818487824273814D9AC22D0CE38 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB0B5C34B0704CE42DB8ACE437DB6B71 /* QuartzCore.framework */; };
-		39D9A740A0E581F4D325AAB1EC53CD3A /* SVProgressAnimatedView.m in Sources */ = {isa = PBXBuildFile; fileRef = FFED2A99E514010D2E3B6B2696AF06EF /* SVProgressAnimatedView.m */; };
-		44795029A736C24FC6A7498329D29830 /* SVProgressHUD.h in Headers */ = {isa = PBXBuildFile; fileRef = F9D0AEE44F09F3D8CD291F1FD78C2CE8 /* SVProgressHUD.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		44E79B0E0D23BD539EC14D14A86567AB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90AAE8973B935FD4979EEDFB8B1E12AC /* Foundation.framework */; };
-		4C954F82D407CD2C02D4E9BB63A82D77 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90AAE8973B935FD4979EEDFB8B1E12AC /* Foundation.framework */; };
-		5A1B2893717AE2865CF99452BEA722B9 /* IIWrapController.m in Sources */ = {isa = PBXBuildFile; fileRef = D3C08BA0529B5D50F1F6494F7E8A68AD /* IIWrapController.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		6059CA6A6C0EB30A5C42031EB781BDB5 /* UIViewController+RESideMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 09F70124514902BD6A559A4AAEB50898 /* UIViewController+RESideMenu.m */; };
-		66BA0D35D632B51C9A087CF086C6C416 /* SVIndefiniteAnimatedView.h in Headers */ = {isa = PBXBuildFile; fileRef = 33B70BD752CAA03026AF31D62966CF44 /* SVIndefiniteAnimatedView.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		693ACFDD088478167CCAE3B4FD523097 /* RESideMenu.h in Headers */ = {isa = PBXBuildFile; fileRef = 83C75F0D9EF2F5130D606CEF3BE8DE59 /* RESideMenu.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		6A305AA5A33CF06FF408B364AA47F573 /* IISideController.h in Headers */ = {isa = PBXBuildFile; fileRef = 74438D59E2E98AABD8F40E0A93767E61 /* IISideController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0FBAD4444BD7BFEC02392034F153B59D /* SVProgressHUD.h in Headers */ = {isa = PBXBuildFile; fileRef = B0D1090A9B7700AD2243BBFE69934A56 /* SVProgressHUD.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		13C3CDA4B83CC22DDC653478A8CDA5C1 /* UIViewController+RESideMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 3167E736592BB27553246B0B8630B702 /* UIViewController+RESideMenu.m */; };
+		153BB954ACA1CF72A7AD1397B42F9B55 /* CarbonKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 957A040ED1B31CACC0F2E1BF2056F570 /* CarbonKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		18AF915EE5673F5EAC907CDAAC0EE178 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A817CAE99C81EE68006DC1E60E295C0A /* Foundation.framework */; };
+		21D70837B32DD2D6F6E093FDBAC57BF9 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23016F69B2480F44D0BB5526B39192FA /* QuartzCore.framework */; };
+		23FD7D21B87677B6875D1EBF0C27B71F /* CarbonTabSwipeScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = F513E7028393F6D3DB179426A2012152 /* CarbonTabSwipeScrollView.m */; };
+		297F2AD5CCEC93DFD4D608AFC48B07BE /* SVIndefiniteAnimatedView.h in Headers */ = {isa = PBXBuildFile; fileRef = DFBC52C41C69DEDDA457AB1DEEA90FB3 /* SVIndefiniteAnimatedView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2D4918D6FA6A7E642290EBCD61E4A1CE /* SVRadialGradientLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = A4C701C2E75B4ACEB7B7FF5796DC8D0D /* SVRadialGradientLayer.m */; };
+		305C662AD0F7F5ECE608BA1F4E29C18F /* IIWrapController.h in Headers */ = {isa = PBXBuildFile; fileRef = 9205A861FA7D6CBFEDFE3A9CBD206B6F /* IIWrapController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		43D36D8EEDCF0BBB6EF77629BD60A1A8 /* IISideController.h in Headers */ = {isa = PBXBuildFile; fileRef = 42DEB6CD9A15B6AB083E228FCEF5A294 /* IISideController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4C954F82D407CD2C02D4E9BB63A82D77 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A817CAE99C81EE68006DC1E60E295C0A /* Foundation.framework */; };
+		59F887630FFDD2AD1583E13D8164B1B1 /* RESideMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 8007CD44957CD51C3C2FBD8F1EB8D755 /* RESideMenu.m */; };
+		62078FA710AC376B32CA96C6BEE71DE8 /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D41664C1638C180391C199265D746E6 /* SVProgressHUD.m */; };
+		694176B4D2220A007EA6FCAC3BB207BD /* SVRadialGradientLayer.h in Headers */ = {isa = PBXBuildFile; fileRef = 7FB3EC7B7DB31EACE4D6153564066671 /* SVRadialGradientLayer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		69D6FB3B367866637A150A17B05D2B48 /* IIViewDeckController.h in Headers */ = {isa = PBXBuildFile; fileRef = 7B16EBBC1CE287411765AF727985C771 /* IIViewDeckController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6AE4ED59C098AC7EC150B0AE6F7DDCBC /* Pods-ResqUITests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 785062E40E7D598EE736CD6C1CEDCC7F /* Pods-ResqUITests-dummy.m */; };
-		71992E2504A3CA031AB5C68F751D241E /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB0B5C34B0704CE42DB8ACE437DB6B71 /* QuartzCore.framework */; };
-		71C6D81789E9F28FD6D7FBFBC0F01996 /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F87C8B5093F650F5955A664D3D6EE0D /* SVProgressHUD.m */; };
-		7836946A4E53771D9684F0B11D5230B7 /* SVIndefiniteAnimatedView.m in Sources */ = {isa = PBXBuildFile; fileRef = 53262BEC6E1639A4C2F1FC15D262ACFC /* SVIndefiniteAnimatedView.m */; };
-		7EF39F9B0314E48BE702E38F9EDD6FA8 /* RESideMenu-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = F7CF21EDB163991D0C9D724E80C94DAC /* RESideMenu-dummy.m */; };
-		82534F1295DF427C75DB1E8366C9A21E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90AAE8973B935FD4979EEDFB8B1E12AC /* Foundation.framework */; };
-		9081A5A690075C6A95C6FB63D9300717 /* UIViewController+RESideMenu.h in Headers */ = {isa = PBXBuildFile; fileRef = EF02345F0CCE251FED0F3F6CE4ACABBC /* UIViewController+RESideMenu.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		A069031C600CE1D9FE0954AF9CD5E103 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB0B5C34B0704CE42DB8ACE437DB6B71 /* QuartzCore.framework */; };
-		A12282F6F505BEA046AE7FC2B93F9A92 /* SVProgressHUD-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CF26725385B79AC0982138368887E98 /* SVProgressHUD-dummy.m */; };
-		A1EEFD9BF00219EE7C45F177E1D39B68 /* Pods-Resq-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = C474F2BA330329DF2C0412E66EAF6536 /* Pods-Resq-dummy.m */; };
-		A52E28C303C10C8E46F22AAFE61D54B9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90AAE8973B935FD4979EEDFB8B1E12AC /* Foundation.framework */; };
-		AA12AA8607CDAE69DE503C18E56F0890 /* IIViewDeckController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF73EA2D94AE5B0C674C5346FC25EEBC /* IIViewDeckController.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		AE17206ECD4C33EC469985D96D80BEEA /* SVRadialGradientLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 16A155487E77CE3A5C86F3964993FE74 /* SVRadialGradientLayer.m */; };
-		AF98B2FF0EA26406F064CBC2F3EC1F93 /* ViewDeck-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = CC223A3593C41F28825D541D27CEB468 /* ViewDeck-dummy.m */; };
-		B1CD1D68C4257A31BE56D4A328D13E6A /* IIViewDeckController.h in Headers */ = {isa = PBXBuildFile; fileRef = 1A0D65D92342CD15F14D811F67381A9D /* IIViewDeckController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		70B63FC83733A46C32947D391F3D4E0D /* SVProgressHUD-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 42FE8A024920641F89E6D46C7B42E3FC /* SVProgressHUD-dummy.m */; };
+		784E15DFE168C16F242C565B48475FE9 /* Pods-Resq-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = C474F2BA330329DF2C0412E66EAF6536 /* Pods-Resq-dummy.m */; };
+		789209632003377E5306067A016F6670 /* CarbonTabSwipeScrollView.h in Headers */ = {isa = PBXBuildFile; fileRef = 7CBEAF2EC736796648FCF103F06016E2 /* CarbonTabSwipeScrollView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7E3E3940897810E1BC40852125E8AA2B /* SVProgressAnimatedView.m in Sources */ = {isa = PBXBuildFile; fileRef = 621B234E98B92571A182388CFBC5268E /* SVProgressAnimatedView.m */; };
+		7EDC2C9A9630C66C3C7C5AD0D75046C1 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23016F69B2480F44D0BB5526B39192FA /* QuartzCore.framework */; };
+		80C223FE2062D2E7F00F015A46DC9D61 /* CarbonSwipeRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = AE03F8CE2AF6269B3CED544F0FDC25CE /* CarbonSwipeRefresh.m */; };
+		870E0639A8523763F9810C2A36DE6C95 /* RECommonFunctions.h in Headers */ = {isa = PBXBuildFile; fileRef = 074D23B3746AC389A816AA7B4FC539B2 /* RECommonFunctions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8769FB45BD6A7FE0CBC587E901616031 /* IIWrapController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4CBD0C38E56EB4006CF67B4948257DA /* IIWrapController.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		91DF2253BFD3F88526E27EFC81A943FF /* ViewDeck-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 13BE6BF2F4A42C46247FD565AE919242 /* ViewDeck-dummy.m */; };
+		924A6EB8F4DCA53392A2DD850B130433 /* UIViewController+RESideMenu.h in Headers */ = {isa = PBXBuildFile; fileRef = D56DFDE2EE855B045455090AA09591DB /* UIViewController+RESideMenu.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		93A44CBFF08647C4F86926D53F70B8CC /* CarbonSwipeRefresh.h in Headers */ = {isa = PBXBuildFile; fileRef = 01B58F199A40CCB7877E30A070E5891A /* CarbonSwipeRefresh.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		93D7B198FF04AC982F5E166EC3D7E1B4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 091D54A73E1E8BB182C9D7D245AF1C2F /* UIKit.framework */; };
+		9B8EE986E365F56960C02D0D81B74769 /* SVIndefiniteAnimatedView.m in Sources */ = {isa = PBXBuildFile; fileRef = 91D541AE867237AC74CB300FBA110E37 /* SVIndefiniteAnimatedView.m */; };
+		A52E28C303C10C8E46F22AAFE61D54B9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A817CAE99C81EE68006DC1E60E295C0A /* Foundation.framework */; };
+		AF73A98238A4F13B6996CD31BAADAE78 /* ViewDeck.h in Headers */ = {isa = PBXBuildFile; fileRef = BA756F32958CDCCEC51CA49E80FB49FF /* ViewDeck.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B2FA162A84C87145426FAC88B8F80CAE /* IISideController.m in Sources */ = {isa = PBXBuildFile; fileRef = B4D57257AEA06104C44536819BA48053 /* IISideController.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		B6AF6B77C7F8AABC851F73AC7556A3B9 /* RESideMenu-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 46AE8BFA3B4C15DEDF98E8E3E95F0D18 /* RESideMenu-dummy.m */; };
+		B85E64D352FDEB64C4A07992A55F8F3A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A817CAE99C81EE68006DC1E60E295C0A /* Foundation.framework */; };
+		BD68F04921EABBD94F7F540A15DDB797 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A817CAE99C81EE68006DC1E60E295C0A /* Foundation.framework */; };
 		C6D3313578A1F56AB41E1273A87D836A /* Pods-ResqTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = FC31EA98DFE646DA20A2BFE17575196E /* Pods-ResqTests-dummy.m */; };
-		DB0C1135226AC1531E4C0AB67073FC2A /* SVRadialGradientLayer.h in Headers */ = {isa = PBXBuildFile; fileRef = 125FEE5DC3857A7D5AF5FF37E2833233 /* SVRadialGradientLayer.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		DB9E661F509C1D1F2A12B1511EDA95BE /* RECommonFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = D8A96A166A3155EAFA340D13A3AD0DE6 /* RECommonFunctions.m */; };
-		F19C175FBDFB73BE63269E32084BAB1C /* ViewDeck.h in Headers */ = {isa = PBXBuildFile; fileRef = 443011023654F61C89D9C986F15923A6 /* ViewDeck.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D2E3AED303B0549167E8391CA83452A7 /* CarbonTabSwipeNavigation.h in Headers */ = {isa = PBXBuildFile; fileRef = EB3C4E642FE0396666D706BC30C4F788 /* CarbonTabSwipeNavigation.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D433DD92D3BD470764EE5CAB79C43D7F /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23016F69B2480F44D0BB5526B39192FA /* QuartzCore.framework */; };
+		D6ABA4B50873210AD7E0F55DC4C2D7C1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A817CAE99C81EE68006DC1E60E295C0A /* Foundation.framework */; };
+		D9C9F66E322F54DA0F00D556CC9FA9B7 /* CarbonKit-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DD437BD0D76D1B236A2877DEA42FBA8 /* CarbonKit-dummy.m */; };
+		DEAB2506266686DBDC86E5EDB8F6571C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A817CAE99C81EE68006DC1E60E295C0A /* Foundation.framework */; };
+		E001F1642B70BC9C52E7839D7BED51E3 /* CarbonTabSwipeSegmentedControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 73B722E43C9B5F2EBB553C5BB40648BB /* CarbonTabSwipeSegmentedControl.m */; };
+		E2CBC135C64FEE74CC650945C5BACB0A /* RECommonFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B8E89A3D4BE2824B45F874A009DB90E /* RECommonFunctions.m */; };
+		E2FF8C93722BCEFA8514620BCE460381 /* CarbonTabSwipeSegmentedControl.h in Headers */ = {isa = PBXBuildFile; fileRef = D8AA6424BF100B2B646E7F6029CF3076 /* CarbonTabSwipeSegmentedControl.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EAC04B82823D0C00572D1CA3DAC1199E /* IIViewDeckController.m in Sources */ = {isa = PBXBuildFile; fileRef = 743FA6D20B7EDC7EB05AABD093A17D87 /* IIViewDeckController.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		F5DE8F7E3D04430918C2BB6E63C61572 /* SVProgressAnimatedView.h in Headers */ = {isa = PBXBuildFile; fileRef = 7C5F81E8FA8C41768633C0D9242FFC76 /* SVProgressAnimatedView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F64EE49FBFA88F05C60C8E64720ECA1D /* RESideMenu.h in Headers */ = {isa = PBXBuildFile; fileRef = A5086C07C120F5F0E4E52965CFE06DE5 /* RESideMenu.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FDE719151ECA820E59CBC701D5A98DA9 /* CarbonTabSwipeNavigation.m in Sources */ = {isa = PBXBuildFile; fileRef = B4A157CD73226CDDAA71D9BC4F21E0C8 /* CarbonTabSwipeNavigation.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		50C1FFBF7AAEBE2AC82065A684968069 /* PBXContainerItemProxy */ = {
+		63A71E4901437FE3135AC53C538CD205 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = E3A3EB6D29DB7574ACEBE74D672B606E;
+			remoteGlobalIDString = 346F523B12D2B7E737C7A29243DF6E36;
+			remoteInfo = CarbonKit;
+		};
+		983C8EFF7233A2CF7AC7938983AFAFA4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E521F7DB92A0A0C70CEEE7462176A2D3;
 			remoteInfo = ViewDeck;
 		};
-		7C18C1749BAA3587EFD2E7A05DF523A0 /* PBXContainerItemProxy */ = {
+		A120C1057925A21270C198A90873FFC6 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = EA9DCBF43C79FA2B41334F00D27FB9C1;
-			remoteInfo = RESideMenu;
-		};
-		9B2073626BD2346679EEE40D6212A4D9 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = B2F491425ABA3743111B9F474909428A;
+			remoteGlobalIDString = 0A80D7E77CF52EDB628736D632E90D62;
 			remoteInfo = SVProgressHUD;
+		};
+		A62A7A175227F07C7C0BADB8E25AB56D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C04CE1559430913D337653099C08B682;
+			remoteInfo = RESideMenu;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		09F70124514902BD6A559A4AAEB50898 /* UIViewController+RESideMenu.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIViewController+RESideMenu.m"; path = "RESideMenu/UIViewController+RESideMenu.m"; sourceTree = "<group>"; };
-		0C3774201A8C2C277734667063210A4D /* SVProgressHUD.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SVProgressHUD.xcconfig; sourceTree = "<group>"; };
-		0E91090BC37E7AE79C04AF7C2028A713 /* SVProgressHUD.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = SVProgressHUD.bundle; path = SVProgressHUD/SVProgressHUD.bundle; sourceTree = "<group>"; };
-		125FEE5DC3857A7D5AF5FF37E2833233 /* SVRadialGradientLayer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SVRadialGradientLayer.h; path = SVProgressHUD/SVRadialGradientLayer.h; sourceTree = "<group>"; };
-		16A155487E77CE3A5C86F3964993FE74 /* SVRadialGradientLayer.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SVRadialGradientLayer.m; path = SVProgressHUD/SVRadialGradientLayer.m; sourceTree = "<group>"; };
-		1A0D65D92342CD15F14D811F67381A9D /* IIViewDeckController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = IIViewDeckController.h; path = ViewDeck/IIViewDeckController.h; sourceTree = "<group>"; };
-		1F87C8B5093F650F5955A664D3D6EE0D /* SVProgressHUD.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SVProgressHUD.m; path = SVProgressHUD/SVProgressHUD.m; sourceTree = "<group>"; };
+		01B58F199A40CCB7877E30A070E5891A /* CarbonSwipeRefresh.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CarbonSwipeRefresh.h; path = CarbonKit/CarbonSwipeRefresh.h; sourceTree = "<group>"; };
+		02F78E5706313C6C3D9B610425D5EECB /* RESideMenu-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "RESideMenu-prefix.pch"; sourceTree = "<group>"; };
+		074D23B3746AC389A816AA7B4FC539B2 /* RECommonFunctions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = RECommonFunctions.h; path = RESideMenu/RECommonFunctions.h; sourceTree = "<group>"; };
+		091D54A73E1E8BB182C9D7D245AF1C2F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		0984865B97F0E6D8C96E1A0ADBABF146 /* ViewDeck.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ViewDeck.xcconfig; sourceTree = "<group>"; };
+		0A00CDABBAFEEE661F5A2342388D97F6 /* SVProgressHUD.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SVProgressHUD.xcconfig; sourceTree = "<group>"; };
+		13BE6BF2F4A42C46247FD565AE919242 /* ViewDeck-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "ViewDeck-dummy.m"; sourceTree = "<group>"; };
+		23016F69B2480F44D0BB5526B39192FA /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/QuartzCore.framework; sourceTree = DEVELOPER_DIR; };
 		23E07E0299875070293D474F82EC181C /* Pods-Resq.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Resq.debug.xcconfig"; sourceTree = "<group>"; };
 		2953465A93F4D0CF5D8FC94CFC9B2D76 /* Pods-ResqUITests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-ResqUITests-acknowledgements.markdown"; sourceTree = "<group>"; };
-		33B70BD752CAA03026AF31D62966CF44 /* SVIndefiniteAnimatedView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SVIndefiniteAnimatedView.h; path = SVProgressHUD/SVIndefiniteAnimatedView.h; sourceTree = "<group>"; };
+		3167E736592BB27553246B0B8630B702 /* UIViewController+RESideMenu.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIViewController+RESideMenu.m"; path = "RESideMenu/UIViewController+RESideMenu.m"; sourceTree = "<group>"; };
 		35559864D002D71753197656E9D0F6B6 /* Pods-ResqUITests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-ResqUITests-acknowledgements.plist"; sourceTree = "<group>"; };
-		38BBC9B4DE7D1294A92CA39C0456150B /* SVProgressAnimatedView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SVProgressAnimatedView.h; path = SVProgressHUD/SVProgressAnimatedView.h; sourceTree = "<group>"; };
-		3CF26725385B79AC0982138368887E98 /* SVProgressHUD-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SVProgressHUD-dummy.m"; sourceTree = "<group>"; };
+		3B7AABB613EADF2DFCDD60FEDC7E4CDB /* SVProgressHUD-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SVProgressHUD-prefix.pch"; sourceTree = "<group>"; };
+		3DD437BD0D76D1B236A2877DEA42FBA8 /* CarbonKit-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "CarbonKit-dummy.m"; sourceTree = "<group>"; };
 		3F834BF86112FD254C8C9F54E867149F /* Pods-ResqUITests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-ResqUITests-frameworks.sh"; sourceTree = "<group>"; };
+		42DEB6CD9A15B6AB083E228FCEF5A294 /* IISideController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = IISideController.h; path = ViewDeck/IISideController.h; sourceTree = "<group>"; };
+		42FE8A024920641F89E6D46C7B42E3FC /* SVProgressHUD-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SVProgressHUD-dummy.m"; sourceTree = "<group>"; };
 		43D509B2AEA6C676921F73257AFC082B /* Pods-Resq-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Resq-resources.sh"; sourceTree = "<group>"; };
-		443011023654F61C89D9C986F15923A6 /* ViewDeck.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ViewDeck.h; path = ViewDeck/ViewDeck.h; sourceTree = "<group>"; };
+		46AE8BFA3B4C15DEDF98E8E3E95F0D18 /* RESideMenu-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "RESideMenu-dummy.m"; sourceTree = "<group>"; };
 		4BF59BD59C093D2CF0A7D10485A7C5D3 /* Pods-ResqTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-ResqTests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		4DAC27B901B2EE4B5B4B8C22B915A242 /* RESideMenu.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = RESideMenu.xcconfig; sourceTree = "<group>"; };
 		501DEDCAA0925AEEFA5608D521DAEAEC /* Pods-ResqTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ResqTests.debug.xcconfig"; sourceTree = "<group>"; };
+		5032AC3C6ADC64DF5697C60C452FA7CB /* CarbonKit.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = CarbonKit.xcconfig; sourceTree = "<group>"; };
 		52FAFD8CD1E66332953668615924081B /* Pods-ResqTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ResqTests.release.xcconfig"; sourceTree = "<group>"; };
-		53262BEC6E1639A4C2F1FC15D262ACFC /* SVIndefiniteAnimatedView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SVIndefiniteAnimatedView.m; path = SVProgressHUD/SVIndefiniteAnimatedView.m; sourceTree = "<group>"; };
-		611937BFD6EF30A2C84EF308B7BF929A /* libRESideMenu.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libRESideMenu.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		62545BDF607466AA4B5247C26C93C053 /* RESideMenu-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "RESideMenu-prefix.pch"; sourceTree = "<group>"; };
+		592EF5C0D044364DDD6CC51F0E14E31F /* libSVProgressHUD.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libSVProgressHUD.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		621B234E98B92571A182388CFBC5268E /* SVProgressAnimatedView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SVProgressAnimatedView.m; path = SVProgressHUD/SVProgressAnimatedView.m; sourceTree = "<group>"; };
 		653B655AE656318A9487CCE0EA96A607 /* Pods-ResqUITests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-ResqUITests-resources.sh"; sourceTree = "<group>"; };
+		6B8E89A3D4BE2824B45F874A009DB90E /* RECommonFunctions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = RECommonFunctions.m; path = RESideMenu/RECommonFunctions.m; sourceTree = "<group>"; };
+		6E35E5A853DC2AB83AB9518A8B53F911 /* libCarbonKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libCarbonKit.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		71A29A89921BB8FACA8B9EFFA3F3B5E8 /* Pods-Resq-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Resq-acknowledgements.markdown"; sourceTree = "<group>"; };
-		74438D59E2E98AABD8F40E0A93767E61 /* IISideController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = IISideController.h; path = ViewDeck/IISideController.h; sourceTree = "<group>"; };
-		77808F35629C020D6D2189F42B365D05 /* ViewDeck.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ViewDeck.xcconfig; sourceTree = "<group>"; };
+		73B722E43C9B5F2EBB553C5BB40648BB /* CarbonTabSwipeSegmentedControl.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CarbonTabSwipeSegmentedControl.m; path = CarbonKit/CarbonTabSwipeSegmentedControl.m; sourceTree = "<group>"; };
+		743FA6D20B7EDC7EB05AABD093A17D87 /* IIViewDeckController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = IIViewDeckController.m; path = ViewDeck/IIViewDeckController.m; sourceTree = "<group>"; };
 		785062E40E7D598EE736CD6C1CEDCC7F /* Pods-ResqUITests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-ResqUITests-dummy.m"; sourceTree = "<group>"; };
-		7A7550CE2F904B19435862E2151C0A61 /* libViewDeck.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libViewDeck.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		83C75F0D9EF2F5130D606CEF3BE8DE59 /* RESideMenu.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = RESideMenu.h; path = RESideMenu/RESideMenu.h; sourceTree = "<group>"; };
+		7B16EBBC1CE287411765AF727985C771 /* IIViewDeckController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = IIViewDeckController.h; path = ViewDeck/IIViewDeckController.h; sourceTree = "<group>"; };
+		7C5F81E8FA8C41768633C0D9242FFC76 /* SVProgressAnimatedView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SVProgressAnimatedView.h; path = SVProgressHUD/SVProgressAnimatedView.h; sourceTree = "<group>"; };
+		7CBEAF2EC736796648FCF103F06016E2 /* CarbonTabSwipeScrollView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CarbonTabSwipeScrollView.h; path = CarbonKit/CarbonTabSwipeScrollView.h; sourceTree = "<group>"; };
+		7FB3EC7B7DB31EACE4D6153564066671 /* SVRadialGradientLayer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SVRadialGradientLayer.h; path = SVProgressHUD/SVRadialGradientLayer.h; sourceTree = "<group>"; };
+		8007CD44957CD51C3C2FBD8F1EB8D755 /* RESideMenu.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = RESideMenu.m; path = RESideMenu/RESideMenu.m; sourceTree = "<group>"; };
 		854133665D0D728492F0CDDEA78E4606 /* Pods-Resq.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Resq.release.xcconfig"; sourceTree = "<group>"; };
-		858CCEC9F7FA6F257651DAF7011D76C0 /* SVProgressHUD-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SVProgressHUD-prefix.pch"; sourceTree = "<group>"; };
-		86FA1C114045B91CEE6B6829D21A55DA /* RECommonFunctions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = RECommonFunctions.h; path = RESideMenu/RECommonFunctions.h; sourceTree = "<group>"; };
-		8E111B1C6ED2E2EF6823891940C973FA /* libSVProgressHUD.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libSVProgressHUD.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		90AAE8973B935FD4979EEDFB8B1E12AC /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		91B95B70AB399441209D166FF2F7EDDD /* IIWrapController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = IIWrapController.h; path = ViewDeck/IIWrapController.h; sourceTree = "<group>"; };
+		85E8DA5F1276F1DAFE1D38659473C0A3 /* libPods-ResqUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ResqUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8955E07BD524C1C0C7A36FD67C8DF013 /* libViewDeck.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libViewDeck.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		91D541AE867237AC74CB300FBA110E37 /* SVIndefiniteAnimatedView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SVIndefiniteAnimatedView.m; path = SVProgressHUD/SVIndefiniteAnimatedView.m; sourceTree = "<group>"; };
+		9205A861FA7D6CBFEDFE3A9CBD206B6F /* IIWrapController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = IIWrapController.h; path = ViewDeck/IIWrapController.h; sourceTree = "<group>"; };
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		957A040ED1B31CACC0F2E1BF2056F570 /* CarbonKit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CarbonKit.h; path = CarbonKit/CarbonKit.h; sourceTree = "<group>"; };
 		9604F9F5A043718A3BD1D291F3E06A21 /* Pods-Resq-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Resq-frameworks.sh"; sourceTree = "<group>"; };
-		98E24424A95205872E5DED1A23BE671B /* ViewDeck-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ViewDeck-prefix.pch"; sourceTree = "<group>"; };
+		9D41664C1638C180391C199265D746E6 /* SVProgressHUD.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SVProgressHUD.m; path = SVProgressHUD/SVProgressHUD.m; sourceTree = "<group>"; };
 		9D9EE11A3A6BDF89F38FBD41C736A55A /* Pods-Resq-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Resq-acknowledgements.plist"; sourceTree = "<group>"; };
-		9E2EBA0BFC2A7ECE9BBB2572852FEA28 /* libPods-ResqUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ResqUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		9E7BA475AAD00D21CDC322CD9B5B1E27 /* RESideMenu.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = RESideMenu.m; path = RESideMenu/RESideMenu.m; sourceTree = "<group>"; };
+		A076F3FD5BAF3A8ADA04A3E59255F305 /* CarbonKit-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "CarbonKit-prefix.pch"; sourceTree = "<group>"; };
 		A3427D75D3067759F7488A54A74D1810 /* Pods-ResqTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-ResqTests-acknowledgements.plist"; sourceTree = "<group>"; };
+		A4C701C2E75B4ACEB7B7FF5796DC8D0D /* SVRadialGradientLayer.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SVRadialGradientLayer.m; path = SVProgressHUD/SVRadialGradientLayer.m; sourceTree = "<group>"; };
+		A5086C07C120F5F0E4E52965CFE06DE5 /* RESideMenu.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = RESideMenu.h; path = RESideMenu/RESideMenu.h; sourceTree = "<group>"; };
 		A6E1DA9395E53AFDC2734D38B4FE0E38 /* Pods-ResqTests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-ResqTests-frameworks.sh"; sourceTree = "<group>"; };
 		A7AC8C030F1D05D6110966B8373BD5C3 /* Pods-ResqTests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-ResqTests-resources.sh"; sourceTree = "<group>"; };
-		B171A3065A6348C3C53F471560DAAC2F /* RESideMenu.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = RESideMenu.xcconfig; sourceTree = "<group>"; };
-		B49DEE494E75DDFA33840DEBEE5DC932 /* libPods-Resq.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Resq.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		B98F292289DADD71025D576F4A7C5357 /* IISideController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = IISideController.m; path = ViewDeck/IISideController.m; sourceTree = "<group>"; };
+		A817CAE99C81EE68006DC1E60E295C0A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		A9BAE044C2205AFB5B7C42E12CBA295A /* ViewDeck-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ViewDeck-prefix.pch"; sourceTree = "<group>"; };
+		AA87BA129C38A5AADC9E536F006390AE /* libRESideMenu.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libRESideMenu.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		AE03F8CE2AF6269B3CED544F0FDC25CE /* CarbonSwipeRefresh.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CarbonSwipeRefresh.m; path = CarbonKit/CarbonSwipeRefresh.m; sourceTree = "<group>"; };
+		B0D1090A9B7700AD2243BBFE69934A56 /* SVProgressHUD.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SVProgressHUD.h; path = SVProgressHUD/SVProgressHUD.h; sourceTree = "<group>"; };
+		B4A157CD73226CDDAA71D9BC4F21E0C8 /* CarbonTabSwipeNavigation.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CarbonTabSwipeNavigation.m; path = CarbonKit/CarbonTabSwipeNavigation.m; sourceTree = "<group>"; };
+		B4D57257AEA06104C44536819BA48053 /* IISideController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = IISideController.m; path = ViewDeck/IISideController.m; sourceTree = "<group>"; };
 		B991958827515746CA00B140C1CA1CBA /* Pods-ResqUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ResqUITests.release.xcconfig"; sourceTree = "<group>"; };
+		BA756F32958CDCCEC51CA49E80FB49FF /* ViewDeck.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ViewDeck.h; path = ViewDeck/ViewDeck.h; sourceTree = "<group>"; };
 		C474F2BA330329DF2C0412E66EAF6536 /* Pods-Resq-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Resq-dummy.m"; sourceTree = "<group>"; };
-		CC223A3593C41F28825D541D27CEB468 /* ViewDeck-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "ViewDeck-dummy.m"; sourceTree = "<group>"; };
-		CEA5959A14EDB92F1DB44BDE946C0141 /* libPods-ResqTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ResqTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		CF73EA2D94AE5B0C674C5346FC25EEBC /* IIViewDeckController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = IIViewDeckController.m; path = ViewDeck/IIViewDeckController.m; sourceTree = "<group>"; };
-		D3C08BA0529B5D50F1F6494F7E8A68AD /* IIWrapController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = IIWrapController.m; path = ViewDeck/IIWrapController.m; sourceTree = "<group>"; };
-		D8A96A166A3155EAFA340D13A3AD0DE6 /* RECommonFunctions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = RECommonFunctions.m; path = RESideMenu/RECommonFunctions.m; sourceTree = "<group>"; };
+		C73F959AEF921B0ECF7B9C2D13B24814 /* SVProgressHUD.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = SVProgressHUD.bundle; path = SVProgressHUD/SVProgressHUD.bundle; sourceTree = "<group>"; };
+		D56DFDE2EE855B045455090AA09591DB /* UIViewController+RESideMenu.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIViewController+RESideMenu.h"; path = "RESideMenu/UIViewController+RESideMenu.h"; sourceTree = "<group>"; };
+		D8AA6424BF100B2B646E7F6029CF3076 /* CarbonTabSwipeSegmentedControl.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CarbonTabSwipeSegmentedControl.h; path = CarbonKit/CarbonTabSwipeSegmentedControl.h; sourceTree = "<group>"; };
+		D99C4DB52B56A3F7E7A45921A464F18D /* libPods-ResqTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ResqTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DA9E12AEC11621A4A09DEF283E3B7681 /* libPods-Resq.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Resq.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DFBC52C41C69DEDDA457AB1DEEA90FB3 /* SVIndefiniteAnimatedView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SVIndefiniteAnimatedView.h; path = SVProgressHUD/SVIndefiniteAnimatedView.h; sourceTree = "<group>"; };
+		E4CBD0C38E56EB4006CF67B4948257DA /* IIWrapController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = IIWrapController.m; path = ViewDeck/IIWrapController.m; sourceTree = "<group>"; };
 		E522FEA935744B4D9B117E864C772C09 /* Pods-ResqUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ResqUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		EB0B5C34B0704CE42DB8ACE437DB6B71 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/QuartzCore.framework; sourceTree = DEVELOPER_DIR; };
-		EF02345F0CCE251FED0F3F6CE4ACABBC /* UIViewController+RESideMenu.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIViewController+RESideMenu.h"; path = "RESideMenu/UIViewController+RESideMenu.h"; sourceTree = "<group>"; };
-		F7CF21EDB163991D0C9D724E80C94DAC /* RESideMenu-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "RESideMenu-dummy.m"; sourceTree = "<group>"; };
-		F9D0AEE44F09F3D8CD291F1FD78C2CE8 /* SVProgressHUD.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SVProgressHUD.h; path = SVProgressHUD/SVProgressHUD.h; sourceTree = "<group>"; };
+		EB3C4E642FE0396666D706BC30C4F788 /* CarbonTabSwipeNavigation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CarbonTabSwipeNavigation.h; path = CarbonKit/CarbonTabSwipeNavigation.h; sourceTree = "<group>"; };
+		F513E7028393F6D3DB179426A2012152 /* CarbonTabSwipeScrollView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CarbonTabSwipeScrollView.m; path = CarbonKit/CarbonTabSwipeScrollView.m; sourceTree = "<group>"; };
 		FC31EA98DFE646DA20A2BFE17575196E /* Pods-ResqTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-ResqTests-dummy.m"; sourceTree = "<group>"; };
-		FFED2A99E514010D2E3B6B2696AF06EF /* SVProgressAnimatedView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SVProgressAnimatedView.m; path = SVProgressHUD/SVProgressAnimatedView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		61A0691ED442806EFB43ABC4D5876979 /* Frameworks */ = {
+		059E72856AF773AE723B256801175914 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				44E79B0E0D23BD539EC14D14A86567AB /* Foundation.framework in Frameworks */,
-				2C945818487824273814D9AC22D0CE38 /* QuartzCore.framework in Frameworks */,
+				B85E64D352FDEB64C4A07992A55F8F3A /* Foundation.framework in Frameworks */,
+				21D70837B32DD2D6F6E093FDBAC57BF9 /* QuartzCore.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4693F44CB803B97F3129734D95765D54 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BD68F04921EABBD94F7F540A15DDB797 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -151,29 +192,12 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		AFE2CBB7FE839964A8A8BB3461E5889D /* Frameworks */ = {
+		BD63481F82D971150CD0AE981D24A0D1 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				82534F1295DF427C75DB1E8366C9A21E /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		BCEADFFA847E97AA0FFC74943A61E9C5 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				1B8062B55ED6E5068046208D7D4A3270 /* Foundation.framework in Frameworks */,
-				A069031C600CE1D9FE0954AF9CD5E103 /* QuartzCore.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		DBF34C0BAB41EA3643519D6B5517B340 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				03CA78FD8B6827891E8FE003DF0DF0DC /* Foundation.framework in Frameworks */,
-				71992E2504A3CA031AB5C68F751D241E /* QuartzCore.framework in Frameworks */,
+				DEAB2506266686DBDC86E5EDB8F6571C /* Foundation.framework in Frameworks */,
+				93D7B198FF04AC982F5E166EC3D7E1B4 /* UIKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -185,106 +209,116 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		EB4F70201257D2146A978BB989EA41F7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D6ABA4B50873210AD7E0F55DC4C2D7C1 /* Foundation.framework in Frameworks */,
+				7EDC2C9A9630C66C3C7C5AD0D75046C1 /* QuartzCore.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F39775FBB1BB2B39833872A8A62C36C3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				18AF915EE5673F5EAC907CDAAC0EE178 /* Foundation.framework in Frameworks */,
+				D433DD92D3BD470764EE5CAB79C43D7F /* QuartzCore.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		07502C02536DDAE26CEA6F65BDCF0A77 /* Products */ = {
+		07CC9CF69CFF0A01A7C7019214ED2F17 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				B49DEE494E75DDFA33840DEBEE5DC932 /* libPods-Resq.a */,
-				CEA5959A14EDB92F1DB44BDE946C0141 /* libPods-ResqTests.a */,
-				9E2EBA0BFC2A7ECE9BBB2572852FEA28 /* libPods-ResqUITests.a */,
-				611937BFD6EF30A2C84EF308B7BF929A /* libRESideMenu.a */,
-				8E111B1C6ED2E2EF6823891940C973FA /* libSVProgressHUD.a */,
-				7A7550CE2F904B19435862E2151C0A61 /* libViewDeck.a */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		15F603C9509400C65A45BFF21BC2E972 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				59290F8C0A1CA4E4D35BFBEF37718C21 /* RESideMenu */,
-				C52F8EDDCE50D863CCD2A8E1F7709BC9 /* SVProgressHUD */,
-				46F1323C672046AB49BE9E52E7994B1A /* ViewDeck */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
-		2EE1AA22C27B20223D0ACF8F28637B52 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				0E91090BC37E7AE79C04AF7C2028A713 /* SVProgressHUD.bundle */,
+				C73F959AEF921B0ECF7B9C2D13B24814 /* SVProgressHUD.bundle */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
 		};
-		433CD3331B6C3787F473C941B61FC68F /* Frameworks */ = {
+		122DA2E5084A4393C29BE363C764795C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				89F803C7E2D77E11F2120CB28FE0B795 /* iOS */,
+				DFDE779C6E5D3445E0CB8CCB8D424449 /* iOS */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		46F1323C672046AB49BE9E52E7994B1A /* ViewDeck */ = {
+		57374494EDA292D3441A80F73471EEB0 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				74438D59E2E98AABD8F40E0A93767E61 /* IISideController.h */,
-				B98F292289DADD71025D576F4A7C5357 /* IISideController.m */,
-				1A0D65D92342CD15F14D811F67381A9D /* IIViewDeckController.h */,
-				CF73EA2D94AE5B0C674C5346FC25EEBC /* IIViewDeckController.m */,
-				91B95B70AB399441209D166FF2F7EDDD /* IIWrapController.h */,
-				D3C08BA0529B5D50F1F6494F7E8A68AD /* IIWrapController.m */,
-				443011023654F61C89D9C986F15923A6 /* ViewDeck.h */,
-				8FE0F2E56B049FC966C6EEDEEB4AEF4C /* Support Files */,
+				4DAC27B901B2EE4B5B4B8C22B915A242 /* RESideMenu.xcconfig */,
+				46AE8BFA3B4C15DEDF98E8E3E95F0D18 /* RESideMenu-dummy.m */,
+				02F78E5706313C6C3D9B610425D5EECB /* RESideMenu-prefix.pch */,
 			);
-			path = ViewDeck;
+			name = "Support Files";
+			path = "../Target Support Files/RESideMenu";
 			sourceTree = "<group>";
 		};
-		59290F8C0A1CA4E4D35BFBEF37718C21 /* RESideMenu */ = {
+		6FFB1147446AFBAA01A68041AB352163 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				86FA1C114045B91CEE6B6829D21A55DA /* RECommonFunctions.h */,
-				D8A96A166A3155EAFA340D13A3AD0DE6 /* RECommonFunctions.m */,
-				83C75F0D9EF2F5130D606CEF3BE8DE59 /* RESideMenu.h */,
-				9E7BA475AAD00D21CDC322CD9B5B1E27 /* RESideMenu.m */,
-				EF02345F0CCE251FED0F3F6CE4ACABBC /* UIViewController+RESideMenu.h */,
-				09F70124514902BD6A559A4AAEB50898 /* UIViewController+RESideMenu.m */,
-				DDB37F08863019A9C1E5DF00C1D3CE7D /* Support Files */,
+				5032AC3C6ADC64DF5697C60C452FA7CB /* CarbonKit.xcconfig */,
+				3DD437BD0D76D1B236A2877DEA42FBA8 /* CarbonKit-dummy.m */,
+				A076F3FD5BAF3A8ADA04A3E59255F305 /* CarbonKit-prefix.pch */,
 			);
-			path = RESideMenu;
+			name = "Support Files";
+			path = "../Target Support Files/CarbonKit";
+			sourceTree = "<group>";
+		};
+		72B19468D0108F75D44C8FB14FDDE05D /* CarbonKit */ = {
+			isa = PBXGroup;
+			children = (
+				957A040ED1B31CACC0F2E1BF2056F570 /* CarbonKit.h */,
+				01B58F199A40CCB7877E30A070E5891A /* CarbonSwipeRefresh.h */,
+				AE03F8CE2AF6269B3CED544F0FDC25CE /* CarbonSwipeRefresh.m */,
+				EB3C4E642FE0396666D706BC30C4F788 /* CarbonTabSwipeNavigation.h */,
+				B4A157CD73226CDDAA71D9BC4F21E0C8 /* CarbonTabSwipeNavigation.m */,
+				7CBEAF2EC736796648FCF103F06016E2 /* CarbonTabSwipeScrollView.h */,
+				F513E7028393F6D3DB179426A2012152 /* CarbonTabSwipeScrollView.m */,
+				D8AA6424BF100B2B646E7F6029CF3076 /* CarbonTabSwipeSegmentedControl.h */,
+				73B722E43C9B5F2EBB553C5BB40648BB /* CarbonTabSwipeSegmentedControl.m */,
+				6FFB1147446AFBAA01A68041AB352163 /* Support Files */,
+			);
+			path = CarbonKit;
+			sourceTree = "<group>";
+		};
+		7BA29BB08706E703B8F09B83ADE5BD43 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				0A00CDABBAFEEE661F5A2342388D97F6 /* SVProgressHUD.xcconfig */,
+				42FE8A024920641F89E6D46C7B42E3FC /* SVProgressHUD-dummy.m */,
+				3B7AABB613EADF2DFCDD60FEDC7E4CDB /* SVProgressHUD-prefix.pch */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/SVProgressHUD";
 			sourceTree = "<group>";
 		};
 		7DB346D0F39D3F0E887471402A8071AB = {
 			isa = PBXGroup;
 			children = (
 				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
-				433CD3331B6C3787F473C941B61FC68F /* Frameworks */,
-				15F603C9509400C65A45BFF21BC2E972 /* Pods */,
-				07502C02536DDAE26CEA6F65BDCF0A77 /* Products */,
+				122DA2E5084A4393C29BE363C764795C /* Frameworks */,
+				9A981357F13076783C6C43D3967FD281 /* Pods */,
+				BE91EE6A4237A1ED2AFD130A5FA4DE66 /* Products */,
 				C0B4AB299ADA686427B00AA6A2E140E0 /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
-		89F803C7E2D77E11F2120CB28FE0B795 /* iOS */ = {
+		86545352ACC48BBFB8864D5F5E49FAA2 /* RESideMenu */ = {
 			isa = PBXGroup;
 			children = (
-				90AAE8973B935FD4979EEDFB8B1E12AC /* Foundation.framework */,
-				EB0B5C34B0704CE42DB8ACE437DB6B71 /* QuartzCore.framework */,
+				074D23B3746AC389A816AA7B4FC539B2 /* RECommonFunctions.h */,
+				6B8E89A3D4BE2824B45F874A009DB90E /* RECommonFunctions.m */,
+				A5086C07C120F5F0E4E52965CFE06DE5 /* RESideMenu.h */,
+				8007CD44957CD51C3C2FBD8F1EB8D755 /* RESideMenu.m */,
+				D56DFDE2EE855B045455090AA09591DB /* UIViewController+RESideMenu.h */,
+				3167E736592BB27553246B0B8630B702 /* UIViewController+RESideMenu.m */,
+				57374494EDA292D3441A80F73471EEB0 /* Support Files */,
 			);
-			name = iOS;
-			sourceTree = "<group>";
-		};
-		8FE0F2E56B049FC966C6EEDEEB4AEF4C /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				77808F35629C020D6D2189F42B365D05 /* ViewDeck.xcconfig */,
-				CC223A3593C41F28825D541D27CEB468 /* ViewDeck-dummy.m */,
-				98E24424A95205872E5DED1A23BE671B /* ViewDeck-prefix.pch */,
-			);
-			name = "Support Files";
-			path = "../Target Support Files/ViewDeck";
+			path = RESideMenu;
 			sourceTree = "<group>";
 		};
 		98B30454859ED54A4C4F54E52C2CE621 /* Pods-Resq */ = {
@@ -302,15 +336,26 @@
 			path = "Target Support Files/Pods-Resq";
 			sourceTree = "<group>";
 		};
-		9B6F32A1AF22C0250736A12AB64009C3 /* Support Files */ = {
+		9A981357F13076783C6C43D3967FD281 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				0C3774201A8C2C277734667063210A4D /* SVProgressHUD.xcconfig */,
-				3CF26725385B79AC0982138368887E98 /* SVProgressHUD-dummy.m */,
-				858CCEC9F7FA6F257651DAF7011D76C0 /* SVProgressHUD-prefix.pch */,
+				72B19468D0108F75D44C8FB14FDDE05D /* CarbonKit */,
+				86545352ACC48BBFB8864D5F5E49FAA2 /* RESideMenu */,
+				E659CB0EA2561DF37035E46C35FD29FF /* SVProgressHUD */,
+				BCECF3D8C132A1E7E062DFB52ACE652C /* ViewDeck */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		B2C6FEF7F31EC71B609A07C12854E051 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				0984865B97F0E6D8C96E1A0ADBABF146 /* ViewDeck.xcconfig */,
+				13BE6BF2F4A42C46247FD565AE919242 /* ViewDeck-dummy.m */,
+				A9BAE044C2205AFB5B7C42E12CBA295A /* ViewDeck-prefix.pch */,
 			);
 			name = "Support Files";
-			path = "../Target Support Files/SVProgressHUD";
+			path = "../Target Support Files/ViewDeck";
 			sourceTree = "<group>";
 		};
 		B7FB8AF5E7B2250D48079C3D7908A633 /* Pods-ResqTests */ = {
@@ -328,6 +373,35 @@
 			path = "Target Support Files/Pods-ResqTests";
 			sourceTree = "<group>";
 		};
+		BCECF3D8C132A1E7E062DFB52ACE652C /* ViewDeck */ = {
+			isa = PBXGroup;
+			children = (
+				42DEB6CD9A15B6AB083E228FCEF5A294 /* IISideController.h */,
+				B4D57257AEA06104C44536819BA48053 /* IISideController.m */,
+				7B16EBBC1CE287411765AF727985C771 /* IIViewDeckController.h */,
+				743FA6D20B7EDC7EB05AABD093A17D87 /* IIViewDeckController.m */,
+				9205A861FA7D6CBFEDFE3A9CBD206B6F /* IIWrapController.h */,
+				E4CBD0C38E56EB4006CF67B4948257DA /* IIWrapController.m */,
+				BA756F32958CDCCEC51CA49E80FB49FF /* ViewDeck.h */,
+				B2C6FEF7F31EC71B609A07C12854E051 /* Support Files */,
+			);
+			path = ViewDeck;
+			sourceTree = "<group>";
+		};
+		BE91EE6A4237A1ED2AFD130A5FA4DE66 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				6E35E5A853DC2AB83AB9518A8B53F911 /* libCarbonKit.a */,
+				DA9E12AEC11621A4A09DEF283E3B7681 /* libPods-Resq.a */,
+				D99C4DB52B56A3F7E7A45921A464F18D /* libPods-ResqTests.a */,
+				85E8DA5F1276F1DAFE1D38659473C0A3 /* libPods-ResqUITests.a */,
+				AA87BA129C38A5AADC9E536F006390AE /* libRESideMenu.a */,
+				592EF5C0D044364DDD6CC51F0E14E31F /* libSVProgressHUD.a */,
+				8955E07BD524C1C0C7A36FD67C8DF013 /* libViewDeck.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		C0B4AB299ADA686427B00AA6A2E140E0 /* Targets Support Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -338,32 +412,31 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		C52F8EDDCE50D863CCD2A8E1F7709BC9 /* SVProgressHUD */ = {
+		DFDE779C6E5D3445E0CB8CCB8D424449 /* iOS */ = {
 			isa = PBXGroup;
 			children = (
-				33B70BD752CAA03026AF31D62966CF44 /* SVIndefiniteAnimatedView.h */,
-				53262BEC6E1639A4C2F1FC15D262ACFC /* SVIndefiniteAnimatedView.m */,
-				38BBC9B4DE7D1294A92CA39C0456150B /* SVProgressAnimatedView.h */,
-				FFED2A99E514010D2E3B6B2696AF06EF /* SVProgressAnimatedView.m */,
-				F9D0AEE44F09F3D8CD291F1FD78C2CE8 /* SVProgressHUD.h */,
-				1F87C8B5093F650F5955A664D3D6EE0D /* SVProgressHUD.m */,
-				125FEE5DC3857A7D5AF5FF37E2833233 /* SVRadialGradientLayer.h */,
-				16A155487E77CE3A5C86F3964993FE74 /* SVRadialGradientLayer.m */,
-				2EE1AA22C27B20223D0ACF8F28637B52 /* Resources */,
-				9B6F32A1AF22C0250736A12AB64009C3 /* Support Files */,
+				A817CAE99C81EE68006DC1E60E295C0A /* Foundation.framework */,
+				23016F69B2480F44D0BB5526B39192FA /* QuartzCore.framework */,
+				091D54A73E1E8BB182C9D7D245AF1C2F /* UIKit.framework */,
 			);
-			path = SVProgressHUD;
+			name = iOS;
 			sourceTree = "<group>";
 		};
-		DDB37F08863019A9C1E5DF00C1D3CE7D /* Support Files */ = {
+		E659CB0EA2561DF37035E46C35FD29FF /* SVProgressHUD */ = {
 			isa = PBXGroup;
 			children = (
-				B171A3065A6348C3C53F471560DAAC2F /* RESideMenu.xcconfig */,
-				F7CF21EDB163991D0C9D724E80C94DAC /* RESideMenu-dummy.m */,
-				62545BDF607466AA4B5247C26C93C053 /* RESideMenu-prefix.pch */,
+				DFBC52C41C69DEDDA457AB1DEEA90FB3 /* SVIndefiniteAnimatedView.h */,
+				91D541AE867237AC74CB300FBA110E37 /* SVIndefiniteAnimatedView.m */,
+				7C5F81E8FA8C41768633C0D9242FFC76 /* SVProgressAnimatedView.h */,
+				621B234E98B92571A182388CFBC5268E /* SVProgressAnimatedView.m */,
+				B0D1090A9B7700AD2243BBFE69934A56 /* SVProgressHUD.h */,
+				9D41664C1638C180391C199265D746E6 /* SVProgressHUD.m */,
+				7FB3EC7B7DB31EACE4D6153564066671 /* SVRadialGradientLayer.h */,
+				A4C701C2E75B4ACEB7B7FF5796DC8D0D /* SVRadialGradientLayer.m */,
+				07CC9CF69CFF0A01A7C7019214ED2F17 /* Resources */,
+				7BA29BB08706E703B8F09B83ADE5BD43 /* Support Files */,
 			);
-			name = "Support Files";
-			path = "../Target Support Files/RESideMenu";
+			path = SVProgressHUD;
 			sourceTree = "<group>";
 		};
 		F383FA9705E09492AB1CAE7E504F3DDE /* Pods-ResqUITests */ = {
@@ -384,41 +457,70 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		0AB6E017FCBA289F118845E3E88D1D41 /* Headers */ = {
+		A2738004C9FBDB7ED81A3E844EC6D23D /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2805B6DBF6A8891A990E300DE923CB85 /* RECommonFunctions.h in Headers */,
-				693ACFDD088478167CCAE3B4FD523097 /* RESideMenu.h in Headers */,
-				9081A5A690075C6A95C6FB63D9300717 /* UIViewController+RESideMenu.h in Headers */,
+				43D36D8EEDCF0BBB6EF77629BD60A1A8 /* IISideController.h in Headers */,
+				69D6FB3B367866637A150A17B05D2B48 /* IIViewDeckController.h in Headers */,
+				305C662AD0F7F5ECE608BA1F4E29C18F /* IIWrapController.h in Headers */,
+				AF73A98238A4F13B6996CD31BAADAE78 /* ViewDeck.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A13A6E82911BA28EA939B93700F48D74 /* Headers */ = {
+		AE337038F1736478414D5B21FBB1E891 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				66BA0D35D632B51C9A087CF086C6C416 /* SVIndefiniteAnimatedView.h in Headers */,
-				2607918D638E56A7F435B4DECED6EDFE /* SVProgressAnimatedView.h in Headers */,
-				44795029A736C24FC6A7498329D29830 /* SVProgressHUD.h in Headers */,
-				DB0C1135226AC1531E4C0AB67073FC2A /* SVRadialGradientLayer.h in Headers */,
+				297F2AD5CCEC93DFD4D608AFC48B07BE /* SVIndefiniteAnimatedView.h in Headers */,
+				F5DE8F7E3D04430918C2BB6E63C61572 /* SVProgressAnimatedView.h in Headers */,
+				0FBAD4444BD7BFEC02392034F153B59D /* SVProgressHUD.h in Headers */,
+				694176B4D2220A007EA6FCAC3BB207BD /* SVRadialGradientLayer.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		F592CA6BD67FA0053E8ED5CE537B3910 /* Headers */ = {
+		B00F9A2900D535830BDE0CAC607B4158 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6A305AA5A33CF06FF408B364AA47F573 /* IISideController.h in Headers */,
-				B1CD1D68C4257A31BE56D4A328D13E6A /* IIViewDeckController.h in Headers */,
-				22269A5B9FBB5BC76443A57F76162442 /* IIWrapController.h in Headers */,
-				F19C175FBDFB73BE63269E32084BAB1C /* ViewDeck.h in Headers */,
+				870E0639A8523763F9810C2A36DE6C95 /* RECommonFunctions.h in Headers */,
+				F64EE49FBFA88F05C60C8E64720ECA1D /* RESideMenu.h in Headers */,
+				924A6EB8F4DCA53392A2DD850B130433 /* UIViewController+RESideMenu.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FC1B5ABA44FE3E8CB1C89085EDC11234 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				153BB954ACA1CF72A7AD1397B42F9B55 /* CarbonKit.h in Headers */,
+				93A44CBFF08647C4F86926D53F70B8CC /* CarbonSwipeRefresh.h in Headers */,
+				D2E3AED303B0549167E8391CA83452A7 /* CarbonTabSwipeNavigation.h in Headers */,
+				789209632003377E5306067A016F6670 /* CarbonTabSwipeScrollView.h in Headers */,
+				E2FF8C93722BCEFA8514620BCE460381 /* CarbonTabSwipeSegmentedControl.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		0A80D7E77CF52EDB628736D632E90D62 /* SVProgressHUD */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2DF1EDD848BD236BD4F32E0AF1E8B9E1 /* Build configuration list for PBXNativeTarget "SVProgressHUD" */;
+			buildPhases = (
+				B37300AFAAD418E0088CCC6B4D7BDEC5 /* Sources */,
+				F39775FBB1BB2B39833872A8A62C36C3 /* Frameworks */,
+				AE337038F1736478414D5B21FBB1E891 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SVProgressHUD;
+			productName = SVProgressHUD;
+			productReference = 592EF5C0D044364DDD6CC51F0E14E31F /* libSVProgressHUD.a */;
+			productType = "com.apple.product-type.library.static";
+		};
 		1FACE37684B5255241C5B1DA2375D36E /* Pods-ResqTests */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 283CD62D0D3776F0C9EE8EA01AAB2106 /* Build configuration list for PBXNativeTarget "Pods-ResqTests" */;
@@ -432,7 +534,24 @@
 			);
 			name = "Pods-ResqTests";
 			productName = "Pods-ResqTests";
-			productReference = CEA5959A14EDB92F1DB44BDE946C0141 /* libPods-ResqTests.a */;
+			productReference = D99C4DB52B56A3F7E7A45921A464F18D /* libPods-ResqTests.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		346F523B12D2B7E737C7A29243DF6E36 /* CarbonKit */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1508788800FAC50E477F59B5DA009E5E /* Build configuration list for PBXNativeTarget "CarbonKit" */;
+			buildPhases = (
+				BAD9B24B392BBFF3F24AB6F451FDDA74 /* Sources */,
+				BD63481F82D971150CD0AE981D24A0D1 /* Frameworks */,
+				FC1B5ABA44FE3E8CB1C89085EDC11234 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CarbonKit;
+			productName = CarbonKit;
+			productReference = 6E35E5A853DC2AB83AB9518A8B53F911 /* libCarbonKit.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 		5F554DED425FD71C2FBF40BB7E9C1E2C /* Pods-ResqUITests */ = {
@@ -448,69 +567,36 @@
 			);
 			name = "Pods-ResqUITests";
 			productName = "Pods-ResqUITests";
-			productReference = 9E2EBA0BFC2A7ECE9BBB2572852FEA28 /* libPods-ResqUITests.a */;
+			productReference = 85E8DA5F1276F1DAFE1D38659473C0A3 /* libPods-ResqUITests.a */;
 			productType = "com.apple.product-type.library.static";
 		};
-		69CE4EF5C9331F67AE50F2F11DA85462 /* Pods-Resq */ = {
+		9EE85252E8CEA687001BB8A858951A05 /* Pods-Resq */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 08F261630E8E8A6B4DF58820F955465C /* Build configuration list for PBXNativeTarget "Pods-Resq" */;
+			buildConfigurationList = 7E0224332C9FB8110D8D9CB073C1FA01 /* Build configuration list for PBXNativeTarget "Pods-Resq" */;
 			buildPhases = (
-				91B6680899B771181FF4BDBE511C72F2 /* Sources */,
-				AFE2CBB7FE839964A8A8BB3461E5889D /* Frameworks */,
+				C6133EF376F0C2F3663AAF45C6DF7DA7 /* Sources */,
+				4693F44CB803B97F3129734D95765D54 /* Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				B4A0E2CFEB4CA503977840CDB9FA241B /* PBXTargetDependency */,
-				DC4E82BEB9794D1C9178219762B9EE59 /* PBXTargetDependency */,
-				E4A57FBEE3FEED2BB589F94113F3331D /* PBXTargetDependency */,
+				AAF5A1DD1CBC2FAF51E9DC2202B4BBBE /* PBXTargetDependency */,
+				056807A8C823B1826540D9BDEEA7E744 /* PBXTargetDependency */,
+				4BAC1BACA4A57EB143E8C377A6B84187 /* PBXTargetDependency */,
+				24F3CADBE67707C927A3BCA9D05E3C6C /* PBXTargetDependency */,
 			);
 			name = "Pods-Resq";
 			productName = "Pods-Resq";
-			productReference = B49DEE494E75DDFA33840DEBEE5DC932 /* libPods-Resq.a */;
+			productReference = DA9E12AEC11621A4A09DEF283E3B7681 /* libPods-Resq.a */;
 			productType = "com.apple.product-type.library.static";
 		};
-		B2F491425ABA3743111B9F474909428A /* SVProgressHUD */ = {
+		C04CE1559430913D337653099C08B682 /* RESideMenu */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 26DBE86EC32FE11CB51E694777DD67F1 /* Build configuration list for PBXNativeTarget "SVProgressHUD" */;
+			buildConfigurationList = E1D5F6F6329C72EE50C056A3036545B1 /* Build configuration list for PBXNativeTarget "RESideMenu" */;
 			buildPhases = (
-				CFEE65026D01F9854D34D3C74F481FDF /* Sources */,
-				DBF34C0BAB41EA3643519D6B5517B340 /* Frameworks */,
-				A13A6E82911BA28EA939B93700F48D74 /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = SVProgressHUD;
-			productName = SVProgressHUD;
-			productReference = 8E111B1C6ED2E2EF6823891940C973FA /* libSVProgressHUD.a */;
-			productType = "com.apple.product-type.library.static";
-		};
-		E3A3EB6D29DB7574ACEBE74D672B606E /* ViewDeck */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 45768974EEE53974E6F29E8256382F0F /* Build configuration list for PBXNativeTarget "ViewDeck" */;
-			buildPhases = (
-				AAFB54B40DAE27958EE3F69F7E68C531 /* Sources */,
-				BCEADFFA847E97AA0FFC74943A61E9C5 /* Frameworks */,
-				F592CA6BD67FA0053E8ED5CE537B3910 /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = ViewDeck;
-			productName = ViewDeck;
-			productReference = 7A7550CE2F904B19435862E2151C0A61 /* libViewDeck.a */;
-			productType = "com.apple.product-type.library.static";
-		};
-		EA9DCBF43C79FA2B41334F00D27FB9C1 /* RESideMenu */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 39459530725A33B32F265C599FF3B759 /* Build configuration list for PBXNativeTarget "RESideMenu" */;
-			buildPhases = (
-				C789D3E35F34CAB5B567BACDF63B2250 /* Sources */,
-				61A0691ED442806EFB43ABC4D5876979 /* Frameworks */,
-				0AB6E017FCBA289F118845E3E88D1D41 /* Headers */,
+				349C4ACCB7F2EBDAFD9F180EC140560F /* Sources */,
+				EB4F70201257D2146A978BB989EA41F7 /* Frameworks */,
+				B00F9A2900D535830BDE0CAC607B4158 /* Headers */,
 			);
 			buildRules = (
 			);
@@ -518,7 +604,24 @@
 			);
 			name = RESideMenu;
 			productName = RESideMenu;
-			productReference = 611937BFD6EF30A2C84EF308B7BF929A /* libRESideMenu.a */;
+			productReference = AA87BA129C38A5AADC9E536F006390AE /* libRESideMenu.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		E521F7DB92A0A0C70CEEE7462176A2D3 /* ViewDeck */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C38743AA04444A8E8DEFE3D442624DE8 /* Build configuration list for PBXNativeTarget "ViewDeck" */;
+			buildPhases = (
+				A18C9D0DB5C873413D1A341C86D50AF7 /* Sources */,
+				059E72856AF773AE723B256801175914 /* Frameworks */,
+				A2738004C9FBDB7ED81A3E844EC6D23D /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ViewDeck;
+			productName = ViewDeck;
+			productReference = 8955E07BD524C1C0C7A36FD67C8DF013 /* libViewDeck.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 /* End PBXNativeTarget section */
@@ -538,16 +641,17 @@
 				en,
 			);
 			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
-			productRefGroup = 07502C02536DDAE26CEA6F65BDCF0A77 /* Products */;
+			productRefGroup = BE91EE6A4237A1ED2AFD130A5FA4DE66 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				69CE4EF5C9331F67AE50F2F11DA85462 /* Pods-Resq */,
+				346F523B12D2B7E737C7A29243DF6E36 /* CarbonKit */,
+				9EE85252E8CEA687001BB8A858951A05 /* Pods-Resq */,
 				1FACE37684B5255241C5B1DA2375D36E /* Pods-ResqTests */,
 				5F554DED425FD71C2FBF40BB7E9C1E2C /* Pods-ResqUITests */,
-				EA9DCBF43C79FA2B41334F00D27FB9C1 /* RESideMenu */,
-				B2F491425ABA3743111B9F474909428A /* SVProgressHUD */,
-				E3A3EB6D29DB7574ACEBE74D672B606E /* ViewDeck */,
+				C04CE1559430913D337653099C08B682 /* RESideMenu */,
+				0A80D7E77CF52EDB628736D632E90D62 /* SVProgressHUD */,
+				E521F7DB92A0A0C70CEEE7462176A2D3 /* ViewDeck */,
 			);
 		};
 /* End PBXProject section */
@@ -561,22 +665,49 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		91B6680899B771181FF4BDBE511C72F2 /* Sources */ = {
+		349C4ACCB7F2EBDAFD9F180EC140560F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A1EEFD9BF00219EE7C45F177E1D39B68 /* Pods-Resq-dummy.m in Sources */,
+				E2CBC135C64FEE74CC650945C5BACB0A /* RECommonFunctions.m in Sources */,
+				B6AF6B77C7F8AABC851F73AC7556A3B9 /* RESideMenu-dummy.m in Sources */,
+				59F887630FFDD2AD1583E13D8164B1B1 /* RESideMenu.m in Sources */,
+				13C3CDA4B83CC22DDC653478A8CDA5C1 /* UIViewController+RESideMenu.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		AAFB54B40DAE27958EE3F69F7E68C531 /* Sources */ = {
+		A18C9D0DB5C873413D1A341C86D50AF7 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2C9019E22EC65F56F488A51ACCEABF04 /* IISideController.m in Sources */,
-				AA12AA8607CDAE69DE503C18E56F0890 /* IIViewDeckController.m in Sources */,
-				5A1B2893717AE2865CF99452BEA722B9 /* IIWrapController.m in Sources */,
-				AF98B2FF0EA26406F064CBC2F3EC1F93 /* ViewDeck-dummy.m in Sources */,
+				B2FA162A84C87145426FAC88B8F80CAE /* IISideController.m in Sources */,
+				EAC04B82823D0C00572D1CA3DAC1199E /* IIViewDeckController.m in Sources */,
+				8769FB45BD6A7FE0CBC587E901616031 /* IIWrapController.m in Sources */,
+				91DF2253BFD3F88526E27EFC81A943FF /* ViewDeck-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B37300AFAAD418E0088CCC6B4D7BDEC5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9B8EE986E365F56960C02D0D81B74769 /* SVIndefiniteAnimatedView.m in Sources */,
+				7E3E3940897810E1BC40852125E8AA2B /* SVProgressAnimatedView.m in Sources */,
+				70B63FC83733A46C32947D391F3D4E0D /* SVProgressHUD-dummy.m in Sources */,
+				62078FA710AC376B32CA96C6BEE71DE8 /* SVProgressHUD.m in Sources */,
+				2D4918D6FA6A7E642290EBCD61E4A1CE /* SVRadialGradientLayer.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BAD9B24B392BBFF3F24AB6F451FDDA74 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D9C9F66E322F54DA0F00D556CC9FA9B7 /* CarbonKit-dummy.m in Sources */,
+				80C223FE2062D2E7F00F015A46DC9D61 /* CarbonSwipeRefresh.m in Sources */,
+				FDE719151ECA820E59CBC701D5A98DA9 /* CarbonTabSwipeNavigation.m in Sources */,
+				23FD7D21B87677B6875D1EBF0C27B71F /* CarbonTabSwipeScrollView.m in Sources */,
+				E001F1642B70BC9C52E7839D7BED51E3 /* CarbonTabSwipeSegmentedControl.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -588,56 +719,68 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		C789D3E35F34CAB5B567BACDF63B2250 /* Sources */ = {
+		C6133EF376F0C2F3663AAF45C6DF7DA7 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DB9E661F509C1D1F2A12B1511EDA95BE /* RECommonFunctions.m in Sources */,
-				7EF39F9B0314E48BE702E38F9EDD6FA8 /* RESideMenu-dummy.m in Sources */,
-				20B58229A35553AB85F2D8641A04E702 /* RESideMenu.m in Sources */,
-				6059CA6A6C0EB30A5C42031EB781BDB5 /* UIViewController+RESideMenu.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		CFEE65026D01F9854D34D3C74F481FDF /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				7836946A4E53771D9684F0B11D5230B7 /* SVIndefiniteAnimatedView.m in Sources */,
-				39D9A740A0E581F4D325AAB1EC53CD3A /* SVProgressAnimatedView.m in Sources */,
-				A12282F6F505BEA046AE7FC2B93F9A92 /* SVProgressHUD-dummy.m in Sources */,
-				71C6D81789E9F28FD6D7FBFBC0F01996 /* SVProgressHUD.m in Sources */,
-				AE17206ECD4C33EC469985D96D80BEEA /* SVRadialGradientLayer.m in Sources */,
+				784E15DFE168C16F242C565B48475FE9 /* Pods-Resq-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		B4A0E2CFEB4CA503977840CDB9FA241B /* PBXTargetDependency */ = {
+		056807A8C823B1826540D9BDEEA7E744 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = RESideMenu;
-			target = EA9DCBF43C79FA2B41334F00D27FB9C1 /* RESideMenu */;
-			targetProxy = 7C18C1749BAA3587EFD2E7A05DF523A0 /* PBXContainerItemProxy */;
+			target = C04CE1559430913D337653099C08B682 /* RESideMenu */;
+			targetProxy = A62A7A175227F07C7C0BADB8E25AB56D /* PBXContainerItemProxy */;
 		};
-		DC4E82BEB9794D1C9178219762B9EE59 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = SVProgressHUD;
-			target = B2F491425ABA3743111B9F474909428A /* SVProgressHUD */;
-			targetProxy = 9B2073626BD2346679EEE40D6212A4D9 /* PBXContainerItemProxy */;
-		};
-		E4A57FBEE3FEED2BB589F94113F3331D /* PBXTargetDependency */ = {
+		24F3CADBE67707C927A3BCA9D05E3C6C /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = ViewDeck;
-			target = E3A3EB6D29DB7574ACEBE74D672B606E /* ViewDeck */;
-			targetProxy = 50C1FFBF7AAEBE2AC82065A684968069 /* PBXContainerItemProxy */;
+			target = E521F7DB92A0A0C70CEEE7462176A2D3 /* ViewDeck */;
+			targetProxy = 983C8EFF7233A2CF7AC7938983AFAFA4 /* PBXContainerItemProxy */;
+		};
+		4BAC1BACA4A57EB143E8C377A6B84187 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SVProgressHUD;
+			target = 0A80D7E77CF52EDB628736D632E90D62 /* SVProgressHUD */;
+			targetProxy = A120C1057925A21270C198A90873FFC6 /* PBXContainerItemProxy */;
+		};
+		AAF5A1DD1CBC2FAF51E9DC2202B4BBBE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = CarbonKit;
+			target = 346F523B12D2B7E737C7A29243DF6E36 /* CarbonKit */;
+			targetProxy = 63A71E4901437FE3135AC53C538CD205 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		21193F832710108B74DDB06F96AB9121 /* Release */ = {
+		082428723CF16A07DFE118DDC261500D /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 77808F35629C020D6D2189F42B365D05 /* ViewDeck.xcconfig */;
+			baseConfigurationReference = 0984865B97F0E6D8C96E1A0ADBABF146 /* ViewDeck.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/ViewDeck/ViewDeck-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		1BA3FB9EE55C99F51067E5C6A0A1F0EE /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0984865B97F0E6D8C96E1A0ADBABF146 /* ViewDeck.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -656,17 +799,17 @@
 			};
 			name = Release;
 		};
-		281C3B27C87A01E553F3D109BDCBB968 /* Release */ = {
+		2E1E46ADD108674EE0B57D65A7B4CB81 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0C3774201A8C2C277734667063210A4D /* SVProgressHUD.xcconfig */;
+			baseConfigurationReference = 5032AC3C6ADC64DF5697C60C452FA7CB /* CarbonKit.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/SVProgressHUD/SVProgressHUD-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
-				MTL_ENABLE_DEBUG_INFO = NO;
+				GCC_PREFIX_HEADER = "Target Support Files/CarbonKit/CarbonKit-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PRIVATE_HEADERS_FOLDER_PATH = "";
@@ -675,7 +818,28 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 			};
-			name = Release;
+			name = Debug;
+		};
+		40E8C96C79D26BB7F7DC06DBF7C73E16 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0A00CDABBAFEEE661F5A2342388D97F6 /* SVProgressHUD.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/SVProgressHUD/SVProgressHUD-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
 		};
 		47BEF9D903506B003EA5C2B249729489 /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -719,48 +883,6 @@
 			};
 			name = Debug;
 		};
-		5D763CB1AD8B5462D33935611DD74BD3 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0C3774201A8C2C277734667063210A4D /* SVProgressHUD.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/SVProgressHUD/SVProgressHUD-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
-				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PRIVATE_HEADERS_FOLDER_PATH = "";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PUBLIC_HEADERS_FOLDER_PATH = "";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-			};
-			name = Debug;
-		};
-		60993805A2362A5C57CED7EA3B2FD609 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 23E07E0299875070293D474F82EC181C /* Pods-Resq.debug.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				MACH_O_TYPE = staticlib;
-				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-			};
-			name = Debug;
-		};
 		6D156A04215B8A307AC2C516D3E93C3C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 501DEDCAA0925AEEFA5608D521DAEAEC /* Pods-ResqTests.debug.xcconfig */;
@@ -782,27 +904,6 @@
 			};
 			name = Debug;
 		};
-		6F6CF4FEF93485A9C32B5B9093E32736 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = B171A3065A6348C3C53F471560DAAC2F /* RESideMenu.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/RESideMenu/RESideMenu-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
-				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PRIVATE_HEADERS_FOLDER_PATH = "";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PUBLIC_HEADERS_FOLDER_PATH = "";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-			};
-			name = Release;
-		};
 		7D58A7DA2ED3C05ABC79DB2A2839FC43 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 52FAFD8CD1E66332953668615924081B /* Pods-ResqTests.release.xcconfig */;
@@ -819,6 +920,48 @@
 				PODS_ROOT = "$(SRCROOT)";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		8CD5BFB75FDAC7BFE4D0F6B4783FDDB0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4DAC27B901B2EE4B5B4B8C22B915A242 /* RESideMenu.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/RESideMenu/RESideMenu-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		901C0F7616C5AF5984D5EFAADAE0A6DB /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5032AC3C6ADC64DF5697C60C452FA7CB /* CarbonKit.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/CarbonKit/CarbonKit-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 			};
@@ -862,6 +1005,27 @@
 			};
 			name = Release;
 		};
+		B4BD242BCBD9A7A67209C90C296935A9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4DAC27B901B2EE4B5B4B8C22B915A242 /* RESideMenu.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/RESideMenu/RESideMenu-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
 		B82B6CD6CECD987CCC5AE10E2EDAC6C6 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = B991958827515746CA00B140C1CA1CBA /* Pods-ResqUITests.release.xcconfig */;
@@ -883,17 +1047,38 @@
 			};
 			name = Release;
 		};
-		E532B9A0A9C6A62D09A23E8E598CD1D2 /* Debug */ = {
+		C3E64E95550D3426CD57E85DED9CAF51 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B171A3065A6348C3C53F471560DAAC2F /* RESideMenu.xcconfig */;
+			baseConfigurationReference = 23E07E0299875070293D474F82EC181C /* Pods-Resq.debug.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/RESideMenu/RESideMenu-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MACH_O_TYPE = staticlib;
 				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		D5219906E56E851D6F4831372D904FB9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0A00CDABBAFEEE661F5A2342388D97F6 /* SVProgressHUD.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/SVProgressHUD/SVProgressHUD-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PRIVATE_HEADERS_FOLDER_PATH = "";
@@ -902,9 +1087,9 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 			};
-			name = Debug;
+			name = Release;
 		};
-		F6C0622378F4678A301B746F4EBD2CAF /* Release */ = {
+		E29604B75A5B8724DFF130EB174E3264 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 854133665D0D728492F0CDDEA78E4606 /* Pods-Resq.release.xcconfig */;
 			buildSettings = {
@@ -946,39 +1131,9 @@
 			};
 			name = Debug;
 		};
-		FB80924B05E76329F596F390634671D8 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 77808F35629C020D6D2189F42B365D05 /* ViewDeck.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/ViewDeck/ViewDeck-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
-				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PRIVATE_HEADERS_FOLDER_PATH = "";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PUBLIC_HEADERS_FOLDER_PATH = "";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-			};
-			name = Debug;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		08F261630E8E8A6B4DF58820F955465C /* Build configuration list for PBXNativeTarget "Pods-Resq" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				60993805A2362A5C57CED7EA3B2FD609 /* Debug */,
-				F6C0622378F4678A301B746F4EBD2CAF /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		124EFA37666E19E47EAD61E946438222 /* Build configuration list for PBXNativeTarget "Pods-ResqUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -988,11 +1143,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		26DBE86EC32FE11CB51E694777DD67F1 /* Build configuration list for PBXNativeTarget "SVProgressHUD" */ = {
+		1508788800FAC50E477F59B5DA009E5E /* Build configuration list for PBXNativeTarget "CarbonKit" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				5D763CB1AD8B5462D33935611DD74BD3 /* Debug */,
-				281C3B27C87A01E553F3D109BDCBB968 /* Release */,
+				2E1E46ADD108674EE0B57D65A7B4CB81 /* Debug */,
+				901C0F7616C5AF5984D5EFAADAE0A6DB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -1015,20 +1170,38 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		39459530725A33B32F265C599FF3B759 /* Build configuration list for PBXNativeTarget "RESideMenu" */ = {
+		2DF1EDD848BD236BD4F32E0AF1E8B9E1 /* Build configuration list for PBXNativeTarget "SVProgressHUD" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				E532B9A0A9C6A62D09A23E8E598CD1D2 /* Debug */,
-				6F6CF4FEF93485A9C32B5B9093E32736 /* Release */,
+				40E8C96C79D26BB7F7DC06DBF7C73E16 /* Debug */,
+				D5219906E56E851D6F4831372D904FB9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		45768974EEE53974E6F29E8256382F0F /* Build configuration list for PBXNativeTarget "ViewDeck" */ = {
+		7E0224332C9FB8110D8D9CB073C1FA01 /* Build configuration list for PBXNativeTarget "Pods-Resq" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				FB80924B05E76329F596F390634671D8 /* Debug */,
-				21193F832710108B74DDB06F96AB9121 /* Release */,
+				C3E64E95550D3426CD57E85DED9CAF51 /* Debug */,
+				E29604B75A5B8724DFF130EB174E3264 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C38743AA04444A8E8DEFE3D442624DE8 /* Build configuration list for PBXNativeTarget "ViewDeck" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				082428723CF16A07DFE118DDC261500D /* Debug */,
+				1BA3FB9EE55C99F51067E5C6A0A1F0EE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E1D5F6F6329C72EE50C056A3036545B1 /* Build configuration list for PBXNativeTarget "RESideMenu" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8CD5BFB75FDAC7BFE4D0F6B4783FDDB0 /* Debug */,
+				B4BD242BCBD9A7A67209C90C296935A9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

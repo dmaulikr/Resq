@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>CarbonKit.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-Resq.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -37,7 +42,17 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>0A80D7E77CF52EDB628736D632E90D62</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>1FACE37684B5255241C5B1DA2375D36E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>346F523B12D2B7E737C7A29243DF6E36</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -47,22 +62,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>69CE4EF5C9331F67AE50F2F11DA85462</key>
+		<key>9EE85252E8CEA687001BB8A858951A05</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>B2F491425ABA3743111B9F474909428A</key>
+		<key>C04CE1559430913D337653099C08B682</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>E3A3EB6D29DB7574ACEBE74D672B606E</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>EA9DCBF43C79FA2B41334F00D27FB9C1</key>
+		<key>E521F7DB92A0A0C70CEEE7462176A2D3</key>
 		<dict>
 			<key>primary</key>
 			<true/>

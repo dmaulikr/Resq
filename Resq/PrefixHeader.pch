@@ -40,6 +40,9 @@ UIAlertView *av = [[UIAlertView alloc] initWithTitle:title message:msg delegate:
 ;\
 }
 
+#define SCREEN_WIDTH CGRectGetWidth([[UIScreen mainScreen ]bounds])
+
+
 typedef NS_ENUM (NSUInteger, ResqSettingCellType){
     ResqSettingCellTypeCloseByCell = 0,
     ResqSettingCellTypeContactsSettingCell = 1,

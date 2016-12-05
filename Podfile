@@ -11,7 +11,9 @@ target 'Resq' do
     #    pod 'Firebase/Messaging'
     #    pod 'Firebase/Database'
     pod 'ViewDeck'
-    
+    pod 'CarbonKit', '~>2.1'
+
+
     target 'ResqTests' do
         inherit! :search_paths
         # Pods for testing

@@ -29,6 +29,11 @@
     _frequentContactsArray = [[NSMutableArray alloc] init];
 }
 
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    [appdelegate checkForTermsOfUseAndPrivacyPolicy:self];
+}
+
 -(void)viewDidAppear:(BOOL)animated{
     dispatch_async(dispatch_get_main_queue(), ^{
         [[UserManager sharedManager]startAdvertising];
@@ -141,7 +146,7 @@
             break;
         }case ResqSettingCellTypeNotificationTimeCell:{
             UISlider * slider = [cell viewWithTag:1];
-            slider.minimumValue = 30.0;
+            slider.minimumValue = 60.0;
             slider.maximumValue = 300.0;
             slider.continuous = YES;
             UILabel * notificationTime = [cell viewWithTag:2];
@@ -326,7 +331,12 @@
 
 -(void)sliderAction:(id)sender{
     UISlider *slider = (UISlider*)sender;
-    float value = slider.value;
+    
+    int roundOfTime = slider.value;
+    if((roundOfTime % 15)>=1){
+        roundOfTime = (roundOfTime - (roundOfTime % 15))+15;
+    }
+    float value = roundOfTime;
     int valueInt = value;
     int min = valueInt/60;
     NSString* timeString = @"";

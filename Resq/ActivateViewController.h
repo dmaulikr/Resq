@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "ResqViewController.h"
+#import "ActivateViewController.h"
 
 @interface ActivateViewController : ResqViewController
 
