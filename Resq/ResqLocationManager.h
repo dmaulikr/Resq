@@ -21,6 +21,8 @@ extern NSString * const locationMangerLocationServicesStatusChangeNotification;
 - (void) startUpdatingLocation;
 - (void) stopUpdatingLocation;
 
+- (void)playSound;
+
 + (BOOL)canUseLocationServices;
 + (BOOL)didPhoneAllowedUseLocationServices;
 

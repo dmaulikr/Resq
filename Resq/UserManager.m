@@ -40,25 +40,57 @@ static UserManager *_sharedUserManagerInstance = nil;
             [_alertTimer invalidate];
         }
         _alertTimer = [NSTimer scheduledTimerWithTimeInterval:[[NSUserDefaults standardUserDefaults]floatForKey:@"notificationTime"] target:self selector:@selector(alertAction) userInfo:nil repeats:NO];
+        
+        if(_alertDif30){
+            [_alertDif30 invalidate];
+        }
+        _alertDif30 = [NSTimer scheduledTimerWithTimeInterval:[[NSUserDefaults standardUserDefaults]floatForKey:@"notificationTime"] -30 target:[ResqLocationManager sharedManager] selector:@selector(playSound) userInfo:nil repeats:NO];
+        
+        if(_alertDif20){
+            [_alertDif20 invalidate];
+        }
+        _alertDif20 = [NSTimer scheduledTimerWithTimeInterval:[[NSUserDefaults standardUserDefaults]floatForKey:@"notificationTime"] -20 target:[ResqLocationManager sharedManager] selector:@selector(playSound) userInfo:nil repeats:NO];
+        
+        if(_alertDif10){
+            [_alertDif10 invalidate];
+        }
+        if(_alertDif1){
+            [_alertDif1 invalidate];
+        }
+        _alertDif10 = [NSTimer scheduledTimerWithTimeInterval:[[NSUserDefaults standardUserDefaults]floatForKey:@"notificationTime"] -11 target:self selector:@selector(playAlert) userInfo:nil repeats:NO];
+        
+        
     }
 }
 
+-(void)playAlert{
+    [[ResqLocationManager sharedManager]playSound];
+    _alertDif1 = [NSTimer scheduledTimerWithTimeInterval:1 target:[ResqLocationManager sharedManager] selector:@selector(playSound) userInfo:nil repeats:YES];
+    
+}
+
 -(void)alertAction{
+    
+    if(_alertDif1){
+        [_alertDif1 invalidate];
+    }
+    NSLog(@"Sending Notification");
     if(_isActivated){
-        NSLog(@"Sending Notification");
         NSString *predicateString = [NSString stringWithFormat:@"isBuddy = '%@' ", @(YES)];
         NSMutableArray* arr = (NSMutableArray*)[[UserManager sharedManager]getAllContacts:@"Contacts" predicate:predicateString isFrequent:NO];
         for(Contacts * contact in arr){
             [self sendMessage:contact.phoneNumber];
         }
-        
-        UILocalNotification* localNotification = [[UILocalNotification alloc] init];
-        localNotification.fireDate = [NSDate date];
-        localNotification.alertBody = @"Sent help SMS to all buddies!";
-        localNotification.timeZone = [NSTimeZone defaultTimeZone];
-        localNotification.applicationIconBadgeNumber = [[UIApplication sharedApplication] applicationIconBadgeNumber] + 1;
-//        [[UIApplication sharedApplication] scheduleLocalNotification:localNotification];
-//        [[NSNotificationCenter defaultCenter] postNotificationName:@"reloadData" object:self];
+        if([[UIApplication sharedApplication] applicationState] == UIApplicationStateActive){
+            ALERT_VIEW(@"RESQ", @"Please re-Activate to start Tracking again.")
+        }else{
+            UILocalNotification* localNotification = [[UILocalNotification alloc] init];
+            localNotification.fireDate = [NSDate date];
+            localNotification.alertBody = @"Please re-Activate to start Tracking again.";
+            localNotification.applicationIconBadgeNumber = 0;
+            [[UIApplication sharedApplication] scheduleLocalNotification:localNotification];
+        }
+        [[ResqLocationManager sharedManager]stopUpdatingLocation];
         _isActivated = NO;
     }
 }
@@ -189,7 +221,7 @@ static UserManager *_sharedUserManagerInstance = nil;
         if(sec){
             timeString = [NSString stringWithFormat:@"%@ %d %@",timeString,sec,sec>1?@"sec" : @"sec"];
         }
-
+        
         
         NSString *post = [NSString stringWithFormat:@"To=%@&From=%@&Body=Snow Rescue Alert: %@ has not moved for %@ time and might need your help. %@",to,from,[[NSUserDefaults standardUserDefaults] valueForKey:@"name"],timeString,mapUrlPath];
         

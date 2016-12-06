@@ -21,12 +21,13 @@
     
     [[UserManager sharedManager]startAdvertising];
     [[_activate_btn layer]setCornerRadius:CGRectGetHeight(_activate_btn.frame)/2];
-    [self updateView];
 }
 
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     [appdelegate checkForTermsOfUseAndPrivacyPolicy:self];
+    [self updateView];
+
 }
 
 -(void)menuAction:(id)sender{
@@ -76,6 +77,15 @@
         [[UserManager sharedManager]setIsActivated:NO];
         if([[UserManager sharedManager] alertTimer]){
             [[[UserManager sharedManager] alertTimer] invalidate];
+        }
+        if([[UserManager sharedManager] alertDif30]){
+            [[[UserManager sharedManager] alertDif30] invalidate];
+        }
+        if([[UserManager sharedManager] alertDif20]){
+            [[[UserManager sharedManager] alertDif20] invalidate];
+        }
+        if([[UserManager sharedManager] alertDif10]){
+            [[[UserManager sharedManager] alertDif10] invalidate];
         }
     }
 }
