@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>CarbonKit.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>9</integer>
+		</dict>
 		<key>GoogleToolboxForMac.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -56,7 +61,17 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>0A80D7E77CF52EDB628736D632E90D62</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>1FACE37684B5255241C5B1DA2375D36E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>346F523B12D2B7E737C7A29243DF6E36</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -72,6 +87,11 @@
 			<true/>
 		</dict>
 		<key>8994FC11CF21240E96184240BCFBE3E6</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>9EE85252E8CEA687001BB8A858951A05</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -96,12 +116,22 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>C04CE1559430913D337653099C08B682</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>D59E3C94F67A610DCA818499D10F3A4A</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>E3A3EB6D29DB7574ACEBE74D672B606E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>E521F7DB92A0A0C70CEEE7462176A2D3</key>
 		<dict>
 			<key>primary</key>
 			<true/>
