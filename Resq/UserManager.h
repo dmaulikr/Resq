@@ -24,6 +24,10 @@
 @property(assign) BOOL isActivated;
 @property(assign) int timeRemaining;
 @property(nonatomic, retain)NSTimer * alertTimer;
+@property(nonatomic, retain)NSTimer * alertDif30;
+@property(nonatomic, retain)NSTimer * alertDif20;
+@property(nonatomic, retain)NSTimer * alertDif10;
+@property(nonatomic, retain)NSTimer * alertDif1;
 
 
 @end

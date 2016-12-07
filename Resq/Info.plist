@@ -35,6 +35,8 @@
 	<string>$(PRODUCT_NAME) uses photos</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>This needs access to your location to track you on a map.</string>
+	<key>LSApplicationCategoryType</key>
+	<string>NSBluetoothPeripheralUsageDescription</string>
 	<key>UIBackgroundModes</key>
 	<array>
 		<string>audio</string>

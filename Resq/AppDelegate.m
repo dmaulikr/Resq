@@ -38,6 +38,11 @@
         navController.navigationBar.translucent = NO;
         self.window.rootViewController = navController;
     }
+    
+    UIUserNotificationType types = UIUserNotificationTypeSound | UIUserNotificationTypeAlert;
+    UIUserNotificationSettings *mySettings = [UIUserNotificationSettings settingsForTypes:types categories:nil];
+    [[UIApplication sharedApplication] registerUserNotificationSettings:mySettings];
+    
     return YES;
 }
 
@@ -64,6 +69,10 @@
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     // Saves changes in the application's managed object context before the application terminates.
     [self saveContext];
+}
+
+- (void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification{
+    
 }
 
 -(void)setSettingsViewController{
@@ -181,14 +190,14 @@
     }
     UIAlertController *alertController = [UIAlertController  alertControllerWithTitle:@"Privacy Policy and Terms of Use"  message:@"By clicking \"I accept\", I agree to accept the Privacy Policy and Terms of Use!"  preferredStyle:UIAlertControllerStyleAlert];
     [alertController addAction:[UIAlertAction actionWithTitle:@"Privacy Policy and Terms of Use" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
-       
+        
         [viewController dismissViewControllerAnimated:YES completion:nil];
         UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
         PrivacyPolicyViewController *privacyPolicyViewController = [storyboard instantiateViewControllerWithIdentifier:@"PrivacyPolicyViewController"];
         UINavigationController* navigationController = [[UINavigationController alloc]initWithRootViewController:privacyPolicyViewController];
         [navigationController.navigationBar setTranslucent:NO];
         [viewController presentViewController:navigationController animated:YES completion:nil];
-
+        
     }]];
     [alertController addAction:[UIAlertAction actionWithTitle:@"I accept" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
         [viewController dismissViewControllerAnimated:YES completion:nil];

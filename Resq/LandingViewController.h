@@ -11,7 +11,10 @@
 #import "ActivateViewController.h"
 #import "SettingsViewController.h"
 
-@interface LandingViewController : ResqViewController
+@interface LandingViewController : ResqViewController<UIPageViewControllerDelegate,UIPageViewControllerDataSource,UIGestureRecognizerDelegate>
+
 @property (assign)BOOL isActivateScreen;
+@property (nonatomic, strong) UIPageViewController *pageViewController;
+
 
 @end
