@@ -44,6 +44,9 @@
 		78A70D6F1DDBBBFC003BB2E1 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78A70D6E1DDBBBFC003BB2E1 /* SettingsViewController.m */; };
 		78D68ACD1DDE3668000801FF /* SearchResultsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78D68ACC1DDE3668000801FF /* SearchResultsViewController.m */; };
 		D9E5A3694AB56C09A0B89B09 /* libPods-Resq.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EFA3F4DFF8A6BAD496DD5B4 /* libPods-Resq.a */; };
+		F28A0F9D1E000C93009DDB7C /* splash@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F28A0F9C1E000C93009DDB7C /* splash@2x.png */; };
+		F28A0FA01E000DFC009DDB7C /* activate_btn_sel@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F28A0F9F1E000DFC009DDB7C /* activate_btn_sel@2x.png */; };
+		F28A0FA31E0011BA009DDB7C /* activate_btn_unsel@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F28A0FA21E0011BA009DDB7C /* activate_btn_unsel@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -142,6 +145,9 @@
 		A40D93B5B9577166790A9AD4 /* Pods-ResqTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ResqTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ResqTests/Pods-ResqTests.release.xcconfig"; sourceTree = "<group>"; };
 		A956C45DB19A854711506DB2 /* libPods-ResqUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ResqUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D676FAA2C94A7BE7F4C994DC /* Pods-ResqTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ResqTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ResqTests/Pods-ResqTests.debug.xcconfig"; sourceTree = "<group>"; };
+		F28A0F9C1E000C93009DDB7C /* splash@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "splash@2x.png"; sourceTree = "<group>"; };
+		F28A0F9F1E000DFC009DDB7C /* activate_btn_sel@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "activate_btn_sel@2x.png"; sourceTree = "<group>"; };
+		F28A0FA21E0011BA009DDB7C /* activate_btn_unsel@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "activate_btn_unsel@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -278,7 +284,9 @@
 		78D68ACE1DDE446A000801FF /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				789DC66F1DEA3221007D3B0A /* BlocksBluetooth */,
+				F28A0FA11E000F8D009DDB7C /* Login */,
+				F28A0F9E1E000D20009DDB7C /* ActivateScreen */,
+				F28A0F971E000B19009DDB7C /* Common */,
 				786EEE8D1DDCE68000B6C40F /* country.json */,
 				786EEE7E1DDCD26500B6C40F /* Hero.aiff */,
 			);
@@ -352,12 +360,37 @@
 		F272F9531DDDE68700D4A672 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				789DC66F1DEA3221007D3B0A /* BlocksBluetooth */,
 				786EEE801DDCD2AD00B6C40F /* ResqLocationManager.h */,
 				786EEE811DDCD2AD00B6C40F /* ResqLocationManager.m */,
 				785AAB041DE6205E0089C84D /* UserManager.h */,
 				785AAB051DE6205E0089C84D /* UserManager.m */,
 			);
 			name = Common;
+			sourceTree = "<group>";
+		};
+		F28A0F971E000B19009DDB7C /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				F28A0F9C1E000C93009DDB7C /* splash@2x.png */,
+			);
+			name = Common;
+			sourceTree = "<group>";
+		};
+		F28A0F9E1E000D20009DDB7C /* ActivateScreen */ = {
+			isa = PBXGroup;
+			children = (
+				F28A0FA21E0011BA009DDB7C /* activate_btn_unsel@2x.png */,
+				F28A0F9F1E000DFC009DDB7C /* activate_btn_sel@2x.png */,
+			);
+			name = ActivateScreen;
+			sourceTree = "<group>";
+		};
+		F28A0FA11E000F8D009DDB7C /* Login */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Login;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -481,9 +514,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F28A0FA31E0011BA009DDB7C /* activate_btn_unsel@2x.png in Resources */,
 				7853171C1DDA3F1E00FC379A /* LaunchScreen.storyboard in Resources */,
 				786EEE8E1DDCE68000B6C40F /* country.json in Resources */,
+				F28A0FA01E000DFC009DDB7C /* activate_btn_sel@2x.png in Resources */,
 				785317191DDA3F1E00FC379A /* Assets.xcassets in Resources */,
+				F28A0F9D1E000C93009DDB7C /* splash@2x.png in Resources */,
 				785317141DDA3F1E00FC379A /* Main.storyboard in Resources */,
 				786EEE7F1DDCD26500B6C40F /* Hero.aiff in Resources */,
 			);
