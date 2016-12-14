@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Consumables</key>
+	<dict>
+		<key>com.app.resq.tourist</key>
+		<dict>
+			<key>ConsumableCount</key>
+			<integer>12</integer>
+			<key>ConsumableId</key>
+			<string>MyTouristWallet</string>
+		</dict>
+		<key>com.app.resq.weekendwarrior</key>
+		<dict>
+			<key>ConsumableCount</key>
+			<integer>3</integer>
+			<key>ConsumableId</key>
+			<string>MyWeekendWallet</string>
+		</dict>
+	</dict>
+	<key>Others</key>
+	<array>
+		<string>com.app.resq.seasonpass</string>
+	</array>
+	<key>SharedSecret</key>
+	<string>069cc229ad5145c984cbd7ae58622449</string>
+</dict>
+</plist>

@@ -14,16 +14,12 @@
 #import "InstructionsViewController.h"
 #import "PrivacyPolicyViewController.h"
 #import <MessageUI/MFMailComposeViewController.h>
-#import "SubscriptionViewController.h"
 
 @interface MenuViewController ()<MFMailComposeViewControllerDelegate>
-
-@property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *menuButtons;
 
 @property (nonatomic, retain) UserProfileViewController * userProfileViewController;
 @property (nonatomic, retain) PrivacyPolicyViewController * privacyPolicyViewController;
 @property (nonatomic, retain) InstructionsViewController * instructionsViewController;
-@property(nonatomic, retain) UIButton* selectedButton;
 
 @end
 
@@ -31,17 +27,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    _selectedButton = [_menuButtons objectAtIndex:1];
-    [[[_menuButtons objectAtIndex:5]titleLabel] setNumberOfLines:0];
-    [self unselectButtons];
-}
-
--(void)viewWillAppear:(BOOL)animated{
-    [super viewWillAppear:animated];
-    
-    
-    _nameField.text = [[NSUserDefaults standardUserDefaults] valueForKey:@"name"];
-    _phoneNumberField.text = [[NSUserDefaults standardUserDefaults] valueForKey:@"phoneNumber"];
+    // Do any additional setup after loading the view.
 }
 
 - (void)didReceiveMemoryWarning {
@@ -59,9 +45,7 @@
  }
  */
 
-- (IBAction)activateAction:(UIButton*)sender {
-    _selectedButton = sender;
-    [self unselectButtons];
+- (IBAction)activateAction:(id)sender {
     if(appdelegate.landingViewController)
         appdelegate.landingViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"LandingViewController"];
     [appdelegate.landingViewController setIsActivateScreen:YES];
@@ -71,10 +55,7 @@
     [appdelegate.viewDeckController closeOpenView];
 }
 
-- (IBAction)settingsAction:(UIButton*)sender {
-    _selectedButton = sender;
-    [self unselectButtons];
-    
+- (IBAction)settingsAction:(id)sender {
     if(appdelegate.landingViewController)
         appdelegate.landingViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"LandingViewController"];
     [appdelegate.landingViewController setIsActivateScreen:NO];
@@ -84,10 +65,7 @@
     [appdelegate.viewDeckController closeOpenView];
 }
 
-- (IBAction)profileAction:(UIButton*)sender {
-    _selectedButton = sender;
-    [self unselectButtons];
-    
+- (IBAction)profileAction:(id)sender {
     _userProfileViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"UserProfileViewController"];
     UINavigationController* navigationController = [[UINavigationController alloc]initWithRootViewController:_userProfileViewController];
     [navigationController.navigationBar setTranslucent:NO];
@@ -95,21 +73,7 @@
     [appdelegate.viewDeckController closeOpenView];
 }
 
-- (IBAction)subscriptionAction:(UIButton*)sender {
-    _selectedButton = sender;
-    [self unselectButtons];
-    
-    SubscriptionViewController *subscriptionViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"SubscriptionViewController"];
-    UINavigationController* navigationController = [[UINavigationController alloc]initWithRootViewController:subscriptionViewController];
-    [navigationController.navigationBar setTranslucent:NO];
-    appdelegate.viewDeckController.centerController = navigationController;
-    [appdelegate.viewDeckController closeOpenView];
-}
-
-- (IBAction)privacyPolicyAction:(UIButton*)sender {
-    _selectedButton = sender;
-    [self unselectButtons];
-    
+- (IBAction)privacyPolicyAction:(id)sender {
     _privacyPolicyViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"PrivacyPolicyViewController"];
     UINavigationController* navigationController = [[UINavigationController alloc]initWithRootViewController:_privacyPolicyViewController];
     [navigationController.navigationBar setTranslucent:NO];
@@ -117,10 +81,7 @@
     [appdelegate.viewDeckController closeOpenView];
 }
 
-- (IBAction)howToUserAction:(UIButton*)sender {
-    _selectedButton = sender;
-    [self unselectButtons];
-    
+- (IBAction)howToUserAction:(id)sender {
     _instructionsViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"InstructionsViewController"];
     UINavigationController* navigationController = [[UINavigationController alloc]initWithRootViewController:_instructionsViewController];
     [navigationController.navigationBar setTranslucent:NO];
@@ -128,10 +89,7 @@
     [appdelegate.viewDeckController closeOpenView];
 }
 
-- (IBAction)feedbackAction:(UIButton*)sender {
-    _selectedButton = sender;
-    [self unselectButtons];
-    
+- (IBAction)feedbackAction:(id)sender {
     if([MFMailComposeViewController canSendMail]){
         MFMailComposeViewController *composer = [[MFMailComposeViewController alloc] init];
         composer.mailComposeDelegate = self;
@@ -147,21 +105,5 @@
     [self dismissViewControllerAnimated:YES completion:^{
         //[appdelegate.viewDeckController closeOpenView];
     }];
-}
-
--(void)unselectButtons{
-    for(UIButton * menuButton in _menuButtons){
-        if(menuButton == _selectedButton){
-            [menuButton setTitleColor:[UIColor colorWithRed:0.0/255.0 green:190.0/255.0 blue:246.0/255.0 alpha:1.0] forState:UIControlStateNormal];
-            [menuButton setImage:[menuButton.imageView.image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate] forState:UIControlStateNormal];
-            [menuButton.imageView setTintColor:[UIColor colorWithRed:0.0/255.0 green:190.0/255.0 blue:246.0/255.0 alpha:1.0]];
-            
-        }else{
-            [menuButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-            [menuButton setImage:[menuButton.imageView.image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate] forState:UIControlStateNormal];
-            [menuButton.imageView setTintColor:[UIColor blackColor]];
-            
-        }
-    }
 }
 @end

@@ -18,7 +18,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    _leftItem = [[UIBarButtonItem alloc]initWithImage:[[UIImage imageNamed:@"menu-icon"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]  style:UIBarButtonItemStyleDone target:self action:@selector(menuAction:)];
+    _leftItem = [[UIBarButtonItem alloc]initWithImage:[[UIImage imageNamed:@"menu_icon.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]  style:UIBarButtonItemStyleDone target:self action:@selector(menuAction:)];
     [_leftItem setShouldGroupAccessibilityChildren:YES];
     _rightItem = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@""] style:UIBarButtonItemStyleDone target:self action:@selector(rightItemAction:)];
     
@@ -31,6 +31,10 @@
 }
 
 - (void)rightItemAction:(id)sender {
+}
+
+- (UIStatusBarStyle)preferredStatusBarStyle{
+    return UIStatusBarStyleLightContent;
 }
 
 @end

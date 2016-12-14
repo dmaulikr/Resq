@@ -117,4 +117,7 @@
     [appdelegate checkForTermsOfUseAndPrivacyPolicy:self];
 }
 
+- (UIStatusBarStyle)preferredStatusBarStyle{
+    return UIStatusBarStyleLightContent;
+}
 @end

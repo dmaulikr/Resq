@@ -24,7 +24,7 @@
     [super viewDidLoad];
     _nameField.delegate = self;
     self.title = @"User Details";
-    [self.rightItem setTitle:@"Save"];
+    //[self.rightItem setTitle:@"Save"];
     
     // Do any additional setup after loading the view.
     NSLocale *currentLocale = [NSLocale currentLocale];  // get the current locale.
@@ -40,9 +40,14 @@
         }
     }
     [_nameField setText:[[NSUserDefaults standardUserDefaults] valueForKey:@"name"]];
+    if([[NSUserDefaults standardUserDefaults] valueForKey:@"dial_code"]){
     [_phoneField setText:[[[NSUserDefaults standardUserDefaults] valueForKey:@"phoneNumber"] stringByReplacingOccurrencesOfString:[[NSUserDefaults standardUserDefaults] valueForKey:@"dial_code"] withString:@""]];
-    [_countryCodeField setText:[[NSUserDefaults standardUserDefaults] valueForKey:@"dial_code"]];
+    }
+    [_countryCodeField setText:[NSString stringWithFormat:@"(%@) - ",[[NSUserDefaults standardUserDefaults] valueForKey:@"dial_code"]]];
     
+    _phoneField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"Phone Number" attributes:@{NSForegroundColorAttributeName: [UIColor whiteColor]}];
+    _nameField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"Name" attributes:@{NSForegroundColorAttributeName: [UIColor whiteColor]}];
+
 }
 
 - (void)didReceiveMemoryWarning {
@@ -61,25 +66,7 @@
  */
 
 -(void)rightItemAction:(id)sender{
-    if([_nameField.text stringByReplacingOccurrencesOfString:@" " withString:@""].length == 0){
-        ALERT_VIEW(@"RESQ", @"Please enter your name.")
-        return;
-    }
     
-    BOOL isValidPhoneNumber = true;//[self validatePhoneNumber:self.phoneField.text];
-    
-    if(!isValidPhoneNumber){
-        ALERT_VIEW(@"RESQ", @"Please enter a valid mobile number.")
-        return;
-    }
-    
-    NSString *phoneNumber = [NSString stringWithFormat:@"%@%@",[_selectedCountry valueForKey:@"dial_code"],_phoneField.text];
-    NSLog(@"phone number: %@",phoneNumber);
-    [[NSUserDefaults standardUserDefaults]setValue:phoneNumber forKey:@"phoneNumber"];
-    [[NSUserDefaults standardUserDefaults]setValue:_nameField.text forKey:@"name"];
-    [[NSUserDefaults standardUserDefaults]setValue:[_selectedCountry valueForKey:@"dial_code"] forKey:@"dial_code"];
-    
-    ALERT_VIEW(@"RESQ", @"User profile update!")
 }
 
 -(NSArray*)loadJsonDataWithFileName:(NSString *)filename{
@@ -130,5 +117,27 @@
     BOOL returnKey = [string rangeOfString: @"\n"].location != NSNotFound;
     
     return newLength <= 16 || returnKey;
+}
+
+- (IBAction)updateAction:(id)sender {
+    if([_nameField.text stringByReplacingOccurrencesOfString:@" " withString:@""].length == 0){
+        ALERT_VIEW(@"RESQ", @"Please enter your name.")
+        return;
+    }
+    
+    BOOL isValidPhoneNumber = true;//[self validatePhoneNumber:self.phoneField.text];
+    
+    if(!isValidPhoneNumber){
+        ALERT_VIEW(@"RESQ", @"Please enter a valid mobile number.")
+        return;
+    }
+    
+    NSString *phoneNumber = [NSString stringWithFormat:@"%@%@",[_selectedCountry valueForKey:@"dial_code"],_phoneField.text];
+    NSLog(@"phone number: %@",phoneNumber);
+    [[NSUserDefaults standardUserDefaults]setValue:phoneNumber forKey:@"phoneNumber"];
+    [[NSUserDefaults standardUserDefaults]setValue:_nameField.text forKey:@"name"];
+    [[NSUserDefaults standardUserDefaults]setValue:[_selectedCountry valueForKey:@"dial_code"] forKey:@"dial_code"];
+    
+    ALERT_VIEW(@"RESQ", @"User profile update!")
 }
 @end

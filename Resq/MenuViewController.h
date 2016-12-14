@@ -9,5 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface MenuViewController : UIViewController
+@property (weak, nonatomic) IBOutlet UILabel *nameField;
+@property (weak, nonatomic) IBOutlet UILabel *phoneNumberField;
 
 @end

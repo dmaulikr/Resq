@@ -41,6 +41,10 @@
             }
         }
     }
+
+    _phoneField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"Phone Number" attributes:@{NSForegroundColorAttributeName: [UIColor whiteColor]}];
+    _nameField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"Name" attributes:@{NSForegroundColorAttributeName: [UIColor whiteColor]}];
+
 }
 
 -(void)viewWillAppear:(BOOL)animated{
@@ -53,37 +57,6 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
- #pragma mark - Navigation
- 
- // In a storyboard-based application, you will often want to do a little preparation before navigation
- - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
- // Get the new view controller using [segue destinationViewController].
- // Pass the selected object to the new view controller.
- }
- */
-
--(void)rightItemAction:(id)sender{
-    if([_nameField.text stringByReplacingOccurrencesOfString:@" " withString:@""].length == 0){
-        ALERT_VIEW(@"RESQ", @"Please enter your name.")
-        return;
-    }
-    
-    BOOL isValidPhoneNumber = true;//[self validatePhoneNumber:self.phoneField.text];
-    
-    if(!isValidPhoneNumber){
-        ALERT_VIEW(@"RESQ", @"Please enter a valid mobile number.")
-        return;
-    }    
-    
-    NSString *phoneNumber = [NSString stringWithFormat:@"%@%@",[_selectedCountry valueForKey:@"dial_code"],_phoneField.text];
-    NSLog(@"phone number: %@",phoneNumber);
-    [[NSUserDefaults standardUserDefaults]setValue:phoneNumber forKey:@"phoneNumber"];
-    [[NSUserDefaults standardUserDefaults]setValue:_nameField.text forKey:@"name"];
-    [[NSUserDefaults standardUserDefaults]setValue:[_selectedCountry valueForKey:@"dial_code"] forKey:@"dial_code"];
-    [appdelegate setSettingsViewController];
-}
-
 -(NSArray*)loadJsonDataWithFileName:(NSString *)filename{
     NSString *filePath = [[NSBundle mainBundle] pathForResource:filename ofType:@"json"];
     NSString *myJSON = [[NSString alloc] initWithContentsOfFile:filePath encoding:NSUTF8StringEncoding error:NULL];
@@ -93,6 +66,7 @@
 }
 
 - (IBAction)countryCodeAction:(id)sender {
+    [_countryCodeField setAdjustsFontSizeToFitWidth:YES];
     CountryPickerViewController * controller = [self.storyboard instantiateViewControllerWithIdentifier:@"CountryPickerViewController"];
     NSArray *arrays = [self loadJsonDataWithFileName:@"country"];
     NSSortDescriptor* brandDescriptor = [[NSSortDescriptor alloc] initWithKey:@"name" ascending:YES];
@@ -104,9 +78,9 @@
     [controller setKeypath:@"name"];
     [controller setTitle:NSLocalizedString(@"Select Country",nil)];
     UINavigationController * navController = [[UINavigationController alloc]initWithRootViewController:controller];
-    [self.navigationController presentViewController:navController animated:YES completion:nil];
+    [self presentViewController:navController animated:YES completion:nil];
     controller.completion = ^(NSMutableDictionary *selectedCountry) {
-        [_countryCodeField setText:[NSString stringWithFormat:@"(%@) -",[selectedCountry valueForKey:@"dial_code"]]];
+        [_countryCodeField setText:[NSString stringWithFormat:@"%@ -",[selectedCountry valueForKey:@"dial_code"]]];
     };
 }
 
@@ -127,4 +101,29 @@
     return newLength <= 16 || returnKey;
 }
 
+- (UIStatusBarStyle)preferredStatusBarStyle
+{
+    return UIStatusBarStyleLightContent;
+}
+
+- (IBAction)nextAction:(id)sender {
+    if([_nameField.text stringByReplacingOccurrencesOfString:@" " withString:@""].length == 0){
+        ALERT_VIEW(@"RESQ", @"Please enter your name.")
+        return;
+    }
+    
+    BOOL isValidPhoneNumber = true;//[self validatePhoneNumber:self.phoneField.text];
+    
+    if(!isValidPhoneNumber){
+        ALERT_VIEW(@"RESQ", @"Please enter a valid mobile number.")
+        return;
+    }
+    
+    NSString *phoneNumber = [NSString stringWithFormat:@"%@%@",[_selectedCountry valueForKey:@"dial_code"],_phoneField.text];
+    NSLog(@"phone number: %@",phoneNumber);
+    [[NSUserDefaults standardUserDefaults]setValue:phoneNumber forKey:@"phoneNumber"];
+    [[NSUserDefaults standardUserDefaults]setValue:_nameField.text forKey:@"name"];
+    [[NSUserDefaults standardUserDefaults]setValue:[_selectedCountry valueForKey:@"dial_code"] forKey:@"dial_code"];
+    [appdelegate setSettingsViewController];
+}
 @end

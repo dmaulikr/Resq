@@ -24,24 +24,67 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    [[UIApplication sharedApplication]setStatusBarStyle:UIStatusBarStyleLightContent];
     [self setSettingsViewController];
-    
-    
     if([[NSUserDefaults standardUserDefaults]valueForKey:@"phoneNumber"] && [[[NSUserDefaults standardUserDefaults]valueForKey:@"phoneNumber"] length]){
         [self setSettingsViewController];
-        
     }else{
         [[NSUserDefaults standardUserDefaults]setFloat:120.0 forKey:@"notificationTime"];
         UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
         PhoneNumberViewController * controller = [storyboard instantiateViewControllerWithIdentifier:@"PhoneNumberViewController"];
-        UINavigationController * navController = [[UINavigationController alloc]initWithRootViewController:controller];
-        navController.navigationBar.translucent = NO;
-        self.window.rootViewController = navController;
+        self.window.rootViewController = controller;
     }
     
     UIUserNotificationType types = UIUserNotificationTypeSound | UIUserNotificationTypeAlert;
     UIUserNotificationSettings *mySettings = [UIUserNotificationSettings settingsForTypes:types categories:nil];
     [[UIApplication sharedApplication] registerUserNotificationSettings:mySettings];
+    
+    
+    [[UINavigationBar appearance] setBarTintColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"nav_bar.png"]]];
+    [[UINavigationBar appearance] setTitleTextAttributes: @{NSForegroundColorAttributeName:[UIColor colorWithRed:176.0/255.0 green:184.0/255.0 blue:198.0/255.0 alpha:1.0]}];
+    [[UINavigationBar appearance] setTintColor:[UIColor colorWithRed:0.0/255.0 green:190.0/255.0 blue:246.0/255.0 alpha:1.0]];
+    [[MKStoreKit sharedKit] startProductRequest];
+    [[NSNotificationCenter defaultCenter]
+     addObserverForName:kMKStoreKitProductsAvailableNotification
+     object:nil
+     queue:[[NSOperationQueue alloc] init]
+     usingBlock:^(NSNotification *note) {
+         NSLog(@"Products available: %@", [[MKStoreKit sharedKit] availableProducts]);
+         for(SKProduct * product in [[MKStoreKit sharedKit] availableProducts]){
+             
+             NSNumberFormatter *_priceFormatter = [[NSNumberFormatter alloc] init];
+             [_priceFormatter setFormatterBehavior:NSNumberFormatterBehavior10_4];
+             [_priceFormatter setNumberStyle:NSNumberFormatterCurrencyStyle];
+             [_priceFormatter setLocale:product.priceLocale];
+             
+             
+             NSLog(@"Price: %@",[_priceFormatter stringFromNumber:product.price]);
+             NSLog(@"Description: %@",product.localizedDescription);
+             NSLog(@"Title: %@",product.localizedTitle);
+             NSLog(@"Identifire: %@\n\n\n\n",product.productIdentifier);
+             
+             NSLog(@"%@",[[MKStoreKit sharedKit] expiryDateForProduct:@"com.app.resq.seasonpass"]);
+             if([[MKStoreKit sharedKit] expiryDateForProduct:@"com.app.resq.seasonpass"]) {
+                 //unlock it
+                 NSLog(@"YES");
+             }else{
+                 NSLog(@"NO");
+             }
+             
+             
+         }
+         dispatch_async(dispatch_get_main_queue(), ^{
+             if([[MKStoreKit sharedKit] isProductPurchased:@"com.app.resq.seasonpass"]) {
+                 dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0),^{
+                     
+                 });                                                          }
+             else{
+                 dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0),^{
+                     
+                 });
+             }
+         });
+     }];
     
     return YES;
 }
@@ -97,7 +140,7 @@
     
     _viewDeckController = [[IIViewDeckController alloc] initWithCenterViewController:_appNavigationController leftViewController:leftMenuViewController];
     _viewDeckController.panningCancelsTouchesInView = NO;
-    _viewDeckController.leftSize = 100 * DEVICE_OFFSET;
+    _viewDeckController.leftSize = 60 * DEVICE_OFFSET;
     _viewDeckController.centerhiddenInteractivity = IIViewDeckCenterHiddenNotUserInteractiveWithTapToClose;
     self.window.rootViewController = _viewDeckController;
     
