@@ -51,6 +51,7 @@
 
 -(void)menuAction:(id)sender{
     [appdelegate.viewDeckController openLeftViewAnimated:YES];
+    
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -245,7 +246,7 @@
                 }
                 else {
                     dispatch_async(dispatch_get_main_queue(), ^{
-                        ALERT_VIEW(@"RESQ", @"PLEASE_GRANT_CONTACTS")
+                        ALERT_VIEW(@"Snow Rescue", @"PLEASE_GRANT_CONTACTS")
                     });
                 }
             });
@@ -277,15 +278,18 @@
         }
         else {
             dispatch_async(dispatch_get_main_queue(), ^{
-                ALERT_VIEW(@"RESQ", @"PLEASE_GRANT_CONTACTS")
+                ALERT_VIEW(@"Snow Rescue", @"PLEASE_GRANT_CONTACTS")
             });
         }
     });
 }
 
 -(void)clearbuddyAction:(id)sender{
+    if(_contactsArray.count == 0){
+        return;
+    }
     UIAlertController * alert = [UIAlertController
-                                 alertControllerWithTitle:@"RESQ"
+                                 alertControllerWithTitle:@"Snow Rescue"
                                  message:[NSString stringWithFormat:@"Are You Sure you want to remove all Buddies?"]
                                  preferredStyle:UIAlertControllerStyleAlert];
     
@@ -327,7 +331,7 @@
     
     
     UIAlertController * alert = [UIAlertController
-                                 alertControllerWithTitle:@"RESQ"
+                                 alertControllerWithTitle:@"Snow Rescue"
                                  message:[NSString stringWithFormat:@"Are You Sure you want to remove %@ from your buddy List?",contact.name]
                                  preferredStyle:UIAlertControllerStyleAlert];
     
@@ -455,7 +459,7 @@
             }
         }
     }else{
-        ALERT_VIEW(@"RESQ", @"Please select Phone number.")
+        ALERT_VIEW(@"Snow Rescue", @"Please select Phone number.")
     }
 }
 

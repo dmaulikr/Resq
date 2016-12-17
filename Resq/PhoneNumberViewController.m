@@ -118,14 +118,14 @@
 
 - (IBAction)nextAction:(id)sender {
     if([_nameField.text stringByReplacingOccurrencesOfString:@" " withString:@""].length == 0){
-        ALERT_VIEW(@"RESQ", @"Please enter your name.")
+        ALERT_VIEW(@"Snow Rescue", @"Please enter your name.")
         return;
     }
     
     BOOL isValidPhoneNumber = true;//[self validatePhoneNumber:self.phoneField.text];
     
     if(!isValidPhoneNumber){
-        ALERT_VIEW(@"RESQ", @"Please enter a valid mobile number.")
+        ALERT_VIEW(@"Snow Rescue", @"Please enter a valid mobile number.")
         return;
     }
     
@@ -134,6 +134,10 @@
     [[NSUserDefaults standardUserDefaults]setValue:phoneNumber forKey:@"phoneNumber"];
     [[NSUserDefaults standardUserDefaults]setValue:_nameField.text forKey:@"name"];
     [[NSUserDefaults standardUserDefaults]setValue:[_selectedCountry valueForKey:@"dial_code"] forKey:@"dial_code"];
-    [appdelegate setSettingsViewController];
+    [appdelegate setActivateViewController];
+}
+
+-(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
+    [self.view endEditing:YES];
 }
 @end

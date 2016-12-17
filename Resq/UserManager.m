@@ -82,7 +82,7 @@ static UserManager *_sharedUserManagerInstance = nil;
             [self sendMessage:contact.phoneNumber];
         }
         if([[UIApplication sharedApplication] applicationState] == UIApplicationStateActive){
-            ALERT_VIEW(@"RESQ", @"Please re-Activate to start Tracking again.")
+            ALERT_VIEW(@"Snow Rescue", @"Please re-Activate to start Tracking again.")
         }else{
             UILocalNotification* localNotification = [[UILocalNotification alloc] init];
             localNotification.fireDate = [NSDate date];

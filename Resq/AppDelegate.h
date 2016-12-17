@@ -28,7 +28,7 @@
 
 -(void)saveContext;
 -(NSURL*)applicationDocumentsDirectory;
--(void)setSettingsViewController;
+-(void)setActivateViewController;
 -(void)checkForTermsOfUseAndPrivacyPolicy:(UIViewController*)viewController;
 @end
 

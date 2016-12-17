@@ -9,6 +9,7 @@
 #import "PrivacyPolicyViewController.h"
 
 @interface PrivacyPolicyViewController ()
+@property (weak, nonatomic) IBOutlet UIWebView *webView;
 
 @end
 
@@ -21,6 +22,11 @@
         [self.leftItem setImage:[UIImage imageNamed:@"back-arrow"]];
         
     }
+    
+    NSString *htmlFile = [[NSBundle mainBundle] pathForResource:@"Temp_privacy_policy" ofType:@"html"];
+    NSString* htmlString = [NSString stringWithContentsOfFile:htmlFile encoding:NSUTF8StringEncoding error:nil];
+    [_webView loadHTMLString:htmlString baseURL: [[NSBundle mainBundle] bundleURL]];
+
     // Do any additional setup after loading the view.
 }
 

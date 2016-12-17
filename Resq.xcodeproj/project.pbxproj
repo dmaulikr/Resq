@@ -48,6 +48,8 @@
 		786EEE8C1DDCE34E00B6C40F /* CountryPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 786EEE8B1DDCE34E00B6C40F /* CountryPickerViewController.m */; };
 		786EEE8E1DDCE68000B6C40F /* country.json in Resources */ = {isa = PBXBuildFile; fileRef = 786EEE8D1DDCE68000B6C40F /* country.json */; };
 		7890D7B61DE3B05800C17E78 /* BluetoothViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7890D7B51DE3B05800C17E78 /* BluetoothViewController.m */; };
+		789562A51E053E4E0041ADC6 /* How_to_use_Snow_Rescue.html in Resources */ = {isa = PBXBuildFile; fileRef = 789562A31E053E4E0041ADC6 /* How_to_use_Snow_Rescue.html */; };
+		789562A61E053E4E0041ADC6 /* Temp_privacy_policy.html in Resources */ = {isa = PBXBuildFile; fileRef = 789562A41E053E4E0041ADC6 /* Temp_privacy_policy.html */; };
 		789DC67F1DEA3221007D3B0A /* CBCentralManager+Blocks.m in Sources */ = {isa = PBXBuildFile; fileRef = 789DC6721DEA3221007D3B0A /* CBCentralManager+Blocks.m */; };
 		789DC6801DEA3221007D3B0A /* CBCentralManager+Debug.m in Sources */ = {isa = PBXBuildFile; fileRef = 789DC6741DEA3221007D3B0A /* CBCentralManager+Debug.m */; };
 		789DC6811DEA3221007D3B0A /* CBCharacteristic+Debug.m in Sources */ = {isa = PBXBuildFile; fileRef = 789DC6761DEA3221007D3B0A /* CBCharacteristic+Debug.m */; };
@@ -171,6 +173,8 @@
 		786EEE8D1DDCE68000B6C40F /* country.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = country.json; sourceTree = "<group>"; };
 		7890D7B41DE3B05800C17E78 /* BluetoothViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BluetoothViewController.h; sourceTree = "<group>"; };
 		7890D7B51DE3B05800C17E78 /* BluetoothViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BluetoothViewController.m; sourceTree = "<group>"; };
+		789562A31E053E4E0041ADC6 /* How_to_use_Snow_Rescue.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = How_to_use_Snow_Rescue.html; sourceTree = "<group>"; };
+		789562A41E053E4E0041ADC6 /* Temp_privacy_policy.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = Temp_privacy_policy.html; sourceTree = "<group>"; };
 		789DC6701DEA3221007D3B0A /* BlocksBluetoothDefinitions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlocksBluetoothDefinitions.h; sourceTree = "<group>"; };
 		789DC6711DEA3221007D3B0A /* CBCentralManager+Blocks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CBCentralManager+Blocks.h"; sourceTree = "<group>"; };
 		789DC6721DEA3221007D3B0A /* CBCentralManager+Blocks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CBCentralManager+Blocks.m"; sourceTree = "<group>"; };
@@ -375,6 +379,15 @@
 			name = Model;
 			sourceTree = "<group>";
 		};
+		789562A21E053D8E0041ADC6 /* HTML */ = {
+			isa = PBXGroup;
+			children = (
+				789562A31E053E4E0041ADC6 /* How_to_use_Snow_Rescue.html */,
+				789562A41E053E4E0041ADC6 /* Temp_privacy_policy.html */,
+			);
+			name = HTML;
+			sourceTree = "<group>";
+		};
 		789DC66F1DEA3221007D3B0A /* BlocksBluetooth */ = {
 			isa = PBXGroup;
 			children = (
@@ -427,6 +440,7 @@
 		78D68ACE1DDE446A000801FF /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				789562A21E053D8E0041ADC6 /* HTML */,
 				78D7A8551E045BA000E3AB0C /* SettingScreen */,
 				78AE542C1E020648002C53A6 /* ProfileScreen */,
 				78AE54171E01F20C002C53A6 /* Menu */,
@@ -709,6 +723,7 @@
 				78AE542E1E020661002C53A6 /* profile_btn@2x.png in Resources */,
 				7844EC931E00A40A00D575E1 /* tourist_icon@2x.png in Resources */,
 				F28A0FA01E000DFC009DDB7C /* activate_btn_sel@2x.png in Resources */,
+				789562A51E053E4E0041ADC6 /* How_to_use_Snow_Rescue.html in Resources */,
 				78AE54251E01F225002C53A6 /* subscription_icon@2x.png in Resources */,
 				785317191DDA3F1E00FC379A /* Assets.xcassets in Resources */,
 				F28A0F9D1E000C93009DDB7C /* splash@2x.png in Resources */,
@@ -729,6 +744,7 @@
 				78AE54301E02066B002C53A6 /* text_field_sep@2x.png in Resources */,
 				7844EC8C1E00A32200D575E1 /* subscriptions_bg@2x.png in Resources */,
 				786EEE7F1DDCD26500B6C40F /* Hero.aiff in Resources */,
+				789562A61E053E4E0041ADC6 /* Temp_privacy_policy.html in Resources */,
 				7844EC911E00A40A00D575E1 /* rounder_price_btn@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

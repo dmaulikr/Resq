@@ -25,9 +25,8 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     [[UIApplication sharedApplication]setStatusBarStyle:UIStatusBarStyleLightContent];
-    [self setSettingsViewController];
     if([[NSUserDefaults standardUserDefaults]valueForKey:@"phoneNumber"] && [[[NSUserDefaults standardUserDefaults]valueForKey:@"phoneNumber"] length]){
-        [self setSettingsViewController];
+        [self setActivateViewController];
     }else{
         [[NSUserDefaults standardUserDefaults]setFloat:120.0 forKey:@"notificationTime"];
         UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
@@ -120,15 +119,15 @@
     
 }
 
--(void)setSettingsViewController{
+-(void)setActivateViewController{
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    //    ActivateViewController *contentViewController = [storyboard instantiateViewControllerWithIdentifier:@"ActivateViewController"];
+//        ActivateViewController *contentViewController = [storyboard instantiateViewControllerWithIdentifier:@"ActivateViewController"];
     //    SettingsViewController *contentViewController = [storyboard instantiateViewControllerWithIdentifier:@"SettingsViewController"];
     MenuViewController * leftMenuViewController = [storyboard instantiateViewControllerWithIdentifier:@"MenuViewController"];
     
     if(!_landingViewController)
         _landingViewController = [storyboard instantiateViewControllerWithIdentifier:@"LandingViewController"];
-    
+    [_landingViewController setIsActivateScreen:YES];
     _appNavigationController = [[UINavigationController alloc]initWithRootViewController:_landingViewController];
     [_appNavigationController.navigationBar setTranslucent:NO];
     _sideMenuViewController = [[RESideMenu alloc] initWithContentViewController:_appNavigationController

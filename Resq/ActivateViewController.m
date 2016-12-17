@@ -34,7 +34,7 @@
          NSMutableDictionary *accuracyAttributes = [[NSMutableDictionary alloc]initWithDictionary:
                                                     @{
                                                       NSForegroundColorAttributeName: [UIColor blackColor],
-                                                      NSFontAttributeName: [UIFont systemFontOfSize:48.0],
+                                                      NSFontAttributeName: [UIFont boldSystemFontOfSize:48.0],
                                                       }];
          NSMutableAttributedString *accuracyattributedText = [[NSMutableAttributedString alloc] initWithString:accuracyString];
          NSRange accuracyRange = [accuracyString rangeOfString:accuracyValue];

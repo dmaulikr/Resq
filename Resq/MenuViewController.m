@@ -31,7 +31,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    _selectedButton = [_menuButtons objectAtIndex:1];
+    _selectedButton = [_menuButtons objectAtIndex:0];
     [[[_menuButtons objectAtIndex:5]titleLabel] setNumberOfLines:0];
     [self unselectButtons];
 }
@@ -135,7 +135,7 @@
     if([MFMailComposeViewController canSendMail]){
         MFMailComposeViewController *composer = [[MFMailComposeViewController alloc] init];
         composer.mailComposeDelegate = self;
-        [composer setSubject:@"RESQ"];
+        [composer setSubject:@"Snow Rescue"];
         [composer setToRecipients:@[@"eden201621@gmail.com"]];
         [self presentViewController:composer animated:YES completion:nil];
     }else{
