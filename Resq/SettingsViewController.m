@@ -125,6 +125,12 @@
             [onoff addTarget: self action: @selector(closeBySwitchAction:) forControlEvents:UIControlEventValueChanged];
             BOOL closeBySwitch = [[NSUserDefaults standardUserDefaults]boolForKey:@"closeBySwitch"];
             onoff.on = closeBySwitch;
+            UIButton * closeButton = [cell viewWithTag:2];
+            [closeButton addTarget:self action:@selector(closeByAction:) forControlEvents:UIControlEventTouchUpInside];
+            UIButton * contactsButton = [cell viewWithTag:3];
+            [contactsButton addTarget:self action:@selector(contactsAction:) forControlEvents:UIControlEventTouchUpInside];
+
+            
             break;
         }case ResqSettingCellTypeContactsSettingCell:{
             UISwitch * onoff = [cell viewWithTag:1];
@@ -158,10 +164,14 @@
                 [self sliderAction:slider];
             }
             
+            UIButton * clearbuddyList = [cell viewWithTag:4];
+            [clearbuddyList addTarget:self action:@selector(clearbuddyAction:) forControlEvents:UIControlEventTouchUpInside];
+
+            
             break;
         }case ResqSettingCellTypeBuddyListHeaderCell:{
-            UIButton * clearbuddyList = [cell viewWithTag:1];
-            [clearbuddyList addTarget:self action:@selector(clearbuddyAction:) forControlEvents:UIControlEventTouchUpInside];
+            //UIButton * clearbuddyList = [cell viewWithTag:1];
+            //[clearbuddyList addTarget:self action:@selector(clearbuddyAction:) forControlEvents:UIControlEventTouchUpInside];
             
             break;
         }case ResqSettingCellTypeBuddyCell:{
@@ -184,22 +194,22 @@
     ResqSettingCellType cellType = indexPath.section;
     switch (cellType) {
         case ResqSettingCellTypeCloseByCell:{
-            return 95.0;
+            return 258.0;
             break;
         }case ResqSettingCellTypeContactsSettingCell:{
-            return 73.0;
+            return 0.0;
             break;
         }case ResqSettingCellTypeFrequentContactHeaderCEL:{
-            return 53.0;
+            return 0.0;
             break;
         }case ResqSettingCellTypeFrequentBuddyCell:{
             return 44.0;
             break;
         }case ResqSettingCellTypeNotificationTimeCell:{
-            return 104.0;
+            return 174.0;
             break;
         }case ResqSettingCellTypeBuddyListHeaderCell:{
-            return 53.0;
+            return 0.0;
             break;
         }case ResqSettingCellTypeBuddyCell:{
             return 44.0;
@@ -211,7 +221,8 @@
     return 0.0;
 }
 
-
+// Moved This Logic to Buttons.
+/*
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     dispatch_async(dispatch_get_main_queue(), ^{
         
@@ -237,6 +248,36 @@
                         ALERT_VIEW(@"RESQ", @"PLEASE_GRANT_CONTACTS")
                     });
                 }
+            });
+        }
+    });
+}*/
+
+-(void)closeByAction:(id)sender{
+    BluetoothViewController * controller = [self.storyboard instantiateViewControllerWithIdentifier:@"BluetoothViewController"];
+    UINavigationController * navController = [[UINavigationController alloc]initWithRootViewController:controller];
+    navController.navigationBar.translucent = NO;
+    [self presentViewController:navController animated:YES completion:nil];
+}
+
+-(void)contactsAction:(id)sender{
+    ABAddressBookRef addressBook =  ABAddressBookCreateWithOptions(NULL, NULL);
+    ABAddressBookRequestAccessWithCompletion(addressBook, ^(bool granted, CFErrorRef error) {
+        if (granted) {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [[UIApplication sharedApplication]setStatusBarStyle:UIStatusBarStyleDefault];
+            });
+            ABPeoplePickerNavigationController*  _addressBookController = [[ABPeoplePickerNavigationController alloc] init];
+            [[_addressBookController navigationBar] setBarStyle:UIBarStyleBlack];
+            
+            //                _addressBookController.delegate =  self;
+            [_addressBookController setPredicateForEnablingPerson:[NSPredicate predicateWithFormat:@"%K.@count > 0", ABPersonPhoneNumbersProperty]];
+            [_addressBookController setPeoplePickerDelegate:self];
+            [self presentViewController:_addressBookController animated:YES completion:nil];
+        }
+        else {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                ALERT_VIEW(@"RESQ", @"PLEASE_GRANT_CONTACTS")
             });
         }
     });
@@ -387,6 +428,7 @@
 }
 
 - (void)peoplePickerNavigationController:(ABPeoplePickerNavigationController*)peoplePicker didSelectPerson:(ABRecordRef)person property:(ABPropertyID)property identifier:(ABMultiValueIdentifier)identifier{
+    [[UIApplication sharedApplication]setStatusBarStyle:UIStatusBarStyleLightContent];
     NSString *firstName = (__bridge NSString *)ABRecordCopyValue(person, kABPersonFirstNameProperty);
     NSString *lastName = (NSString *)CFBridgingRelease(ABRecordCopyValue(person, kABPersonLastNameProperty));
     // Compose the full name.
@@ -415,6 +457,11 @@
     }else{
         ALERT_VIEW(@"RESQ", @"Please select Phone number.")
     }
+}
+
+-(void)peoplePickerNavigationControllerDidCancel:(ABPeoplePickerNavigationController *)peoplePicker{
+    [[UIApplication sharedApplication]setStatusBarStyle:UIStatusBarStyleLightContent];
+
 }
 
 -(void)addBuddyinList:(NSString*)mobileNumber name:(NSString*)name{

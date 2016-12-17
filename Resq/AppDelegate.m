@@ -40,9 +40,11 @@
     [[UIApplication sharedApplication] registerUserNotificationSettings:mySettings];
     
     
-    [[UINavigationBar appearance] setBarTintColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"nav_bar.png"]]];
+    /*[[UINavigationBar appearance] setBarTintColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"nav_bar.png"]]];
+     */
     [[UINavigationBar appearance] setTitleTextAttributes: @{NSForegroundColorAttributeName:[UIColor colorWithRed:176.0/255.0 green:184.0/255.0 blue:198.0/255.0 alpha:1.0]}];
     [[UINavigationBar appearance] setTintColor:[UIColor colorWithRed:0.0/255.0 green:190.0/255.0 blue:246.0/255.0 alpha:1.0]];
+     
     [[MKStoreKit sharedKit] startProductRequest];
     [[NSNotificationCenter defaultCenter]
      addObserverForName:kMKStoreKitProductsAvailableNotification

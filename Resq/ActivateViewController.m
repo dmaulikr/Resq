@@ -19,13 +19,38 @@
     [super viewDidLoad];
     
     [[UserManager sharedManager] startAdvertising];
+    [[NSNotificationCenter defaultCenter]
+     addObserverForName:didUpdateLocationNotification
+     object:nil
+     queue:[NSOperationQueue mainQueue]
+     usingBlock:^(NSNotification *note) {
+         
+         _latitude_label.text = [NSString stringWithFormat:@"%f",[ResqLocationManager sharedManager].currentLocation.coordinate.latitude];
+         _longitude_label.text = [NSString stringWithFormat:@"%f",[ResqLocationManager sharedManager].currentLocation.coordinate.longitude];
+         NSLog(@"%f",[ResqLocationManager sharedManager].currentLocation.horizontalAccuracy);
+         
+         NSString * accuracyValue = [NSString stringWithFormat:@"%.0f",[ResqLocationManager sharedManager].currentLocation.horizontalAccuracy];
+         NSString * accuracyString = [NSString stringWithFormat:@"%@m\nAccuracy",accuracyValue];
+         NSMutableDictionary *accuracyAttributes = [[NSMutableDictionary alloc]initWithDictionary:
+                                                    @{
+                                                      NSForegroundColorAttributeName: [UIColor blackColor],
+                                                      NSFontAttributeName: [UIFont systemFontOfSize:48.0],
+                                                      }];
+         NSMutableAttributedString *accuracyattributedText = [[NSMutableAttributedString alloc] initWithString:accuracyString];
+         NSRange accuracyRange = [accuracyString rangeOfString:accuracyValue];
+         [accuracyattributedText setAttributes:accuracyAttributes range:accuracyRange];
+         _accuracy_label.attributedText = accuracyattributedText;
+         
+     }];
 }
 
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     [appdelegate checkForTermsOfUseAndPrivacyPolicy:self];
     [self updateView];
-
+    _latitude_label.text = [NSString stringWithFormat:@"%f",[ResqLocationManager sharedManager].currentLocation.coordinate.latitude];
+    _longitude_label.text = [NSString stringWithFormat:@"%f",[ResqLocationManager sharedManager].currentLocation.coordinate.longitude];
+    
 }
 
 -(void)menuAction:(id)sender{

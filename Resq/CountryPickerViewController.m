@@ -46,8 +46,8 @@ static NSString *cellIdentifier = @"CountryTableViewCell";
         _controller = [[UISearchController alloc]initWithSearchResultsController:resultsController];
         _controller.searchResultsUpdater = self;
         _controller.delegate = self;
-        [_controller.searchBar setBarTintColor:[UIColor groupTableViewBackgroundColor]];
-        [_controller.view setBackgroundColor:[UIColor lightGrayColor]];
+        //[_controller.searchBar setBarTintColor:[UIColor groupTableViewBackgroundColor]];
+        //[_controller.view setBackgroundColor:[UIColor lightGrayColor]];
     }
     return _controller;
 }

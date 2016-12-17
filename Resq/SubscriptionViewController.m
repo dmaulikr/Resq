@@ -8,10 +8,17 @@
 
 #import "SubscriptionViewController.h"
 
+#define SEASONPASS_IN_APP @"com.app.resq.seasonpass"
+#define TOURIST_IN_APP @"com.app.resq.tourist"
+#define WEEKEND_WARRIOR_IN_APP @"com.app.resq.weekendwarrior"
+
 @interface SubscriptionViewController (){
     NSNumberFormatter * _priceFormatter;
     
 }
+@property (weak, nonatomic) IBOutlet UIButton *weekendwarrior_btn;
+@property (weak, nonatomic) IBOutlet UIButton *tourist_btn;
+@property (weak, nonatomic) IBOutlet UIButton *seasonpass_btn;
 
 @end
 
@@ -19,7 +26,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     [self setTitle:@"Subscription"];
+    [((UIScrollView *)self.view) setScrollEnabled:YES];
+    ((UIScrollView *)self.view).contentSize = CGSizeMake(320.0, 555);
     
     _priceFormatter = [[NSNumberFormatter alloc] init];
     [_priceFormatter setFormatterBehavior:NSNumberFormatterBehavior10_4];
@@ -30,9 +40,7 @@
                                                        queue:[[NSOperationQueue alloc] init]
                                                   usingBlock:^(NSNotification *note) {
                                                       dispatch_async(dispatch_get_main_queue(), ^{
-                                                          for(SKProduct *prod in [MKStoreKit sharedKit]. availableProducts){
-                                                              [_priceFormatter setLocale:prod.priceLocale];
-                                                          }
+                                                          [self updateProducts];
                                                       });
                                                   }];
     
@@ -80,6 +88,14 @@
     
 }
 
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    _weekendwarrior_btn.hidden = YES;
+    _tourist_btn.hidden = YES;
+    _seasonpass_btn.hidden = YES;
+    [self updateProducts];
+}
+
 -(void)menuAction:(id)sender{
     [appdelegate.viewDeckController openLeftViewAnimated:YES];
 }
@@ -98,5 +114,43 @@
  // Pass the selected object to the new view controller.
  }
  */
+
+-(void)updateProducts{
+    for(SKProduct * product in [[MKStoreKit sharedKit] availableProducts]){
+        [_priceFormatter setLocale:product.priceLocale];
+        if([product.productIdentifier isEqualToString:WEEKEND_WARRIOR_IN_APP]){
+            _weekendwarrior_btn.hidden = NO;
+            [_weekendwarrior_btn setTitle:[_priceFormatter stringFromNumber:product.price] forState:UIControlStateNormal];
+            
+        }
+        if([product.productIdentifier isEqualToString:SEASONPASS_IN_APP]){
+            _seasonpass_btn.hidden = NO;
+            [_seasonpass_btn setTitle:[_priceFormatter stringFromNumber:product.price] forState:UIControlStateNormal];
+        }
+        if([product.productIdentifier isEqualToString:TOURIST_IN_APP]){
+            _tourist_btn.hidden = NO;
+            [_tourist_btn setTitle:[_priceFormatter stringFromNumber:product.price] forState:UIControlStateNormal];
+        }
+        
+        if([[MKStoreKit sharedKit] expiryDateForProduct:SEASONPASS_IN_APP]) {
+            //unlock it
+            NSLog(@"YES");
+        }else{
+            NSLog(@"NO");
+        }
+    }
+}
+
+-(IBAction)weekendwarriorAction:(id)sender{
+    [[MKStoreKit sharedKit] initiatePaymentRequestForProductWithIdentifier:WEEKEND_WARRIOR_IN_APP];
+}
+
+-(IBAction)touristAction:(id)sender{
+    [[MKStoreKit sharedKit] initiatePaymentRequestForProductWithIdentifier:TOURIST_IN_APP];
+}
+
+-(IBAction)seasonpassAction:(id)sender{
+    [[MKStoreKit sharedKit] initiatePaymentRequestForProductWithIdentifier:SEASONPASS_IN_APP];
+}
 
 @end

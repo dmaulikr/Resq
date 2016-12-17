@@ -59,11 +59,11 @@
     self.pageViewController.view.frame = pageViewRect;
     
     _pageControl = [[UIPageControl alloc] init];
-    _pageControl.frame = CGRectMake((SCREEN_WIDTH-40)/2, SCREEN_HEIGHT-94 , 40, 20);
+    _pageControl.frame = CGRectMake((SCREEN_WIDTH-40)/2, SCREEN_HEIGHT-88 , 40, 20);
     _pageControl.numberOfPages = 2;
     _pageControl.currentPage = 0;
     [_pageControl setPageIndicatorTintColor:[UIColor lightGrayColor]];
-    [_pageControl setCurrentPageIndicatorTintColor:[UIColor darkGrayColor]];
+    [_pageControl setCurrentPageIndicatorTintColor:[UIColor colorWithRed:0.0/255.0 green:190.0/255.0 blue:246.0/255.0 alpha:1.0]];
     [self.view addSubview:_pageControl];
     if(_isActivateScreen){
         [self updateActiviateScreen];

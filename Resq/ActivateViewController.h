@@ -12,5 +12,9 @@
 
 @interface ActivateViewController : ResqViewController
 
+@property (weak, nonatomic) IBOutlet UILabel *longitude_label;
+@property (weak, nonatomic) IBOutlet UILabel *latitude_label;
 @property (weak, nonatomic) IBOutlet UIButton *activate_btn;
+@property (weak, nonatomic) IBOutlet UILabel *accuracy_label;
+
 @end
