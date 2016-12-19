@@ -28,7 +28,7 @@
     if(![[NSUserDefaults standardUserDefaults]appSeeded]){
         [[NSUserDefaults standardUserDefaults]setAppSeeded:YES];
         [[NSUserDefaults standardUserDefaults]setFreeTrial:YES];
-        [[NSUserDefaults standardUserDefaults] setSubscriptionDate:[[UserManager sharedManager]getDateAfterAddingNumberOfDays:4]];
+        [[NSUserDefaults standardUserDefaults] setSubscriptionDate:[[UserManager sharedManager]getDateAfterAddingNumberOfDays:10]];
     }
     
     if([[NSUserDefaults standardUserDefaults]freeTrial]){
@@ -89,7 +89,7 @@
                  [[NSUserDefaults standardUserDefaults]setFreeTrial:NO];
                  [[NSUserDefaults standardUserDefaults] setSubscriptionDate:[[UserManager sharedManager]getDateAfterAddingNumberOfDays:0]];
              }
-             NSLog(@"Purchased/Subscribed to product with id: %@", [note object]);
+             //NSLog(@"Purchased/Subscribed to product with id: %@", [note object]);
              if([[note object] isEqualToString:WEEKEND_WARRIOR_IN_APP]){
                  [[NSUserDefaults standardUserDefaults] setSubscriptionDate:[[UserManager sharedManager]getUpdatedSubscriptionDateAfterAddingNumberOfDays:3]];
                  

@@ -227,6 +227,7 @@ static NSDictionary *errorDictionary;
 
 - (void)request:(SKRequest *)request didFailWithError:(NSError *)error {
     NSLog(@"Product request failed with error: %@", error);
+    [SVProgressHUD dismiss];
 }
 
 #pragma mark -
@@ -508,7 +509,7 @@ static NSDictionary *errorDictionary;
                 } else {
                     // non-consumable or subscriptions
                     // subscriptions will eventually contain the expiry date after the receipt is validated during the next run
-                    self.purchaseRecord[transaction.payment.productIdentifier] = [NSNull null];
+                    //self.purchaseRecord[transaction.payment.productIdentifier] = [NSNull null];
                 }
                 
                 [self savePurchaseRecord];

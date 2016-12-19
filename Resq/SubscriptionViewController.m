@@ -92,12 +92,19 @@
                                                       object:nil
                                                        queue:[[NSOperationQueue alloc] init]
                                                   usingBlock:^(NSNotification *note) {
-                                                      [[MKStoreKit sharedKit] restorePurchases];
+                                                      [SVProgressHUD dismiss];
+                                                      dispatch_async(dispatch_get_main_queue(), ^{
+                                                          
+                                                          [self performSelector:@selector(updateStatus) withObject:nil afterDelay:0.5];
+                                                      });
+                                                      
+                                                      //[[MKStoreKit sharedKit] restorePurchases];
                                                   }];
     [[NSNotificationCenter defaultCenter] addObserverForName:kMKStoreKitReceiptValidationFailedNotification
                                                       object:nil
                                                        queue:[[NSOperationQueue alloc] init]
                                                   usingBlock:^(NSNotification *note) {
+                                                      [SVProgressHUD dismiss];
                                                   }];
     
 }
@@ -108,6 +115,8 @@
     [[NSNotificationCenter defaultCenter] removeObserver:kMKStoreKitRestoredPurchasesNotification];
     [[NSNotificationCenter defaultCenter] removeObserver:kMKStoreKitRestoringPurchasesFailedNotification];
     [[NSNotificationCenter defaultCenter] removeObserver:kMKStoreKitProductPurchaseFailedNotification];
+    [[NSNotificationCenter defaultCenter] removeObserver:kMKStoreKitReceiptValidationNotification];
+    [[NSNotificationCenter defaultCenter] removeObserver:kMKStoreKitReceiptValidationFailedNotification];
     
 }
 
@@ -126,8 +135,7 @@
 
 -(void)rightItemAction:(id)sender{
     [SVProgressHUD show];
-    [[MKStoreKit sharedKit] refreshAppStoreReceipt];
-    
+    [[MKStoreKit sharedKit] restorePurchases];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -219,11 +227,18 @@
     NSInteger numberOfDays = [[UserManager sharedManager]subscriptionNumberOfDaysLeft];
     if([[MKStoreKit sharedKit] isProductPurchased:SEASONPASS_IN_APP]) {
         NSDate * date = [[MKStoreKit sharedKit] expiryDateForProduct:SEASONPASS_IN_APP];
-        NSLog(@"1!!! \t%@",date);
-        NSLog(@"2!!! \t%@",[[MKStoreKit sharedKit] expiryDateForProduct:SEASONPASS_IN_APP]);
+        if([date isKindOfClass:[NSNull class]]){
+            [[MKStoreKit sharedKit] refreshAppStoreReceipt];
+            return;
+        }
+        
+        
         if([[MKStoreKit sharedKit] expiryDateForProduct:SEASONPASS_IN_APP]) {
-            NSLog(@"Date after  \t%@",date);
-            NSLog(@"Days to be added :   %ld",[[UserManager sharedManager]seasonPassNumberOfDaysInWithExpiryDate:date]);
+            if([[NSUserDefaults standardUserDefaults]freeTrial]){
+                [[NSUserDefaults standardUserDefaults]setFreeTrial:NO];
+                [[NSUserDefaults standardUserDefaults] setSubscriptionDate:[[UserManager sharedManager]getDateAfterAddingNumberOfDays:0]];
+                NSLog(@"Days to be added :   %ld",[[UserManager sharedManager]seasonPassNumberOfDaysInWithExpiryDate:date]);
+            }
         }else{
             NSLog(@"NO");
         }
