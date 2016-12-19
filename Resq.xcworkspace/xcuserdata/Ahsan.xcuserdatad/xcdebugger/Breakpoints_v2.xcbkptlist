@@ -26,7 +26,7 @@
             startingLineNumber = "133"
             endingLineNumber = "133"
             landmarkName = "-addBuddyAction:"
-            landmarkType = "7">
+            landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -67,29 +67,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Resq/ResqLocationManager.m"
-            timestampString = "502148280.950541"
+            filePath = "Resq/SubscriptionViewController.m"
+            timestampString = "503847740.786804"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "64"
-            endingLineNumber = "64"
-            landmarkName = "-startUpdatingLocation"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Resq/AppDelegate.m"
-            timestampString = "503655813.033567"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "119"
-            endingLineNumber = "119"
-            landmarkName = "-application:didReceiveLocalNotification:"
+            startingLineNumber = "70"
+            endingLineNumber = "70"
+            landmarkName = "-viewDidLoad"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -100,12 +84,76 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Resq/ActivateViewController.m"
-            timestampString = "503625156.737953"
+            timestampString = "503845169.982699"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "28"
-            endingLineNumber = "28"
-            landmarkName = "-viewDidLoad"
+            startingLineNumber = "76"
+            endingLineNumber = "76"
+            landmarkName = "-onActivateBtnClick:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Resq/MKStoreKit.m"
+            timestampString = "503852924.432637"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "420"
+            endingLineNumber = "420"
+            landmarkName = "-startValidatingReceiptsAndUpdateLocalStore"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__56-[MKStoreKit startValidatingReceiptsAndUpdateLocalStore]_block_invoke"
+                  moduleName = "RESQ"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Ahsan/AhsanMacBook/Source%20Tree/Resq/Resq/MKStoreKit.m"
+                  timestampString = "503853060.592409"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "420"
+                  endingLineNumber = "420"
+                  offsetFromSymbolStart = "548">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__56-[MKStoreKit startValidatingReceiptsAndUpdateLocalStore]_block_invoke.313"
+                  moduleName = "RESQ"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Ahsan/AhsanMacBook/Source%20Tree/Resq/Resq/MKStoreKit.m"
+                  timestampString = "503853060.593523"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "421"
+                  endingLineNumber = "421"
+                  offsetFromSymbolStart = "108">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Resq/MKStoreKit.m"
+            timestampString = "503853041.359141"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "171"
+            endingLineNumber = "171"
+            landmarkName = "-expiryDateForProduct:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

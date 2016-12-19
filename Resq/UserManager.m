@@ -271,4 +271,61 @@ static UserManager *_sharedUserManagerInstance = nil;
     }];
 }
 
+-(BOOL)canUseActivateSection{
+    BOOL canUse = NO;
+    
+    
+    
+    return canUse;
+}
+
+-(NSDate*)getDateAfterAddingNumberOfDays:(int)days{
+    NSDateComponents *dayComponent = [[NSDateComponents alloc] init];
+    dayComponent.day = days;
+    NSCalendar *theCalendar = [NSCalendar currentCalendar];
+    NSDate *nextDate = [theCalendar dateByAddingComponents:dayComponent toDate:[NSDate date] options:0];
+    return nextDate;
+}
+
+-(NSInteger)subscriptionNumberOfDaysLeft{
+    
+    NSDate* date1 = [[NSUserDefaults standardUserDefaults]subscriptionDate];
+    NSDate* date2 = [NSDate date];
+    NSTimeInterval distanceBetweenDates = [date1 timeIntervalSinceDate:date2];
+    double secondsInAnHour = 3600;
+    NSInteger hoursBetweenDates = distanceBetweenDates / secondsInAnHour;
+    if(distanceBetweenDates <= 0){
+        return 0;
+    }else{
+        int days = hoursBetweenDates / 24.0;
+        days = days+1;
+        return days;
+    }
+    return 0;
+}
+
+-(NSDate*)getUpdatedSubscriptionDateAfterAddingNumberOfDays:(int)days{
+    NSDateComponents *dayComponent = [[NSDateComponents alloc] init];
+    dayComponent.day = days;
+    NSCalendar *theCalendar = [NSCalendar currentCalendar];
+    NSDate *nextDate = [theCalendar dateByAddingComponents:dayComponent toDate:[[NSUserDefaults standardUserDefaults] subscriptionDate] options:0];
+    return nextDate;
+}
+
+-(NSInteger)seasonPassNumberOfDaysInWithExpiryDate:(NSDate*)date{
+    
+    NSDate* date1 = date;
+    NSDate* date2 = [NSDate date];
+    NSTimeInterval distanceBetweenDates = [date1 timeIntervalSinceDate:date2];
+    double secondsInAnHour = 3600 ;
+    NSInteger hoursBetweenDates = distanceBetweenDates / secondsInAnHour ;
+    if(distanceBetweenDates <= 0){
+        return 0;
+    }else{
+        int days = hoursBetweenDates / 24.0;
+        days = days+1;
+        return days;
+    }
+    return 0;
+}
 @end

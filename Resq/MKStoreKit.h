@@ -115,7 +115,7 @@ extern NSString *const kMKStoreKitDownloadProgressNotification;
  *  @abstract This notification is posted when MKStoreKit completes downloading a hosted content
  */
 extern NSString *const kMKStoreKitDownloadCompletedNotification;
-
+extern NSString *const kMKStoreKitReceiptValidationNotification;
 
 /*!
  *  @abstract The singleton class that takes care of In App Purchasing

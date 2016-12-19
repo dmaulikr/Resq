@@ -49,6 +49,7 @@ NSString *const kMKStoreKitReceiptValidationFailedNotification = @"com.mugunthku
 NSString *const kMKStoreKitSubscriptionExpiredNotification = @"com.mugunthkumar.mkstorekit.subscriptionexpired";
 NSString *const kMKStoreKitDownloadProgressNotification = @"com.mugunthkumar.mkstorekit.downloadprogress";
 NSString *const kMKStoreKitDownloadCompletedNotification = @"com.mugunthkumar.mkstorekit.downloadcompleted";
+NSString *const kMKStoreKitReceiptValidationNotification = @"com.mugunthkumar.mkstorekit.validatingreceipts";
 
 
 NSString *const kSandboxServer = @"https://sandbox.itunes.apple.com/verifyReceipt";
@@ -165,7 +166,7 @@ static NSDictionary *errorDictionary;
     
     NSNumber *expiresDateMs = self.purchaseRecord[productId];
     if ([expiresDateMs isKindOfClass:NSNull.class]) {
-        return NSDate.date;
+        return nil;
     } else {
         return [NSDate dateWithTimeIntervalSince1970:[expiresDateMs doubleValue] / 1000.0f];
     }
@@ -414,7 +415,8 @@ static NSDictionary *errorDictionary;
             if (purchaseRecordDirty) {
                 [self savePurchaseRecord];
             }
-            
+            [[NSNotificationCenter defaultCenter] postNotificationName:kMKStoreKitReceiptValidationNotification object:nil];
+
             [self.purchaseRecord enumerateKeysAndObjectsUsingBlock:^(NSString *productIdentifier, NSNumber *expiresDateMs, BOOL *stop) {
                 if (![expiresDateMs isKindOfClass: [NSNull class]]) {
                     if ([[NSDate date] timeIntervalSince1970] > [expiresDateMs doubleValue]) {

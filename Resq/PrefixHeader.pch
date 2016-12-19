@@ -9,6 +9,10 @@
 #ifndef PrefixHeader_pch
 #define PrefixHeader_pch
 
+#define SEASONPASS_IN_APP @"com.app.resq.seasonpass"
+#define TOURIST_IN_APP @"com.app.resq.tourist"
+#define WEEKEND_WARRIOR_IN_APP @"com.app.resq.weekendwarrior"
+
 #define CLOSE_BY_CELL @"CloseByCell"
 #define CONTACTS_SETTING_CELL @"ContactsSettingCell"
 #define FREQUENT_CONTACTS_HEADER_CELL @"FrequentContactHeaderCELL"
@@ -23,6 +27,7 @@
 // You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
 #import "MKStoreKit.h"
 #import <StoreKit/StoreKit.h>
+#import "NSUserDefaults+Snow_Rescue.h"
 #import <CoreLocation/CoreLocation.h>
 #import "CBPeripheralManager+Blocks.h"
 #import "CBPeripheral+Debug.h"

@@ -14,6 +14,7 @@
 #import "PhoneNumberViewController.h"
 #import "LandingViewController.h"
 #import "PrivacyPolicyViewController.h"
+#import "SubscriptionViewController.h"
 
 @interface AppDelegate ()<UNUserNotificationCenterDelegate>
 
@@ -23,7 +24,32 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    
+    if(![[NSUserDefaults standardUserDefaults]appSeeded]){
+        [[NSUserDefaults standardUserDefaults]setAppSeeded:YES];
+        [[NSUserDefaults standardUserDefaults]setFreeTrial:YES];
+        [[NSUserDefaults standardUserDefaults] setSubscriptionDate:[[UserManager sharedManager]getDateAfterAddingNumberOfDays:4]];
+    }
+    
+    if([[NSUserDefaults standardUserDefaults]freeTrial]){
+        if([[UserManager sharedManager]subscriptionNumberOfDaysLeft]<=0){
+            [[NSUserDefaults standardUserDefaults]setFreeTrial:NO];
+        }
+    }
+    
+    //Testing inApp
+    /*
+     NSLog(@"Number of days left %ld",[[UserManager sharedManager]subscriptionNumberOfDaysLeft]);
+     
+     NSLog(@"%@",[[NSUserDefaults standardUserDefaults] subscriptionDate]);
+     
+     if(![[NSUserDefaults standardUserDefaults]appSeeded]){
+     [[NSUserDefaults standardUserDefaults]setFreeTrial:YES];
+     [[NSUserDefaults standardUserDefaults] setSubscriptionDate:[[UserManager sharedManager]getDateAfterAddingNumberOfDays:4]];
+     [[NSUserDefaults standardUserDefaults] setSubscriptionDate:[[UserManager sharedManager]getUpdatedSubscriptionDateAfterAddingNumberOfDays:4]];
+     }
+     */
+    
     [[UIApplication sharedApplication]setStatusBarStyle:UIStatusBarStyleLightContent];
     if([[NSUserDefaults standardUserDefaults]valueForKey:@"phoneNumber"] && [[[NSUserDefaults standardUserDefaults]valueForKey:@"phoneNumber"] length]){
         [self setActivateViewController];
@@ -43,7 +69,7 @@
      */
     [[UINavigationBar appearance] setTitleTextAttributes: @{NSForegroundColorAttributeName:[UIColor colorWithRed:176.0/255.0 green:184.0/255.0 blue:198.0/255.0 alpha:1.0]}];
     [[UINavigationBar appearance] setTintColor:[UIColor colorWithRed:0.0/255.0 green:190.0/255.0 blue:246.0/255.0 alpha:1.0]];
-     
+    
     [[MKStoreKit sharedKit] startProductRequest];
     [[NSNotificationCenter defaultCenter]
      addObserverForName:kMKStoreKitProductsAvailableNotification
@@ -51,45 +77,33 @@
      queue:[[NSOperationQueue alloc] init]
      usingBlock:^(NSNotification *note) {
          NSLog(@"Products available: %@", [[MKStoreKit sharedKit] availableProducts]);
-         for(SKProduct * product in [[MKStoreKit sharedKit] availableProducts]){
-             
-             NSNumberFormatter *_priceFormatter = [[NSNumberFormatter alloc] init];
-             [_priceFormatter setFormatterBehavior:NSNumberFormatterBehavior10_4];
-             [_priceFormatter setNumberStyle:NSNumberFormatterCurrencyStyle];
-             [_priceFormatter setLocale:product.priceLocale];
-             
-             
-             NSLog(@"Price: %@",[_priceFormatter stringFromNumber:product.price]);
-             NSLog(@"Description: %@",product.localizedDescription);
-             NSLog(@"Title: %@",product.localizedTitle);
-             NSLog(@"Identifire: %@\n\n\n\n",product.productIdentifier);
-             
-             NSLog(@"%@",[[MKStoreKit sharedKit] expiryDateForProduct:@"com.app.resq.seasonpass"]);
-             if([[MKStoreKit sharedKit] expiryDateForProduct:@"com.app.resq.seasonpass"]) {
-                 //unlock it
-                 NSLog(@"YES");
-             }else{
-                 NSLog(@"NO");
-             }
-             
-             
-         }
-         dispatch_async(dispatch_get_main_queue(), ^{
-             if([[MKStoreKit sharedKit] isProductPurchased:@"com.app.resq.seasonpass"]) {
-                 dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0),^{
-                     
-                 });                                                          }
-             else{
-                 dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0),^{
-                     
-                 });
-             }
-         });
      }];
     
+    [[NSNotificationCenter defaultCenter]
+     addObserverForName:kMKStoreKitProductPurchasedNotification
+     object:nil
+     queue:[[NSOperationQueue alloc] init]
+     usingBlock:^(NSNotification *note) {
+         dispatch_async(dispatch_get_main_queue(), ^{
+             if([[NSUserDefaults standardUserDefaults]freeTrial]){
+                 [[NSUserDefaults standardUserDefaults]setFreeTrial:NO];
+                 [[NSUserDefaults standardUserDefaults] setSubscriptionDate:[[UserManager sharedManager]getDateAfterAddingNumberOfDays:0]];
+             }
+             NSLog(@"Purchased/Subscribed to product with id: %@", [note object]);
+             if([[note object] isEqualToString:WEEKEND_WARRIOR_IN_APP]){
+                 [[NSUserDefaults standardUserDefaults] setSubscriptionDate:[[UserManager sharedManager]getUpdatedSubscriptionDateAfterAddingNumberOfDays:3]];
+                 
+             } else if([[note object] isEqualToString:TOURIST_IN_APP]){
+                 [[NSUserDefaults standardUserDefaults] setSubscriptionDate:[[UserManager sharedManager]getUpdatedSubscriptionDateAfterAddingNumberOfDays:12]];
+                 
+             } else if([[note object] isEqualToString:SEASONPASS_IN_APP]){
+                 
+             }
+             [SVProgressHUD dismiss];
+         });
+     }];
     return YES;
 }
-
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
@@ -121,13 +135,16 @@
 
 -(void)setActivateViewController{
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-//        ActivateViewController *contentViewController = [storyboard instantiateViewControllerWithIdentifier:@"ActivateViewController"];
+    //        ActivateViewController *contentViewController = [storyboard instantiateViewControllerWithIdentifier:@"ActivateViewController"];
     //    SettingsViewController *contentViewController = [storyboard instantiateViewControllerWithIdentifier:@"SettingsViewController"];
     MenuViewController * leftMenuViewController = [storyboard instantiateViewControllerWithIdentifier:@"MenuViewController"];
     
     if(!_landingViewController)
         _landingViewController = [storyboard instantiateViewControllerWithIdentifier:@"LandingViewController"];
     [_landingViewController setIsActivateScreen:YES];
+    
+    //SubscriptionViewController *contentViewController = [storyboard instantiateViewControllerWithIdentifier:@"SubscriptionViewController"];
+    
     _appNavigationController = [[UINavigationController alloc]initWithRootViewController:_landingViewController];
     [_appNavigationController.navigationBar setTranslucent:NO];
     _sideMenuViewController = [[RESideMenu alloc] initWithContentViewController:_appNavigationController

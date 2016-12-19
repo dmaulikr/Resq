@@ -73,7 +73,10 @@
  */
 
 - (IBAction)onActivateBtnClick:(UIButton *)sender {
-    
+    if(![self checkActivationStatus]){
+        ALERT_VIEW(@"Snow Rescue", @"your free trial is over, please purchase...")
+        return;
+    }
     sender.selected = !sender.selected;
     
     if(![[UserManager sharedManager] isActivated]){
@@ -107,6 +110,30 @@
     else{
         self.activate_btn.selected = NO;
     }
+}
+
+
+-(BOOL)checkActivationStatus{
+    NSInteger numberOfDays = [[UserManager sharedManager]subscriptionNumberOfDaysLeft];
+    if([[MKStoreKit sharedKit] isProductPurchased:SEASONPASS_IN_APP]) {
+        NSDate * date = [[MKStoreKit sharedKit] expiryDateForProduct:SEASONPASS_IN_APP];
+        if([[MKStoreKit sharedKit] expiryDateForProduct:SEASONPASS_IN_APP]) {
+            NSLog(@"Date after  \t%@",date);
+            NSLog(@"Days to be added :   %ld",[[UserManager sharedManager]seasonPassNumberOfDaysInWithExpiryDate:date]);
+        }else{
+            NSLog(@"NO");
+        }
+        numberOfDays += [[UserManager sharedManager]seasonPassNumberOfDaysInWithExpiryDate:date];
+    }
+    BOOL isActive = NO;
+    if([[NSUserDefaults standardUserDefaults]freeTrial]){
+        isActive = YES;
+    } else if(numberOfDays <= 0){
+        isActive = NO;
+    } else if(numberOfDays > 0){
+        isActive = YES;
+    }
+    return isActive;
 }
 
 @end

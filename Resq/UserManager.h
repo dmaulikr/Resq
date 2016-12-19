@@ -29,5 +29,9 @@
 @property(nonatomic, retain)NSTimer * alertDif10;
 @property(nonatomic, retain)NSTimer * alertDif1;
 
+-(NSDate*)getDateAfterAddingNumberOfDays:(int)days;
+-(NSInteger)subscriptionNumberOfDaysLeft;
+-(NSDate*)getUpdatedSubscriptionDateAfterAddingNumberOfDays:(int)days;
+-(NSInteger)seasonPassNumberOfDaysInWithExpiryDate:(NSDate*)date;
 
 @end
