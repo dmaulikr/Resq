@@ -17,9 +17,11 @@
 -(NSManagedObject *)getObject:(NSString *)className predicate:(NSString*)predicate;
 -(NSArray *)getAllContacts:(NSString *)className predicate:(NSString*)predicate isFrequent:(BOOL)isFrequent;
 
+
 -(void)setup;
 -(void)startAdvertising;
 -(void)sendMessage:(NSString*)to;
+-(void)checkTimer;
 
 @property(assign) BOOL isActivated;
 @property(assign) int timeRemaining;

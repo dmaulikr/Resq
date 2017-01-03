@@ -46,14 +46,10 @@ static ResqLocationManager *_sharedLocationManagerInstance = nil;
     return self;
 }
 
--(void)outputAccelertionData:(CMAcceleration)acceleration
-{
-    NSLog(@"Ahsan");
+-(void)outputAccelertionData:(CMAcceleration)acceleration{
     
 }
--(void)outputRotationData:(CMRotationRate)rotation
-{
-    NSLog(@"Hananta");
+-(void)outputRotationData:(CMRotationRate)rotation{
     
 }
 
@@ -71,7 +67,7 @@ static ResqLocationManager *_sharedLocationManagerInstance = nil;
                                                 // UPDATE: print debug information
                                                 float staticThreshold = 0.025;
                                                 if(totalAcceleration> staticThreshold){
-                                                    NSLog (@"total=%f", totalAcceleration);
+                                                    //NSLog (@"total=%f", totalAcceleration);
                                                     [[UserManager sharedManager] setup];
                                                 }
                                             }];
@@ -152,7 +148,7 @@ static ResqLocationManager *_sharedLocationManagerInstance = nil;
 }
 
 - (void)locationManager:(CLLocationManager *) manager didUpdateHeading:(nonnull CLHeading *)newHeading{
-        NSLog(@"Heading");
+        //NSLog(@"Heading");
     [[NSNotificationCenter defaultCenter] postNotificationName:didUpdateHeadingNotification object:newHeading];
     [[UserManager sharedManager] setup];
     
@@ -167,7 +163,7 @@ static ResqLocationManager *_sharedLocationManagerInstance = nil;
         CLLocation *location = [locations lastObject];
         if (location)
             self.currentLocation = location;
-        NSLog(@"%.3f,%.3f",self.currentLocation.coordinate.latitude,self.currentLocation.coordinate.longitude);
+        //NSLog(@"%.3f,%.3f",self.currentLocation.coordinate.latitude,self.currentLocation.coordinate.longitude);
         [[NSNotificationCenter defaultCenter] postNotificationName:didUpdateLocationNotification object:self];
     }
 }
@@ -181,7 +177,7 @@ static ResqLocationManager *_sharedLocationManagerInstance = nil;
 - (void)initilizeAudioPlayer{
     // set our default audio session state
     [self setSessionActiveWithMixing:NO];
-    NSURL *heroSoundURL = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"Hero" ofType:@"aiff"]];
+    NSURL *heroSoundURL = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"Hero" ofType:@"aifc"]];
     assert(heroSoundURL);
     _audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:heroSoundURL error:nil];
 }

@@ -18,6 +18,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateView) name:UIApplicationWillEnterForegroundNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateView) name:ResetActivateModeView object:nil];
+    
     [[UserManager sharedManager] startAdvertising];
     [[NSNotificationCenter defaultCenter]
      addObserverForName:didUpdateLocationNotification
@@ -27,7 +30,6 @@
          
          _latitude_label.text = [NSString stringWithFormat:@"%f",[ResqLocationManager sharedManager].currentLocation.coordinate.latitude];
          _longitude_label.text = [NSString stringWithFormat:@"%f",[ResqLocationManager sharedManager].currentLocation.coordinate.longitude];
-         NSLog(@"%f",[ResqLocationManager sharedManager].currentLocation.horizontalAccuracy);
          
          NSString * accuracyValue = [NSString stringWithFormat:@"%.0f",[ResqLocationManager sharedManager].currentLocation.horizontalAccuracy];
          NSString * accuracyString = [NSString stringWithFormat:@"%@m\nAccuracy",accuracyValue];
@@ -136,4 +138,7 @@
     return isActive;
 }
 
+-(void) dealloc{
+    [[NSNotificationCenter defaultCenter] removeObserver:ResetActivateModeView];
+}
 @end

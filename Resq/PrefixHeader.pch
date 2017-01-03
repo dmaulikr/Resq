@@ -21,10 +21,15 @@
 #define BUDDY_LIST_HEADER_CELL @"BuddyListHeaderCell"
 #define BUDDY_CELL @"BuddyCell"
 
+#define ResetActivateModeView @"ResetActiveModeView"
+
 
 
 // Include any system framework and library headers here that should be included in all compilation units.
 // You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+@import UserNotifications;
+
 #import "MKStoreKit.h"
 #import <StoreKit/StoreKit.h>
 #import "NSUserDefaults+Snow_Rescue.h"

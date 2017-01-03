@@ -35,6 +35,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     _settingsViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"SettingsViewController"];
     _activateViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"ActivateViewController"];
     

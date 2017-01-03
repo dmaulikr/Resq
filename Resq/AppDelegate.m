@@ -15,6 +15,7 @@
 #import "LandingViewController.h"
 #import "PrivacyPolicyViewController.h"
 #import "SubscriptionViewController.h"
+#import <UserNotifications/UserNotifications.h>
 
 @interface AppDelegate ()<UNUserNotificationCenterDelegate>
 
@@ -102,7 +103,41 @@
              [SVProgressHUD dismiss];
          });
      }];
+    
+    
+    UNUserNotificationCenter *center = [UNUserNotificationCenter currentNotificationCenter];
+    [center requestAuthorizationWithOptions:(UNAuthorizationOptionBadge | UNAuthorizationOptionSound | UNAuthorizationOptionAlert)
+                          completionHandler:^(BOOL granted, NSError * _Nullable error) {
+                              if (!error && granted) {
+                                  NSLog(@"request succeeded!");
+                              }
+                          }];
+    
+    
+    
+    
+    [NSTimer scheduledTimerWithTimeInterval:1.0 target:[UserManager sharedManager] selector:@selector(checkTimer) userInfo:nil repeats:YES];
     return YES;
+}
+
+-(void)testAlrt{
+    UNUserNotificationCenter *center = [UNUserNotificationCenter currentNotificationCenter];
+    UNMutableNotificationContent *content = [UNMutableNotificationContent new];
+    //content.title = @"Don't forget";
+    content.body = @"Please re-Activate to start Tracking again.";
+    content.sound = [UNNotificationSound defaultSound];
+    UNTimeIntervalNotificationTrigger *trigger = [UNTimeIntervalNotificationTrigger triggerWithTimeInterval:2
+                                                                                                    repeats:NO];
+    // Objective-C
+    NSString *identifier = @"UYLLocalNotification";
+    UNNotificationRequest *request = [UNNotificationRequest requestWithIdentifier:identifier
+                                                                          content:content trigger:trigger];
+    [center addNotificationRequest:request withCompletionHandler:^(NSError * _Nullable error) {
+        if (error != nil) {
+            NSLog(@"Something went wrong: %@",error);
+        }
+    }];
+
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {
@@ -113,6 +148,8 @@
 - (void)applicationDidEnterBackground:(UIApplication *)application {
     // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
     // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+    // Objective-C
+    //[self testAlrt];
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application {

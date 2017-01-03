@@ -30,5 +30,6 @@
 -(NSURL*)applicationDocumentsDirectory;
 -(void)setActivateViewController;
 -(void)checkForTermsOfUseAndPrivacyPolicy:(UIViewController*)viewController;
+-(void)testAlrt;
 @end
 

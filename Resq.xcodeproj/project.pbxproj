@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		0FF0D2B03AEAB4DF39EAFD22 /* libPods-ResqUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A956C45DB19A854711506DB2 /* libPods-ResqUITests.a */; };
 		6450958A084E006C72E2423A /* libPods-ResqTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 589765DA3E0CCEE90880D0B8 /* libPods-ResqTests.a */; };
+		78026DED1E1C1FC700DCD361 /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78026DEC1E1C1FC700DCD361 /* UserNotifications.framework */; };
+		78026DEF1E1C4DFA00DCD361 /* Hero.aifc in Resources */ = {isa = PBXBuildFile; fileRef = 78026DEE1E1C4DC800DCD361 /* Hero.aifc */; };
 		78144ACD1DF43F7200CD18B6 /* LandingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78144ACC1DF43F7200CD18B6 /* LandingViewController.m */; };
 		78144AD01DF445A200CD18B6 /* PrivacyPolicyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78144ACF1DF445A200CD18B6 /* PrivacyPolicyViewController.m */; };
 		78144AD31DF445F100CD18B6 /* InstructionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78144AD21DF445F100CD18B6 /* InstructionsViewController.m */; };
@@ -42,7 +44,6 @@
 		785AAB021DE61F3C0089C84D /* Contacts+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 785AAAFF1DE61F3C0089C84D /* Contacts+CoreDataProperties.m */; };
 		785AAB031DE61F3C0089C84D /* Contacts.m in Sources */ = {isa = PBXBuildFile; fileRef = 785AAB011DE61F3C0089C84D /* Contacts.m */; };
 		785AAB061DE6205E0089C84D /* UserManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 785AAB051DE6205E0089C84D /* UserManager.m */; };
-		786EEE7F1DDCD26500B6C40F /* Hero.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 786EEE7E1DDCD26500B6C40F /* Hero.aiff */; };
 		786EEE821DDCD2AD00B6C40F /* ResqLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 786EEE811DDCD2AD00B6C40F /* ResqLocationManager.m */; };
 		786EEE861DDCDD0400B6C40F /* PhoneNumberViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 786EEE851DDCDD0400B6C40F /* PhoneNumberViewController.m */; };
 		786EEE891DDCE05400B6C40F /* CountryTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 786EEE881DDCE05400B6C40F /* CountryTableViewCell.m */; };
@@ -113,6 +114,9 @@
 		589765DA3E0CCEE90880D0B8 /* libPods-ResqTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ResqTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5FDCD9FA6118E84325556155 /* Pods-Resq.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Resq.release.xcconfig"; path = "Pods/Target Support Files/Pods-Resq/Pods-Resq.release.xcconfig"; sourceTree = "<group>"; };
 		6EFA3F4DFF8A6BAD496DD5B4 /* libPods-Resq.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Resq.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		78026DEB1E1C1BB300DCD361 /* RESQ.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = RESQ.entitlements; sourceTree = "<group>"; };
+		78026DEC1E1C1FC700DCD361 /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
+		78026DEE1E1C4DC800DCD361 /* Hero.aifc */ = {isa = PBXFileReference; lastKnownFileType = file; path = Hero.aifc; sourceTree = "<group>"; };
 		78144ACB1DF43F7200CD18B6 /* LandingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LandingViewController.h; sourceTree = "<group>"; };
 		78144ACC1DF43F7200CD18B6 /* LandingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LandingViewController.m; sourceTree = "<group>"; };
 		78144ACE1DF445A200CD18B6 /* PrivacyPolicyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrivacyPolicyViewController.h; sourceTree = "<group>"; };
@@ -163,7 +167,6 @@
 		785AAB011DE61F3C0089C84D /* Contacts.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Contacts.m; sourceTree = "<group>"; };
 		785AAB041DE6205E0089C84D /* UserManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserManager.h; sourceTree = "<group>"; };
 		785AAB051DE6205E0089C84D /* UserManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserManager.m; sourceTree = "<group>"; };
-		786EEE7E1DDCD26500B6C40F /* Hero.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = Hero.aiff; sourceTree = "<group>"; };
 		786EEE801DDCD2AD00B6C40F /* ResqLocationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResqLocationManager.h; sourceTree = "<group>"; };
 		786EEE811DDCD2AD00B6C40F /* ResqLocationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResqLocationManager.m; sourceTree = "<group>"; };
 		786EEE831DDCD37E00B6C40F /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
@@ -242,6 +245,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				78026DED1E1C1FC700DCD361 /* UserNotifications.framework in Frameworks */,
 				D9E5A3694AB56C09A0B89B09 /* libPods-Resq.a in Frameworks */,
 				78BAFB3A1E01AE71002377D5 /* StoreKit.framework in Frameworks */,
 			);
@@ -335,6 +339,7 @@
 		785317081DDA3F1E00FC379A /* Resq */ = {
 			isa = PBXGroup;
 			children = (
+				78026DEB1E1C1BB300DCD361 /* RESQ.entitlements */,
 				7853170C1DDA3F1E00FC379A /* AppDelegate.h */,
 				7853170D1DDA3F1E00FC379A /* AppDelegate.m */,
 				F272F9531DDDE68700D4A672 /* Common */,
@@ -462,7 +467,7 @@
 				F28A0F9E1E000D20009DDB7C /* ActivateScreen */,
 				F28A0F971E000B19009DDB7C /* Common */,
 				786EEE8D1DDCE68000B6C40F /* country.json */,
-				786EEE7E1DDCD26500B6C40F /* Hero.aiff */,
+				78026DEE1E1C4DC800DCD361 /* Hero.aifc */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -497,6 +502,7 @@
 		CA0F6C8CD6EE61EBD07137E6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				78026DEC1E1C1FC700DCD361 /* UserNotifications.framework */,
 				78BAFB391E01AE71002377D5 /* StoreKit.framework */,
 				789E66961DE62BC100B907EC /* ContactsUI.framework */,
 				6EFA3F4DFF8A6BAD496DD5B4 /* libPods-Resq.a */,
@@ -675,7 +681,7 @@
 								enabled = 1;
 							};
 							com.apple.Push = {
-								enabled = 0;
+								enabled = 1;
 							};
 						};
 					};
@@ -714,6 +720,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				78026DEF1E1C4DFA00DCD361 /* Hero.aifc in Resources */,
 				7844EC761E008FED00D575E1 /* textfield_line@2x.png in Resources */,
 				78AE542B1E01F263002C53A6 /* menu_snow_img@2x.png in Resources */,
 				78D7A8571E045BD200E3AB0C /* cell_bg@2x.png in Resources */,
@@ -756,7 +763,6 @@
 				7844EC801E009D5A00D575E1 /* nav_bar@2x.png in Resources */,
 				78AE54301E02066B002C53A6 /* text_field_sep@2x.png in Resources */,
 				7844EC8C1E00A32200D575E1 /* subscriptions_bg@2x.png in Resources */,
-				786EEE7F1DDCD26500B6C40F /* Hero.aiff in Resources */,
 				789562A61E053E4E0041ADC6 /* Temp_privacy_policy.html in Resources */,
 				7844EC911E00A40A00D575E1 /* rounder_price_btn@2x.png in Resources */,
 			);
@@ -1084,6 +1090,7 @@
 			baseConfigurationReference = 7A00E41842F35AE579CDB56F /* Pods-Resq.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Resq/RESQ.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Muhammad Ahsan (V32767GP8L)";
 				DEVELOPMENT_TEAM = MBT5FS6977;
 				GCC_PREFIX_HEADER = Resq/PrefixHeader.pch;
@@ -1092,7 +1099,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.eden.resqtest;
 				PRODUCT_NAME = RESQ;
-				PROVISIONING_PROFILE = "18ba449b-4cc2-43c4-8b43-b55bbb44f1cf";
+				PROVISIONING_PROFILE = "5553325b-0a5d-4309-9ccd-f925a9158687";
 				PROVISIONING_PROFILE_SPECIFIER = "Resq Dev Test";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -1103,6 +1110,7 @@
 			baseConfigurationReference = 5FDCD9FA6118E84325556155 /* Pods-Resq.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Resq/RESQ.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Muhammad Ahsan (V32767GP8L)";
 				DEVELOPMENT_TEAM = MBT5FS6977;
 				GCC_PREFIX_HEADER = Resq/PrefixHeader.pch;
@@ -1111,7 +1119,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.eden.resqtest;
 				PRODUCT_NAME = RESQ;
-				PROVISIONING_PROFILE = "18ba449b-4cc2-43c4-8b43-b55bbb44f1cf";
+				PROVISIONING_PROFILE = "5553325b-0a5d-4309-9ccd-f925a9158687";
 				PROVISIONING_PROFILE_SPECIFIER = "Resq Dev Test";
 				TARGETED_DEVICE_FAMILY = 1;
 			};

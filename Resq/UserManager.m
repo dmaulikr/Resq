@@ -20,20 +20,45 @@ static UserManager *_sharedUserManagerInstance = nil;
     return _sharedUserManagerInstance;
 }
 
+-(void)checkTimer{
+    if(_isActivated){
+        _timeRemaining = _timeRemaining-1;
+        NSLog(@"Remaining: %d",_timeRemaining);
+        if(_timeRemaining == 30){
+            [[ResqLocationManager sharedManager]playSound];
+        }
+        
+        if(_timeRemaining == 20){
+            [[ResqLocationManager sharedManager]playSound];
+        }
+        
+        if(_timeRemaining <= 10){
+            [[ResqLocationManager sharedManager]playSound];
+        }
+        
+        if(_timeRemaining == 0){
+            [self alertAction];
+        }
+    }
+}
+
 -(void)setup{
-    //    [NSTimer scheduledTimerWithTimeInterval:1 repeats:YES block:^(NSTimer * _Nonnull timer) {
-    //        if(_isActivated){
-    //            int totalTime = [[NSUserDefaults standardUserDefaults]floatForKey:@"notificationTime"];
+    _timeRemaining = [[NSUserDefaults standardUserDefaults]floatForKey:@"notificationTime"];
+    
+    return;
+    //        [NSTimer scheduledTimerWithTimeInterval:1 repeats:YES block:^(NSTimer * _Nonnull timer) {
+    //            if(_isActivated){
+    //                int totalTime = [[NSUserDefaults standardUserDefaults]floatForKey:@"notificationTime"];
     //
-    //            NSLog(@"Ahsan %d    -     %d",_time Remaining ,totalTime);
-    //            if(_timeRemaining<=totalTime){
-    //                _timeRemaining++;
-    //            }else{
-    //                NSLog(@"Fire Alert");
-    //                _isActivated = NO;
+    //                NSLog(@"Ahsan %d    -     %d",_time Remaining ,totalTime);
+    //                if(_timeRemaining<=totalTime){
+    //                    _timeRemaining++;
+    //                }else{
+    //                    NSLog(@"Fire Alert");
+    //                    _isActivated = NO;
+    //                }
     //            }
-    //        }
-    //    }];
+    //        }];
     
     if(_isActivated){
         if(_alertTimer){
@@ -58,8 +83,23 @@ static UserManager *_sharedUserManagerInstance = nil;
             [_alertDif1 invalidate];
         }
         _alertDif10 = [NSTimer scheduledTimerWithTimeInterval:[[NSUserDefaults standardUserDefaults]floatForKey:@"notificationTime"] -11 target:self selector:@selector(playAlert) userInfo:nil repeats:NO];
+    }else {
         
-        
+        if(_alertTimer){
+            [_alertTimer invalidate];
+        }
+        if(_alertDif30){
+            [_alertDif30 invalidate];
+        }
+        if(_alertDif20){
+            [_alertDif20 invalidate];
+        }
+        if(_alertDif10){
+            [_alertDif10 invalidate];
+        }
+        if(_alertDif1){
+            [_alertDif1 invalidate];
+        }
     }
 }
 
@@ -89,9 +129,11 @@ static UserManager *_sharedUserManagerInstance = nil;
             localNotification.alertBody = @"Please re-Activate to start Tracking again.";
             localNotification.applicationIconBadgeNumber = 0;
             [[UIApplication sharedApplication] scheduleLocalNotification:localNotification];
+            //            [appdelegate testAlrt];
         }
         [[ResqLocationManager sharedManager]stopUpdatingLocation];
         _isActivated = NO;
+        [[NSNotificationCenter defaultCenter] postNotificationName:ResetActivateModeView object:nil];
     }
 }
 
