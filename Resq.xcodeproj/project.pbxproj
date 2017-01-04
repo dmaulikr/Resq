@@ -681,7 +681,7 @@
 								enabled = 1;
 							};
 							com.apple.Push = {
-								enabled = 1;
+								enabled = 0;
 							};
 						};
 					};
@@ -1090,7 +1090,6 @@
 			baseConfigurationReference = 7A00E41842F35AE579CDB56F /* Pods-Resq.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = Resq/RESQ.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Muhammad Ahsan (V32767GP8L)";
 				DEVELOPMENT_TEAM = MBT5FS6977;
 				GCC_PREFIX_HEADER = Resq/PrefixHeader.pch;
@@ -1110,7 +1109,6 @@
 			baseConfigurationReference = 5FDCD9FA6118E84325556155 /* Pods-Resq.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = Resq/RESQ.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Muhammad Ahsan (V32767GP8L)";
 				DEVELOPMENT_TEAM = MBT5FS6977;
 				GCC_PREFIX_HEADER = Resq/PrefixHeader.pch;
