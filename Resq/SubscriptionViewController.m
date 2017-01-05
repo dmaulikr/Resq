@@ -159,16 +159,19 @@
         if([product.productIdentifier isEqualToString:WEEKEND_WARRIOR_IN_APP]){
             _weekendwarrior_btn.hidden = NO;
             [_weekendwarrior_btn setTitle:[_priceFormatter stringFromNumber:product.price] forState:UIControlStateNormal];
+            [_weekendwarrior_btn.titleLabel setAdjustsFontSizeToFitWidth:YES];
             _weekendWarrior_product = product;
         }
         if([product.productIdentifier isEqualToString:SEASONPASS_IN_APP]){
             _seasonpass_btn.hidden = NO;
             [_seasonpass_btn setTitle:[_priceFormatter stringFromNumber:product.price] forState:UIControlStateNormal];
+            [_seasonpass_btn.titleLabel setAdjustsFontSizeToFitWidth:YES];
             _seasonpass_product = product;
         }
         if([product.productIdentifier isEqualToString:TOURIST_IN_APP]){
             _tourist_btn.hidden = NO;
             [_tourist_btn setTitle:[_priceFormatter stringFromNumber:product.price] forState:UIControlStateNormal];
+            [_tourist_btn.titleLabel setAdjustsFontSizeToFitWidth:YES];
             _tourist_product = product;
         }
     }

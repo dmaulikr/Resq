@@ -164,11 +164,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Resq/SubscriptionViewController.m"
-            timestampString = "503868495.888559"
+            timestampString = "505308944.440753"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "231"
-            endingLineNumber = "231"
+            startingLineNumber = "240"
+            endingLineNumber = "240"
             landmarkName = "-updateStatus"
             landmarkType = "7">
          </BreakpointContent>
@@ -196,11 +196,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Resq/SubscriptionViewController.m"
-            timestampString = "503868679.469073"
+            timestampString = "505308944.440753"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "227"
-            endingLineNumber = "227"
+            startingLineNumber = "236"
+            endingLineNumber = "236"
             landmarkName = "-updateStatus"
             landmarkType = "7">
          </BreakpointContent>
@@ -244,42 +244,27 @@
                   moduleName = "RESQ"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/Ahsan/AhsanMacBook/Source%20Tree/Resq/Resq/UserManager.m"
-                  timestampString = "505171610.888721"
+                  timestampString = "505309023.66281"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "242"
                   endingLineNumber = "242"
-                  offsetFromSymbolStart = "76">
+                  offsetFromSymbolStart = "129">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "__Block_byref_object_copy_"
+                  symbolName = "__27-[UserManager sendMessage:]_block_invoke"
                   moduleName = "RESQ"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/Ahsan/AhsanMacBook/Source%20Tree/Resq/Resq/UserManager.m"
-                  timestampString = "505171610.889852"
+                  timestampString = "505309023.6639"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "242"
                   endingLineNumber = "242"
-                  offsetFromSymbolStart = "24">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__Block_byref_object_dispose_"
-                  moduleName = "RESQ"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/Ahsan/AhsanMacBook/Source%20Tree/Resq/Resq/UserManager.m"
-                  timestampString = "505171610.890957"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "242"
-                  endingLineNumber = "242"
-                  offsetFromSymbolStart = "20">
+                  offsetFromSymbolStart = "22">
                </Location>
             </Locations>
          </BreakpointContent>
