@@ -57,6 +57,8 @@ static ResqLocationManager *_sharedLocationManagerInstance = nil;
     [self.locationManager startUpdatingLocation];
     [self.locationManager requestWhenInUseAuthorization];
     [self.locationManager startUpdatingHeading];
+    [self.locationManager setPausesLocationUpdatesAutomatically:NO];
+
 //    if([self respondsToSelector:@selector(allowsBackgroundLocationUpdates)])
         self.locationManager.allowsBackgroundLocationUpdates = YES;
     [self.motionManager startDeviceMotionUpdatesToQueue:[NSOperationQueue mainQueue]
