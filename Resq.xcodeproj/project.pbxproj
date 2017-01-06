@@ -14,6 +14,7 @@
 		78144ACD1DF43F7200CD18B6 /* LandingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78144ACC1DF43F7200CD18B6 /* LandingViewController.m */; };
 		78144AD01DF445A200CD18B6 /* PrivacyPolicyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78144ACF1DF445A200CD18B6 /* PrivacyPolicyViewController.m */; };
 		78144AD31DF445F100CD18B6 /* InstructionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78144AD21DF445F100CD18B6 /* InstructionsViewController.m */; };
+		7824E9491E1FBCCB00A4F868 /* PrivacyPolicyTermsOfUseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7824E9481E1FBCCB00A4F868 /* PrivacyPolicyTermsOfUseViewController.m */; };
 		783A1F4F1E04AF9F00A999C1 /* detail_Screen_bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 783A1F4E1E04AF9F00A999C1 /* detail_Screen_bg@2x.png */; };
 		783EFCB41DEB1F8D007817E6 /* UserProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 783EFCB31DEB1F8D007817E6 /* UserProfileViewController.m */; };
 		7840264D1E07C21B00D35511 /* NSUserDefaults+Snow_Rescue.m in Sources */ = {isa = PBXBuildFile; fileRef = 7840264C1E07C21B00D35511 /* NSUserDefaults+Snow_Rescue.m */; };
@@ -123,6 +124,8 @@
 		78144ACF1DF445A200CD18B6 /* PrivacyPolicyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PrivacyPolicyViewController.m; sourceTree = "<group>"; };
 		78144AD11DF445F100CD18B6 /* InstructionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InstructionsViewController.h; sourceTree = "<group>"; };
 		78144AD21DF445F100CD18B6 /* InstructionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InstructionsViewController.m; sourceTree = "<group>"; };
+		7824E9471E1FBCCB00A4F868 /* PrivacyPolicyTermsOfUseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrivacyPolicyTermsOfUseViewController.h; sourceTree = "<group>"; };
+		7824E9481E1FBCCB00A4F868 /* PrivacyPolicyTermsOfUseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PrivacyPolicyTermsOfUseViewController.m; sourceTree = "<group>"; };
 		783A1F4E1E04AF9F00A999C1 /* detail_Screen_bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "detail_Screen_bg@2x.png"; sourceTree = "<group>"; };
 		783EFCB21DEB1F8D007817E6 /* UserProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserProfileViewController.h; sourceTree = "<group>"; };
 		783EFCB31DEB1F8D007817E6 /* UserProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserProfileViewController.m; sourceTree = "<group>"; };
@@ -539,6 +542,8 @@
 				78EEA1C41E049D82003CC07E /* UpdateUserProfileViewController.m */,
 				78144ACE1DF445A200CD18B6 /* PrivacyPolicyViewController.h */,
 				78144ACF1DF445A200CD18B6 /* PrivacyPolicyViewController.m */,
+				7824E9471E1FBCCB00A4F868 /* PrivacyPolicyTermsOfUseViewController.h */,
+				7824E9481E1FBCCB00A4F868 /* PrivacyPolicyTermsOfUseViewController.m */,
 				78144AD11DF445F100CD18B6 /* InstructionsViewController.h */,
 				78144AD21DF445F100CD18B6 /* InstructionsViewController.m */,
 				7844EC831E00A12200D575E1 /* SubscriptionViewController.h */,
@@ -672,6 +677,7 @@
 					785317051DDA3F1E00FC379A = {
 						CreatedOnToolsVersion = 7.3;
 						DevelopmentTeam = MBT5FS6977;
+						LastSwiftMigration = 0820;
 						ProvisioningStyle = Manual;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
@@ -940,6 +946,7 @@
 				7853170B1DDA3F1E00FC379A /* main.m in Sources */,
 				78144ACD1DF43F7200CD18B6 /* LandingViewController.m in Sources */,
 				7840264D1E07C21B00D35511 /* NSUserDefaults+Snow_Rescue.m in Sources */,
+				7824E9491E1FBCCB00A4F868 /* PrivacyPolicyTermsOfUseViewController.m in Sources */,
 				783EFCB41DEB1F8D007817E6 /* UserProfileViewController.m in Sources */,
 				789DC6841DEA3221007D3B0A /* CBPeripheralManager+Blocks.m in Sources */,
 				786EEE821DDCD2AD00B6C40F /* ResqLocationManager.m in Sources */,
@@ -1090,6 +1097,7 @@
 			baseConfigurationReference = 7A00E41842F35AE579CDB56F /* Pods-Resq.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Muhammad Ahsan (V32767GP8L)";
 				DEVELOPMENT_TEAM = MBT5FS6977;
 				GCC_PREFIX_HEADER = Resq/PrefixHeader.pch;
@@ -1100,6 +1108,8 @@
 				PRODUCT_NAME = RESQ;
 				PROVISIONING_PROFILE = "5553325b-0a5d-4309-9ccd-f925a9158687";
 				PROVISIONING_PROFILE_SPECIFIER = "Resq Dev Test";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -1109,6 +1119,7 @@
 			baseConfigurationReference = 5FDCD9FA6118E84325556155 /* Pods-Resq.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Muhammad Ahsan (V32767GP8L)";
 				DEVELOPMENT_TEAM = MBT5FS6977;
 				GCC_PREFIX_HEADER = Resq/PrefixHeader.pch;
@@ -1119,6 +1130,7 @@
 				PRODUCT_NAME = RESQ;
 				PROVISIONING_PROFILE = "5553325b-0a5d-4309-9ccd-f925a9158687";
 				PROVISIONING_PROFILE_SPECIFIER = "Resq Dev Test";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;

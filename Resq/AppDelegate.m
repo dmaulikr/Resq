@@ -29,7 +29,7 @@
     if(![[NSUserDefaults standardUserDefaults]appSeeded]){
         [[NSUserDefaults standardUserDefaults]setAppSeeded:YES];
         [[NSUserDefaults standardUserDefaults]setFreeTrial:YES];
-        [[NSUserDefaults standardUserDefaults] setSubscriptionDate:[[UserManager sharedManager]getDateAfterAddingNumberOfDays:10]];
+        [[NSUserDefaults standardUserDefaults] setSubscriptionDate:[[UserManager sharedManager]getDateAfterAddingNumberOfDays:7]];
     }
     
     if([[NSUserDefaults standardUserDefaults]freeTrial]){

@@ -272,7 +272,7 @@
             [[_addressBookController navigationBar] setBarStyle:UIBarStyleBlack];
             
             //                _addressBookController.delegate =  self;
-            [_addressBookController setPredicateForEnablingPerson:[NSPredicate predicateWithFormat:@"%K.@count > 0", ABPersonPhoneNumbersProperty]];
+//            [_addressBookController setPredicateForEnablingPerson:[NSPredicate predicateWithFormat:@"%K.@count > 0", ABPersonPhoneNumbersProperty]];
             [_addressBookController setPeoplePickerDelegate:self];
             [self presentViewController:_addressBookController animated:YES completion:nil];
         }

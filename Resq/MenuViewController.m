@@ -15,13 +15,14 @@
 #import "PrivacyPolicyViewController.h"
 #import <MessageUI/MFMailComposeViewController.h>
 #import "SubscriptionViewController.h"
+#import "PrivacyPolicyTermsOfUseViewController.h"
 
 @interface MenuViewController ()<MFMailComposeViewControllerDelegate>
 
 @property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *menuButtons;
 
 @property (nonatomic, retain) UserProfileViewController * userProfileViewController;
-@property (nonatomic, retain) PrivacyPolicyViewController * privacyPolicyViewController;
+@property (nonatomic, retain) PrivacyPolicyTermsOfUseViewController * privacyPolicyViewController;
 @property (nonatomic, retain) InstructionsViewController * instructionsViewController;
 @property(nonatomic, retain) UIButton* selectedButton;
 
@@ -110,7 +111,7 @@
     _selectedButton = sender;
     [self unselectButtons];
     
-    _privacyPolicyViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"PrivacyPolicyViewController"];
+    _privacyPolicyViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"PrivacyPolicyTermsOfUseViewController"];
     UINavigationController* navigationController = [[UINavigationController alloc]initWithRootViewController:_privacyPolicyViewController];
     [navigationController.navigationBar setTranslucent:NO];
     appdelegate.viewDeckController.centerController = navigationController;

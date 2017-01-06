@@ -8,7 +8,7 @@
 
 #import "PrivacyPolicyViewController.h"
 
-@interface PrivacyPolicyViewController ()
+@interface PrivacyPolicyViewController ()<UIWebViewDelegate>
 @property (weak, nonatomic) IBOutlet UIWebView *webView;
 
 @end
@@ -17,17 +17,22 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title = @"Privacy Policy and Terms of Use";
+    self.title = _titleString;
     if([self presentingViewController]){
         [self.leftItem setImage:[UIImage imageNamed:@"back-arrow"]];
-        
     }
+    _webView.delegate = self;
+    [_webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:_urlString]]];
     
-    NSString *htmlFile = [[NSBundle mainBundle] pathForResource:@"Temp_privacy_policy" ofType:@"html"];
-    NSString* htmlString = [NSString stringWithContentsOfFile:htmlFile encoding:NSUTF8StringEncoding error:nil];
-    [_webView loadHTMLString:htmlString baseURL: [[NSBundle mainBundle] bundleURL]];
-
     // Do any additional setup after loading the view.
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"cross-ping-btn"] style:UIBarButtonItemStyleDone target:self action:@selector(dismiss)];
+    UIActivityIndicatorView *spinner = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhite];
+    [spinner startAnimating];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:spinner];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -35,20 +40,21 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
- #pragma mark - Navigation
- 
- // In a storyboard-based application, you will often want to do a little preparation before navigation
- - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
- // Get the new view controller using [segue destinationViewController].
- // Pass the selected object to the new view controller.
- }
- */
+#pragma mark - UIWebViewDelegate
+
+- (void)webViewDidFinishLoad:(UIWebView *)webView{
+    self.navigationItem.rightBarButtonItem = nil;
+}
+
+-(void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error{
+    self.navigationItem.rightBarButtonItem = nil;
+}
 
 -(void)menuAction:(id)sender{
     if([self presentingViewController]){
         [self dismissViewControllerAnimated:YES completion:nil];
-    }else
+    }else{
         [appdelegate.viewDeckController openLeftViewAnimated:YES];
+    }
 }
 @end

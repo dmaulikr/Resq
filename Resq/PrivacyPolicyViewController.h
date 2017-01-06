@@ -9,5 +9,8 @@
 #import "ResqViewController.h"
 
 @interface PrivacyPolicyViewController : ResqViewController
+@property (nonatomic, retain) NSString* titleString;
+@property (nonatomic, retain) NSString* urlString;
+
 
 @end
