@@ -1,21 +1,24 @@
 PODS:
   - CarbonKit (2.1.9)
   - RESideMenu (4.0.7)
+  - SAMKeychain (1.5.2)
   - SVProgressHUD (2.0.4)
   - ViewDeck (2.4.2)
 
 DEPENDENCIES:
   - CarbonKit (~> 2.1)
   - RESideMenu
+  - SAMKeychain
   - SVProgressHUD
   - ViewDeck
 
 SPEC CHECKSUMS:
   CarbonKit: af16a9c0d2b6c908a5985fe4633424d38c9bfc0a
   RESideMenu: f24c508404b49c667344c54aba7e590883533958
+  SAMKeychain: 1865333198217411f35327e8da61b43de79b635b
   SVProgressHUD: bfde85ed6c573ea802b9cb37894ed9b629034f1b
   ViewDeck: 0b7b83bc2782a20dfb76207d0a2e8c5e6a6d182d
 
-PODFILE CHECKSUM: 744120485248fef33eeaf1c896fa5a359902b73c
+PODFILE CHECKSUM: 2c772c34bafc45f8948367dbc1a6bae7569b7fd9
 
 COCOAPODS: 1.0.1

@@ -22,6 +22,7 @@
 #define BUDDY_CELL @"BuddyCell"
 
 #define ResetActivateModeView @"ResetActiveModeView"
+#define KEYCHAIN_IDENTIFIER @"RESQ_KEYCHAIN"
 
 
 

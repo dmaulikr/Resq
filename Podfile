@@ -11,6 +11,7 @@ target 'Resq' do
     #    pod 'Firebase/Messaging'
     #    pod 'Firebase/Database'
     pod 'ViewDeck'
+    pod 'SAMKeychain'
     pod 'CarbonKit', '~>2.1'
 
 
