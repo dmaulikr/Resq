@@ -94,7 +94,7 @@
                                                   usingBlock:^(NSNotification *note) {
                                                       [SVProgressHUD dismiss];
                                                       dispatch_async(dispatch_get_main_queue(), ^{
-                                                          
+                                                          [[MKStoreKit sharedKit] restorePurchases];
                                                           [self performSelector:@selector(updateStatus) withObject:nil afterDelay:0.5];
                                                       });
                                                       
@@ -135,7 +135,8 @@
 
 -(void)rightItemAction:(id)sender{
     [SVProgressHUD show];
-    [[MKStoreKit sharedKit] restorePurchases];
+    [[MKStoreKit sharedKit] refreshAppStoreReceipt];
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -240,7 +241,19 @@
                 [[NSUserDefaults standardUserDefaults] setSubscriptionDate:[[UserManager sharedManager]getDateAfterAddingNumberOfDays:0]];
                 NSLog(@"Days to be added :   %ld",[[UserManager sharedManager]seasonPassNumberOfDaysInWithExpiryDate:date]);
             }
-        }else if([[MKStoreKit sharedKit] expiryDateForProduct:WEEKEND_WARRIOR_IN_APP]) {
+        }else{
+            NSLog(@"NO");
+        }
+        numberOfDays += [[UserManager sharedManager]seasonPassNumberOfDaysInWithExpiryDate:date];
+    }
+    if([[MKStoreKit sharedKit] isProductPurchased:RIPPER_IN_APP]) {
+        NSDate * date = [[MKStoreKit sharedKit] expiryDateForProduct:RIPPER_IN_APP];
+        if([date isKindOfClass:[NSNull class]]){
+            [[MKStoreKit sharedKit] refreshAppStoreReceipt];
+            return;
+        }
+        
+        if([[MKStoreKit sharedKit] expiryDateForProduct:RIPPER_IN_APP]) {
             if([[NSUserDefaults standardUserDefaults]freeTrial]){
                 [[NSUserDefaults standardUserDefaults]setFreeTrial:NO];
                 [[NSUserDefaults standardUserDefaults] setSubscriptionDate:[[UserManager sharedManager]getDateAfterAddingNumberOfDays:0]];
@@ -251,7 +264,6 @@
         }
         numberOfDays += [[UserManager sharedManager]seasonPassNumberOfDaysInWithExpiryDate:date];
     }
-    
     if([[NSUserDefaults standardUserDefaults]freeTrial]){
         [_subscriptionStatus setText:[NSString stringWithFormat:@"Free Trial ends in %ld day(s)",[[UserManager sharedManager]subscriptionNumberOfDaysLeft]]];
     } else if(numberOfDays <= 0){
