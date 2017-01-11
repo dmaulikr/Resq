@@ -129,6 +129,7 @@
     [NSTimer scheduledTimerWithTimeInterval:1.0 target:[UserManager sharedManager] selector:@selector(checkTimer) userInfo:nil repeats:YES];
     [[FBSDKApplicationDelegate sharedInstance] application:application
                              didFinishLaunchingWithOptions:launchOptions];
+    [FBSDKAppEvents logEvent:@"appLaunched"];
     return YES;
 }
 

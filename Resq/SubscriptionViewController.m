@@ -234,7 +234,6 @@
             return;
         }
         
-        
         if([[MKStoreKit sharedKit] expiryDateForProduct:SEASONPASS_IN_APP]) {
             if([[NSUserDefaults standardUserDefaults]freeTrial]){
                 [[NSUserDefaults standardUserDefaults]setFreeTrial:NO];
