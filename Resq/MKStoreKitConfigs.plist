@@ -22,6 +22,7 @@
 	<key>Others</key>
 	<array>
 		<string>com.app.resq.seasonpass</string>
+		<string>com.app.resq.ripper</string>
 	</array>
 	<key>SharedSecret</key>
 	<string>069cc229ad5145c984cbd7ae58622449</string>

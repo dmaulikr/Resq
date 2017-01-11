@@ -13,6 +13,8 @@ target 'Resq' do
     pod 'ViewDeck'
     pod 'SAMKeychain'
     pod 'CarbonKit', '~>2.1'
+    pod 'Facebook-iOS-SDK'
+
 
 
     target 'ResqTests' do

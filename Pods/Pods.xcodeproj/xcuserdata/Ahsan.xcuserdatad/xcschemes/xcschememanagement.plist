@@ -4,7 +4,17 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>Bolts.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>CarbonKit.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Facebook-iOS-SDK.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -52,27 +62,22 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>2B1D61AC8FC8F0F7AA4E46CC76927A12</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>346F523B12D2B7E737C7A29243DF6E36</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>3A4DA9467CE9CA1BBE9378B183ADD5FD</key>
+		<key>3E1D9ABF50A218E5381D9AAEEFAE1AD7</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>48B903968D068665BBEA22ACB388BDC2</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>4A12BBA6E21D7C72CD6D4FB2A0BA1AF4</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>51362952C7EAA7E5E026126804EB30D5</key>
+		<key>5E260787160C8A2D3E0881E764965995</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -82,7 +87,22 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>7E722696C0015C511104D7C81008527A</key>
+		<key>67904A49109C591301007FA1A6735C2F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>A9D3CC88CDBD65AB83A70382B48CECEF</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>BD724A8EA3A5A0E326704D015FAA862F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>EB855DE1F6A05B6ABC6322C02F75D0C2</key>
 		<dict>
 			<key>primary</key>
 			<true/>

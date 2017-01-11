@@ -66,5 +66,27 @@
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
+    <key>CFBundleURLTypes</key>
+    <array>
+        <dict>
+            <key>CFBundleURLSchemes</key>
+            <array>
+                <string>fb739142269583587</string>
+            </array>
+        </dict>
+    </array>
+    <key>FacebookAppID</key>
+    <string>739142269583587</string>
+    <key>FacebookDisplayName</key>
+    <string>Snow Rescue</string>
+    <key>LSApplicationQueriesSchemes</key>
+    <array>
+        <string>fbapi</string>
+        <string>fb-messenger-api</string>
+        <string>fbauth2</string>
+        <string>fbshareextension</string>
+    </array>
+    <key>NSPhotoLibraryUsageDescription</key>
+    <string>To use your photo to show from Facebook</string>
 </dict>
 </plist>

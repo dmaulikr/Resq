@@ -18,6 +18,7 @@
 #import <UserNotifications/UserNotifications.h>
 //#import "KeychainItemWrapper.h"
 #import <SAMKeychain.h>
+#import <FBSDKCoreKit/FBSDKCoreKit.h>
 
 @interface AppDelegate ()<UNUserNotificationCenterDelegate>
 
@@ -30,7 +31,6 @@
     
     
     NSError *error = nil;
-    NSString * password = [SAMKeychain passwordForService:@"RESQ_SERVICE" account:@"RESQ" error:&error];
     if ([error code] == errSecItemNotFound) {
         if([SAMKeychain setPassword:@"123456" forService:@"RESQ_SERVICE" account:@"RESQ" error:&error]){
             if ([error code] == errSecItemNotFound) {
@@ -105,9 +105,8 @@
              if([[note object] isEqualToString:WEEKEND_WARRIOR_IN_APP]){
                  [[NSUserDefaults standardUserDefaults] setSubscriptionDate:[[UserManager sharedManager]getUpdatedSubscriptionDateAfterAddingNumberOfDays:3]];
                  
-             } else if([[note object] isEqualToString:TOURIST_IN_APP]){
-                 [[NSUserDefaults standardUserDefaults] setSubscriptionDate:[[UserManager sharedManager]getUpdatedSubscriptionDateAfterAddingNumberOfDays:12]];
-                 
+             } else if([[note object] isEqualToString:RIPPER_IN_APP]){
+                 //[[NSUserDefaults standardUserDefaults] setSubscriptionDate:[[UserManager sharedManager]getUpdatedSubscriptionDateAfterAddingNumberOfDays:12]];
              } else if([[note object] isEqualToString:SEASONPASS_IN_APP]){
                  
              }
@@ -128,7 +127,22 @@
     
     
     [NSTimer scheduledTimerWithTimeInterval:1.0 target:[UserManager sharedManager] selector:@selector(checkTimer) userInfo:nil repeats:YES];
+    [[FBSDKApplicationDelegate sharedInstance] application:application
+                             didFinishLaunchingWithOptions:launchOptions];
     return YES;
+}
+
+- (BOOL)application:(UIApplication *)application
+            openURL:(NSURL *)url
+            options:(NSDictionary<UIApplicationOpenURLOptionsKey,id> *)options {
+    
+    BOOL handled = [[FBSDKApplicationDelegate sharedInstance] application:application
+                                                                  openURL:url
+                                                        sourceApplication:options[UIApplicationOpenURLOptionsSourceApplicationKey]
+                                                               annotation:options[UIApplicationOpenURLOptionsAnnotationKey]
+                    ];
+    // Add any custom logic here.
+    return handled;
 }
 
 -(void)testAlrt{
@@ -168,6 +182,7 @@
 }
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
+    [FBSDKAppEvents activateApp];
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
 }
 

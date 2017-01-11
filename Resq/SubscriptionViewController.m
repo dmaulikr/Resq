@@ -168,7 +168,7 @@
             [_seasonpass_btn.titleLabel setAdjustsFontSizeToFitWidth:YES];
             _seasonpass_product = product;
         }
-        if([product.productIdentifier isEqualToString:TOURIST_IN_APP]){
+        if([product.productIdentifier isEqualToString:RIPPER_IN_APP]){
             _tourist_btn.hidden = NO;
             [_tourist_btn setTitle:[_priceFormatter stringFromNumber:product.price] forState:UIControlStateNormal];
             [_tourist_btn.titleLabel setAdjustsFontSizeToFitWidth:YES];
@@ -185,7 +185,6 @@
 
 -(IBAction)touristAction:(id)sender{
     [self startProductWithProductID:_tourist_product];
-    //[[MKStoreKit sharedKit] initiatePaymentRequestForProductWithIdentifier:TOURIST_IN_APP];
 }
 
 -(IBAction)seasonpassAction:(id)sender{
@@ -199,8 +198,8 @@
         numberOfDays = @"3 Days";
     } else if([product.productIdentifier isEqualToString:SEASONPASS_IN_APP]){
         numberOfDays = @"1 Year";
-    }else if([product.productIdentifier isEqualToString:TOURIST_IN_APP]){
-        numberOfDays = @"12 Days";
+    }else if([product.productIdentifier isEqualToString:RIPPER_IN_APP]){
+        numberOfDays = @"1 Month";
     }
     
     if(![[NSUserDefaults standardUserDefaults] freeTrial]){
@@ -237,6 +236,12 @@
         
         
         if([[MKStoreKit sharedKit] expiryDateForProduct:SEASONPASS_IN_APP]) {
+            if([[NSUserDefaults standardUserDefaults]freeTrial]){
+                [[NSUserDefaults standardUserDefaults]setFreeTrial:NO];
+                [[NSUserDefaults standardUserDefaults] setSubscriptionDate:[[UserManager sharedManager]getDateAfterAddingNumberOfDays:0]];
+                NSLog(@"Days to be added :   %ld",[[UserManager sharedManager]seasonPassNumberOfDaysInWithExpiryDate:date]);
+            }
+        }else if([[MKStoreKit sharedKit] expiryDateForProduct:WEEKEND_WARRIOR_IN_APP]) {
             if([[NSUserDefaults standardUserDefaults]freeTrial]){
                 [[NSUserDefaults standardUserDefaults]setFreeTrial:NO];
                 [[NSUserDefaults standardUserDefaults] setSubscriptionDate:[[UserManager sharedManager]getDateAfterAddingNumberOfDays:0]];

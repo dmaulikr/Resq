@@ -10,8 +10,8 @@
 #define PrefixHeader_pch
 
 #define SEASONPASS_IN_APP @"com.app.resq.seasonpass"
-#define TOURIST_IN_APP @"com.app.resq.tourist"
-#define WEEKEND_WARRIOR_IN_APP @"com.app.resq.weekendwarrior"
+#define RIPPER_IN_APP @"com.app.resq.ripper"
+#define WEEKEND_WARRIOR_IN_APP @"com.app.resq.weekendwarriors"
 
 #define CLOSE_BY_CELL @"CloseByCell"
 #define CONTACTS_SETTING_CELL @"ContactsSettingCell"

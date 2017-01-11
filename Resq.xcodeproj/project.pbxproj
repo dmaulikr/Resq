@@ -1100,6 +1100,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Muhammad Ahsan (V32767GP8L)";
 				DEVELOPMENT_TEAM = MBT5FS6977;
+				FRAMEWORK_SEARCH_PATHS = "~/Documents/FacebookSDK";
 				GCC_PREFIX_HEADER = Resq/PrefixHeader.pch;
 				INFOPLIST_FILE = Resq/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -1122,6 +1123,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Muhammad Ahsan (V32767GP8L)";
 				DEVELOPMENT_TEAM = MBT5FS6977;
+				FRAMEWORK_SEARCH_PATHS = "~/Documents/FacebookSDK";
 				GCC_PREFIX_HEADER = Resq/PrefixHeader.pch;
 				INFOPLIST_FILE = Resq/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
