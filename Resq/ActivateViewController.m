@@ -120,8 +120,6 @@
     if([[MKStoreKit sharedKit] isProductPurchased:SEASONPASS_IN_APP]) {
         NSDate * date = [[MKStoreKit sharedKit] expiryDateForProduct:SEASONPASS_IN_APP];
         if([[MKStoreKit sharedKit] expiryDateForProduct:SEASONPASS_IN_APP]) {
-            NSLog(@"Date after  \t%@",date);
-            NSLog(@"Days to be added :   %ld",[[UserManager sharedManager]seasonPassNumberOfDaysInWithExpiryDate:date]);
         }else{
             NSLog(@"NO");
         }
@@ -130,8 +128,6 @@
     if([[MKStoreKit sharedKit] isProductPurchased:RIPPER_IN_APP]) {
         NSDate * date = [[MKStoreKit sharedKit] expiryDateForProduct:RIPPER_IN_APP];
         if([[MKStoreKit sharedKit] expiryDateForProduct:RIPPER_IN_APP]) {
-            NSLog(@"Date after  \t%@",date);
-            NSLog(@"Days to be added :   %ld",[[UserManager sharedManager]seasonPassNumberOfDaysInWithExpiryDate:date]);
         }else{
             NSLog(@"NO");
         }

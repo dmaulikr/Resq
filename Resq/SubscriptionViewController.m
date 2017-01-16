@@ -23,6 +23,9 @@
 @property (strong, nonatomic) SKProduct * tourist_product;
 @property (strong, nonatomic) SKProduct * seasonpass_product;
 
+@property (assign)BOOL isRipperCanDo;
+@property (assign)BOOL isSeasonCanDo;
+
 
 @end
 
@@ -56,9 +59,42 @@
      usingBlock:^(NSNotification *note) {
          dispatch_async(dispatch_get_main_queue(), ^{
              
-             NSLog(@"Purchased/Subscribed to product with id: %@", [note object]);
-             [self performSelector:@selector(updateStatus) withObject:nil afterDelay:0.5];
-             [SVProgressHUD dismiss];
+             NSInteger numberOfDays = [[UserManager sharedManager]subscriptionNumberOfDaysLeft];
+             if([[note object] isEqualToString:SEASONPASS_IN_APP]){
+                 NSDate * date = [[MKStoreKit sharedKit] expiryDateForProduct:SEASONPASS_IN_APP];
+                 if(![date isKindOfClass:[NSNull class]]){
+                     if([[MKStoreKit sharedKit] expiryDateForProduct:SEASONPASS_IN_APP]) {
+                         if([[NSUserDefaults standardUserDefaults]freeTrial]){
+                             [[NSUserDefaults standardUserDefaults]setFreeTrial:NO];
+                             [[NSUserDefaults standardUserDefaults] setSubscriptionDate:[[UserManager sharedManager]getDateAfterAddingNumberOfDays:0]];
+                         }
+                     }
+                     numberOfDays += [[UserManager sharedManager]seasonPassNumberOfDaysInWithExpiryDate:date];
+                 }
+             }
+             if([[note object] isEqualToString:RIPPER_IN_APP]){
+                 NSDate * date = [[MKStoreKit sharedKit] expiryDateForProduct:RIPPER_IN_APP];
+                 if(![date isKindOfClass:[NSNull class]]){
+                     if([[MKStoreKit sharedKit] expiryDateForProduct:RIPPER_IN_APP]) {
+                         if([[NSUserDefaults standardUserDefaults]freeTrial]){
+                             [[NSUserDefaults standardUserDefaults]setFreeTrial:NO];
+                             [[NSUserDefaults standardUserDefaults] setSubscriptionDate:[[UserManager sharedManager]getDateAfterAddingNumberOfDays:0]];
+                         }
+                     }
+                     numberOfDays += [[UserManager sharedManager]seasonPassNumberOfDaysInWithExpiryDate:date];
+                 }
+             }
+             if(numberOfDays == 0 && _isRipperCanDo){
+                 _isRipperCanDo = NO;
+                 [[MKStoreKit sharedKit] startValidatingReceiptsAndUpdateLocalStore];
+             }
+             if([[NSUserDefaults standardUserDefaults]freeTrial]){
+                 [_subscriptionStatus setText:[NSString stringWithFormat:@"Free Trial ends in %ld day(s)",[[UserManager sharedManager]subscriptionNumberOfDaysLeft]]];
+             } else if(numberOfDays <= 0){
+                 [_subscriptionStatus setText:[NSString stringWithFormat:@"Expired, Please choose an option"]];
+             } else if(numberOfDays > 0){
+                 [_subscriptionStatus setText:[NSString stringWithFormat:@"Your Subscription status: Ends in %ld day(s)",numberOfDays]];
+             }
          });
      }];
     
@@ -67,7 +103,6 @@
                                                        queue:[[NSOperationQueue alloc] init]
                                                   usingBlock:^(NSNotification *note) {
                                                       [SVProgressHUD dismiss];
-                                                      NSLog(@"Failed restoring purchases with error: %@", [note object]);
                                                       [SVProgressHUD dismiss];
                                                   }];
     
@@ -76,8 +111,7 @@
                                                        queue:[[NSOperationQueue alloc] init]
                                                   usingBlock:^(NSNotification *note) {
                                                       [SVProgressHUD dismiss];
-                                                      NSLog(@"Restored Purchases");
-                                                      [self performSelector:@selector(updateStatus) withObject:nil afterDelay:0.5];
+                                                      [self performSelector:@selector(updateStatus:) withObject:@(NO) afterDelay:0.5];
                                                   }];
     
     [[NSNotificationCenter defaultCenter] addObserverForName:kMKStoreKitRestoringPurchasesFailedNotification
@@ -85,7 +119,6 @@
                                                        queue:[[NSOperationQueue alloc] init]
                                                   usingBlock:^(NSNotification *note) {
                                                       [SVProgressHUD dismiss];
-                                                      NSLog(@"Failed restoring purchases with error: %@", [note object]);
                                                   }];
     
     [[NSNotificationCenter defaultCenter] addObserverForName:kMKStoreKitReceiptValidationNotification
@@ -95,10 +128,8 @@
                                                       [SVProgressHUD dismiss];
                                                       dispatch_async(dispatch_get_main_queue(), ^{
                                                           [[MKStoreKit sharedKit] restorePurchases];
-                                                          [self performSelector:@selector(updateStatus) withObject:nil afterDelay:0.5];
+                                                          [self performSelector:@selector(updateStatus:) withObject:@(NO) afterDelay:0.5];
                                                       });
-                                                      
-                                                      //[[MKStoreKit sharedKit] restorePurchases];
                                                   }];
     [[NSNotificationCenter defaultCenter] addObserverForName:kMKStoreKitReceiptValidationFailedNotification
                                                       object:nil
@@ -126,7 +157,7 @@
     _tourist_btn.hidden = YES;
     _seasonpass_btn.hidden = YES;
     [self updateProducts];
-    [self updateStatus];
+    [self performSelector:@selector(updateStatus:) withObject:@(NO) afterDelay:0.0];
 }
 
 -(void)menuAction:(id)sender{
@@ -139,30 +170,9 @@
     
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-/*
- #pragma mark - Navigation
- 
- // In a storyboard-based application, you will often want to do a little preparation before navigation
- - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
- // Get the new view controller using [segue destinationViewController].
- // Pass the selected object to the new view controller.
- }
- */
-
 -(void)updateProducts{
     for(SKProduct * product in [[MKStoreKit sharedKit] availableProducts]){
         [_priceFormatter setLocale:product.priceLocale];
-        if([product.productIdentifier isEqualToString:WEEKEND_WARRIOR_IN_APP]){
-            _weekendwarrior_btn.hidden = NO;
-            [_weekendwarrior_btn setTitle:[_priceFormatter stringFromNumber:product.price] forState:UIControlStateNormal];
-            [_weekendwarrior_btn.titleLabel setAdjustsFontSizeToFitWidth:YES];
-            _weekendWarrior_product = product;
-        }
         if([product.productIdentifier isEqualToString:SEASONPASS_IN_APP]){
             _seasonpass_btn.hidden = NO;
             [_seasonpass_btn setTitle:[_priceFormatter stringFromNumber:product.price] forState:UIControlStateNormal];
@@ -185,19 +195,20 @@
 }
 
 -(IBAction)touristAction:(id)sender{
+    _isRipperCanDo = YES;
     [self startProductWithProductID:_tourist_product];
 }
 
 -(IBAction)seasonpassAction:(id)sender{
+    _isRipperCanDo = YES;
     [self startProductWithProductID:_seasonpass_product];
     //[[MKStoreKit sharedKit] initiatePaymentRequestForProductWithIdentifier:SEASONPASS_IN_APP];
 }
 
 -(void)startProductWithProductID:(SKProduct *)product{
     NSString *numberOfDays = @"";
-    if([product.productIdentifier isEqualToString:WEEKEND_WARRIOR_IN_APP]){
-        numberOfDays = @"3 Days";
-    } else if([product.productIdentifier isEqualToString:SEASONPASS_IN_APP]){
+    
+    if([product.productIdentifier isEqualToString:SEASONPASS_IN_APP]){
         numberOfDays = @"1 Year";
     }else if([product.productIdentifier isEqualToString:RIPPER_IN_APP]){
         numberOfDays = @"1 Month";
@@ -225,44 +236,32 @@
     }
 }
 
--(void)updateStatus{
+-(void)updateStatus:(NSNumber*)timerObject{
     
     NSInteger numberOfDays = [[UserManager sharedManager]subscriptionNumberOfDaysLeft];
     if([[MKStoreKit sharedKit] isProductPurchased:SEASONPASS_IN_APP]) {
         NSDate * date = [[MKStoreKit sharedKit] expiryDateForProduct:SEASONPASS_IN_APP];
-        if([date isKindOfClass:[NSNull class]]){
-            [[MKStoreKit sharedKit] refreshAppStoreReceipt];
-            return;
-        }
-        
-        if([[MKStoreKit sharedKit] expiryDateForProduct:SEASONPASS_IN_APP]) {
-            if([[NSUserDefaults standardUserDefaults]freeTrial]){
-                [[NSUserDefaults standardUserDefaults]setFreeTrial:NO];
-                [[NSUserDefaults standardUserDefaults] setSubscriptionDate:[[UserManager sharedManager]getDateAfterAddingNumberOfDays:0]];
-                NSLog(@"Days to be added :   %ld",[[UserManager sharedManager]seasonPassNumberOfDaysInWithExpiryDate:date]);
+        if(![date isKindOfClass:[NSNull class]]){
+            if([[MKStoreKit sharedKit] expiryDateForProduct:SEASONPASS_IN_APP]) {
+                if([[NSUserDefaults standardUserDefaults]freeTrial]){
+                    [[NSUserDefaults standardUserDefaults]setFreeTrial:NO];
+                    [[NSUserDefaults standardUserDefaults] setSubscriptionDate:[[UserManager sharedManager]getDateAfterAddingNumberOfDays:0]];
+                }
             }
-        }else{
-            NSLog(@"NO");
+            numberOfDays += [[UserManager sharedManager]seasonPassNumberOfDaysInWithExpiryDate:date];
         }
-        numberOfDays += [[UserManager sharedManager]seasonPassNumberOfDaysInWithExpiryDate:date];
     }
     if([[MKStoreKit sharedKit] isProductPurchased:RIPPER_IN_APP]) {
         NSDate * date = [[MKStoreKit sharedKit] expiryDateForProduct:RIPPER_IN_APP];
-        if([date isKindOfClass:[NSNull class]]){
-            [[MKStoreKit sharedKit] refreshAppStoreReceipt];
-            return;
-        }
-        
-        if([[MKStoreKit sharedKit] expiryDateForProduct:RIPPER_IN_APP]) {
-            if([[NSUserDefaults standardUserDefaults]freeTrial]){
-                [[NSUserDefaults standardUserDefaults]setFreeTrial:NO];
-                [[NSUserDefaults standardUserDefaults] setSubscriptionDate:[[UserManager sharedManager]getDateAfterAddingNumberOfDays:0]];
-                NSLog(@"Days to be added :   %ld",[[UserManager sharedManager]seasonPassNumberOfDaysInWithExpiryDate:date]);
+        if(![date isKindOfClass:[NSNull class]]){
+            if([[MKStoreKit sharedKit] expiryDateForProduct:RIPPER_IN_APP]) {
+                if([[NSUserDefaults standardUserDefaults]freeTrial]){
+                    [[NSUserDefaults standardUserDefaults]setFreeTrial:NO];
+                    [[NSUserDefaults standardUserDefaults] setSubscriptionDate:[[UserManager sharedManager]getDateAfterAddingNumberOfDays:0]];
+                }
             }
-        }else{
-            NSLog(@"NO");
+            numberOfDays += [[UserManager sharedManager]seasonPassNumberOfDaysInWithExpiryDate:date];
         }
-        numberOfDays += [[UserManager sharedManager]seasonPassNumberOfDaysInWithExpiryDate:date];
     }
     if([[NSUserDefaults standardUserDefaults]freeTrial]){
         [_subscriptionStatus setText:[NSString stringWithFormat:@"Free Trial ends in %ld day(s)",[[UserManager sharedManager]subscriptionNumberOfDaysLeft]]];
@@ -271,5 +270,6 @@
     } else if(numberOfDays > 0){
         [_subscriptionStatus setText:[NSString stringWithFormat:@"Your Subscription status: Ends in %ld day(s)",numberOfDays]];
     }
+    
 }
 @end

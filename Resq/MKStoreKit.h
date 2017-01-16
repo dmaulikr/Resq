@@ -196,6 +196,7 @@ extern NSString *const kMKStoreKitReceiptValidationNotification;
  *  an App Store login alert to the user (without explanation).
  */
 - (void)refreshAppStoreReceipt;
+- (void)startValidatingReceiptsAndUpdateLocalStore;
 
 /*!
  *  @abstract Initiates payment request for a In App Purchasable Product
