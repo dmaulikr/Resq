@@ -3,22 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>Consumables</key>
-	<dict>
-		<key>com.app.resq.tourist</key>
-		<dict>
-			<key>ConsumableCount</key>
-			<integer>12</integer>
-			<key>ConsumableId</key>
-			<string>MyTouristWallet</string>
-		</dict>
-		<key>com.app.resq.weekendwarrior</key>
-		<dict>
-			<key>ConsumableCount</key>
-			<integer>3</integer>
-			<key>ConsumableId</key>
-			<string>MyWeekendWallet</string>
-		</dict>
-	</dict>
+	<dict/>
 	<key>Others</key>
 	<array>
 		<string>com.app.resq.seasonpass</string>

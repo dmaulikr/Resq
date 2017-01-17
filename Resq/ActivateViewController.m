@@ -117,22 +117,6 @@
 
 -(BOOL)checkActivationStatus{
     NSInteger numberOfDays = [[UserManager sharedManager]subscriptionNumberOfDaysLeft];
-    if([[MKStoreKit sharedKit] isProductPurchased:SEASONPASS_IN_APP]) {
-        NSDate * date = [[MKStoreKit sharedKit] expiryDateForProduct:SEASONPASS_IN_APP];
-        if([[MKStoreKit sharedKit] expiryDateForProduct:SEASONPASS_IN_APP]) {
-        }else{
-            NSLog(@"NO");
-        }
-        numberOfDays += [[UserManager sharedManager]seasonPassNumberOfDaysInWithExpiryDate:date];
-    }
-    if([[MKStoreKit sharedKit] isProductPurchased:RIPPER_IN_APP]) {
-        NSDate * date = [[MKStoreKit sharedKit] expiryDateForProduct:RIPPER_IN_APP];
-        if([[MKStoreKit sharedKit] expiryDateForProduct:RIPPER_IN_APP]) {
-        }else{
-            NSLog(@"NO");
-        }
-        numberOfDays += [[UserManager sharedManager]seasonPassNumberOfDaysInWithExpiryDate:date];
-    }
     BOOL isActive = NO;
     if([[NSUserDefaults standardUserDefaults]freeTrial]){
         isActive = YES;

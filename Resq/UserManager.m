@@ -315,9 +315,6 @@ static UserManager *_sharedUserManagerInstance = nil;
 
 -(BOOL)canUseActivateSection{
     BOOL canUse = NO;
-    
-    
-    
     return canUse;
 }
 

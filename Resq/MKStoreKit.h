@@ -115,7 +115,7 @@ extern NSString *const kMKStoreKitDownloadProgressNotification;
  *  @abstract This notification is posted when MKStoreKit completes downloading a hosted content
  */
 extern NSString *const kMKStoreKitDownloadCompletedNotification;
-extern NSString *const kMKStoreKitReceiptValidationNotification;
+
 
 /*!
  *  @abstract The singleton class that takes care of In App Purchasing
@@ -165,7 +165,7 @@ extern NSString *const kMKStoreKitReceiptValidationNotification;
  *
  *  @discussion
  *	This method is normally called after fetching a list of products from your server.
- *  If all your products are known before hand, 
+ *  If all your products are known before hand,
  *  fill them in MKStoreKitConfigs.plist and use -startProductRequest
  *
  *  If this method fails, MKStoreKit will not work
@@ -196,7 +196,6 @@ extern NSString *const kMKStoreKitReceiptValidationNotification;
  *  an App Store login alert to the user (without explanation).
  */
 - (void)refreshAppStoreReceipt;
-- (void)startValidatingReceiptsAndUpdateLocalStore;
 
 /*!
  *  @abstract Initiates payment request for a In App Purchasable Product
@@ -299,6 +298,7 @@ extern NSString *const kMKStoreKitReceiptValidationNotification;
  *  -isProductPurchased
  */
 - (void)setDefaultCredits:(NSNumber *)creditCount forConsumableIdentifier:(NSString *)consumableId;
+- (void)startValidatingAppStoreReceiptWithCompletionHandler:(void (^)(NSArray *receipts, NSError *error)) completionHandler ;
 
 
 @end

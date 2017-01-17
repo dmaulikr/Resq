@@ -67,38 +67,6 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Resq/MKStoreKit.m"
-            timestampString = "503855859.424931"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "182"
-            endingLineNumber = "182"
-            landmarkName = "-consumeCredits:identifiedByConsumableIdentifier:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Resq/MKStoreKit.m"
-            timestampString = "503855862.616047"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "188"
-            endingLineNumber = "188"
-            landmarkName = "-setDefaultCredits:forConsumableIdentifier:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "Resq/UserManager.m"
             timestampString = "505171609.827239"
             startingColumnNumber = "9223372036854775807"
@@ -116,7 +84,7 @@
                   moduleName = "RESQ"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/Ahsan/AhsanMacBook/Source%20Tree/Resq/Resq/UserManager.m"
-                  timestampString = "506289338.24966"
+                  timestampString = "506387271.025615"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "242"
@@ -131,7 +99,7 @@
                   moduleName = "RESQ"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/Ahsan/AhsanMacBook/Source%20Tree/Resq/Resq/UserManager.m"
-                  timestampString = "506289338.250892"
+                  timestampString = "506387271.026721"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "242"
@@ -164,11 +132,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Resq/SubscriptionViewController.m"
-            timestampString = "506287060.991047"
+            timestampString = "506384845.995736"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "141"
-            endingLineNumber = "141"
+            startingLineNumber = "82"
+            endingLineNumber = "82"
             landmarkName = "-viewDidLoad"
             landmarkType = "7">
          </BreakpointContent>
@@ -179,13 +147,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Resq/MKStoreKit.m"
-            timestampString = "506258307.655376"
+            filePath = "Resq/SubscriptionViewController.m"
+            timestampString = "506384845.995736"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "241"
-            endingLineNumber = "241"
-            landmarkName = "-paymentQueue:restoreCompletedTransactionsFailedWithError:"
+            startingLineNumber = "88"
+            endingLineNumber = "88"
+            landmarkName = "-viewDidLoad"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -196,12 +164,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Resq/SubscriptionViewController.m"
-            timestampString = "506289472.893256"
+            timestampString = "506387270.916493"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "290"
-            endingLineNumber = "290"
-            landmarkName = "-updateStatus:"
+            startingLineNumber = "134"
+            endingLineNumber = "134"
+            landmarkName = "-updatePurchased"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -212,12 +180,60 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Resq/SubscriptionViewController.m"
-            timestampString = "506289336.620765"
+            timestampString = "506387270.916493"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "108"
-            endingLineNumber = "108"
-            landmarkName = "-viewDidLoad"
+            startingLineNumber = "146"
+            endingLineNumber = "146"
+            landmarkName = "-updatePurchased"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Resq/SubscriptionViewController.m"
+            timestampString = "506387270.916493"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "130"
+            endingLineNumber = "130"
+            landmarkName = "-updatePurchased"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Resq/MKStoreKit.m"
+            timestampString = "506387452.394253"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "368"
+            endingLineNumber = "368"
+            landmarkName = "-startValidatingAppStoreReceiptWithCompletionHandler:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Resq/MKStoreKit.m"
+            timestampString = "506387571.152097"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "304"
+            endingLineNumber = "304"
+            landmarkName = "-startValidatingAppStoreReceiptWithCompletionHandler:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
