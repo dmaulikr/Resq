@@ -16,8 +16,6 @@
 #import "PrivacyPolicyViewController.h"
 #import "SubscriptionViewController.h"
 #import <UserNotifications/UserNotifications.h>
-//#import "KeychainItemWrapper.h"
-#import <SAMKeychain.h>
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
 
 @interface AppDelegate ()<UNUserNotificationCenterDelegate>
@@ -29,18 +27,10 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
-    
-    NSError *error = nil;
-    if ([error code] == errSecItemNotFound) {
-        if([SAMKeychain setPassword:@"123456" forService:@"RESQ_SERVICE" account:@"RESQ" error:&error]){
-            if ([error code] == errSecItemNotFound) {
-                [[NSUserDefaults standardUserDefaults]setAppSeeded:YES];
-                [[NSUserDefaults standardUserDefaults]setFreeTrial:YES];
-                [[NSUserDefaults standardUserDefaults] setSubscriptionDate:[[UserManager sharedManager]getDateAfterAddingNumberOfDays:7]];
-            } else if (error != nil) {
-
-            }
-        }
+    if(![[NSUserDefaults standardUserDefaults]appSeeded]){
+        [[NSUserDefaults standardUserDefaults]setAppSeeded:YES];
+        [[NSUserDefaults standardUserDefaults]setFreeTrial:YES];
+        [[NSUserDefaults standardUserDefaults] setSubscriptionDate:[[UserManager sharedManager]getDateAfterAddingNumberOfDays:7]];
     }
     
     if([[NSUserDefaults standardUserDefaults]freeTrial]){
