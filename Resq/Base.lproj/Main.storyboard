@@ -843,7 +843,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="TZg-mr-k9N">
-                                <rect key="frame" x="30" y="416" width="315" height="200"/>
+                                <rect key="frame" x="30" y="416" width="315" height="228"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <string key="text">To keep using Snow Rescue after the free trial period, please select one of the above subscription options. Snow Rescue will not be able to function as intended without a subscription. Both options gives you access to the full Snow Rescue functionalities and updates.
 
@@ -857,6 +857,8 @@ Your subscription helps us keep developing the app with new and better features 
                     </view>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
                     <nil key="simulatedBottomBarMetrics"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="375" height="667"/>
                     <connections>
                         <outlet property="seasonpass_btn" destination="iDp-VU-Cgo" id="SS0-HQ-rTA"/>
                         <outlet property="subscriptionStatus" destination="oYL-lf-Lhu" id="r2b-xk-0TD"/>
