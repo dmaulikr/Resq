@@ -36,7 +36,7 @@
     [self.rightItem setTitle:@"Restore"];
     [self setTitle:@"Subscription"];
     [((UIScrollView *)self.view) setScrollEnabled:YES];
-    ((UIScrollView *)self.view).contentSize = CGSizeMake(320.0, 575);
+    ((UIScrollView *)self.view).contentSize = CGSizeMake(320.0, 655);
     
     _priceFormatter = [[NSNumberFormatter alloc] init];
     [_priceFormatter setFormatterBehavior:NSNumberFormatterBehavior10_4];

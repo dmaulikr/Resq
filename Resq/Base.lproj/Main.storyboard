@@ -843,12 +843,12 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="TZg-mr-k9N">
-                                <rect key="frame" x="30" y="416" width="315" height="146"/>
+                                <rect key="frame" x="30" y="416" width="315" height="200"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <string key="text">To keep using Snow Rescue after the free trial period, please select one of the above subscription options. Snow Rescue will not be able to function as intended without a subscription. Both options gives you access to the full Snow Rescue functionalities and updates.
 
 Your subscription helps us keep developing the app with new and better features and hopefully help save the lives of happy skiers and snowboarders in many years to come. Thanks for your support!</string>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-ThinItalic" family="Helvetica Neue" pointSize="10"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <color key="textColor" red="0.29803922770000002" green="0.29803922770000002" blue="0.29803922770000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>

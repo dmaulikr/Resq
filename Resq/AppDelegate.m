@@ -13,7 +13,7 @@
 #import <UserNotifications/UserNotifications.h>
 #import "PhoneNumberViewController.h"
 #import "LandingViewController.h"
-#import "PrivacyPolicyViewController.h"
+#import "PrivacyPolicyTermsOfUseViewController.h"
 #import "SubscriptionViewController.h"
 #import <UserNotifications/UserNotifications.h>
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
@@ -308,7 +308,7 @@
         
         [viewController dismissViewControllerAnimated:YES completion:nil];
         UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-        PrivacyPolicyViewController *privacyPolicyViewController = [storyboard instantiateViewControllerWithIdentifier:@"PrivacyPolicyViewController"];
+        PrivacyPolicyTermsOfUseViewController *privacyPolicyViewController = [storyboard instantiateViewControllerWithIdentifier:@"PrivacyPolicyTermsOfUseViewController"];
         UINavigationController* navigationController = [[UINavigationController alloc]initWithRootViewController:privacyPolicyViewController];
         [navigationController.navigationBar setTranslucent:NO];
         [viewController presentViewController:navigationController animated:YES completion:nil];
