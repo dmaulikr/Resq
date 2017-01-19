@@ -11,5 +11,6 @@
 @interface MenuViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UILabel *nameField;
 @property (weak, nonatomic) IBOutlet UILabel *phoneNumberField;
+@property (weak, nonatomic) IBOutlet UIScrollView *scroller;
 
 @end
