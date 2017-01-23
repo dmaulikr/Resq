@@ -88,8 +88,8 @@
      usingBlock:^(NSNotification *note) {
          dispatch_async(dispatch_get_main_queue(), ^{
              if([[NSUserDefaults standardUserDefaults]freeTrial]){
-                 [[NSUserDefaults standardUserDefaults]setFreeTrial:NO];
-                 [[NSUserDefaults standardUserDefaults] setSubscriptionDate:[[UserManager sharedManager]getDateAfterAddingNumberOfDays:0]];
+                 //                 [[NSUserDefaults standardUserDefaults]setFreeTrial:NO];
+                 //                 [[NSUserDefaults standardUserDefaults] setSubscriptionDate:[[UserManager sharedManager]getDateAfterAddingNumberOfDays:0]];
              }
              //NSLog(@"Purchased/Subscribed to product with id: %@", [note object]);
              if([[note object] isEqualToString:WEEKEND_WARRIOR_IN_APP]){

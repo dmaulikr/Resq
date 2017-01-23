@@ -85,9 +85,9 @@
                                                       object:nil
                                                        queue:[[NSOperationQueue alloc] init]
                                                   usingBlock:^(NSNotification *note) {
-                                                      [SVProgressHUD dismiss];
+                                                      //[SVProgressHUD dismiss];
                                                   }];
-    
+    [self updatePurchased];
 }
 
 -(void)dealloc{
@@ -102,11 +102,18 @@
 
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
+    [SVProgressHUD setDefaultMaskType:SVProgressHUDMaskTypeGradient];
     _weekendwarrior_btn.hidden = YES;
     _tourist_btn.hidden = YES;
     _seasonpass_btn.hidden = YES;
     [self updateProducts];
     [self performSelector:@selector(updateStatus:) withObject:@(NO) afterDelay:0.0];
+    
+}
+
+-(void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:animated];
+    [SVProgressHUD setDefaultMaskType:SVProgressHUDMaskTypeNone];
 }
 
 -(void)menuAction:(id)sender{
@@ -130,15 +137,18 @@
                 BOOL isExpired = YES;
                 for(NSDictionary * receipt in receipts){
                     if(receipt && [receipt valueForKey:@"expires_date_ms"] && [[receipt valueForKey:@"expires_date_ms"]doubleValue]>[currentTime doubleValue]){
-                        NSLog(@"Date1 %@:",[NSDate date]);
+                        //NSLog(@"Date1 %@:",[NSDate date]);
                         NSInteger expiryValue = [[receipt valueForKey:@"expires_date_ms"] integerValue];
                         expiryValue = expiryValue/1000;
                         NSTimeInterval timestamp = (NSTimeInterval)[@(expiryValue) doubleValue];
                         NSDate *updatetimestamp = [NSDate dateWithTimeIntervalSince1970:timestamp];
-                        NSLog(@"Date2 %@:",updatetimestamp);
+                        //NSLog(@"Date2 %@:",updatetimestamp);
                         NSInteger numberOfDays = [[UserManager sharedManager]seasonPassNumberOfDaysInWithExpiryDate:updatetimestamp];
                         [[NSUserDefaults standardUserDefaults] setSubscriptionDate:[[UserManager sharedManager]getDateAfterAddingNumberOfDays:[@(numberOfDays) intValue]]];
                         isExpired = NO;
+                        if([[receipt valueForKey:@"product_id"]isEqualToString:SEASONPASS_IN_APP] || [[receipt valueForKey:@"product_id"]isEqualToString:RIPPER_IN_APP]){
+                            [[NSUserDefaults standardUserDefaults]setFreeTrial:NO];
+                        }
                         break;
                     }
                 }
@@ -228,6 +238,5 @@
     } else if(numberOfDays > 0){
         [_subscriptionStatus setText:[NSString stringWithFormat:@"Your Subscription status: Ends in %ld day(s)",numberOfDays]];
     }
-    [SVProgressHUD dismiss];
 }
 @end
